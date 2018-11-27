@@ -101,5 +101,8 @@
   <ItemGroup>
     <None Include="nosacz.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="getting-new-car-key-from-seller-to-vector-clip-art_csp53426618.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

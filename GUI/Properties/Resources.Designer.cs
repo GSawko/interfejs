@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap getting_new_car_key_from_seller_to_vector_clip_art_csp53426618 {
+            get {
+                object obj = ResourceManager.GetObject("getting-new-car-key-from-seller-to-vector-clip-art_csp53426618", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nosacz {
             get {
                 object obj = ResourceManager.GetObject("nosacz", resourceCulture);
