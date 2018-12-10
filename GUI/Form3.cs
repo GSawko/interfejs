@@ -28,11 +28,6 @@ namespace GUI
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -83,37 +78,12 @@ namespace GUI
 
         }
 
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -125,14 +95,9 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.WybórPojazduPanel.BringToFront();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
 
         }
-      
+
         private void button6_Click_1(object sender, EventArgs e)
         {
             FormularzRezerwacjiPanel.BringToFront();
@@ -150,17 +115,12 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EdytujDaneOsPanel.BringToFront();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            KontaktPanel.BringToFront();
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }
