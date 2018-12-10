@@ -93,34 +93,39 @@ namespace GUI
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click_1(object sender, EventArgs e)
         {
-            FormularzRezerwacjiPanel.BringToFront();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormularzRezerwacjiPanel.BringToFront();
+            DodajKlientaPanel.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            WyszukiwanieRezerwacjiPanel.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            EdytujDaneKlientaPanel.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBox25_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PrzeglądanieRezerwacjiPanel.BringToFront();
         }
     }
 }
