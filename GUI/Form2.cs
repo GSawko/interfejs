@@ -1,126 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GUI.Models;
+using System;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private BazaDanych BD;
+        private Klient klient;
+        public Form2(string login)
         {
             InitializeComponent();
+            BD = new BazaDanych();
+            klient = BD.WczytajKlienta(login);
 
+            ZaladujDaneKlienta();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ZaladujDaneKlienta()
         {
+            //boczne menu
+            label2.Text = klient.ImieNazwisko;
 
-        }
+            //zakładka dane
+            textBox10.Text = klient.Imie;
+            textBox11.Text = klient.DrugieImie;
+            textBox13.Text = klient.Nazwisko;
+            //textBox12.Text = klient.Adres;
+            comboBox1.Items.AddRange(new object[] { "M", "K" });
+            comboBox1.SelectedIndex = klient.Plec ? 1 : 0;
+            textBox17.Text = klient.Telefon;
+            textBox16.Text = klient.Email;
+            textBox15.Text = klient.NrPrawaJazd;
+            textBox14.Text = klient.NrDowOsob;
+            textBox20.Text = klient.DataRejestracji.ToString("d");
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+            //checkedListBox3.  //Kategorie
+            //pictureBox7.Image = klient.Zdjecie;
 
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ReservationFormPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label20_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
+            textBox19.Text = klient.Login;
+            textBox18.Text = klient.Haslo;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -128,24 +47,14 @@ namespace GUI
             this.WybórPojazduPanel.BringToFront();
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-      
         private void button6_Click_1(object sender, EventArgs e)
         {
             FormularzRezerwacjiPanel.BringToFront();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonMakeReservation_Click(object sender, EventArgs e)
         {
             FormularzRezerwacjiPanel.BringToFront();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -158,7 +67,12 @@ namespace GUI
             KontaktPanel.BringToFront();
         }
 
-        private void label25_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void buttonShowReservation_Click(object sender, EventArgs e)
         {
 
         }

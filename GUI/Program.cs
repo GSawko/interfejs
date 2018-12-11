@@ -23,13 +23,13 @@ namespace GUI
             var prefiks = login.Substring(0, 1);
             if (prefiks == "p")
             {
-                Form3 widokPracownika = new Form3();
+                Form3 widokPracownika = new Form3(login);
                 Application.Run(widokPracownika);
 
             }
             else if (prefiks == "k")
             {
-                Form2 widokKlienta = new Form2();
+                Form2 widokKlienta = new Form2(login);
                 Application.Run(widokKlienta);
             }
             else if (prefiks == "w")

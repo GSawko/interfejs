@@ -78,6 +78,9 @@
     <Compile Include="Form3.designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\KategoriaPrawaJazdy.cs" />
+    <Compile Include="Models\Klient.cs" />
+    <Compile Include="Models\Pracownik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
