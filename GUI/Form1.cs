@@ -5,6 +5,7 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        // komentarz
         private BazaDanych BD;
         public string Login;
         public Form1()
