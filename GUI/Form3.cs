@@ -21,6 +21,7 @@ namespace GUI
             Pracownik pracownik = BD.WczytajPracownika(login);
 
             label2.Text = pracownik.ImieNazwisko;
+            PlecComboEDKlienta.Items.AddRange(new object[] { "M", "K" });
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace GUI
         {
             Application.Restart();
         }
-
+        
         private void IDKlientaTBox_TextChanged(object sender, EventArgs e)
         {
             string id = ((TextBox)sender).Text;
@@ -74,6 +75,41 @@ namespace GUI
                 PlecDispLabel.Text = "";
                 AdresDispLabel.Text = "";
                 EmailDispLabel.Text = "";
+            }
+        }
+
+        private void IDKlientaTBoxWEDK_TextChanged(object sender, EventArgs e)
+        {
+            string id = ((TextBox)sender).Text;
+            Klient klient = BD.SzukajPoID(id);
+
+            if (klient != null)
+            {
+                ImieTBoxEDKlienta.Text = klient.Imie;
+                DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
+                NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
+                //DataUrDispLabel.Text = klient.DataUrodzenia.ToString("d");
+                TelefonTBoxEDKlienta.Text = klient.Telefon;
+                PlecComboEDKlienta.SelectedIndex = klient.Plec ? 1 : 0;
+                //AdresTBoxEDKlienta.Text = klient.Adres;
+                EmailTBoxEDKlienta.Text = klient.Email;
+                NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
+                NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
+                DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestracji.ToString("d");
+            }
+            else
+            {
+                ImieTBoxEDKlienta.Text = "";
+                DrugieImieTBoxEDKlienta.Text = "";
+                NazwiskoTBoxEDKlienta.Text = "";
+                //DataUrDispLabel.Text = "";
+                TelefonTBoxEDKlienta.Text = "";
+                PlecComboEDKlienta.SelectedIndex = 0;
+                //AdresTBoxEDKlienta.Text = "";
+                EmailTBoxEDKlienta.Text = "";
+                NrPJazdyTBoxEDKlienta.Text = "";
+                NrDowOsTBoxEDKlienta.Text = "";
+                DataRejestracjiTBoxEDKlienta.Text = "";
             }
         }
     }
