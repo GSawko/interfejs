@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KATEGORIEPJAZDY">
+          <Key>
+            <PropertyRef Name="idKatPJ" />
+          </Key>
+          <Property Name="idKatPJ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KLIENCI">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DrugieImie" Type="varchar" MaxLength="30" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="DataUr" Type="date" Nullable="false" />
+          <Property Name="DataRejestr" Type="date" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NrPrawaJazd" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="NrDowOsob" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Plec" Type="tinyint" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Zdjecie" Type="longblob" />
+        </EntityType>
+        <EntityType Name="MARKI">
+          <Key>
+            <PropertyRef Name="idMarki" />
+          </Key>
+          <Property Name="idMarki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPINIA">
+          <Key>
+            <PropertyRef Name="idOpinia" />
+          </Key>
+          <Property Name="idOpinia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REZERWACJE_idRezerw" Type="int" Nullable="false" />
+          <Property Name="DataWyst" Type="date" Nullable="false" />
+          <Property Name="Ocena" Type="smallint" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="POJAZDY">
+          <Key>
+            <PropertyRef Name="idPojazd" />
+          </Key>
+          <Property Name="idPojazd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rodzaj" Type="smallint" Nullable="false" />
+          <Property Name="NrRejestr" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Przebieg" Type="int" />
+          <Property Name="ZaGodz" Type="float" />
+          <Property Name="DataProd" Type="date" Nullable="false" />
+          <Property Name="Sprawny" Type="tinyint" />
+          <Property Name="Opis" Type="varchar" MaxLength="45" />
+          <Property Name="MARKI_idMarki" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="POSIADA">
+          <Key>
+            <PropertyRef Name="KATEGORIEPJAZDY_idKatPJ" />
+            <PropertyRef Name="KLIENCI_idKlient" />
+          </Key>
+          <Property Name="KATEGORIEPJAZDY_idKatPJ" Type="int" Nullable="false" />
+          <Property Name="KLIENCI_idKlient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRACOWNICY">
+          <Key>
+            <PropertyRef Name="idPrac" />
+          </Key>
+          <Property Name="idPrac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DrugieImie" Type="varchar" MaxLength="30" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="DataUr" Type="date" Nullable="false" />
+          <Property Name="DataZatr" Type="date" Nullable="false" />
+          <Property Name="Adres" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="Plec" Type="tinyint" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Zdjecie" Type="longblob" />
+        </EntityType>
+        <EntityType Name="PRZEGLADY">
+          <Key>
+            <PropertyRef Name="idPrzegl" />
+          </Key>
+          <Property Name="idPrzegl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="250" />
+          <Property Name="POJAZDY_idPojazd" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REZERWACJE">
+          <Key>
+            <PropertyRef Name="idRezerw" />
+          </Key>
+          <Property Name="idRezerw" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataRez" Type="date" Nullable="false" />
+          <Property Name="DataWypoz" Type="date" Nullable="false" />
+          <Property Name="Wypozycz" Type="tinyint" Nullable="false" />
+          <Property Name="DataZwrotu" Type="date" Nullable="false" />
+          <Property Name="DataZdania" Type="date" />
+          <Property Name="KLIENCI_idKlient" Type="int" Nullable="false" />
+          <Property Name="POJAZDY_idPojazd" Type="int" Nullable="false" />
+          <Property Name="PRACOWNICY_idPracWydaj" Type="int" />
+          <Property Name="PRACOWNICY_idPracOdbier" Type="int" />
+        </EntityType>
+        <EntityType Name="WYMAGA">
+          <Key>
+            <PropertyRef Name="POJAZDY_idPojazd" />
+            <PropertyRef Name="KATEGORIEPJAZDY_idKatPJ" />
+          </Key>
+          <Property Name="POJAZDY_idPojazd" Type="int" Nullable="false" />
+          <Property Name="KATEGORIEPJAZDY_idKatPJ" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ZDJECIA">
+          <Key>
+            <PropertyRef Name="idZdjecia" />
+          </Key>
+          <Property Name="idZdjecia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POJAZDY_idPojazd" Type="int" Nullable="false" />
+          <Property Name="Zdjecie" Type="longblob" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.ISDB.LoginData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LoginData">
+          <Key>
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Haslo" />
+          </Key>
+          <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_KATEGORIEPJAZDY_has_KLIENCI_KATEGORIEPJAZDY1">
+          <End Role="KATEGORIEPJAZDY" Type="Self.KATEGORIEPJAZDY" Multiplicity="1" />
+          <End Role="POSIADA" Type="Self.POSIADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORIEPJAZDY">
+              <PropertyRef Name="idKatPJ" />
+            </Principal>
+            <Dependent Role="POSIADA">
+              <PropertyRef Name="KATEGORIEPJAZDY_idKatPJ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_KATEGORIEPJAZDY_has_KLIENCI_KLIENCI1">
+          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1" />
+          <End Role="POSIADA" Type="Self.POSIADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLIENCI">
+              <PropertyRef Name="idKlient" />
+            </Principal>
+            <Dependent Role="POSIADA">
+              <PropertyRef Name="KLIENCI_idKlient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_OPINIA_REZERWACJE1">
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="1" />
+          <End Role="OPINIA" Type="Self.OPINIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REZERWACJE">
+              <PropertyRef Name="idRezerw" />
+            </Principal>
+            <Dependent Role="OPINIA">
+              <PropertyRef Name="REZERWACJE_idRezerw" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_POJAZDY_has_KATEGORIEPJAZDY_KATEGORIEPJAZDY1">
+          <End Role="KATEGORIEPJAZDY" Type="Self.KATEGORIEPJAZDY" Multiplicity="1" />
+          <End Role="WYMAGA" Type="Self.WYMAGA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORIEPJAZDY">
+              <PropertyRef Name="idKatPJ" />
+            </Principal>
+            <Dependent Role="WYMAGA">
+              <PropertyRef Name="KATEGORIEPJAZDY_idKatPJ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_POJAZDY_has_KATEGORIEPJAZDY_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="WYMAGA" Type="Self.WYMAGA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="WYMAGA">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_POJAZDY_MARKI1">
+          <End Role="MARKI" Type="Self.MARKI" Multiplicity="1" />
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKI">
+              <PropertyRef Name="idMarki" />
+            </Principal>
+            <Dependent Role="POJAZDY">
+              <PropertyRef Name="MARKI_idMarki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PRZEGLADY_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="PRZEGLADY" Type="Self.PRZEGLADY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="PRZEGLADY">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_KLIENCI1">
+          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLIENCI">
+              <PropertyRef Name="idKlient" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="KLIENCI_idKlient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_PRACOWNICY1">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="idPrac" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="PRACOWNICY_idPracWydaj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_PRACOWNICY2">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="idPrac" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="PRACOWNICY_idPracOdbier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ZDJECIA_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="ZDJECIA" Type="Self.ZDJECIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="ZDJECIA">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="KATEGORIEPJAZDY" EntityType="Self.KATEGORIEPJAZDY" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="KLIENCI" EntityType="Self.KLIENCI" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="MARKI" EntityType="Self.MARKI" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="OPINIA" EntityType="Self.OPINIA" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="POJAZDY" EntityType="Self.POJAZDY" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="POSIADA" EntityType="Self.POSIADA" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="PRZEGLADY" EntityType="Self.PRZEGLADY" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="REZERWACJE" EntityType="Self.REZERWACJE" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="WYMAGA" EntityType="Self.WYMAGA" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="ZDJECIA" EntityType="Self.ZDJECIA" Schema="ISDB" store:Type="Tables" />
+          <EntitySet Name="LoginData" EntityType="Self.LoginData" store:Type="Views" store:Schema="ISDB">
+            <DefiningQuery>SELECT
+`LoginData`.`Login`, 
+`LoginData`.`Haslo`
+FROM `LoginData` AS `LoginData`</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_KATEGORIEPJAZDY_has_KLIENCI_KATEGORIEPJAZDY1" Association="Self.fk_KATEGORIEPJAZDY_has_KLIENCI_KATEGORIEPJAZDY1">
+            <End Role="KATEGORIEPJAZDY" EntitySet="KATEGORIEPJAZDY" />
+            <End Role="POSIADA" EntitySet="POSIADA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_KATEGORIEPJAZDY_has_KLIENCI_KLIENCI1" Association="Self.fk_KATEGORIEPJAZDY_has_KLIENCI_KLIENCI1">
+            <End Role="KLIENCI" EntitySet="KLIENCI" />
+            <End Role="POSIADA" EntitySet="POSIADA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_OPINIA_REZERWACJE1" Association="Self.fk_OPINIA_REZERWACJE1">
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+            <End Role="OPINIA" EntitySet="OPINIA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_POJAZDY_has_KATEGORIEPJAZDY_KATEGORIEPJAZDY1" Association="Self.fk_POJAZDY_has_KATEGORIEPJAZDY_KATEGORIEPJAZDY1">
+            <End Role="KATEGORIEPJAZDY" EntitySet="KATEGORIEPJAZDY" />
+            <End Role="WYMAGA" EntitySet="WYMAGA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_POJAZDY_has_KATEGORIEPJAZDY_POJAZDY1" Association="Self.fk_POJAZDY_has_KATEGORIEPJAZDY_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="WYMAGA" EntitySet="WYMAGA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_POJAZDY_MARKI1" Association="Self.fk_POJAZDY_MARKI1">
+            <End Role="MARKI" EntitySet="MARKI" />
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PRZEGLADY_POJAZDY1" Association="Self.fk_PRZEGLADY_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="PRZEGLADY" EntitySet="PRZEGLADY" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_KLIENCI1" Association="Self.fk_REZERWACJE_KLIENCI1">
+            <End Role="KLIENCI" EntitySet="KLIENCI" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_POJAZDY1" Association="Self.fk_REZERWACJE_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_PRACOWNICY1" Association="Self.fk_REZERWACJE_PRACOWNICY1">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_PRACOWNICY2" Association="Self.fk_REZERWACJE_PRACOWNICY2">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ZDJECIA_POJAZDY1" Association="Self.fk_ZDJECIA_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="ZDJECIA" EntitySet="ZDJECIA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KATEGORIEPJAZDY">
+          <Key>
+            <PropertyRef Name="idKatPJ" />
+          </Key>
+          <Property Name="idKatPJ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KLIENCI" Relationship="Self.POSIADA" FromRole="KATEGORIEPJAZDY" ToRole="KLIENCI" />
+          <NavigationProperty Name="POJAZDY" Relationship="Self.WYMAGA" FromRole="KATEGORIEPJAZDY" ToRole="POJAZDY" />
+        </EntityType>
+        <EntityType Name="KLIENCI">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrugieImie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataUr" Type="DateTime" Nullable="false" />
+          <Property Name="DataRejestr" Type="DateTime" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrPrawaJazd" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrDowOsob" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Zdjecie" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_REZERWACJE_KLIENCI1" FromRole="KLIENCI" ToRole="REZERWACJE" />
+          <NavigationProperty Name="KATEGORIEPJAZDY" Relationship="Self.POSIADA" FromRole="KLIENCI" ToRole="KATEGORIEPJAZDY" />
+          <Property Name="Plec" Type="SByte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MARKI">
+          <Key>
+            <PropertyRef Name="idMarki" />
+          </Key>
+          <Property Name="idMarki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="POJAZDY" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="MARKI" ToRole="POJAZDY" />
+        </EntityType>
+        <EntityType Name="OPINIA">
+          <Key>
+            <PropertyRef Name="idOpinia" />
+          </Key>
+          <Property Name="idOpinia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REZERWACJE_idRezerw" Type="Int32" Nullable="false" />
+          <Property Name="DataWyst" Type="DateTime" Nullable="false" />
+          <Property Name="Ocena" Type="Int16" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_OPINIA_REZERWACJE1" FromRole="OPINIA" ToRole="REZERWACJE" />
+        </EntityType>
+        <EntityType Name="POJAZDY">
+          <Key>
+            <PropertyRef Name="idPojazd" />
+          </Key>
+          <Property Name="idPojazd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rodzaj" Type="Int16" Nullable="false" />
+          <Property Name="NrRejestr" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Przebieg" Type="Int32" />
+          <Property Name="ZaGodz" Type="Single" />
+          <Property Name="DataProd" Type="DateTime" Nullable="false" />
+          <Property Name="Sprawny" Type="SByte" />
+          <Property Name="Opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="MARKI_idMarki" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MARKI" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="POJAZDY" ToRole="MARKI" />
+          <NavigationProperty Name="PRZEGLADY" Relationship="Self.fk_PRZEGLADY_POJAZDY1" FromRole="POJAZDY" ToRole="PRZEGLADY" />
+          <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_REZERWACJE_POJAZDY1" FromRole="POJAZDY" ToRole="REZERWACJE" />
+          <NavigationProperty Name="ZDJECIA" Relationship="Self.fk_ZDJECIA_POJAZDY1" FromRole="POJAZDY" ToRole="ZDJECIA" />
+          <NavigationProperty Name="KATEGORIEPJAZDY" Relationship="Self.WYMAGA" FromRole="POJAZDY" ToRole="KATEGORIEPJAZDY" />
+        </EntityType>
+        <EntityType Name="PRACOWNICY">
+          <Key>
+            <PropertyRef Name="idPrac" />
+          </Key>
+          <Property Name="idPrac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrugieImie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataUr" Type="DateTime" Nullable="false" />
+          <Property Name="DataZatr" Type="DateTime" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Plec" Type="SByte" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Zdjecie" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_REZERWACJE_PRACOWNICY1" FromRole="PRACOWNICY" ToRole="REZERWACJE" />
+          <NavigationProperty Name="REZERWACJE1" Relationship="Self.fk_REZERWACJE_PRACOWNICY2" FromRole="PRACOWNICY" ToRole="REZERWACJE" />
+        </EntityType>
+        <EntityType Name="PRZEGLADY">
+          <Key>
+            <PropertyRef Name="idPrzegl" />
+          </Key>
+          <Property Name="idPrzegl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="POJAZDY_idPojazd" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="POJAZDY" Relationship="Self.fk_PRZEGLADY_POJAZDY1" FromRole="PRZEGLADY" ToRole="POJAZDY" />
+        </EntityType>
+        <EntityType Name="REZERWACJE">
+          <Key>
+            <PropertyRef Name="idRezerw" />
+          </Key>
+          <Property Name="idRezerw" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataRez" Type="DateTime" Nullable="false" />
+          <Property Name="DataWypoz" Type="DateTime" Nullable="false" />
+          <Property Name="Wypozycz" Type="SByte" Nullable="false" />
+          <Property Name="DataZwrotu" Type="DateTime" Nullable="false" />
+          <Property Name="DataZdania" Type="DateTime" />
+          <Property Name="KLIENCI_idKlient" Type="Int32" Nullable="false" />
+          <Property Name="POJAZDY_idPojazd" Type="Int32" Nullable="false" />
+          <Property Name="PRACOWNICY_idPracWydaj" Type="Int32" />
+          <Property Name="PRACOWNICY_idPracOdbier" Type="Int32" />
+          <NavigationProperty Name="KLIENCI" Relationship="Self.fk_REZERWACJE_KLIENCI1" FromRole="REZERWACJE" ToRole="KLIENCI" />
+          <NavigationProperty Name="OPINIA" Relationship="Self.fk_OPINIA_REZERWACJE1" FromRole="REZERWACJE" ToRole="OPINIA" />
+          <NavigationProperty Name="POJAZDY" Relationship="Self.fk_REZERWACJE_POJAZDY1" FromRole="REZERWACJE" ToRole="POJAZDY" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.fk_REZERWACJE_PRACOWNICY1" FromRole="REZERWACJE" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="PRACOWNICY1" Relationship="Self.fk_REZERWACJE_PRACOWNICY2" FromRole="REZERWACJE" ToRole="PRACOWNICY" />
+        </EntityType>
+        <EntityType Name="ZDJECIA">
+          <Key>
+            <PropertyRef Name="idZdjecia" />
+          </Key>
+          <Property Name="idZdjecia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POJAZDY_idPojazd" Type="Int32" Nullable="false" />
+          <Property Name="Zdjecie" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="POJAZDY" Relationship="Self.fk_ZDJECIA_POJAZDY1" FromRole="ZDJECIA" ToRole="POJAZDY" />
+        </EntityType>
+        <EntityType Name="LoginData">
+          <Key>
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Haslo" />
+          </Key>
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_REZERWACJE_KLIENCI1">
+          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KLIENCI">
+              <PropertyRef Name="idKlient" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="KLIENCI_idKlient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_POJAZDY_MARKI1">
+          <End Role="MARKI" Type="Self.MARKI" Multiplicity="1" />
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKI">
+              <PropertyRef Name="idMarki" />
+            </Principal>
+            <Dependent Role="POJAZDY">
+              <PropertyRef Name="MARKI_idMarki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_OPINIA_REZERWACJE1">
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="1" />
+          <End Role="OPINIA" Type="Self.OPINIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REZERWACJE">
+              <PropertyRef Name="idRezerw" />
+            </Principal>
+            <Dependent Role="OPINIA">
+              <PropertyRef Name="REZERWACJE_idRezerw" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PRZEGLADY_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="PRZEGLADY" Type="Self.PRZEGLADY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="PRZEGLADY">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ZDJECIA_POJAZDY1">
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="1" />
+          <End Role="ZDJECIA" Type="Self.ZDJECIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY">
+              <PropertyRef Name="idPojazd" />
+            </Principal>
+            <Dependent Role="ZDJECIA">
+              <PropertyRef Name="POJAZDY_idPojazd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_PRACOWNICY1">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="idPrac" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="PRACOWNICY_idPracWydaj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_REZERWACJE_PRACOWNICY2">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+          <End Role="REZERWACJE" Type="Self.REZERWACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="idPrac" />
+            </Principal>
+            <Dependent Role="REZERWACJE">
+              <PropertyRef Name="PRACOWNICY_idPracOdbier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POSIADA">
+          <End Role="KATEGORIEPJAZDY" Type="Self.KATEGORIEPJAZDY" Multiplicity="*" />
+          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="*" />
+        </Association>
+        <Association Name="WYMAGA">
+          <End Role="KATEGORIEPJAZDY" Type="Self.KATEGORIEPJAZDY" Multiplicity="*" />
+          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KATEGORIEPJAZDY" EntityType="Self.KATEGORIEPJAZDY" />
+          <EntitySet Name="KLIENCI" EntityType="Self.KLIENCI" />
+          <EntitySet Name="MARKI" EntityType="Self.MARKI" />
+          <EntitySet Name="OPINIA" EntityType="Self.OPINIA" />
+          <EntitySet Name="POJAZDY" EntityType="Self.POJAZDY" />
+          <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" />
+          <EntitySet Name="PRZEGLADY" EntityType="Self.PRZEGLADY" />
+          <EntitySet Name="REZERWACJE" EntityType="Self.REZERWACJE" />
+          <EntitySet Name="ZDJECIA" EntityType="Self.ZDJECIA" />
+          <EntitySet Name="LoginData" EntityType="Self.LoginData" />
+          <AssociationSet Name="fk_REZERWACJE_KLIENCI1" Association="Self.fk_REZERWACJE_KLIENCI1">
+            <End Role="KLIENCI" EntitySet="KLIENCI" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_POJAZDY_MARKI1" Association="Self.fk_POJAZDY_MARKI1">
+            <End Role="MARKI" EntitySet="MARKI" />
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="fk_OPINIA_REZERWACJE1" Association="Self.fk_OPINIA_REZERWACJE1">
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+            <End Role="OPINIA" EntitySet="OPINIA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PRZEGLADY_POJAZDY1" Association="Self.fk_PRZEGLADY_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="PRZEGLADY" EntitySet="PRZEGLADY" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_POJAZDY1" Association="Self.fk_REZERWACJE_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ZDJECIA_POJAZDY1" Association="Self.fk_ZDJECIA_POJAZDY1">
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+            <End Role="ZDJECIA" EntitySet="ZDJECIA" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_PRACOWNICY1" Association="Self.fk_REZERWACJE_PRACOWNICY1">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_REZERWACJE_PRACOWNICY2" Association="Self.fk_REZERWACJE_PRACOWNICY2">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="REZERWACJE" EntitySet="REZERWACJE" />
+          </AssociationSet>
+          <AssociationSet Name="POSIADA" Association="Self.POSIADA">
+            <End Role="KATEGORIEPJAZDY" EntitySet="KATEGORIEPJAZDY" />
+            <End Role="KLIENCI" EntitySet="KLIENCI" />
+          </AssociationSet>
+          <AssociationSet Name="WYMAGA" Association="Self.WYMAGA">
+            <End Role="KATEGORIEPJAZDY" EntitySet="KATEGORIEPJAZDY" />
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="KATEGORIEPJAZDY">
+            <EntityTypeMapping TypeName="DBModel.KATEGORIEPJAZDY">
+              <MappingFragment StoreEntitySet="KATEGORIEPJAZDY">
+                <ScalarProperty Name="idKatPJ" ColumnName="idKatPJ" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KLIENCI">
+            <EntityTypeMapping TypeName="DBModel.KLIENCI">
+              <MappingFragment StoreEntitySet="KLIENCI">
+                <ScalarProperty Name="Plec" ColumnName="Plec" />
+                <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="DrugieImie" ColumnName="DrugieImie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="DataUr" ColumnName="DataUr" />
+                <ScalarProperty Name="DataRejestr" ColumnName="DataRejestr" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="NrPrawaJazd" ColumnName="NrPrawaJazd" />
+                <ScalarProperty Name="NrDowOsob" ColumnName="NrDowOsob" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARKI">
+            <EntityTypeMapping TypeName="DBModel.MARKI">
+              <MappingFragment StoreEntitySet="MARKI">
+                <ScalarProperty Name="idMarki" ColumnName="idMarki" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPINIA">
+            <EntityTypeMapping TypeName="DBModel.OPINIA">
+              <MappingFragment StoreEntitySet="OPINIA">
+                <ScalarProperty Name="idOpinia" ColumnName="idOpinia" />
+                <ScalarProperty Name="REZERWACJE_idRezerw" ColumnName="REZERWACJE_idRezerw" />
+                <ScalarProperty Name="DataWyst" ColumnName="DataWyst" />
+                <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POJAZDY">
+            <EntityTypeMapping TypeName="DBModel.POJAZDY">
+              <MappingFragment StoreEntitySet="POJAZDY">
+                <ScalarProperty Name="idPojazd" ColumnName="idPojazd" />
+                <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+                <ScalarProperty Name="NrRejestr" ColumnName="NrRejestr" />
+                <ScalarProperty Name="Przebieg" ColumnName="Przebieg" />
+                <ScalarProperty Name="ZaGodz" ColumnName="ZaGodz" />
+                <ScalarProperty Name="DataProd" ColumnName="DataProd" />
+                <ScalarProperty Name="Sprawny" ColumnName="Sprawny" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="MARKI_idMarki" ColumnName="MARKI_idMarki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRACOWNICY">
+            <EntityTypeMapping TypeName="DBModel.PRACOWNICY">
+              <MappingFragment StoreEntitySet="PRACOWNICY">
+                <ScalarProperty Name="idPrac" ColumnName="idPrac" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="DrugieImie" ColumnName="DrugieImie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="DataUr" ColumnName="DataUr" />
+                <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Plec" ColumnName="Plec" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZEGLADY">
+            <EntityTypeMapping TypeName="DBModel.PRZEGLADY">
+              <MappingFragment StoreEntitySet="PRZEGLADY">
+                <ScalarProperty Name="idPrzegl" ColumnName="idPrzegl" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="POJAZDY_idPojazd" ColumnName="POJAZDY_idPojazd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REZERWACJE">
+            <EntityTypeMapping TypeName="DBModel.REZERWACJE">
+              <MappingFragment StoreEntitySet="REZERWACJE">
+                <ScalarProperty Name="idRezerw" ColumnName="idRezerw" />
+                <ScalarProperty Name="DataRez" ColumnName="DataRez" />
+                <ScalarProperty Name="DataWypoz" ColumnName="DataWypoz" />
+                <ScalarProperty Name="Wypozycz" ColumnName="Wypozycz" />
+                <ScalarProperty Name="DataZwrotu" ColumnName="DataZwrotu" />
+                <ScalarProperty Name="DataZdania" ColumnName="DataZdania" />
+                <ScalarProperty Name="KLIENCI_idKlient" ColumnName="KLIENCI_idKlient" />
+                <ScalarProperty Name="POJAZDY_idPojazd" ColumnName="POJAZDY_idPojazd" />
+                <ScalarProperty Name="PRACOWNICY_idPracWydaj" ColumnName="PRACOWNICY_idPracWydaj" />
+                <ScalarProperty Name="PRACOWNICY_idPracOdbier" ColumnName="PRACOWNICY_idPracOdbier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZDJECIA">
+            <EntityTypeMapping TypeName="DBModel.ZDJECIA">
+              <MappingFragment StoreEntitySet="ZDJECIA">
+                <ScalarProperty Name="idZdjecia" ColumnName="idZdjecia" />
+                <ScalarProperty Name="POJAZDY_idPojazd" ColumnName="POJAZDY_idPojazd" />
+                <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginData">
+            <EntityTypeMapping TypeName="DBModel.LoginData">
+              <MappingFragment StoreEntitySet="LoginData">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="POSIADA" TypeName="DBModel.POSIADA" StoreEntitySet="POSIADA">
+            <EndProperty Name="KATEGORIEPJAZDY">
+              <ScalarProperty Name="idKatPJ" ColumnName="KATEGORIEPJAZDY_idKatPJ" />
+            </EndProperty>
+            <EndProperty Name="KLIENCI">
+              <ScalarProperty Name="idKlient" ColumnName="KLIENCI_idKlient" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="WYMAGA" TypeName="DBModel.WYMAGA" StoreEntitySet="WYMAGA">
+            <EndProperty Name="KATEGORIEPJAZDY">
+              <ScalarProperty Name="idKatPJ" ColumnName="KATEGORIEPJAZDY_idKatPJ" />
+            </EndProperty>
+            <EndProperty Name="POJAZDY">
+              <ScalarProperty Name="idPojazd" ColumnName="POJAZDY_idPojazd" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -397,10 +397,10 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
             this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.PrzeglądanieRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
-            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
             this.PrawyPanel.Controls.Add(this.PodglądPojazduPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
@@ -2140,6 +2140,9 @@
             // PlecComboEDKlienta
             // 
             this.PlecComboEDKlienta.FormattingEnabled = true;
+            this.PlecComboEDKlienta.Items.AddRange(new object[] {
+            "M",
+            "K"});
             this.PlecComboEDKlienta.Location = new System.Drawing.Point(94, 145);
             this.PlecComboEDKlienta.Name = "PlecComboEDKlienta";
             this.PlecComboEDKlienta.Size = new System.Drawing.Size(100, 21);

@@ -1,5 +1,4 @@
-﻿using GUI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +12,16 @@ namespace GUI
 {
     public partial class Form3 : Form
     {
-        private BazaDanych BD;
         public Form3(string login)
         {
             InitializeComponent();
-            BD = new BazaDanych();
-            Pracownik pracownik = BD.WczytajPracownika(login);
 
-            label2.Text = pracownik.ImieNazwisko;
-            PlecComboEDKlienta.Items.AddRange(new object[] { "M", "K" });
+            using (var entities = new DBEntities())
+            {
+                var pracownik = entities.PRACOWNICY.Where(p => p.Login == login).First();
+
+                label2.Text = pracownik.Imie + " " + pracownik.Nazwisko;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,18 +51,24 @@ namespace GUI
         
         private void IDKlientaTBox_TextChanged(object sender, EventArgs e)
         {
-            string id = ((TextBox)sender).Text;
-            Klient klient = BD.SzukajPoID(id);
+            if (!int.TryParse(((TextBox)sender).Text, out int id))
+                return;
 
-            if(klient != null)
+            KLIENCI klient = null;
+            using (var entities = new DBEntities())
+            {
+                klient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id);
+            }
+
+            if (klient != null)
             {
                 ImieDispLabel.Text = klient.Imie;
                 DrugieImieDispLabel.Text = klient.DrugieImie;
                 NazwiskoDispLabel.Text = klient.Nazwisko;
-                //DataUrDispLabel.Text = klient.DataUrodzenia.ToString("d");
+                DataUrDispLabel.Text = klient.DataUr.ToString("d");
                 TelefonDispLabel.Text = klient.Telefon;
-                PlecDispLabel.Text = klient.Plec ? "Kobieta" : "Mężczyzna";
-                //AdresDispLabel.Text = klient.Adres;
+                PlecDispLabel.Text = klient.Plec == 1 ? "Kobieta" : "Mężczyzna";
+                AdresDispLabel.Text = klient.Adres;
                 EmailDispLabel.Text = klient.Email;
             }
             else
@@ -80,32 +86,38 @@ namespace GUI
 
         private void IDKlientaTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
-            string id = ((TextBox)sender).Text;
-            Klient klient = BD.SzukajPoID(id);
+            if (!int.TryParse(((TextBox)sender).Text, out int id))
+                return;
+
+            KLIENCI klient = null;
+            using (var entites = new DBEntities())
+            {
+                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id);
+            }
 
             if (klient != null)
             {
                 ImieTBoxEDKlienta.Text = klient.Imie;
                 DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
                 NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
-                //DataUrDispLabel.Text = klient.DataUrodzenia.ToString("d");
+                DataUrDispLabel.Text = klient.DataUr.ToString("d");
                 TelefonTBoxEDKlienta.Text = klient.Telefon;
-                PlecComboEDKlienta.SelectedIndex = klient.Plec ? 1 : 0;
-                //AdresTBoxEDKlienta.Text = klient.Adres;
+                PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
+                AdresTBoxEDKlienta.Text = klient.Adres;
                 EmailTBoxEDKlienta.Text = klient.Email;
                 NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
                 NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
-                DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestracji.ToString("d");
+                DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestr.ToString("d");
             }
             else
             {
                 ImieTBoxEDKlienta.Text = "";
                 DrugieImieTBoxEDKlienta.Text = "";
                 NazwiskoTBoxEDKlienta.Text = "";
-                //DataUrDispLabel.Text = "";
+                DataUrDispLabel.Text = "";
                 TelefonTBoxEDKlienta.Text = "";
                 PlecComboEDKlienta.SelectedIndex = 0;
-                //AdresTBoxEDKlienta.Text = "";
+                AdresTBoxEDKlienta.Text = "";
                 EmailTBoxEDKlienta.Text = "";
                 NrPJazdyTBoxEDKlienta.Text = "";
                 NrDowOsTBoxEDKlienta.Text = "";

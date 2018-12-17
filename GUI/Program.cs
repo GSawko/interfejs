@@ -13,30 +13,31 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 widokLogowania = new Form1();
-            if (widokLogowania.ShowDialog() == DialogResult.OK)
-                DajWidokNaPodstLoginu(widokLogowania.Login);
+            Form1 loginView = new Form1();
+            Application.Run(loginView);
+
+            if (loginView.LoginStatus == true)
+                OpenUserView(loginView.UserType, loginView.UserLogin);
         }
 
-        private static void DajWidokNaPodstLoginu(string login)
+        private static void OpenUserView(char userType, string userLogin)
         {
-            var prefiks = login.Substring(0, 1);
-            if (prefiks == "p")
+            switch (userType)
             {
-                Form3 widokPracownika = new Form3(login);
-                Application.Run(widokPracownika);
+                case 'k':
+                    Form2 clientView = new Form2(userLogin);
+                    Application.Run(clientView);
+                    break;
 
-            }
-            else if (prefiks == "k")
-            {
-                Form2 widokKlienta = new Form2(login);
-                Application.Run(widokKlienta);
-            }
-            else if (prefiks == "w")
-            {
-                //toDo
-            }
+                case 'p':
+                    Form3 workerView = new Form3(userLogin);
+                    Application.Run(workerView);
+                    break;
 
+                case 'w':
+                    //TODO Start ownerView
+                    break;
+            }
         }
     }
 }

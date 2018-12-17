@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ffffe273a8940329f5ff9192dc31e98" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.KATEGORIEPJAZDY" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.KLIENCI" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.MARKI" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.OPINIA" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.POJAZDY" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PRACOWNICY" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PRZEGLADY" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.REZERWACJE" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ZDJECIA" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LoginData" Width="2" PointX="8.125" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.fk_REZERWACJE_KLIENCI1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_POJAZDY_MARKI1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_OPINIA_REZERWACJE1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_PRZEGLADY_POJAZDY1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_REZERWACJE_POJAZDY1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_ZDJECIA_POJAZDY1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_REZERWACJE_PRACOWNICY1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_REZERWACJE_PRACOWNICY2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.POSIADA" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.WYMAGA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,28 +1,43 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class Form1 : Form
     {
-        // komentarz212131231232
-        private BazaDanych BD;
-        public string Login;
+        public char UserType { get; private set; }
+        public string UserLogin { get; private set; }
+        public bool LoginStatus { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
-            BD = new BazaDanych();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (BD.Zaloguj(textBox1.Text, textBox2.Text))
+            var login = textBox1.Text;
+            var password = textBox2.Text;
+
+            using (var entities = new DBEntities())
             {
-                DialogResult = DialogResult.OK;
-                Login = textBox1.Text;
+                var isGoodAuth = entities.LoginData.Where(u => u.Login == login && u.Haslo == password).Any();
+
+                if (isGoodAuth == true)
+                {
+                    UserType = login[0];
+                    UserLogin = login;
+                    LoginStatus = true;
+                    this.Close();
+                }
+                else
+                {
+                    LoginStatus = false;
+                    MessageBox.Show("Nieprawidłowy login lub hasło");
+                }
             }
-            else
-                MessageBox.Show("Nieprawidłowy login lub hasło");
+
         }
     }
 }
