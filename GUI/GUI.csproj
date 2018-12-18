@@ -81,6 +81,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\CheckedListBoxExtension.cs" />
+    <Compile Include="Extensions\TextBoxExtension.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -67,101 +64,77 @@ namespace GUI
         private void IDKlientaTBox_TextChanged(object sender, EventArgs e)
         {
             if (!int.TryParse(((TextBox)sender).Text, out int id))
-                return;
-
-            KLIENCI klient = null;
-            using (var entities = new DBEntities())
             {
-                klient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id);
+                id = -1;
             }
-
-            if (klient != null)
-            {
-                ImieDispLabel.Text = klient.Imie;
-                DrugieImieDispLabel.Text = klient.DrugieImie;
-                NazwiskoDispLabel.Text = klient.Nazwisko;
-                DataUrDispLabel.Text = klient.DataUr.ToString("d");
-                TelefonDispLabel.Text = klient.Telefon;
-                PlecDispLabel.Text = klient.Plec == 1 ? "Kobieta" : "Mężczyzna";
-                AdresDispLabel.Text = klient.Adres;
-                EmailDispLabel.Text = klient.Email;
-            }
-            else
-            {
-                ImieDispLabel.Text = "";
-                DrugieImieDispLabel.Text = "";
-                NazwiskoDispLabel.Text = "";
-                DataUrDispLabel.Text = "";
-                TelefonDispLabel.Text = "";
-                PlecDispLabel.Text = "";
-                AdresDispLabel.Text = "";
-                EmailDispLabel.Text = "";
-            }
-        }
-
-        private void IDKlientaTBoxWEDK_TextChanged(object sender, EventArgs e)
-        {
-            if (!int.TryParse(((TextBox)sender).Text, out int id))
-                return;
 
             KLIENCI klient = null;
             using (var entites = new DBEntities())
             {
-                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id);
+                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
                 var saveToCache = klient?.KATEGORIEPJAZDY;
             }
 
-            if (klient != null)
+            ImieDispLabel.Text = klient.Imie;
+            DrugieImieDispLabel.Text = klient.DrugieImie;
+            NazwiskoDispLabel.Text = klient.Nazwisko;
+            DataUrDispLabel.Text = klient.DataUr.ToString("d");
+            TelefonDispLabel.Text = klient.Telefon;
+            PlecDispLabel.Text = klient.Plec == 1 ? "Kobieta" : "Mężczyzna";
+            AdresDispLabel.Text = klient.Adres;
+            EmailDispLabel.Text = klient.Email;
+        }
+
+        private void IDKlientaTBoxWEDK_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!int.TryParse(((TextBox)sender).Text, out int id))
             {
-                ImieTBoxEDKlienta.Text = klient.Imie;
-                DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
-                NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
-                DataUrDispLabel.Text = klient.DataUr.ToString("d");
-                TelefonTBoxEDKlienta.Text = klient.Telefon;
-                PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
-                AdresTBoxEDKlienta.Text = klient.Adres;
-                EmailTBoxEDKlienta.Text = klient.Email;
-                NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
-                NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
-                DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestr.ToString("d");
-                foreach (var licence in klient.KATEGORIEPJAZDY)
-                {
-                    KategoriePJazdyCBoxEDKlienta.SetItemChecked(licence.idKatPJ - 1, true);
-                }
+                id = -1;
             }
-            else
+
+            KLIENCI klient = null;
+            using (var entites = new DBEntities())
             {
-                ImieTBoxEDKlienta.Text = "";
-                DrugieImieTBoxEDKlienta.Text = "";
-                NazwiskoTBoxEDKlienta.Text = "";
-                DataUrDispLabel.Text = "";
-                TelefonTBoxEDKlienta.Text = "";
-                PlecComboEDKlienta.SelectedIndex = 0;
-                AdresTBoxEDKlienta.Text = "";
-                EmailTBoxEDKlienta.Text = "";
-                NrPJazdyTBoxEDKlienta.Text = "";
-                NrDowOsTBoxEDKlienta.Text = "";
-                DataRejestracjiTBoxEDKlienta.Text = "";
-                while (KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count > 0)
-                    KategoriePJazdyCBoxEDKlienta.SetItemChecked(KategoriePJazdyCBoxEDKlienta.CheckedIndices[0], false);
+                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
+                var saveToCache = klient?.KATEGORIEPJAZDY;
             }
+            
+            ImieTBoxEDKlienta.Text = klient.Imie;
+            DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
+            NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
+            DataUrDispLabel.Text = klient.DataUr.ToString("d");
+            TelefonTBoxEDKlienta.Text = klient.Telefon;
+            PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
+            AdresTBoxEDKlienta.Text = klient.Adres;
+            EmailTBoxEDKlienta.Text = klient.Email;
+            NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
+            NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
+            DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestr.ToString("d");
+
+            KategoriePJazdyCBoxEDKlienta.ClearItemChecked();
+            foreach (var licence in klient.KATEGORIEPJAZDY)
+            {
+                KategoriePJazdyCBoxEDKlienta.SetItemChecked(licence.idKatPJ - 1, true);
+            }
+           
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             KLIENCI newKlient = new KLIENCI();
-            newKlient.Imie = textBox10.Text;
-            newKlient.DrugieImie = textBox11.Text;
-            newKlient.Nazwisko = textBox13.Text;
-            newKlient.Adres = textBox12.Text;
+            newKlient.Imie = textBox10.TextOrDefault();
+            newKlient.DrugieImie = textBox11.TextOrDefault();
+            newKlient.Nazwisko = textBox13.TextOrDefault();
+            newKlient.Adres = textBox12.TextOrDefault();
             newKlient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newKlient.Telefon = textBox17.Text;
-            newKlient.Email = textBox16.Text;
-            newKlient.NrPrawaJazd = textBox15.Text;
-            newKlient.NrDowOsob = textBox14.Text;
+            newKlient.Telefon = textBox17.TextOrDefault();
+            newKlient.Email = textBox16.TextOrDefault();
+            newKlient.NrPrawaJazd = textBox15.TextOrDefault();
+            newKlient.NrDowOsob = textBox14.TextOrDefault();
             newKlient.DataRejestr = DateTime.Now;
             newKlient.DataUr = DateTime.Now;
-            newKlient.Login = "Test";
+            newKlient.Login = "Test";   //Jak ma być nadawane login i hasło kiedy pracownik tworzy konto dla użytownika??
             newKlient.Haslo = "Test";
 
             using (var entities = new DBEntities())
@@ -175,7 +148,32 @@ namespace GUI
                 }
 
                 entities.KLIENCI.Add(newKlient);
-                entities.SaveChanges();
+                try
+                {
+                    entities.SaveChanges();
+                }
+                catch(DbEntityValidationException ex)
+                {
+                    foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
+                    {
+                        // Get entry
+                        DbEntityEntry entry = item.Entry;
+                        string entityTypeName = entry.Entity.GetType().Name;
+
+                        // Display or log error messages
+
+                        foreach (DbValidationError subItem in item.ValidationErrors)
+                        {
+                            string message = string.Format("Błąd '{0}' wystąpił w {1} przy {2}",
+                                     subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
+                            MessageBox.Show(message);
+                        }
+                    }
+                }
+                catch(DbUpdateException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
