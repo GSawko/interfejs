@@ -2622,7 +2622,7 @@
             this.ClientSize = new System.Drawing.Size(800, 442);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "Form3";
-            this.Text = "Form2";
+            this.Text = "Panel Pracownika";
             this.KlientMenuPanel.ResumeLayout(false);
             this.KlientMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
