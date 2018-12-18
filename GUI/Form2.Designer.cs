@@ -320,6 +320,7 @@
             this.button8.TabIndex = 20;
             this.button8.Text = "Zapisz";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox3
             // 
@@ -484,6 +485,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "M",

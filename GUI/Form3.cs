@@ -157,7 +157,7 @@ namespace GUI
             }
         }
 
-        private void UpdateKlientDataFromEditScreen(KLIENCI klient)
+        private void LoadKlientDataFromEditScreen(KLIENCI klient)
         {
             klient.Imie = ImieTBoxEDKlienta.TextOrDefault();
             klient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
@@ -232,7 +232,7 @@ namespace GUI
                 using (var entities = new DBEntities())
                 {
                     var klient = entities.KLIENCI.First(k => k.idKlient == _currentEditKlient.idKlient);
-                    UpdateKlientDataFromEditScreen(klient);
+                    LoadKlientDataFromEditScreen(klient);
 
                     for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)
                     {
@@ -244,8 +244,7 @@ namespace GUI
                         else if (klient.KATEGORIEPJAZDY.Contains(licence))
                         {
                             klient.KATEGORIEPJAZDY.Remove(licence);
-                        }
-                            
+                        }    
                     }
 
                     try

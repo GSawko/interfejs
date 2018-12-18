@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -69,6 +71,17 @@ namespace GUI
             textBox18.Text = klient.Haslo;
         }
 
+        private void LoadKlientDataFromEditScreen(KLIENCI klient)
+        {
+            klient.Imie = textBox10.TextOrDefault();
+            klient.DrugieImie = textBox11.TextOrDefault();
+            klient.Nazwisko = textBox13.TextOrDefault();
+            klient.Adres = textBox12.TextOrDefault();
+            klient.Telefon = textBox17.TextOrDefault();
+            klient.Email = textBox16.TextOrDefault();
+            klient.Haslo = textBox18.TextOrDefault();
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             this.WybórPojazduPanel.BringToFront();
@@ -103,5 +116,56 @@ namespace GUI
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            using (var entities = new DBEntities())
+            {
+                var klient = entities.KLIENCI.First(k => k.Login == Login);
+                LoadKlientDataFromEditScreen(klient);
+
+                for (int i = 0; i < checkedListBox3.Items.Count; i++)
+                {
+                    var licence = entities.KATEGORIEPJAZDY.FirstOrDefault(k => k.idKatPJ == i + 1);
+                    if (checkedListBox3.GetItemCheckState(i) == CheckState.Checked)
+                    {
+                        klient.KATEGORIEPJAZDY.Add(licence);
+                    }
+                    else if (klient.KATEGORIEPJAZDY.Contains(licence))
+                    {
+                        klient.KATEGORIEPJAZDY.Remove(licence);
+                    }
+                }
+
+                try
+                {
+                    entities.SaveChanges();
+                    MessageBox.Show("Zapisano zmiany");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
+                    {
+                        // Get entry
+                        DbEntityEntry entry = item.Entry;
+                        string entityTypeName = entry.Entity.GetType().Name;
+
+                        // Display error messages
+                        string message = "";
+                        foreach (DbValidationError subItem in item.ValidationErrors)
+                        {
+                            message += string.Format("Błąd '{0}' wystąpił w {1} przy {2}\n",
+                                     subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
+                        }
+                        MessageBox.Show(message);
+                    }
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
     }
 }
