@@ -397,10 +397,10 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
-            this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
-            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
-            this.PrawyPanel.Controls.Add(this.PodglądPojazduPanel);
             this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
+            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.PodglądPojazduPanel);
             this.PrawyPanel.Controls.Add(this.PrzeglądanieRezerwacjiPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
@@ -949,6 +949,7 @@
             this.NrDowOsTBoxWEDK.Name = "NrDowOsTBoxWEDK";
             this.NrDowOsTBoxWEDK.Size = new System.Drawing.Size(100, 20);
             this.NrDowOsTBoxWEDK.TabIndex = 3;
+            this.NrDowOsTBoxWEDK.TextChanged += new System.EventHandler(this.NrDowOsTBoxWEDK_TextChanged);
             // 
             // IDKlientaLabelWEDK
             // 
@@ -1333,6 +1334,7 @@
             this.NrDowOsTBox.Name = "NrDowOsTBox";
             this.NrDowOsTBox.Size = new System.Drawing.Size(100, 20);
             this.NrDowOsTBox.TabIndex = 3;
+            this.NrDowOsTBox.TextChanged += new System.EventHandler(this.NrDowOsTBox_TextChanged);
             // 
             // IDKlientaLabel
             // 

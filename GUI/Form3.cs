@@ -75,6 +75,24 @@ namespace GUI
                 var saveToCache = klient?.KATEGORIEPJAZDY;
             }
 
+            LoadKlientDataReservationScreen(klient);
+        }
+
+        private void NrDowOsTBox_TextChanged(object sender, EventArgs e)
+        {
+            string nrDowOsob = ((TextBox)sender).TextOrDefault();
+
+            KLIENCI klient = null;
+            using (var entities = new DBEntities())
+            {
+                klient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
+            }
+
+            LoadKlientDataReservationScreen(klient);
+        }
+
+        private void LoadKlientDataReservationScreen(KLIENCI klient)
+        {
             ImieDispLabel.Text = klient.Imie;
             DrugieImieDispLabel.Text = klient.DrugieImie;
             NazwiskoDispLabel.Text = klient.Nazwisko;
@@ -94,12 +112,31 @@ namespace GUI
             }
 
             KLIENCI klient = null;
-            using (var entites = new DBEntities())
+            using (var entities = new DBEntities())
             {
-                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
-                var saveToCache = klient?.KATEGORIEPJAZDY;
+                klient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
+                var loadToCache = klient?.KATEGORIEPJAZDY;
             }
-            
+
+            LoadKlientDataEditScreen(klient);
+        }
+
+        private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
+        {
+            string nrDowOsob = ((TextBox)sender).TextOrDefault();
+
+            KLIENCI klient = null;
+            using (var entities = new DBEntities())
+            {
+                klient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
+                var loadToCache = klient?.KATEGORIEPJAZDY;
+            }
+
+            LoadKlientDataEditScreen(klient);
+        }
+
+        private void LoadKlientDataEditScreen(KLIENCI klient)
+        {
             ImieTBoxEDKlienta.Text = klient.Imie;
             DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
             NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
@@ -117,7 +154,6 @@ namespace GUI
             {
                 KategoriePJazdyCBoxEDKlienta.SetItemChecked(licence.idKatPJ - 1, true);
             }
-           
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -152,7 +188,7 @@ namespace GUI
                 {
                     entities.SaveChanges();
                 }
-                catch(DbEntityValidationException ex)
+                catch (DbEntityValidationException ex)
                 {
                     foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
                     {
@@ -162,19 +198,21 @@ namespace GUI
 
                         // Display or log error messages
 
+                        string message = "";
                         foreach (DbValidationError subItem in item.ValidationErrors)
                         {
-                            string message = string.Format("Błąd '{0}' wystąpił w {1} przy {2}",
+                            message += string.Format("Błąd '{0}' wystąpił w {1} przy {2}\n",
                                      subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
-                            MessageBox.Show(message);
                         }
+                        MessageBox.Show(message);
                     }
                 }
-                catch(DbUpdateException ex)
+                catch (DbUpdateException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
         }
+
     }
 }
