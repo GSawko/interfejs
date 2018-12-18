@@ -252,6 +252,7 @@
             this.label78 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.UpdateClientDataButton = new System.Windows.Forms.Button();
             this.KlientMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrawyPanel.SuspendLayout();
@@ -397,8 +398,8 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
-            this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
             this.PrawyPanel.Controls.Add(this.PodglądPojazduPanel);
             this.PrawyPanel.Controls.Add(this.PrzeglądanieRezerwacjiPanel);
@@ -684,6 +685,7 @@
             // 
             // EdytujDaneKlientaPanel
             // 
+            this.EdytujDaneKlientaPanel.Controls.Add(this.UpdateClientDataButton);
             this.EdytujDaneKlientaPanel.Controls.Add(this.DaneOsobiste);
             this.EdytujDaneKlientaPanel.Controls.Add(this.WyszukajEDKlienta);
             this.EdytujDaneKlientaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -788,6 +790,7 @@
             // 
             // PlecComboEDKlienta
             // 
+            this.PlecComboEDKlienta.Enabled = false;
             this.PlecComboEDKlienta.FormattingEnabled = true;
             this.PlecComboEDKlienta.Items.AddRange(new object[] {
             "M",
@@ -2617,6 +2620,16 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 442);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
+            // UpdateClientDataButton
+            // 
+            this.UpdateClientDataButton.Location = new System.Drawing.Point(201, 392);
+            this.UpdateClientDataButton.Name = "UpdateClientDataButton";
+            this.UpdateClientDataButton.Size = new System.Drawing.Size(120, 23);
+            this.UpdateClientDataButton.TabIndex = 24;
+            this.UpdateClientDataButton.Text = "Zapisz";
+            this.UpdateClientDataButton.UseVisualStyleBackColor = true;
+            this.UpdateClientDataButton.Click += new System.EventHandler(this.UpdateClientDataButton_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2920,5 +2933,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Button UpdateClientDataButton;
     }
 }

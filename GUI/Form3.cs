@@ -9,6 +9,7 @@ namespace GUI
 {
     public partial class Form3 : Form
     {
+        private KLIENCI _currentEditKlient;
         public Form3(string login)
         {
             InitializeComponent();
@@ -68,27 +69,27 @@ namespace GUI
                 id = -1;
             }
 
-            KLIENCI klient = null;
+            _currentEditKlient = null;
             using (var entites = new DBEntities())
             {
-                klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
-                var saveToCache = klient?.KATEGORIEPJAZDY;
+                _currentEditKlient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
+                var saveToCache = _currentEditKlient?.KATEGORIEPJAZDY;
             }
 
-            LoadKlientDataReservationScreen(klient);
+            LoadKlientDataReservationScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBox_TextChanged(object sender, EventArgs e)
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
 
-            KLIENCI klient = null;
+            _currentEditKlient = null;
             using (var entities = new DBEntities())
             {
-                klient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
+                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
             }
 
-            LoadKlientDataReservationScreen(klient);
+            LoadKlientDataReservationScreen(_currentEditKlient);
         }
 
         private void LoadKlientDataReservationScreen(KLIENCI klient)
@@ -111,28 +112,28 @@ namespace GUI
                 id = -1;
             }
 
-            KLIENCI klient = null;
+            _currentEditKlient = null;
             using (var entities = new DBEntities())
             {
-                klient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
-                var loadToCache = klient?.KATEGORIEPJAZDY;
+                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
+                var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
             }
 
-            LoadKlientDataEditScreen(klient);
+            LoadKlientDataEditScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
 
-            KLIENCI klient = null;
+            _currentEditKlient = null;
             using (var entities = new DBEntities())
             {
-                klient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
-                var loadToCache = klient?.KATEGORIEPJAZDY;
+                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
+                var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
             }
 
-            LoadKlientDataEditScreen(klient);
+            LoadKlientDataEditScreen(_currentEditKlient);
         }
 
         private void LoadKlientDataEditScreen(KLIENCI klient)
@@ -154,6 +155,16 @@ namespace GUI
             {
                 KategoriePJazdyCBoxEDKlienta.SetItemChecked(licence.idKatPJ - 1, true);
             }
+        }
+
+        private void UpdateKlientDataFromEditScreen(KLIENCI klient)
+        {
+            klient.Imie = ImieTBoxEDKlienta.TextOrDefault();
+            klient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
+            klient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
+            klient.Adres = AdresTBoxEDKlienta.TextOrDefault();
+            klient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+            klient.Email = EmailTBoxEDKlienta.TextOrDefault();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -214,5 +225,61 @@ namespace GUI
             }
         }
 
+        private void UpdateClientDataButton_Click(object sender, EventArgs e)
+        {
+            if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
+            {
+                using (var entities = new DBEntities())
+                {
+                    var klient = entities.KLIENCI.First(k => k.idKlient == _currentEditKlient.idKlient);
+                    UpdateKlientDataFromEditScreen(klient);
+
+                    for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)
+                    {
+                        var licence = entities.KATEGORIEPJAZDY.FirstOrDefault(k => k.idKatPJ == i + 1);
+                        if (KategoriePJazdyCBoxEDKlienta.GetItemCheckState(i) == CheckState.Checked)
+                        {
+                            klient.KATEGORIEPJAZDY.Add(licence);
+                        }
+                        else if (klient.KATEGORIEPJAZDY.Contains(licence))
+                        {
+                            klient.KATEGORIEPJAZDY.Remove(licence);
+                        }
+                            
+                    }
+
+                    try
+                    {
+                        entities.SaveChanges();
+                        MessageBox.Show("Zapisano zmiany");
+                    }
+                    catch (DbEntityValidationException ex)
+                    {
+                        foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
+                        {
+                            // Get entry
+                            DbEntityEntry entry = item.Entry;
+                            string entityTypeName = entry.Entity.GetType().Name;
+
+                            // Display error messages
+                            string message = "";
+                            foreach (DbValidationError subItem in item.ValidationErrors)
+                            {
+                                message += string.Format("Błąd '{0}' wystąpił w {1} przy {2}\n",
+                                         subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
+                            }
+                            MessageBox.Show(message);
+                        }
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+            }
+            else
+                MessageBox.Show("Najpierw wybierz klienta do edycji!");
+        }
     }
 }
