@@ -15,17 +15,32 @@ namespace GUI
         public Form3(string login)
         {
             InitializeComponent();
+            LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
+            LoadCheckedListBox(checkedListBox3);
 
             using (var entities = new DBEntities())
             {
                 var pracownik = entities.PRACOWNICY.Where(p => p.Login == login).First();
-
                 label2.Text = pracownik.Imie + " " + pracownik.Nazwisko;
+            }
+        }
+
+        private void LoadCheckedListBox(CheckedListBox checkedListBox)
+        {
+            using (var entities = new DBEntities())
+            {
+                var driveLicenceType = entities.KATEGORIEPJAZDY.ToList();
+
+                foreach (var licenceType in driveLicenceType)
+                {
+                    checkedListBox.Items.Add(licenceType.Nazwa);
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox20.Text = DateTime.Now.ToString("d");
             DodajKlientaPanel.BringToFront();
         }
 
@@ -93,6 +108,7 @@ namespace GUI
             using (var entites = new DBEntities())
             {
                 klient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id);
+                var saveToCache = klient?.KATEGORIEPJAZDY;
             }
 
             if (klient != null)
@@ -108,6 +124,10 @@ namespace GUI
                 NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
                 NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
                 DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestr.ToString("d");
+                foreach (var licence in klient.KATEGORIEPJAZDY)
+                {
+                    KategoriePJazdyCBoxEDKlienta.SetItemChecked(licence.idKatPJ - 1, true);
+                }
             }
             else
             {
@@ -122,6 +142,40 @@ namespace GUI
                 NrPJazdyTBoxEDKlienta.Text = "";
                 NrDowOsTBoxEDKlienta.Text = "";
                 DataRejestracjiTBoxEDKlienta.Text = "";
+                while (KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count > 0)
+                    KategoriePJazdyCBoxEDKlienta.SetItemChecked(KategoriePJazdyCBoxEDKlienta.CheckedIndices[0], false);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            KLIENCI newKlient = new KLIENCI();
+            newKlient.Imie = textBox10.Text;
+            newKlient.DrugieImie = textBox11.Text;
+            newKlient.Nazwisko = textBox13.Text;
+            newKlient.Adres = textBox12.Text;
+            newKlient.Plec = (sbyte)comboBox1.SelectedIndex;
+            newKlient.Telefon = textBox17.Text;
+            newKlient.Email = textBox16.Text;
+            newKlient.NrPrawaJazd = textBox15.Text;
+            newKlient.NrDowOsob = textBox14.Text;
+            newKlient.DataRejestr = DateTime.Now;
+            newKlient.DataUr = DateTime.Now;
+            newKlient.Login = "Test";
+            newKlient.Haslo = "Test";
+
+            using (var entities = new DBEntities())
+            {
+                for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
+                {
+                    var index = checkedListBox3.CheckedIndices[i];
+                    var licence = entities.KATEGORIEPJAZDY.FirstOrDefault(k => k.idKatPJ == index + 1);
+                    if (licence != null)
+                        newKlient.KATEGORIEPJAZDY.Add(licence);
+                }
+
+                entities.KLIENCI.Add(newKlient);
+                entities.SaveChanges();
             }
         }
     }
