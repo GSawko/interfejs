@@ -6,12 +6,16 @@ namespace GUI
 {
     public partial class Form2 : Form
     {
+        private string Login;
         private KLIENCI klient;
         public Form2(string login)
         {
             InitializeComponent();
+            LoadCheckedListBox(checkedListBox3);
 
-            LoadClient(login);
+            Login = login;
+
+            LoadClient(Login);
             LoadClientData();
         }
 
@@ -20,6 +24,21 @@ namespace GUI
             using (var entities = new DBEntities())
             {
                 klient = entities.KLIENCI.Where(k => k.Login == login).First();
+                var saveInCache0 = klient.KATEGORIEPJAZDY;
+                var saveInCache1 = klient.REZERWACJE;
+            }
+        }
+
+        private void LoadCheckedListBox(CheckedListBox checkedListBox)
+        {
+            using (var entities = new DBEntities())
+            {
+                var driveLicenceType = entities.KATEGORIEPJAZDY.ToList();
+
+                foreach (var licenceType in driveLicenceType)
+                {
+                    checkedListBox.Items.Add(licenceType.Nazwa);
+                }
             }
         }
 
@@ -33,7 +52,6 @@ namespace GUI
             textBox11.Text = klient.DrugieImie;
             textBox13.Text = klient.Nazwisko;
             textBox12.Text = klient.Adres;
-            //comboBox1.Items.AddRange(new object[] { "M", "K" });
             comboBox1.SelectedIndex = klient.Plec;
             textBox17.Text = klient.Telefon;
             textBox16.Text = klient.Email;
@@ -41,7 +59,10 @@ namespace GUI
             textBox14.Text = klient.NrDowOsob;
             textBox20.Text = klient.DataRejestr.ToString("d");
 
-            //checkedListBox3.  //Kategorie
+            foreach (var licence in klient.KATEGORIEPJAZDY)
+            {
+                checkedListBox3.SetItemChecked(licence.idKatPJ - 1, true);
+            }
             //pictureBox7.Image = klient.Zdjecie;
 
             textBox19.Text = klient.Login;
