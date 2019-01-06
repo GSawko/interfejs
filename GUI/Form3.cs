@@ -10,9 +10,11 @@ namespace GUI
     public partial class Form3 : Form
     {
         private KLIENCI _currentEditKlient;
+        private ClientService CS;
         public Form3(string login)
         {
             InitializeComponent();
+            CS = new ClientService();
             LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
             LoadCheckedListBox(checkedListBox3);
 
@@ -68,13 +70,10 @@ namespace GUI
             {
                 id = -1;
             }
-
             _currentEditKlient = null;
-            using (var entites = new DBEntities())
-            {
-                _currentEditKlient = entites.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
-                var saveToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            }
+            _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
+            var saveToCache = _currentEditKlient?.KATEGORIEPJAZDY;
+            
 
             LoadKlientDataReservationScreen(_currentEditKlient);
         }
@@ -84,11 +83,7 @@ namespace GUI
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
 
             _currentEditKlient = null;
-            using (var entities = new DBEntities())
-            {
-                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
-            }
-
+            _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
             LoadKlientDataReservationScreen(_currentEditKlient);
         }
 
@@ -113,26 +108,17 @@ namespace GUI
             }
 
             _currentEditKlient = null;
-            using (var entities = new DBEntities())
-            {
-                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.idKlient == id) ?? new KLIENCI();
-                var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            }
-
+            _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
+            var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
             LoadKlientDataEditScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
-
             _currentEditKlient = null;
-            using (var entities = new DBEntities())
-            {
-                _currentEditKlient = entities.KLIENCI.FirstOrDefault(k => k.NrDowOsob.StartsWith(nrDowOsob)) ?? new KLIENCI();
-                var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            }
-
+            _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
+            var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
             LoadKlientDataEditScreen(_currentEditKlient);
         }
 
@@ -231,7 +217,7 @@ namespace GUI
             {
                 using (var entities = new DBEntities())
                 {
-                    var klient = entities.KLIENCI.First(k => k.idKlient == _currentEditKlient.idKlient);
+                    var klient = CS.GetClient(_currentEditKlient.idKlient);
                     LoadKlientDataFromEditScreen(klient);
 
                     for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)

@@ -9,26 +9,25 @@ namespace GUI
     public partial class Form2 : Form
     {
         private string Login;
-        private KLIENCI klient;
+        private KLIENCI CurrClient;
+        private ClientService CS;
         public Form2(string login)
         {
             InitializeComponent();
             LoadCheckedListBox(checkedListBox3);
 
             Login = login;
-
+            CS = new ClientService();
             LoadClient(Login);
             LoadClientData();
         }
 
         private void LoadClient(string login)
         {
-            using (var entities = new DBEntities())
-            {
-                klient = entities.KLIENCI.Where(k => k.Login == login).First();
-                var saveInCache0 = klient.KATEGORIEPJAZDY;
-                var saveInCache1 = klient.REZERWACJE;
-            }
+            CurrClient = CS.GetClient(login);
+            var saveInCache0 = CurrClient.KATEGORIEPJAZDY;
+            var saveInCache1 = CurrClient.REZERWACJE;
+            
         }
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
@@ -47,28 +46,28 @@ namespace GUI
         private void LoadClientData()
         {
             //boczne menu
-            label2.Text = klient.Imie + " " + klient.Nazwisko;
+            label2.Text = CurrClient.Imie + " " + CurrClient.Nazwisko;
 
             //zakładka dane
-            textBox10.Text = klient.Imie;
-            textBox11.Text = klient.DrugieImie;
-            textBox13.Text = klient.Nazwisko;
-            textBox12.Text = klient.Adres;
-            comboBox1.SelectedIndex = klient.Plec;
-            textBox17.Text = klient.Telefon;
-            textBox16.Text = klient.Email;
-            textBox15.Text = klient.NrPrawaJazd;
-            textBox14.Text = klient.NrDowOsob;
-            textBox20.Text = klient.DataRejestr.ToString("d");
+            textBox10.Text = CurrClient.Imie;
+            textBox11.Text = CurrClient.DrugieImie;
+            textBox13.Text = CurrClient.Nazwisko;
+            textBox12.Text = CurrClient.Adres;
+            comboBox1.SelectedIndex = CurrClient.Plec;
+            textBox17.Text = CurrClient.Telefon;
+            textBox16.Text = CurrClient.Email;
+            textBox15.Text = CurrClient.NrPrawaJazd;
+            textBox14.Text = CurrClient.NrDowOsob;
+            textBox20.Text = CurrClient.DataRejestr.ToString("d");
 
-            foreach (var licence in klient.KATEGORIEPJAZDY)
+            foreach (var licence in CurrClient.KATEGORIEPJAZDY)
             {
                 checkedListBox3.SetItemChecked(licence.idKatPJ - 1, true);
             }
             //pictureBox7.Image = klient.Zdjecie;
 
-            textBox19.Text = klient.Login;
-            textBox18.Text = klient.Haslo;
+            textBox19.Text = CurrClient.Login;
+            textBox18.Text = CurrClient.Haslo;
         }
 
         private void LoadKlientDataFromEditScreen(KLIENCI klient)
