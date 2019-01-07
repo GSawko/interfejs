@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
@@ -70,12 +72,9 @@ namespace GUI
             {
                 id = -1;
             }
-            _currentEditKlient = null;
             _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
-            var saveToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            
 
-            LoadKlientDataReservationScreen(_currentEditKlient);
+            ShowKlientDataOnReservationScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBox_TextChanged(object sender, EventArgs e)
@@ -84,10 +83,10 @@ namespace GUI
 
             _currentEditKlient = null;
             _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
-            LoadKlientDataReservationScreen(_currentEditKlient);
+            ShowKlientDataOnReservationScreen(_currentEditKlient);
         }
 
-        private void LoadKlientDataReservationScreen(KLIENCI klient)
+        private void ShowKlientDataOnReservationScreen(KLIENCI klient)
         {
             ImieDispLabel.Text = klient.Imie;
             DrugieImieDispLabel.Text = klient.DrugieImie;
@@ -107,10 +106,8 @@ namespace GUI
                 id = -1;
             }
 
-            _currentEditKlient = null;
             _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
-            var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            LoadKlientDataEditScreen(_currentEditKlient);
+            UpdateKlientDataFromEditScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
@@ -118,11 +115,10 @@ namespace GUI
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
             _currentEditKlient = null;
             _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
-            var loadToCache = _currentEditKlient?.KATEGORIEPJAZDY;
-            LoadKlientDataEditScreen(_currentEditKlient);
+            UpdateKlientDataFromEditScreen(_currentEditKlient);
         }
 
-        private void LoadKlientDataEditScreen(KLIENCI klient)
+        private void UpdateKlientDataFromEditScreen(KLIENCI klient)
         {
             ImieTBoxEDKlienta.Text = klient.Imie;
             DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
@@ -143,7 +139,7 @@ namespace GUI
             }
         }
 
-        private void LoadKlientDataFromEditScreen(KLIENCI klient)
+        private void GetKlientDataFromEditScreen(KLIENCI klient)
         {
             klient.Imie = ImieTBoxEDKlienta.TextOrDefault();
             klient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
@@ -153,61 +149,43 @@ namespace GUI
             klient.Email = EmailTBoxEDKlienta.TextOrDefault();
         }
 
+        private KLIENCI LoadKlientDataFromAddScreen()
+        {
+            KLIENCI newClient = new KLIENCI();
+            newClient.Imie = textBox10.TextOrDefault();
+            newClient.DrugieImie = textBox11.TextOrDefault();
+            newClient.Nazwisko = textBox13.TextOrDefault();
+            newClient.Adres = textBox12.TextOrDefault();
+            newClient.Plec = (sbyte)comboBox1.SelectedIndex;
+            newClient.Telefon = textBox17.TextOrDefault();
+            newClient.Email = textBox16.TextOrDefault();
+            newClient.NrPrawaJazd = textBox15.TextOrDefault();
+            newClient.NrDowOsob = textBox14.TextOrDefault();
+            newClient.DataRejestr = DateTime.Now;
+            newClient.DataUr = DateTime.Now;
+            newClient.Login = "k_" + newClient.Imie;   //Jak ma być nadawane login i hasło kiedy pracownik tworzy konto dla użytownika??
+            newClient.Haslo = "Test";
+
+            for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
+            {
+                var index = checkedListBox3.CheckedIndices[i];
+                newClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index + 1 });
+            }
+
+            return newClient;
+        }
+
         private void button10_Click(object sender, EventArgs e)
         {
-            KLIENCI newKlient = new KLIENCI();
-            newKlient.Imie = textBox10.TextOrDefault();
-            newKlient.DrugieImie = textBox11.TextOrDefault();
-            newKlient.Nazwisko = textBox13.TextOrDefault();
-            newKlient.Adres = textBox12.TextOrDefault();
-            newKlient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newKlient.Telefon = textBox17.TextOrDefault();
-            newKlient.Email = textBox16.TextOrDefault();
-            newKlient.NrPrawaJazd = textBox15.TextOrDefault();
-            newKlient.NrDowOsob = textBox14.TextOrDefault();
-            newKlient.DataRejestr = DateTime.Now;
-            newKlient.DataUr = DateTime.Now;
-            newKlient.Login = "Test";   //Jak ma być nadawane login i hasło kiedy pracownik tworzy konto dla użytownika??
-            newKlient.Haslo = "Test";
+            var addClient = LoadKlientDataFromAddScreen();
 
-            using (var entities = new DBEntities())
+            if (CS.AddClient(addClient))
             {
-                for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
-                {
-                    var index = checkedListBox3.CheckedIndices[i];
-                    var licence = entities.KATEGORIEPJAZDY.FirstOrDefault(k => k.idKatPJ == index + 1);
-                    if (licence != null)
-                        newKlient.KATEGORIEPJAZDY.Add(licence);
-                }
-
-                entities.KLIENCI.Add(newKlient);
-                try
-                {
-                    entities.SaveChanges();
-                }
-                catch (DbEntityValidationException ex)
-                {
-                    foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
-                    {
-                        // Get entry
-                        DbEntityEntry entry = item.Entry;
-                        string entityTypeName = entry.Entity.GetType().Name;
-
-                        // Display or log error messages
-
-                        string message = "";
-                        foreach (DbValidationError subItem in item.ValidationErrors)
-                        {
-                            message += string.Format("Błąd '{0}' wystąpił w {1} przy {2}\n",
-                                     subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
-                        }
-                        MessageBox.Show(message);
-                    }
-                }
-                catch (DbUpdateException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Dodano klienta.");
+            }
+            else
+            {
+                MessageBox.Show("Błąd dodawania klienta!");
             }
         }
 
@@ -215,56 +193,33 @@ namespace GUI
         {
             if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
             {
-                using (var entities = new DBEntities())
+                GetKlientDataFromEditScreen(_currentEditKlient);
+
+                _currentEditKlient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
+                for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)
                 {
-                    var klient = CS.GetClient(_currentEditKlient.idKlient);
-                    LoadKlientDataFromEditScreen(klient);
-
-                    for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)
+                    if (KategoriePJazdyCBoxEDKlienta.GetItemCheckState(i) == CheckState.Checked)
                     {
-                        var licence = entities.KATEGORIEPJAZDY.FirstOrDefault(k => k.idKatPJ == i + 1);
-                        if (KategoriePJazdyCBoxEDKlienta.GetItemCheckState(i) == CheckState.Checked)
-                        {
-                            klient.KATEGORIEPJAZDY.Add(licence);
-                        }
-                        else if (klient.KATEGORIEPJAZDY.Contains(licence))
-                        {
-                            klient.KATEGORIEPJAZDY.Remove(licence);
-                        }    
+                        _currentEditKlient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = i + 1 });
                     }
-
-                    try
-                    {
-                        entities.SaveChanges();
-                        MessageBox.Show("Zapisano zmiany");
-                    }
-                    catch (DbEntityValidationException ex)
-                    {
-                        foreach (DbEntityValidationResult item in ex.EntityValidationErrors)
-                        {
-                            // Get entry
-                            DbEntityEntry entry = item.Entry;
-                            string entityTypeName = entry.Entity.GetType().Name;
-
-                            // Display error messages
-                            string message = "";
-                            foreach (DbValidationError subItem in item.ValidationErrors)
-                            {
-                                message += string.Format("Błąd '{0}' wystąpił w {1} przy {2}\n",
-                                         subItem.ErrorMessage, entityTypeName, subItem.PropertyName);
-                            }
-                            MessageBox.Show(message);
-                        }
-                    }
-                    catch (DbUpdateException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-
                 }
+
+                if (CS.UpdateClient(_currentEditKlient))
+                {
+                    MessageBox.Show("Zapisano zmiany.");
+                }
+                else
+                {
+                    MessageBox.Show("Nie można zapisać zmian!");
+                }
+
+                //Update Klient object from DB
+                _currentEditKlient = CS.GetClient(_currentEditKlient.idKlient);
             }
             else
+            {
                 MessageBox.Show("Najpierw wybierz klienta do edycji!");
+            }
         }
     }
 }
