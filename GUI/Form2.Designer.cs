@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.KlientMenuPanel = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -74,6 +75,11 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
+            this.KontaktPanel = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.WybórPojazduPanel = new System.Windows.Forms.Panel();
             this.OpinieBox = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -145,12 +151,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.KontaktPanel = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.DostepnePojazdy = new System.Windows.Forms.GroupBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.KlientMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrawyPanel.SuspendLayout();
@@ -158,6 +162,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.KontaktPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.WybórPojazduPanel.SuspendLayout();
             this.OpinieBox.SuspendLayout();
             this.PrzegladyBox.SuspendLayout();
@@ -176,9 +182,8 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.ZwrotBox.SuspendLayout();
             this.RezerwacjaBox.SuspendLayout();
-            this.KontaktPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.DostepnePojazdy.SuspendLayout();
             this.SuspendLayout();
             // 
             // KlientMenuPanel
@@ -290,9 +295,9 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.WybórPojazduPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
             this.PrawyPanel.Controls.Add(this.KontaktPanel);
-            this.PrawyPanel.Controls.Add(this.WybórPojazduPanel);
             this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
@@ -627,10 +632,60 @@
             this.textBox17.Size = new System.Drawing.Size(100, 20);
             this.textBox17.TabIndex = 9;
             // 
+            // KontaktPanel
+            // 
+            this.KontaktPanel.Controls.Add(this.groupBox1);
+            this.KontaktPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.KontaktPanel.Location = new System.Drawing.Point(0, 0);
+            this.KontaktPanel.Name = "KontaktPanel";
+            this.KontaktPanel.Size = new System.Drawing.Size(585, 436);
+            this.KontaktPanel.TabIndex = 13;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.label34);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(585, 436);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kontakt";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(31, 30);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(90, 13);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "tel1 123 456 789 ";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(31, 82);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(126, 13);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "samochodziarnia@mail.pl";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(31, 57);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(87, 13);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "tel2 987 654 321";
+            // 
             // WybórPojazduPanel
             // 
             this.WybórPojazduPanel.AutoScroll = true;
             this.WybórPojazduPanel.Controls.Add(this.OpinieBox);
+            this.WybórPojazduPanel.Controls.Add(this.DostepnePojazdy);
             this.WybórPojazduPanel.Controls.Add(this.button6);
             this.WybórPojazduPanel.Controls.Add(this.PrzegladyBox);
             this.WybórPojazduPanel.Controls.Add(this.SamochódBox);
@@ -644,7 +699,7 @@
             // 
             this.OpinieBox.Controls.Add(this.listView1);
             this.OpinieBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpinieBox.Location = new System.Drawing.Point(0, 730);
+            this.OpinieBox.Location = new System.Drawing.Point(0, 1230);
             this.OpinieBox.Name = "OpinieBox";
             this.OpinieBox.Size = new System.Drawing.Size(568, 204);
             this.OpinieBox.TabIndex = 25;
@@ -1395,55 +1450,6 @@
             this.button7.Text = "Rezerwuj";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // KontaktPanel
-            // 
-            this.KontaktPanel.Controls.Add(this.groupBox1);
-            this.KontaktPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.KontaktPanel.Location = new System.Drawing.Point(0, 0);
-            this.KontaktPanel.Name = "KontaktPanel";
-            this.KontaktPanel.Size = new System.Drawing.Size(585, 436);
-            this.KontaktPanel.TabIndex = 13;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Controls.Add(this.label35);
-            this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 436);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kontakt";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(31, 30);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(90, 13);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "tel1 123 456 789 ";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(31, 82);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(126, 13);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "samochodziarnia@mail.pl";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(31, 57);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(87, 13);
-            this.label34.TabIndex = 1;
-            this.label34.Text = "tel2 987 654 321";
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.AutoSize = true;
@@ -1461,6 +1467,37 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 442);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.LargeImageList = this.imageList1;
+            this.listView2.Location = new System.Drawing.Point(3, 16);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(562, 481);
+            this.listView2.TabIndex = 27;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // DostepnePojazdy
+            // 
+            this.DostepnePojazdy.Controls.Add(this.listView2);
+            this.DostepnePojazdy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DostepnePojazdy.Location = new System.Drawing.Point(0, 730);
+            this.DostepnePojazdy.Name = "DostepnePojazdy";
+            this.DostepnePojazdy.Size = new System.Drawing.Size(568, 500);
+            this.DostepnePojazdy.TabIndex = 21;
+            this.DostepnePojazdy.TabStop = false;
+            this.DostepnePojazdy.Text = "Dostępne pojazdy";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg");
+            this.imageList1.Images.SetKeyName(1, "indeks.jpg");
+            this.imageList1.Images.SetKeyName(2, "jaguar-c-x75-007-spectre-6f017bc.jpg");
+            this.imageList1.Images.SetKeyName(3, "samochod.jpg");
+            this.imageList1.Images.SetKeyName(4, "samochody-z-logo-oldtimerow17.310.jpg");
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1469,6 +1506,7 @@
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "Form2";
             this.Text = "Panel Klienta";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.KlientMenuPanel.ResumeLayout(false);
             this.KlientMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1479,6 +1517,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.KontaktPanel.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.WybórPojazduPanel.ResumeLayout(false);
             this.OpinieBox.ResumeLayout(false);
             this.PrzegladyBox.ResumeLayout(false);
@@ -1504,10 +1545,8 @@
             this.ZwrotBox.PerformLayout();
             this.RezerwacjaBox.ResumeLayout(false);
             this.RezerwacjaBox.PerformLayout();
-            this.KontaktPanel.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.DostepnePojazdy.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1637,5 +1676,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.GroupBox DostepnePojazdy;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

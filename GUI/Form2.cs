@@ -140,5 +140,23 @@ namespace GUI
             CurrClient = CS.GetClient(Login);
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //TODO
+            /* Obrazy są niskiej jakości ponieważ ImageList korzysta z bardzo słabego domyślnego algorytmu
+             * zmiany rozmiaru. Należy albo zapewnić, że wczytywane obrazy nie wymagają zmiany rozmiaru,
+             * albo zmienić rozmiar ręcznie przed wczytaniem do ImageList*/
+            ImageList imageList = listView2.LargeImageList;
+            for (int i = 0; i < imageList.Images.Count; i++)
+            {
+                listView2.Items.Add(imageList.Images.Keys[i], i);
+            }
+            listView2.RedrawItems(0, imageList.Images.Count - 1, false);
+        }
+
+        private void listView2_ItemActivate(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
