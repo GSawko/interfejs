@@ -12,11 +12,10 @@ namespace GUI
     public partial class Form3 : Form
     {
         private KLIENCI _currentEditKlient;
-        private ClientService CS;
+
         public Form3(string login)
         {
             InitializeComponent();
-            CS = new ClientService();
             LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
             LoadCheckedListBox(checkedListBox3);
 
@@ -72,7 +71,7 @@ namespace GUI
             {
                 id = -1;
             }
-            _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
+            _currentEditKlient = ClientService.GetClient(id) ?? new KLIENCI();
 
             ShowKlientDataOnReservationScreen(_currentEditKlient);
         }
@@ -82,7 +81,7 @@ namespace GUI
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
 
             _currentEditKlient = null;
-            _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
+            _currentEditKlient = ClientService.GetClient(nrDowOsob, true) ?? new KLIENCI();
             ShowKlientDataOnReservationScreen(_currentEditKlient);
         }
 
@@ -106,7 +105,7 @@ namespace GUI
                 id = -1;
             }
 
-            _currentEditKlient = CS.GetClient(id) ?? new KLIENCI();
+            _currentEditKlient = ClientService.GetClient(id) ?? new KLIENCI();
             UpdateKlientDataFromEditScreen(_currentEditKlient);
         }
 
@@ -114,7 +113,7 @@ namespace GUI
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
             _currentEditKlient = null;
-            _currentEditKlient = CS.GetClient(nrDowOsob, true) ?? new KLIENCI();
+            _currentEditKlient = ClientService.GetClient(nrDowOsob, true) ?? new KLIENCI();
             UpdateKlientDataFromEditScreen(_currentEditKlient);
         }
 
@@ -179,7 +178,7 @@ namespace GUI
         {
             var addClient = LoadKlientDataFromAddScreen();
 
-            if (CS.AddClient(addClient))
+            if (ClientService.AddClient(addClient))
             {
                 MessageBox.Show("Dodano klienta.");
             }
@@ -204,7 +203,7 @@ namespace GUI
                     }
                 }
 
-                if (CS.UpdateClient(_currentEditKlient))
+                if (ClientService.UpdateClient(_currentEditKlient))
                 {
                     MessageBox.Show("Zapisano zmiany.");
                 }
@@ -214,7 +213,7 @@ namespace GUI
                 }
 
                 //Update Klient object from DB
-                _currentEditKlient = CS.GetClient(_currentEditKlient.idKlient);
+                _currentEditKlient = ClientService.GetClient(_currentEditKlient.idKlient);
             }
             else
             {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GUI
 {
-    class ClientService
+    static class ClientService
     {
-        public KLIENCI GetClient(string loginOrIDNumb, bool IDNumb = false)
+        public static KLIENCI GetClient(string loginOrIDNumb, bool IDNumb = false)
         {
             using (var entities = new DBEntities())
             {
@@ -35,7 +35,7 @@ namespace GUI
             }
         }
 
-        public KLIENCI GetClient(int id)
+        public static KLIENCI GetClient(int id)
         {
             using (var entities = new DBEntities())
             {
@@ -49,7 +49,7 @@ namespace GUI
             }
         }
 
-        public bool UpdateClient(KLIENCI updateKlient)
+        public static bool UpdateClient(KLIENCI updateKlient)
         {
             using (var entities = new DBEntities())
             {
@@ -73,7 +73,7 @@ namespace GUI
             }
         }
 
-        public bool AddClient(KLIENCI newClient)
+        public static bool AddClient(KLIENCI newClient)
         {
             using (var entities = new DBEntities())
             {
