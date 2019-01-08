@@ -167,6 +167,7 @@
     <Compile Include="REZERWACJE.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\ReservationService.cs" />
     <Compile Include="Service\VehicleService.cs" />
     <Compile Include="ZDJECIA.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
