@@ -42,5 +42,17 @@ namespace GUI
                 return vehicles;
             }
         }
+
+        public static List<OPINIA> GetVehicleOpinions(int idVehicle)
+        {
+            using (var entities = new DBEntities())
+            {
+                var opinions = entities.OPINIA
+                    .Where(o => o.REZERWACJE.POJAZDY_idPojazd == idVehicle)
+                    .ToList();
+
+                return opinions;
+            }
+        }
     }
 }

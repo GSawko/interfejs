@@ -104,10 +104,10 @@ namespace GUI
 
         private void ShowVehicleDataToChooseVehicle(POJAZDY vehicle)
         {
-            label5.Text = vehicle.MARKI.Nazwa;      //Opis pod zjęciem
+            label5.Text = vehicle.MARKI.Nazwa + " " + vehicle.MARKI.Model;      //Opis pod zjęciem
             label7.Text = vehicle.MARKI.Nazwa;
-            //label9.Text = //Model
-            //label11.Text = //Kolor
+            label9.Text = vehicle.MARKI.Model;
+            label11.Text = vehicle.Kolor;
             label13.Text = vehicle.Przebieg.ToString() + " km";
             label15.Text = vehicle.DataProd.ToString("yyyy");
             label17.Text = vehicle.Sprawny == 0 ? "Nie" : "Tak";
@@ -119,6 +119,13 @@ namespace GUI
                 listBox1.Items.Add(check.Data.ToString("d"));
 
             richTextBox2.Text = "";
+
+            var opinions = VehicleService.GetVehicleOpinions(vehicle.idPojazd);
+            listView1.Items.Clear();
+            foreach (var opinion in opinions)
+            {
+                listView1.Items.Add(opinion.DataWyst.ToString("d") + " - " + opinion.Ocena + "/10 " + opinion.Opis);
+            }
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)

@@ -295,10 +295,10 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.WybórPojazduPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
             this.PrawyPanel.Controls.Add(this.KontaktPanel);
-            this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
@@ -333,11 +333,13 @@
             // listView1
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listView1.Location = new System.Drawing.Point(3, 16);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(562, 185);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // DostepnePojazdy
             // 
@@ -358,7 +360,7 @@
             this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(562, 481);
-            this.listView2.TabIndex = 27;
+            this.listView2.TabIndex = 25;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
             // 
