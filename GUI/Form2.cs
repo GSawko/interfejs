@@ -9,23 +9,25 @@ namespace GUI
 {
     public partial class Form2 : Form
     {
-        private string Login;
-        private KLIENCI CurrClient;
+        private string _login;
+        private KLIENCI _currentClient;
+        private List<POJAZDY> _vehicleList;
+        private int _vehicleShow;
        
         public Form2(string login)
         {
             InitializeComponent();
             LoadCheckedListBox(checkedListBox3);
 
-            Login = login;
+            _login = login;
             
-            LoadClient(Login);
+            LoadClient(_login);
             LoadClientData();
         }
 
         private void LoadClient(string login)
         {
-            CurrClient = ClientService.GetClient(login);
+            _currentClient = ClientService.GetClient(login);
         }
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
@@ -44,28 +46,28 @@ namespace GUI
         private void LoadClientData()
         {
             //boczne menu
-            label2.Text = CurrClient.Imie + " " + CurrClient.Nazwisko;
+            label2.Text = _currentClient.Imie + " " + _currentClient.Nazwisko;
 
             //zakładka dane
-            textBox10.Text = CurrClient.Imie;
-            textBox11.Text = CurrClient.DrugieImie;
-            textBox13.Text = CurrClient.Nazwisko;
-            textBox12.Text = CurrClient.Adres;
-            comboBox1.SelectedIndex = CurrClient.Plec;
-            textBox17.Text = CurrClient.Telefon;
-            textBox16.Text = CurrClient.Email;
-            textBox15.Text = CurrClient.NrPrawaJazd;
-            textBox14.Text = CurrClient.NrDowOsob;
-            textBox20.Text = CurrClient.DataRejestr.ToString("d");
+            textBox10.Text = _currentClient.Imie;
+            textBox11.Text = _currentClient.DrugieImie;
+            textBox13.Text = _currentClient.Nazwisko;
+            textBox12.Text = _currentClient.Adres;
+            comboBox1.SelectedIndex = _currentClient.Plec;
+            textBox17.Text = _currentClient.Telefon;
+            textBox16.Text = _currentClient.Email;
+            textBox15.Text = _currentClient.NrPrawaJazd;
+            textBox14.Text = _currentClient.NrDowOsob;
+            textBox20.Text = _currentClient.DataRejestr.ToString("d");
 
-            foreach (var licence in CurrClient.KATEGORIEPJAZDY)
+            foreach (var licence in _currentClient.KATEGORIEPJAZDY)
             {
                 checkedListBox3.SetItemChecked(licence.idKatPJ - 1, true);
             }
             //pictureBox7.Image = klient.Zdjecie;
 
-            textBox19.Text = CurrClient.Login;
-            textBox18.Text = CurrClient.Haslo;
+            textBox19.Text = _currentClient.Login;
+            textBox18.Text = _currentClient.Haslo;
         }
 
         private void LoadKlientDataFromEditScreen(KLIENCI klient)
@@ -81,7 +83,59 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
+            //Load all vehicle
+            _vehicleList = VehicleService.GetVehicles();
+            _vehicleShow = 0;
+            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
             this.WybórPojazduPanel.BringToFront();
+        }
+
+        private void ShowVehicleDataToChooseVehicle(POJAZDY vehicle)
+        {
+            label5.Text = vehicle.MARKI.Nazwa;      //Opis pod zjęciem
+            label7.Text = vehicle.MARKI.Nazwa;
+            //label9.Text = //Model
+            //label11.Text = //Kolor
+            label13.Text = vehicle.Przebieg.ToString() + " km";
+            label15.Text = vehicle.DataProd.ToString("yyyy");
+            label17.Text = vehicle.Sprawny == 0 ? "Nie" : "Tak";
+            label19.Text = vehicle.ZaGodz.ToString() + " zł";
+            richTextBox1.Text = vehicle.Opis;
+
+            listBox1.Items.Clear();
+            foreach (var check in vehicle.PRZEGLADY)
+                listBox1.Items.Add(check.Data.ToString("d"));
+
+            richTextBox2.Text = "";
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            var index = listBox1.SelectedIndex;
+            if (index >= 0)
+            {
+                var check = _vehicleList[_vehicleShow].PRZEGLADY.ToList()[index];
+
+                richTextBox2.Text = check.Data.ToString("d") + '\n' + check.Opis;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            _vehicleShow--;
+            if (_vehicleShow < 0)
+                _vehicleShow = _vehicleList.Count - 1;
+
+            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            _vehicleShow++;
+            if (_vehicleShow >= _vehicleList.Count)
+                _vehicleShow = 0;
+
+            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -116,18 +170,18 @@ namespace GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            LoadKlientDataFromEditScreen(CurrClient);
+            LoadKlientDataFromEditScreen(_currentClient);
 
-            CurrClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
+            _currentClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
             for (int i = 0; i < checkedListBox3.Items.Count; i++)
             {
                 if (checkedListBox3.GetItemCheckState(i) == CheckState.Checked)
                 {
-                    CurrClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = i + 1 });
+                    _currentClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = i + 1 });
                 }
             }
 
-            if (ClientService.UpdateClient(CurrClient))
+            if (ClientService.UpdateClient(_currentClient))
             {
                 MessageBox.Show("Zapisano zmiany.");
             }
@@ -137,7 +191,7 @@ namespace GUI
             }
 
             //Update Klient object from DB
-            CurrClient = ClientService.GetClient(Login);
+            _currentClient = ClientService.GetClient(_login);
         }
 
     }

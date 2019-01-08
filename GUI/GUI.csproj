@@ -102,7 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientService.cs" />
+    <Compile Include="Service\ClientService.cs" />
     <Compile Include="DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,6 +167,7 @@
     <Compile Include="REZERWACJE.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\VehicleService.cs" />
     <Compile Include="ZDJECIA.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
