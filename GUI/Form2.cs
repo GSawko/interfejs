@@ -11,21 +11,21 @@ namespace GUI
     {
         private string Login;
         private KLIENCI CurrClient;
-        private ClientService CS;
+       
         public Form2(string login)
         {
             InitializeComponent();
             LoadCheckedListBox(checkedListBox3);
 
             Login = login;
-            CS = new ClientService();
+            
             LoadClient(Login);
             LoadClientData();
         }
 
         private void LoadClient(string login)
         {
-            CurrClient = CS.GetClient(login);
+            CurrClient = ClientService.GetClient(login);
         }
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
@@ -127,7 +127,7 @@ namespace GUI
                 }
             }
 
-            if (CS.UpdateClient(CurrClient))
+            if (ClientService.UpdateClient(CurrClient))
             {
                 MessageBox.Show("Zapisano zmiany.");
             }
@@ -137,7 +137,7 @@ namespace GUI
             }
 
             //Update Klient object from DB
-            CurrClient = CS.GetClient(Login);
+            CurrClient = ClientService.GetClient(Login);
         }
 
         private void Form2_Load(object sender, EventArgs e)
