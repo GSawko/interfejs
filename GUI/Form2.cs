@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -87,6 +88,17 @@ namespace GUI
             _vehicleList = VehicleService.GetVehicles();
             _vehicleShow = 0;
             ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
+
+            
+            listView2.LargeImageList.Images.Clear();
+            listView2.Items.Clear();
+            int i = 0;
+            foreach (var vehicle in _vehicleList)
+            {
+                listView2.LargeImageList.Images.Add(vehicle.MARKI.Nazwa, Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907);
+                listView2.Items.Add(vehicle.MARKI.Nazwa, i++);
+            }
+
             this.WybórPojazduPanel.BringToFront();
         }
 
@@ -136,6 +148,16 @@ namespace GUI
                 _vehicleShow = 0;
 
             ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
+        }
+
+        private void listView2_DoubleClick(object sender, EventArgs e)
+        {
+            var index = listView2.SelectedIndices[0];
+            if (index >= 0)
+            {
+                _vehicleShow = index;
+                ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
+            }
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -206,11 +228,6 @@ namespace GUI
                 listView2.Items.Add(imageList.Images.Keys[i], i);
             }
             listView2.RedrawItems(0, imageList.Images.Count - 1, false);
-        }
-
-        private void listView2_ItemActivate(object sender, EventArgs e)
-        {
-            
         }
     }
 }

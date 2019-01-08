@@ -41,6 +41,38 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PrawyPanel = new System.Windows.Forms.Panel();
+            this.WybórPojazduPanel = new System.Windows.Forms.Panel();
+            this.OpinieBox = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.DostepnePojazdy = new System.Windows.Forms.GroupBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button6 = new System.Windows.Forms.Button();
+            this.PrzegladyBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.SamochódBox = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.EdytujDaneOsPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -80,35 +112,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.WybórPojazduPanel = new System.Windows.Forms.Panel();
-            this.OpinieBox = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.PrzegladyBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.SamochódBox = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.FormularzRezerwacjiPanel = new System.Windows.Forms.Panel();
             this.WybranyBox = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -152,26 +155,24 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.DostepnePojazdy = new System.Windows.Forms.GroupBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.KlientMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrawyPanel.SuspendLayout();
-            this.EdytujDaneOsPanel.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.KontaktPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.WybórPojazduPanel.SuspendLayout();
             this.OpinieBox.SuspendLayout();
+            this.DostepnePojazdy.SuspendLayout();
             this.PrzegladyBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SamochódBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.EdytujDaneOsPanel.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.KontaktPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.FormularzRezerwacjiPanel.SuspendLayout();
             this.WybranyBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -183,7 +184,6 @@
             this.ZwrotBox.SuspendLayout();
             this.RezerwacjaBox.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.DostepnePojazdy.SuspendLayout();
             this.SuspendLayout();
             // 
             // KlientMenuPanel
@@ -304,6 +304,351 @@
             this.PrawyPanel.Name = "PrawyPanel";
             this.PrawyPanel.Size = new System.Drawing.Size(585, 436);
             this.PrawyPanel.TabIndex = 21;
+            // 
+            // WybórPojazduPanel
+            // 
+            this.WybórPojazduPanel.AutoScroll = true;
+            this.WybórPojazduPanel.Controls.Add(this.OpinieBox);
+            this.WybórPojazduPanel.Controls.Add(this.DostepnePojazdy);
+            this.WybórPojazduPanel.Controls.Add(this.button6);
+            this.WybórPojazduPanel.Controls.Add(this.PrzegladyBox);
+            this.WybórPojazduPanel.Controls.Add(this.SamochódBox);
+            this.WybórPojazduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WybórPojazduPanel.Location = new System.Drawing.Point(0, 0);
+            this.WybórPojazduPanel.Name = "WybórPojazduPanel";
+            this.WybórPojazduPanel.Size = new System.Drawing.Size(585, 436);
+            this.WybórPojazduPanel.TabIndex = 1;
+            // 
+            // OpinieBox
+            // 
+            this.OpinieBox.Controls.Add(this.listView1);
+            this.OpinieBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpinieBox.Location = new System.Drawing.Point(0, 1230);
+            this.OpinieBox.Name = "OpinieBox";
+            this.OpinieBox.Size = new System.Drawing.Size(568, 204);
+            this.OpinieBox.TabIndex = 25;
+            this.OpinieBox.TabStop = false;
+            this.OpinieBox.Text = "Opinie";
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(3, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(562, 185);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // DostepnePojazdy
+            // 
+            this.DostepnePojazdy.Controls.Add(this.listView2);
+            this.DostepnePojazdy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DostepnePojazdy.Location = new System.Drawing.Point(0, 730);
+            this.DostepnePojazdy.Name = "DostepnePojazdy";
+            this.DostepnePojazdy.Size = new System.Drawing.Size(568, 500);
+            this.DostepnePojazdy.TabIndex = 21;
+            this.DostepnePojazdy.TabStop = false;
+            this.DostepnePojazdy.Text = "Dostępne pojazdy";
+            // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.LargeImageList = this.imageList1;
+            this.listView2.Location = new System.Drawing.Point(3, 16);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(562, 481);
+            this.listView2.TabIndex = 27;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg");
+            this.imageList1.Images.SetKeyName(1, "indeks.jpg");
+            this.imageList1.Images.SetKeyName(2, "jaguar-c-x75-007-spectre-6f017bc.jpg");
+            this.imageList1.Images.SetKeyName(3, "samochod.jpg");
+            this.imageList1.Images.SetKeyName(4, "samochody-z-logo-oldtimerow17.310.jpg");
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 707);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(568, 23);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "Dalej";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // PrzegladyBox
+            // 
+            this.PrzegladyBox.Controls.Add(this.tableLayoutPanel1);
+            this.PrzegladyBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PrzegladyBox.Location = new System.Drawing.Point(0, 444);
+            this.PrzegladyBox.Name = "PrzegladyBox";
+            this.PrzegladyBox.Size = new System.Drawing.Size(568, 263);
+            this.PrzegladyBox.TabIndex = 23;
+            this.PrzegladyBox.TabStop = false;
+            this.PrzegladyBox.Text = "Przeglądy";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
+            this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "01-01-2016",
+            "02-03-2017",
+            "03-02-2018"});
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(275, 238);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
+            // 
+            // SamochódBox
+            // 
+            this.SamochódBox.Controls.Add(this.richTextBox1);
+            this.SamochódBox.Controls.Add(this.label5);
+            this.SamochódBox.Controls.Add(this.label4);
+            this.SamochódBox.Controls.Add(this.label19);
+            this.SamochódBox.Controls.Add(this.pictureBox4);
+            this.SamochódBox.Controls.Add(this.label6);
+            this.SamochódBox.Controls.Add(this.pictureBox3);
+            this.SamochódBox.Controls.Add(this.label18);
+            this.SamochódBox.Controls.Add(this.pictureBox2);
+            this.SamochódBox.Controls.Add(this.label7);
+            this.SamochódBox.Controls.Add(this.label17);
+            this.SamochódBox.Controls.Add(this.label8);
+            this.SamochódBox.Controls.Add(this.label16);
+            this.SamochódBox.Controls.Add(this.label9);
+            this.SamochódBox.Controls.Add(this.label15);
+            this.SamochódBox.Controls.Add(this.label10);
+            this.SamochódBox.Controls.Add(this.label14);
+            this.SamochódBox.Controls.Add(this.label11);
+            this.SamochódBox.Controls.Add(this.label13);
+            this.SamochódBox.Controls.Add(this.label12);
+            this.SamochódBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SamochódBox.Location = new System.Drawing.Point(0, 0);
+            this.SamochódBox.Name = "SamochódBox";
+            this.SamochódBox.Size = new System.Drawing.Size(568, 444);
+            this.SamochódBox.TabIndex = 26;
+            this.SamochódBox.TabStop = false;
+            this.SamochódBox.Text = " ";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(315, 291);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(231, 120);
+            this.richTextBox1.TabIndex = 20;
+            this.richTextBox1.Text = "Krótki opis pojazdu";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(260, 261);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Fiat 126p";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Dokonaj Rezerwacji ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(140, 385);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(28, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "70zł";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::GUI.Properties.Resources.prawa_strzałka_318_113460;
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(477, 98);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(91, 88);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Marka";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources.strzalka_pelna_w_lewo;
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(8, 99);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(91, 88);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(43, 385);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 13);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Za Godzinę";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907;
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(105, 33);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(366, 225);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(140, 277);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Fiat";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(140, 363);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(26, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Tak";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 295);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Model";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(43, 363);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 13);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Sprawny";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(140, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "126p";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(140, 346);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(31, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "1973";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 312);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Kolor";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(43, 346);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Data produkcji";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(140, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Czarny";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(140, 329);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "30 000km";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(43, 329);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Przebieg";
             // 
             // EdytujDaneOsPanel
             // 
@@ -680,315 +1025,6 @@
             this.label34.Size = new System.Drawing.Size(87, 13);
             this.label34.TabIndex = 1;
             this.label34.Text = "tel2 987 654 321";
-            // 
-            // WybórPojazduPanel
-            // 
-            this.WybórPojazduPanel.AutoScroll = true;
-            this.WybórPojazduPanel.Controls.Add(this.OpinieBox);
-            this.WybórPojazduPanel.Controls.Add(this.DostepnePojazdy);
-            this.WybórPojazduPanel.Controls.Add(this.button6);
-            this.WybórPojazduPanel.Controls.Add(this.PrzegladyBox);
-            this.WybórPojazduPanel.Controls.Add(this.SamochódBox);
-            this.WybórPojazduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WybórPojazduPanel.Location = new System.Drawing.Point(0, 0);
-            this.WybórPojazduPanel.Name = "WybórPojazduPanel";
-            this.WybórPojazduPanel.Size = new System.Drawing.Size(585, 436);
-            this.WybórPojazduPanel.TabIndex = 1;
-            // 
-            // OpinieBox
-            // 
-            this.OpinieBox.Controls.Add(this.listView1);
-            this.OpinieBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpinieBox.Location = new System.Drawing.Point(0, 1230);
-            this.OpinieBox.Name = "OpinieBox";
-            this.OpinieBox.Size = new System.Drawing.Size(568, 204);
-            this.OpinieBox.TabIndex = 25;
-            this.OpinieBox.TabStop = false;
-            this.OpinieBox.Text = "Opinie";
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(562, 185);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 707);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(568, 23);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Dalej";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // PrzegladyBox
-            // 
-            this.PrzegladyBox.Controls.Add(this.tableLayoutPanel1);
-            this.PrzegladyBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PrzegladyBox.Location = new System.Drawing.Point(0, 444);
-            this.PrzegladyBox.Name = "PrzegladyBox";
-            this.PrzegladyBox.Size = new System.Drawing.Size(568, 263);
-            this.PrzegladyBox.TabIndex = 23;
-            this.PrzegladyBox.TabStop = false;
-            this.PrzegladyBox.Text = "Przeglądy";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
-            this.tableLayoutPanel1.TabIndex = 21;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "01-01-2016",
-            "02-03-2017",
-            "03-02-2018"});
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(275, 238);
-            this.listBox1.TabIndex = 0;
-            // 
-            // SamochódBox
-            // 
-            this.SamochódBox.Controls.Add(this.richTextBox1);
-            this.SamochódBox.Controls.Add(this.label5);
-            this.SamochódBox.Controls.Add(this.label4);
-            this.SamochódBox.Controls.Add(this.label19);
-            this.SamochódBox.Controls.Add(this.pictureBox4);
-            this.SamochódBox.Controls.Add(this.label6);
-            this.SamochódBox.Controls.Add(this.pictureBox3);
-            this.SamochódBox.Controls.Add(this.label18);
-            this.SamochódBox.Controls.Add(this.pictureBox2);
-            this.SamochódBox.Controls.Add(this.label7);
-            this.SamochódBox.Controls.Add(this.label17);
-            this.SamochódBox.Controls.Add(this.label8);
-            this.SamochódBox.Controls.Add(this.label16);
-            this.SamochódBox.Controls.Add(this.label9);
-            this.SamochódBox.Controls.Add(this.label15);
-            this.SamochódBox.Controls.Add(this.label10);
-            this.SamochódBox.Controls.Add(this.label14);
-            this.SamochódBox.Controls.Add(this.label11);
-            this.SamochódBox.Controls.Add(this.label13);
-            this.SamochódBox.Controls.Add(this.label12);
-            this.SamochódBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SamochódBox.Location = new System.Drawing.Point(0, 0);
-            this.SamochódBox.Name = "SamochódBox";
-            this.SamochódBox.Size = new System.Drawing.Size(568, 444);
-            this.SamochódBox.TabIndex = 26;
-            this.SamochódBox.TabStop = false;
-            this.SamochódBox.Text = " ";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(315, 291);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(231, 120);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "Krótki opis pojazdu";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(260, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Fiat 126p";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Dokonaj Rezerwacji ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(140, 385);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(28, 13);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "70zł";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GUI.Properties.Resources.prawa_strzałka_318_113460;
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(477, 98);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(91, 88);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 278);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Marka";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.strzalka_pelna_w_lewo;
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(8, 99);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(91, 88);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(43, 385);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 13);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Za Godzinę";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907;
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(105, 33);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(366, 225);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(140, 277);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Fiat";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(140, 363);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Tak";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(43, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Model";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(43, 363);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Sprawny";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(140, 295);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "126p";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(140, 346);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 13);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "1973";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 312);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Kolor";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(43, 346);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 13);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Data produkcji";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(140, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Czarny";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(140, 329);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "30 000km";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(43, 329);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Przebieg";
             // 
             // FormularzRezerwacjiPanel
             // 
@@ -1467,37 +1503,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 442);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
-            // listView2
-            // 
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.LargeImageList = this.imageList1;
-            this.listView2.Location = new System.Drawing.Point(3, 16);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(562, 481);
-            this.listView2.TabIndex = 27;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // DostepnePojazdy
-            // 
-            this.DostepnePojazdy.Controls.Add(this.listView2);
-            this.DostepnePojazdy.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DostepnePojazdy.Location = new System.Drawing.Point(0, 730);
-            this.DostepnePojazdy.Name = "DostepnePojazdy";
-            this.DostepnePojazdy.Size = new System.Drawing.Size(568, 500);
-            this.DostepnePojazdy.TabIndex = 21;
-            this.DostepnePojazdy.TabStop = false;
-            this.DostepnePojazdy.Text = "Dostępne pojazdy";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg");
-            this.imageList1.Images.SetKeyName(1, "indeks.jpg");
-            this.imageList1.Images.SetKeyName(2, "jaguar-c-x75-007-spectre-6f017bc.jpg");
-            this.imageList1.Images.SetKeyName(3, "samochod.jpg");
-            this.imageList1.Images.SetKeyName(4, "samochody-z-logo-oldtimerow17.310.jpg");
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1511,6 +1516,16 @@
             this.KlientMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PrawyPanel.ResumeLayout(false);
+            this.WybórPojazduPanel.ResumeLayout(false);
+            this.OpinieBox.ResumeLayout(false);
+            this.DostepnePojazdy.ResumeLayout(false);
+            this.PrzegladyBox.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.SamochódBox.ResumeLayout(false);
+            this.SamochódBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.EdytujDaneOsPanel.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1520,15 +1535,6 @@
             this.KontaktPanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.WybórPojazduPanel.ResumeLayout(false);
-            this.OpinieBox.ResumeLayout(false);
-            this.PrzegladyBox.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.SamochódBox.ResumeLayout(false);
-            this.SamochódBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.FormularzRezerwacjiPanel.ResumeLayout(false);
             this.FormularzRezerwacjiPanel.PerformLayout();
             this.WybranyBox.ResumeLayout(false);
@@ -1546,7 +1552,6 @@
             this.RezerwacjaBox.ResumeLayout(false);
             this.RezerwacjaBox.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.DostepnePojazdy.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
