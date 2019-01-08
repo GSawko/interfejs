@@ -26,12 +26,13 @@ namespace GUI
         public int idPojazd { get; set; }
         public short Rodzaj { get; set; }
         public string NrRejestr { get; set; }
-        public Nullable<int> Przebieg { get; set; }
-        public Nullable<float> ZaGodz { get; set; }
+        public int Przebieg { get; set; }
+        public float ZaGodz { get; set; }
         public System.DateTime DataProd { get; set; }
-        public Nullable<sbyte> Sprawny { get; set; }
+        public sbyte Sprawny { get; set; }
         public string Opis { get; set; }
         public int MARKI_idMarki { get; set; }
+        public string Kolor { get; set; }
     
         public virtual MARKI MARKI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

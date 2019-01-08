@@ -39,6 +39,7 @@
           </Key>
           <Property Name="idMarki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="OPINIA">
           <Key>
@@ -55,14 +56,15 @@
             <PropertyRef Name="idPojazd" />
           </Key>
           <Property Name="idPojazd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MARKI_idMarki" Type="int" Nullable="false" />
           <Property Name="Rodzaj" Type="smallint" Nullable="false" />
           <Property Name="NrRejestr" Type="varchar" MaxLength="8" Nullable="false" />
-          <Property Name="Przebieg" Type="int" />
-          <Property Name="ZaGodz" Type="float" />
+          <Property Name="Przebieg" Type="int" Nullable="false" />
+          <Property Name="ZaGodz" Type="float" Nullable="false" />
           <Property Name="DataProd" Type="date" Nullable="false" />
-          <Property Name="Sprawny" Type="tinyint" />
+          <Property Name="Sprawny" Type="tinyint" Nullable="false" />
           <Property Name="Opis" Type="varchar" MaxLength="45" />
-          <Property Name="MARKI_idMarki" Type="int" Nullable="false" />
+          <Property Name="Kolor" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="POSIADA">
           <Key>
@@ -153,7 +155,9 @@ warning 6002: The table/view 'def.ISDB.LoginData' does not have a primary key de
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_KATEGORIEPJAZDY_has_KLIENCI_KLIENCI1">
-          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1" />
+          <End Role="KLIENCI" Type="Self.KLIENCI" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="POSIADA" Type="Self.POSIADA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KLIENCI">
@@ -394,6 +398,7 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <Property Name="idMarki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="POJAZDY" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="MARKI" ToRole="POJAZDY" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="OPINIA">
           <Key>
@@ -413,10 +418,10 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <Property Name="idPojazd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rodzaj" Type="Int16" Nullable="false" />
           <Property Name="NrRejestr" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Przebieg" Type="Int32" />
-          <Property Name="ZaGodz" Type="Single" />
+          <Property Name="Przebieg" Type="Int32" Nullable="false" />
+          <Property Name="ZaGodz" Type="Single" Nullable="false" />
           <Property Name="DataProd" Type="DateTime" Nullable="false" />
-          <Property Name="Sprawny" Type="SByte" />
+          <Property Name="Sprawny" Type="SByte" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="MARKI_idMarki" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MARKI" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="POJAZDY" ToRole="MARKI" />
@@ -424,6 +429,7 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_REZERWACJE_POJAZDY1" FromRole="POJAZDY" ToRole="REZERWACJE" />
           <NavigationProperty Name="ZDJECIA" Relationship="Self.fk_ZDJECIA_POJAZDY1" FromRole="POJAZDY" ToRole="ZDJECIA" />
           <NavigationProperty Name="KATEGORIEPJAZDY" Relationship="Self.WYMAGA" FromRole="POJAZDY" ToRole="KATEGORIEPJAZDY" />
+          <Property Name="Kolor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PRACOWNICY">
           <Key>
@@ -687,6 +693,7 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <EntitySetMapping Name="MARKI">
             <EntityTypeMapping TypeName="DBModel.MARKI">
               <MappingFragment StoreEntitySet="MARKI">
+                <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="idMarki" ColumnName="idMarki" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
               </MappingFragment>
@@ -706,6 +713,7 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <EntitySetMapping Name="POJAZDY">
             <EntityTypeMapping TypeName="DBModel.POJAZDY">
               <MappingFragment StoreEntitySet="POJAZDY">
+                <ScalarProperty Name="Kolor" ColumnName="Kolor" />
                 <ScalarProperty Name="idPojazd" ColumnName="idPojazd" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
                 <ScalarProperty Name="NrRejestr" ColumnName="NrRejestr" />

@@ -22,6 +22,7 @@ namespace GUI
     
         public int idMarki { get; set; }
         public string Nazwa { get; set; }
+        public string Model { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POJAZDY> POJAZDY { get; set; }
