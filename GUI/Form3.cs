@@ -55,10 +55,6 @@ namespace GUI
             EdytujDaneKlientaPanel.BringToFront();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            PrzeglądanieRezerwacjiPanel.BringToFront();
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
