@@ -47,5 +47,15 @@ namespace GUI
         {
             DodajPojazdPanel.BringToFront();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DodajKlientaPanel.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PodgladRezerwacjiPanel.BringToFront();
+        }
     }
 }
