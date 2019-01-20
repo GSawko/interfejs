@@ -240,5 +240,15 @@ namespace GUI
         {
             PodgladRezerwacjiPanel.BringToFront();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PodgladRezerwacjiPanel.BringToFront();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DodajKlientaPanel.BringToFront();
+        }
     }
 }
