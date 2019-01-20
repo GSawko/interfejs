@@ -35,7 +35,8 @@ namespace GUI
                     break;
 
                 case 'w':
-                    //TODO Start ownerView
+                    Form4 OwnerView = new Form4(userLogin);
+                    Application.Run(OwnerView);
                     break;
             }
         }
