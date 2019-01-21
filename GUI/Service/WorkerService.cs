@@ -21,6 +21,18 @@ namespace GUI.Service
             }
         }
 
+        public static PRACOWNICY GetWorker(string login)
+        {
+            using (var entities = new DBEntities())
+            {
+                PRACOWNICY pracownik = entities.PRACOWNICY
+                    .Where(p => p.Login == login)
+                    .FirstOrDefault();
+
+                return pracownik;
+            }
+        }
+
         public static bool UpdateWorker(PRACOWNICY updatePracownik)
         {
             using (var entities = new DBEntities())
