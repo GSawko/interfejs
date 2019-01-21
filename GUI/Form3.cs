@@ -108,7 +108,6 @@ namespace GUI
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
-            _currentEditKlient = null;
             _currentEditKlient = ClientService.GetClient(nrDowOsob, true) ?? new KLIENCI();
             UpdateKlientDataFromEditScreen(_currentEditKlient);
         }
@@ -142,6 +141,13 @@ namespace GUI
             klient.Adres = AdresTBoxEDKlienta.TextOrDefault();
             klient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
             klient.Email = EmailTBoxEDKlienta.TextOrDefault();
+
+            klient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
+            for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count; i++)
+            {
+                var index = KategoriePJazdyCBoxEDKlienta.CheckedIndices[i] + 1;
+                klient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
+            }
         }
 
         private KLIENCI LoadKlientDataFromAddScreen()
@@ -158,14 +164,16 @@ namespace GUI
             newClient.NrDowOsob = textBox14.TextOrDefault();
             newClient.DataRejestr = DateTime.Now;
             newClient.DataUr = DateTime.Now;
-            newClient.Login = "k_" + newClient.Imie;   //Jak ma być nadawane login i hasło kiedy pracownik tworzy konto dla użytownika??
-            newClient.Haslo = "Test";
+            //newClient.Zdjecie = 
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
             {
-                var index = checkedListBox3.CheckedIndices[i];
-                newClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index + 1 });
+                var index = checkedListBox3.CheckedIndices[i] + 1;
+                newClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
             }
+
+            newClient.Login = "k_" + newClient.Imie + newClient.DataUr.ToString("dd");
+            newClient.Haslo = newClient.Login;
 
             return newClient;
         }
@@ -173,15 +181,11 @@ namespace GUI
         private void button10_Click(object sender, EventArgs e)
         {
             var addClient = LoadKlientDataFromAddScreen();
-
-            if (ClientService.AddClient(addClient))
-            {
+            var isAdd = ClientService.AddClient(addClient);
+            if (isAdd)
                 MessageBox.Show("Dodano klienta.");
-            }
             else
-            {
-                MessageBox.Show("Błąd dodawania klienta!");
-            }
+                MessageBox.Show("Błąd dodanie klienta!");
         }
 
         private void UpdateClientDataButton_Click(object sender, EventArgs e)
@@ -189,37 +193,16 @@ namespace GUI
             if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
             {
                 GetKlientDataFromEditScreen(_currentEditKlient);
-
-                _currentEditKlient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
-                for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.Items.Count; i++)
-                {
-                    if (KategoriePJazdyCBoxEDKlienta.GetItemCheckState(i) == CheckState.Checked)
-                    {
-                        _currentEditKlient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = i + 1 });
-                    }
-                }
-
-                if (ClientService.UpdateClient(_currentEditKlient))
-                {
-                    MessageBox.Show("Zapisano zmiany.");
-                }
+                var isEdt = ClientService.UpdateClient(_currentEditKlient);
+                if (isEdt)
+                    MessageBox.Show("Zaktualizowano dane klienta.");
                 else
-                {
-                    MessageBox.Show("Nie można zapisać zmian!");
-                }
+                    MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
 
-                //Update Klient object from DB
                 _currentEditKlient = ClientService.GetClient(_currentEditKlient.idKlient);
             }
             else
-            {
                 MessageBox.Show("Najpierw wybierz klienta do edycji!");
-            }
-        }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
