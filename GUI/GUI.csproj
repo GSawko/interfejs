@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\RichTextBoxExtension.cs" />
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +178,7 @@
     </Compile>
     <Compile Include="Service\ReservationService.cs" />
     <Compile Include="Service\VehicleService.cs" />
+    <Compile Include="Service\WorkerService.cs" />
     <Compile Include="ToggleBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
