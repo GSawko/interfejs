@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\MaskedTextBoxExtension.cs" />
     <Compile Include="Extensions\RichTextBoxExtension.cs" />
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
