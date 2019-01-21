@@ -104,6 +104,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service\CarBrandService.cs" />
+    <Compile Include="Service\DrivingLicenceService.cs" />
     <Compile Include="Extensions\MaskedTextBoxExtension.cs" />
     <Compile Include="Extensions\RichTextBoxExtension.cs" />
     <Compile Include="Form4.cs">
