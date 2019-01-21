@@ -22,7 +22,16 @@ namespace GUI
 
             using (var entities = new DBEntities())
             {
-                var isGoodAuth = entities.LoginData.Where(u => u.Login == login && u.Haslo == password).Any();
+                var isGoodAuth = false;
+                try
+                {
+                    isGoodAuth = entities.LoginData.Where(u => u.Login == login && u.Haslo == password).Any();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Brak połączenia z internetem!");
+                    return;
+                }
 
                 if (isGoodAuth == true)
                 {
