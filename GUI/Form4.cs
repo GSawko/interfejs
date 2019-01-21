@@ -23,6 +23,7 @@ namespace GUI
         {
             InitializeComponent();
             LoadCheckedListBox();
+            LoadComboBox(comboBox5);
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -89,6 +90,18 @@ namespace GUI
             LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
             LoadCheckedListBox(checkedListBox3);
             LoadCheckedListBox(checkedListBox6);
+        }
+
+        private void LoadComboBox(ComboBox comboBox)
+        {
+            using (var entities = new DBEntities())
+            {
+                foreach (var model in entities.MARKI)
+                {
+                    comboBox.Items.Add(model);
+                }
+                comboBox.SelectedIndex = 0;
+            }
         }
 
         private void textBox41_TextChanged(object sender, EventArgs e)
@@ -292,13 +305,14 @@ namespace GUI
         {
             POJAZDY newVehicle = new POJAZDY();
             newVehicle.Rodzaj = (sbyte)comboBox4.SelectedIndex;
-            newVehicle.NrRejestr = "ALA54FA";      //Nie ma takiego pola
+            newVehicle.NrRejestr = textBox43.TextOrDefault();
             newVehicle.Przebieg = int.Parse(textBox49.Text);
             newVehicle.ZaGodz = float.Parse(textBox51.Text);
             newVehicle.DataProd = DateTime.Parse(textBox52.Text);
-            newVehicle.Sprawny = 1;     //Nie ma pola, np. checkedBox
+            newVehicle.Sprawny = (sbyte)(checkBox3.Checked == true ? 1 : 0);
             newVehicle.Opis = richTextBox4.TextOrDefault();
             newVehicle.Kolor = textBox50.TextOrDefault();
+            newVehicle.MARKI_idMarki = ((MARKI)comboBox5.SelectedItem).idMarki;
 
             for (int i = 0; i < checkedListBox6.CheckedIndices.Count; i++)
             {
