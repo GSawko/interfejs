@@ -54,5 +54,24 @@ namespace GUI
                 return opinions;
             }
         }
+
+        public static bool AddVehicle(POJAZDY newVehile)
+        {
+            using (var entities = new DBEntities())
+            {
+                var licences = new List<KATEGORIEPJAZDY>();
+                foreach (var lic in newVehile.KATEGORIEPJAZDY)
+                {
+                    var licence = entities.KATEGORIEPJAZDY.First(k => k.idKatPJ == lic.idKatPJ);
+                    licences.Add(licence);
+                }
+
+                newVehile.KATEGORIEPJAZDY = licences;
+                entities.POJAZDY.Add(newVehile);
+                entities.SaveChanges();
+
+                return true;
+            }
+        }
     }
 }

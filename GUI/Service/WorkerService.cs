@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GUI.Service
+{
+    static class WorkerService
+    {
+        public static PRACOWNICY GetWorker(int idWork)
+        {
+            using (var entities = new DBEntities())
+            {
+                PRACOWNICY pracownik = entities.PRACOWNICY
+                    .Where(p => p.idPrac == idWork)
+                    .FirstOrDefault();
+
+                return pracownik;
+            }
+        }
+
+        public static bool UpdateWorker(PRACOWNICY updatePracownik)
+        {
+            using (var entities = new DBEntities())
+            {
+                var pracownik = entities.PRACOWNICY
+                    .Where(p => p.idPrac == updatePracownik.idPrac)
+                    .First();
+
+                entities.Entry(pracownik).CurrentValues.SetValues(updatePracownik);
+
+                entities.SaveChanges();
+
+                return true;
+            }
+        }
+
+        public static bool AddWorker(PRACOWNICY newPracownik)
+        {
+            using (var entities = new DBEntities())
+            {
+                entities.PRACOWNICY.Add(newPracownik);
+                entities.SaveChanges();
+            }
+
+            return true;
+        }
+    }
+}
