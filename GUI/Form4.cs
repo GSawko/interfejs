@@ -66,6 +66,11 @@ namespace GUI
             PodgladRezerwacjiPanel.BringToFront();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
         {
             using (var entities = new DBEntities())
