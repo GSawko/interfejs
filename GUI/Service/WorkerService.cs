@@ -59,5 +59,26 @@ namespace GUI.Service
 
             return true;
         }
+
+        public static bool RemoveWorker(int idWorker)
+        {
+            PRACOWNICY worker = new PRACOWNICY() { idPrac = idWorker };
+            using (var entities = new DBEntities())
+            {
+                try
+                {
+                    entities.PRACOWNICY.Attach(worker);
+                    entities.PRACOWNICY.Remove(worker);
+                    entities.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    if (!entities.PRACOWNICY.Any(p => p.idPrac == idWorker))
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

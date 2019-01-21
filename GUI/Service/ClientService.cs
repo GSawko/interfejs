@@ -91,5 +91,26 @@ namespace GUI
                 return true;
             }
         }
+
+        public static bool RemoveClient(int idClient)
+        {
+            KLIENCI client = new KLIENCI() { idKlient = idClient };
+            using (var entities = new DBEntities())
+            {
+                try
+                {
+                    entities.KLIENCI.Attach(client);
+                    entities.KLIENCI.Remove(client);
+                    entities.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    if (!entities.KLIENCI.Any(k => k.idKlient == idClient))
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

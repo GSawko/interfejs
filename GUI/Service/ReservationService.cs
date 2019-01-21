@@ -37,5 +37,26 @@ namespace GUI.Service
                 return reservation;
             }
         }
+
+        public static bool RemoveReservation(int idReservation)
+        {
+            REZERWACJE reservation = new REZERWACJE() { idRezerw = idReservation };
+            using (var entities = new DBEntities())
+            {
+                try
+                {
+                    entities.REZERWACJE.Attach(reservation);
+                    entities.REZERWACJE.Remove(reservation);
+                    entities.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    if (!entities.REZERWACJE.Any(r => r.idRezerw == idReservation))
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

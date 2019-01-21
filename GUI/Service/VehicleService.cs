@@ -73,5 +73,26 @@ namespace GUI.Service
                 return true;
             }
         }
+
+        public static bool RemoveVehicle(int idVehicle)
+        {
+            POJAZDY vehicle = new POJAZDY() { idPojazd = idVehicle };
+            using (var entities = new DBEntities())
+            {
+                try
+                {
+                    entities.POJAZDY.Attach(vehicle);
+                    entities.POJAZDY.Remove(vehicle);
+                    entities.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    if (!entities.POJAZDY.Any(p => p.idPojazd == idVehicle))
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
