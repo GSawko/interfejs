@@ -40,7 +40,6 @@
             this.label97 = new System.Windows.Forms.Label();
             this.checkedListBox6 = new System.Windows.Forms.CheckedListBox();
             this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
@@ -94,10 +93,8 @@
             this.DodajPracownikaPanel = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
             this.label84 = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label91 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
@@ -115,11 +112,9 @@
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.label106 = new System.Windows.Forms.Label();
             this.label107 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
             this.DodajKlientaPanel = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
             this.label69 = new System.Windows.Forms.Label();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -146,7 +141,6 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
             this.EdytujDaneKlientaPanel = new System.Windows.Forms.Panel();
             this.UpdateClientDataButton = new System.Windows.Forms.Button();
             this.DaneOsobiste = new System.Windows.Forms.GroupBox();
@@ -176,7 +170,6 @@
             this.AdresTBoxEDKlienta = new System.Windows.Forms.TextBox();
             this.EmailLabelEDKlienta = new System.Windows.Forms.Label();
             this.TelefonLabelEDKlienta = new System.Windows.Forms.Label();
-            this.TelefonTBoxEDKlienta = new System.Windows.Forms.TextBox();
             this.WyszukajEDKlienta = new System.Windows.Forms.GroupBox();
             this.NrDowOsTBoxWEDK = new System.Windows.Forms.TextBox();
             this.IDKlientaLabelWEDK = new System.Windows.Forms.Label();
@@ -205,7 +198,6 @@
             this.textBox38 = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
-            this.textBox39 = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label95 = new System.Windows.Forms.Label();
             this.textBox41 = new System.Windows.Forms.TextBox();
@@ -364,6 +356,14 @@
             this.NazwiskoDispLabel = new System.Windows.Forms.Label();
             this.DataUrLabel = new System.Windows.Forms.Label();
             this.PlecDispLabel = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel6.SuspendLayout();
             this.PrawyPanel.SuspendLayout();
             this.DodajPojazdPanel.SuspendLayout();
@@ -450,15 +450,15 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
-            this.PrawyPanel.Controls.Add(this.DodajPojazdPanel);
-            this.PrawyPanel.Controls.Add(this.PodgladPojazduPanel);
-            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.DodajPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
-            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
             this.PrawyPanel.Controls.Add(this.EdytujPracownikaPanel);
-            this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
+            this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.DodajPojazdPanel);
             this.PrawyPanel.Controls.Add(this.PodgladRezerwacjiPanel);
+            this.PrawyPanel.Controls.Add(this.PodgladPojazduPanel);
+            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
+            this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
@@ -490,6 +490,7 @@
             // groupBox13
             // 
             this.groupBox13.AutoSize = true;
+            this.groupBox13.Controls.Add(this.maskedTextBox1);
             this.groupBox13.Controls.Add(this.checkBox3);
             this.groupBox13.Controls.Add(this.textBox43);
             this.groupBox13.Controls.Add(this.label104);
@@ -499,7 +500,6 @@
             this.groupBox13.Controls.Add(this.label97);
             this.groupBox13.Controls.Add(this.checkedListBox6);
             this.groupBox13.Controls.Add(this.textBox51);
-            this.groupBox13.Controls.Add(this.textBox52);
             this.groupBox13.Controls.Add(this.textBox49);
             this.groupBox13.Controls.Add(this.textBox50);
             this.groupBox13.Controls.Add(this.richTextBox4);
@@ -569,13 +569,6 @@
             this.textBox51.Name = "textBox51";
             this.textBox51.Size = new System.Drawing.Size(149, 20);
             this.textBox51.TabIndex = 26;
-            // 
-            // textBox52
-            // 
-            this.textBox52.Location = new System.Drawing.Point(121, 297);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(149, 20);
-            this.textBox52.TabIndex = 25;
             // 
             // textBox49
             // 
@@ -1090,10 +1083,11 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.textBox33);
+            this.groupBox10.Controls.Add(this.maskedTextBox8);
+            this.groupBox10.Controls.Add(this.maskedTextBox3);
+            this.groupBox10.Controls.Add(this.maskedTextBox2);
             this.groupBox10.Controls.Add(this.label84);
             this.groupBox10.Controls.Add(this.label89);
-            this.groupBox10.Controls.Add(this.textBox34);
             this.groupBox10.Controls.Add(this.pictureBox10);
             this.groupBox10.Controls.Add(this.label91);
             this.groupBox10.Controls.Add(this.label96);
@@ -1111,7 +1105,6 @@
             this.groupBox10.Controls.Add(this.textBox47);
             this.groupBox10.Controls.Add(this.label106);
             this.groupBox10.Controls.Add(this.label107);
-            this.groupBox10.Controls.Add(this.textBox48);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
@@ -1119,13 +1112,6 @@
             this.groupBox10.TabIndex = 19;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Dane Osobiste";
-            // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(385, 109);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(160, 20);
-            this.textBox33.TabIndex = 27;
             // 
             // label84
             // 
@@ -1144,14 +1130,6 @@
             this.label89.Size = new System.Drawing.Size(92, 13);
             this.label89.TabIndex = 21;
             this.label89.Text = "Data Zatrudnienia";
-            // 
-            // textBox34
-            // 
-            this.textBox34.Enabled = false;
-            this.textBox34.Location = new System.Drawing.Point(385, 80);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(160, 20);
-            this.textBox34.TabIndex = 20;
             // 
             // pictureBox10
             // 
@@ -1297,13 +1275,6 @@
             this.label107.TabIndex = 8;
             this.label107.Text = "Telefon";
             // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(385, 19);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(160, 20);
-            this.textBox48.TabIndex = 9;
-            // 
             // DodajKlientaPanel
             // 
             this.DodajKlientaPanel.Controls.Add(this.button10);
@@ -1327,7 +1298,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox37);
+            this.groupBox2.Controls.Add(this.maskedTextBox7);
+            this.groupBox2.Controls.Add(this.maskedTextBox4);
             this.groupBox2.Controls.Add(this.label69);
             this.groupBox2.Controls.Add(this.checkedListBox3);
             this.groupBox2.Controls.Add(this.label49);
@@ -1354,7 +1326,6 @@
             this.groupBox2.Controls.Add(this.textBox12);
             this.groupBox2.Controls.Add(this.label42);
             this.groupBox2.Controls.Add(this.label43);
-            this.groupBox2.Controls.Add(this.textBox17);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
@@ -1362,13 +1333,6 @@
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane Osobiste";
-            // 
-            // textBox37
-            // 
-            this.textBox37.Location = new System.Drawing.Point(94, 179);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(160, 20);
-            this.textBox37.TabIndex = 27;
             // 
             // label69
             // 
@@ -1589,13 +1553,6 @@
             this.label43.TabIndex = 8;
             this.label43.Text = "Telefon";
             // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(387, 19);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(160, 20);
-            this.textBox17.TabIndex = 9;
-            // 
             // EdytujDaneKlientaPanel
             // 
             this.EdytujDaneKlientaPanel.Controls.Add(this.UpdateClientDataButton);
@@ -1619,6 +1576,7 @@
             // 
             // DaneOsobiste
             // 
+            this.DaneOsobiste.Controls.Add(this.maskedTextBox5);
             this.DaneOsobiste.Controls.Add(this.textBox18);
             this.DaneOsobiste.Controls.Add(this.label68);
             this.DaneOsobiste.Controls.Add(this.label71);
@@ -1645,7 +1603,6 @@
             this.DaneOsobiste.Controls.Add(this.AdresTBoxEDKlienta);
             this.DaneOsobiste.Controls.Add(this.EmailLabelEDKlienta);
             this.DaneOsobiste.Controls.Add(this.TelefonLabelEDKlienta);
-            this.DaneOsobiste.Controls.Add(this.TelefonTBoxEDKlienta);
             this.DaneOsobiste.Dock = System.Windows.Forms.DockStyle.Top;
             this.DaneOsobiste.Location = new System.Drawing.Point(0, 42);
             this.DaneOsobiste.Name = "DaneOsobiste";
@@ -1656,6 +1613,7 @@
             // 
             // textBox18
             // 
+            this.textBox18.Enabled = false;
             this.textBox18.Location = new System.Drawing.Point(94, 178);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(160, 20);
@@ -1875,13 +1833,6 @@
             this.TelefonLabelEDKlienta.TabIndex = 8;
             this.TelefonLabelEDKlienta.Text = "Telefon";
             // 
-            // TelefonTBoxEDKlienta
-            // 
-            this.TelefonTBoxEDKlienta.Location = new System.Drawing.Point(390, 19);
-            this.TelefonTBoxEDKlienta.Name = "TelefonTBoxEDKlienta";
-            this.TelefonTBoxEDKlienta.Size = new System.Drawing.Size(160, 20);
-            this.TelefonTBoxEDKlienta.TabIndex = 9;
-            // 
             // WyszukajEDKlienta
             // 
             this.WyszukajEDKlienta.Controls.Add(this.NrDowOsTBoxWEDK);
@@ -1953,6 +1904,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.maskedTextBox6);
             this.groupBox8.Controls.Add(this.textBox19);
             this.groupBox8.Controls.Add(this.label72);
             this.groupBox8.Controls.Add(this.label82);
@@ -1973,7 +1925,6 @@
             this.groupBox8.Controls.Add(this.textBox38);
             this.groupBox8.Controls.Add(this.label93);
             this.groupBox8.Controls.Add(this.label94);
-            this.groupBox8.Controls.Add(this.textBox39);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox8.Location = new System.Drawing.Point(0, 42);
             this.groupBox8.Name = "groupBox8";
@@ -2152,13 +2103,6 @@
             this.label94.Size = new System.Drawing.Size(43, 13);
             this.label94.TabIndex = 8;
             this.label94.Text = "Telefon";
-            // 
-            // textBox39
-            // 
-            this.textBox39.Location = new System.Drawing.Point(392, 19);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(160, 20);
-            this.textBox39.TabIndex = 9;
             // 
             // groupBox9
             // 
@@ -3939,6 +3883,75 @@
             this.PlecDispLabel.TabIndex = 12;
             this.PlecDispLabel.Text = "Mężczyzna";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(121, 300);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox1.TabIndex = 35;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Enabled = false;
+            this.maskedTextBox2.Location = new System.Drawing.Point(385, 79);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox2.TabIndex = 37;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(385, 110);
+            this.maskedTextBox3.Mask = "00/00/0000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox3.TabIndex = 38;
+            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(94, 178);
+            this.maskedTextBox4.Mask = "00/00/0000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox4.TabIndex = 38;
+            this.maskedTextBox4.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(390, 17);
+            this.maskedTextBox5.Mask = "000-000-0000";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox5.TabIndex = 38;
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.Location = new System.Drawing.Point(392, 17);
+            this.maskedTextBox6.Mask = "000-000-0000";
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox6.TabIndex = 39;
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.Location = new System.Drawing.Point(387, 19);
+            this.maskedTextBox7.Mask = "000-000-0000";
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox7.TabIndex = 39;
+            // 
+            // maskedTextBox8
+            // 
+            this.maskedTextBox8.Location = new System.Drawing.Point(385, 19);
+            this.maskedTextBox8.Mask = "000-000-0000";
+            this.maskedTextBox8.Name = "maskedTextBox8";
+            this.maskedTextBox8.Size = new System.Drawing.Size(160, 20);
+            this.maskedTextBox8.TabIndex = 39;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4075,7 +4088,6 @@
         private System.Windows.Forms.TextBox AdresTBoxEDKlienta;
         private System.Windows.Forms.Label EmailLabelEDKlienta;
         private System.Windows.Forms.Label TelefonLabelEDKlienta;
-        private System.Windows.Forms.TextBox TelefonTBoxEDKlienta;
         private System.Windows.Forms.GroupBox WyszukajEDKlienta;
         private System.Windows.Forms.TextBox NrDowOsTBoxWEDK;
         private System.Windows.Forms.Label IDKlientaLabelWEDK;
@@ -4084,7 +4096,6 @@
         private System.Windows.Forms.Panel DodajKlientaPanel;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.Label label49;
@@ -4111,7 +4122,6 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Panel WyszukiwanieRezerwacjiPanel;
         private System.Windows.Forms.ListView listView2;
         private ToggleBox toggleBox3;
@@ -4271,17 +4281,14 @@
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.TextBox textBox41;
         private System.Windows.Forms.Panel DodajPracownikaPanel;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label96;
@@ -4299,12 +4306,10 @@
         private System.Windows.Forms.TextBox textBox47;
         private System.Windows.Forms.Label label106;
         private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.TextBox textBox48;
         public System.Windows.Forms.Panel DodajPojazdPanel;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox textBox51;
-        private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.TextBox textBox49;
         private System.Windows.Forms.TextBox textBox50;
         private System.Windows.Forms.RichTextBox richTextBox4;
@@ -4379,5 +4384,13 @@
         private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
     }
 }

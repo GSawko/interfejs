@@ -22,8 +22,16 @@ namespace GUI
         public Form4(string Login)
         {
             InitializeComponent();
+            LoadMenuData(Login);
             LoadCheckedListBox();
             LoadComboBox(comboBox5);
+        }
+
+        private void LoadMenuData(string login)
+        {
+            var owner = WorkerService.GetWorker(login);
+
+            label2.Text = owner.Imie + " " + owner.Nazwisko;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -43,6 +51,7 @@ namespace GUI
 
         private void button18_Click(object sender, EventArgs e)
         {
+            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             DodajPracownikaPanel.BringToFront();
         }
 
@@ -122,7 +131,7 @@ namespace GUI
             textBox35.Text = pracownicy.Nazwisko;
             textBox38.Text = pracownicy.Adres;
             comboBox2.SelectedIndex = pracownicy.Plec == 1 ? 1 : 0;
-            textBox39.Text = pracownicy.Telefon;
+            maskedTextBox6.Text = pracownicy.Telefon;
             textBox36.Text = pracownicy.Email;
             textBox24.Text = pracownicy.DataZatr.ToString("d");
             textBox19.Text = pracownicy.DataUr.ToString("d");
@@ -136,8 +145,8 @@ namespace GUI
             editWorker.DrugieImie = textBox26.TextOrDefault();
             editWorker.Nazwisko = textBox35.TextOrDefault();
             editWorker.Adres = textBox38.TextOrDefault();
-            editWorker.Telefon = textBox39.Text;
-            editWorker.Email = textBox36.Text;
+            editWorker.Telefon = maskedTextBox6.TextOrDefault();
+            editWorker.Email = textBox36.TextOrDefault();
 
             //editWorker.Zdjecie =
         }
@@ -185,7 +194,7 @@ namespace GUI
             AdresTBoxEDKlienta.Text = klient.Adres;
             PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
             textBox18.Text = klient.DataUr.ToString("d");
-            TelefonTBoxEDKlienta.Text = klient.Telefon;
+            maskedTextBox5.Text = klient.Telefon;
             EmailTBoxEDKlienta.Text = klient.Email;
             NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
             NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
@@ -204,7 +213,7 @@ namespace GUI
             editClient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
             editClient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
             editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
-            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+            editClient.Telefon = maskedTextBox5.TextOrDefault();
             editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
             //editClient.Zdjecie =
 
@@ -241,8 +250,8 @@ namespace GUI
             newClient.Nazwisko = textBox13.TextOrDefault();
             newClient.Adres = textBox12.TextOrDefault();
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newClient.DataUr = DateTime.Now;
-            newClient.Telefon = textBox17.TextOrDefault();
+            newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
+            newClient.Telefon = maskedTextBox7.TextOrDefault();
             newClient.Email = textBox16.TextOrDefault();
             newClient.NrPrawaJazd = textBox15.TextOrDefault();
             newClient.NrDowOsob = textBox14.TextOrDefault();
@@ -279,10 +288,10 @@ namespace GUI
             newWorker.Nazwisko = textBox45.TextOrDefault();
             newWorker.Adres = textBox47.TextOrDefault();
             newWorker.Plec = (sbyte)comboBox3.SelectedIndex;
-            newWorker.Telefon = textBox48.TextOrDefault();
+            newWorker.Telefon = maskedTextBox8.TextOrDefault();
             newWorker.Email = textBox46.TextOrDefault();
-            newWorker.DataZatr = DateTime.Now;  //textBox34
-            newWorker.DataUr = DateTime.Now;    //textBox33
+            newWorker.DataZatr = DateTime.Now;
+            newWorker.DataUr = DateTime.Parse(maskedTextBox3.Text);
             //newWorker.Zdjecie =
 
             newWorker.Login = "p_" + newWorker.Imie + newWorker.DataUr.ToString("dd");
@@ -308,7 +317,7 @@ namespace GUI
             newVehicle.NrRejestr = textBox43.TextOrDefault();
             newVehicle.Przebieg = int.Parse(textBox49.Text);
             newVehicle.ZaGodz = float.Parse(textBox51.Text);
-            newVehicle.DataProd = DateTime.Parse(textBox52.Text);
+            newVehicle.DataProd = DateTime.Parse(maskedTextBox1.Text);
             newVehicle.Sprawny = (sbyte)(checkBox3.Checked == true ? 1 : 0);
             newVehicle.Opis = richTextBox4.TextOrDefault();
             newVehicle.Kolor = textBox50.TextOrDefault();
