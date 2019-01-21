@@ -83,14 +83,9 @@ namespace GUI
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
         {
-            using (var entities = new DBEntities())
+            foreach (var licenceType in DrivingLicenceService.GetDrivingLicences())
             {
-                var driveLicenceType = entities.KATEGORIEPJAZDY.ToList();
-
-                foreach (var licenceType in driveLicenceType)
-                {
-                    checkedListBox.Items.Add(licenceType.Nazwa);
-                }
+                checkedListBox.Items.Add(licenceType.Nazwa);
             }
         }
 
@@ -103,14 +98,11 @@ namespace GUI
 
         private void LoadComboBox(ComboBox comboBox)
         {
-            using (var entities = new DBEntities())
+            foreach (var model in CarBrandService.GetCarBrands())
             {
-                foreach (var model in entities.MARKI)
-                {
-                    comboBox.Items.Add(model);
-                }
-                comboBox.SelectedIndex = 0;
+                comboBox.Items.Add(model);
             }
+            comboBox.SelectedIndex = 0;
         }
 
         private void textBox41_TextChanged(object sender, EventArgs e)

@@ -2509,7 +2509,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
-            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(4952, 0);
+            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(5226, 0);
             this.PrzegladyToggle.WorkingArea.TabIndex = 2;
             this.PrzegladyToggle.WorkingArea.Visible = false;
             // 
@@ -2568,7 +2568,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.OpinieToggle.WorkingArea.Name = "WorkingArea";
-            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(4952, 0);
+            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(5226, 0);
             this.OpinieToggle.WorkingArea.TabIndex = 2;
             this.OpinieToggle.WorkingArea.Visible = false;
             // 
@@ -2840,7 +2840,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox5.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox5.WorkingArea.Name = "WorkingArea";
-            this.toggleBox5.WorkingArea.Size = new System.Drawing.Size(4952, 0);
+            this.toggleBox5.WorkingArea.Size = new System.Drawing.Size(5226, 0);
             this.toggleBox5.WorkingArea.TabIndex = 2;
             this.toggleBox5.WorkingArea.Visible = false;
             // 
@@ -2899,7 +2899,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox6.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox6.WorkingArea.Name = "WorkingArea";
-            this.toggleBox6.WorkingArea.Size = new System.Drawing.Size(4952, 0);
+            this.toggleBox6.WorkingArea.Size = new System.Drawing.Size(5226, 0);
             this.toggleBox6.WorkingArea.TabIndex = 2;
             this.toggleBox6.WorkingArea.Visible = false;
             // 
@@ -3107,7 +3107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox3.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox3.WorkingArea.Name = "WorkingArea";
-            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(6696, 0);
+            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(6987, 0);
             this.toggleBox3.WorkingArea.TabIndex = 2;
             this.toggleBox3.WorkingArea.Visible = false;
             // 
@@ -3320,7 +3320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox4.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox4.WorkingArea.Name = "WorkingArea";
-            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(6696, 0);
+            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(6987, 0);
             this.toggleBox4.WorkingArea.TabIndex = 2;
             this.toggleBox4.WorkingArea.Visible = false;
             // 
@@ -3515,7 +3515,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox2.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox2.WorkingArea.Name = "WorkingArea";
-            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(6696, 0);
+            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(6987, 0);
             this.toggleBox2.WorkingArea.TabIndex = 2;
             this.toggleBox2.WorkingArea.Visible = false;
             // 
@@ -3601,7 +3601,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox1.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox1.WorkingArea.Name = "WorkingArea";
-            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(6696, 0);
+            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(6987, 0);
             this.toggleBox1.WorkingArea.TabIndex = 2;
             this.toggleBox1.WorkingArea.Visible = false;
             // 
