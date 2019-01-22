@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.GridView;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace GUI.Service
         {
             using (var entities = new DBEntities())
             {
+                entities.Configuration.ProxyCreationEnabled = false;
                 var vehicles = entities.POJAZDY
                     .Include("MARKI")
                     .Include("PRZEGLADY")
@@ -26,20 +28,20 @@ namespace GUI.Service
             }
         }
 
-        public static List<POJAZDY> GetVehicle(int idVehicle)
+        public static POJAZDY GetVehicle(int idVehicle)
         {
             using (var entities = new DBEntities())
             {
-                var vehicles = entities.POJAZDY
+                var vehicle = entities.POJAZDY
                     .Where(p => p.idPojazd == idVehicle)
                     .Include("MARKI")
                     .Include("PRZEGLADY")
                     .Include("REZERWACJE")
                     .Include("ZDJECIA")
                     .Include("KATEGORIEPJAZDY")
-                    .ToList();
+                    .FirstOrDefault();
 
-                return vehicles;
+                return vehicle;
             }
         }
 

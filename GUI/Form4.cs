@@ -1,4 +1,5 @@
-﻿using GUI.Service;
+﻿using GUI.GridView;
+using GUI.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace GUI
         private PRACOWNICY _currentEditPracownik;
         private POJAZDY _currentEditPojazd;
         private int _indexPojazd;
-        private List<POJAZDY> _listPojazd;
+        private List<CarListGrid> _listPojazd = new List<CarListGrid>();
 
         public Form4(string Login)
         {
@@ -74,6 +75,12 @@ namespace GUI
         private void button2_Click(object sender, EventArgs e)
         {
             PodgladRezerwacjiPanel.BringToFront();
+        }
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            LoadCarList();
+            ListaPojazdowPanel.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -332,6 +339,50 @@ namespace GUI
                 MessageBox.Show("Dodano pojazd.");
             else
                 MessageBox.Show("Błąd dodania pojazdu!");
+        }
+
+        private void LoadVehicleGridList()
+        {
+            var cars = VehicleService.GetVehicles();
+            foreach (CarListGrid car in cars)
+            {
+                _listPojazd.Add(car);
+            }
+        }
+
+        private void LoadCarList()
+        {
+            LoadVehicleGridList();
+            dataGridView1.DataSource = _listPojazd;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var row = dataGridView1.SelectedRows[0];
+                var id = (int)row.Cells["idPojazd"].Value;
+                ShowSelectedVehicleOnEditScreen(id);
+            }
+
+        }
+
+        private void ShowSelectedVehicleOnEditScreen(int id)
+        {
+            var car = VehicleService.GetVehicle(id) ?? new POJAZDY();
+            ShowVehicleOnEditScreen(car);
+            EdytujPojazdPanel.BringToFront();
+        }
+
+        private void ShowVehicleOnEditScreen(POJAZDY vehicle)
+        {
+            textBox64.Text = vehicle.MARKI.Nazwa;
+            textBox63.Text = vehicle.MARKI.Model;
+            textBox62.Text = vehicle.Kolor;
+            textBox61.Text = vehicle.Przebieg.ToString("D");
+            textBox60.Text = vehicle.DataProd.ToString("d");
+            textBox59.Text = vehicle.ZaGodz.ToString("C");
+            richTextBox7.Text = vehicle.Opis;
         }
     }
 }

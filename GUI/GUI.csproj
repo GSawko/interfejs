@@ -104,6 +104,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridView\CarListGrid.cs" />
     <Compile Include="Service\CarBrandService.cs" />
     <Compile Include="Service\DrivingLicenceService.cs" />
     <Compile Include="Extensions\MaskedTextBoxExtension.cs" />
