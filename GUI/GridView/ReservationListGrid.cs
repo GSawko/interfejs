@@ -10,8 +10,9 @@ namespace GUI.GridView
     {
         public int idRezerw { get; set; }
         public string DataWypoz { get; set; }
+        public DateTime DateWypoz { get; set; }
         public string DataZwrotu { get; set; }
-
+        public DateTime DateZwrotu { get; set; }
         public string Pojazd { get; set; }
         public string Klient { get; set; }
 
@@ -21,7 +22,9 @@ namespace GUI.GridView
         {
             idRezerw = rezerwacje.idRezerw;
             DataWypoz = rezerwacje.DataWypoz.ToString("d");
+            DateWypoz = rezerwacje.DataWypoz;
             DataZwrotu = rezerwacje.DataZwrotu.ToString("d");
+            DateZwrotu = rezerwacje.DataZwrotu;
             Pojazd = rezerwacje.POJAZDY.MARKI.Nazwa;
             Klient = rezerwacje.KLIENCI.Imie + " " + rezerwacje.KLIENCI.Nazwisko;
         }

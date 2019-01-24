@@ -23,6 +23,8 @@ namespace GUI
         private POJAZDY _currentEditVehicle;
         private List<VehicleListGrid> _vehicleListGrid = new List<VehicleListGrid>();
 
+        private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
+
         public Form4(string Login)
         {
             InitializeComponent();
@@ -520,12 +522,12 @@ namespace GUI
         private void LoadReservationList()
         {
             var reservations = ReservationService.GetReservations();
-            List<ReservationListGrid> reservationListGrid = new List<ReservationListGrid>();
-            foreach (ReservationListGrid reservationView in reservations)
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
             {
-                reservationListGrid.Add(reservationView);
+                _reservationListGrid.Add(reservation);
             }
-            dataGridView4.DataSource = reservationListGrid;
+            dataGridView4.DataSource = _reservationListGrid;
         }
 
         private void ShowSelectedReservationOnEditScreen(int id)
@@ -543,6 +545,29 @@ namespace GUI
                 var id = (int)row.Cells["idRezerw"].Value;
                 //Wywołanie funkcji otwierającej szczegóły na podstawie idRezerw
             }
+        }
+
+        private void ReservationListFilter(object sender, EventArgs e)
+        {
+            var filterList = _reservationListGrid;
+           
+            DateTime startWypoz = dateTimePicker1.Value;
+            if (checkBox4.Checked)
+                filterList = filterList.Where(r => r.DateWypoz >= startWypoz).ToList();
+
+            DateTime startZwrotu = dateTimePicker2.Value;
+            if (checkBox5.Checked)
+                filterList = filterList.Where(r => r.DateZwrotu >= startZwrotu).ToList();
+
+            string pojazd = textBox48.TextOrDefault();
+            if (pojazd != null)
+                filterList = filterList.Where(r => r.Pojazd.Contains(pojazd, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string klient = textBox54.TextOrDefault();
+            if (klient != null)
+                filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView4.DataSource = filterList;
         }
     }
 }
