@@ -9,8 +9,7 @@ namespace GUI.GridView
     class WorkerListGrid
     {
         public int idPrac { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
+        public string ImieNazwisko { get; set; }
         public string DataZatr { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
@@ -21,8 +20,7 @@ namespace GUI.GridView
         public WorkerListGrid(PRACOWNICY pracownik)
         {
             idPrac = pracownik.idPrac;
-            Imie = pracownik.Imie;
-            Nazwisko = pracownik.Nazwisko;
+            ImieNazwisko = pracownik.Imie + " " + pracownik.Nazwisko;
             DataZatr = pracownik.DataZatr.ToString("d");
             Telefon = pracownik.Telefon;
             Email = pracownik.Email;

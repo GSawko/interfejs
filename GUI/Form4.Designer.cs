@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.PrawyPanel = new System.Windows.Forms.Panel();
-            this.ListaKlientowPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ListaPojazdowPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label127 = new System.Windows.Forms.Label();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.label128 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idPojazd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +45,56 @@
             this.NrRejestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaGodz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sprawny = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListaPracownikowPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.label125 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idPrac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImieNazwiskoP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataZatr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListaKlientowPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImieNazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataUr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrDowOsob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListaRezerwacjiPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.idRezerw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataWypoz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataZwrotu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pojazd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Klient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdytujPojazdPanel = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
+            this.toggleBox5 = new GUI.ToggleBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.toggleBox6 = new GUI.ToggleBox();
+            this.listView4 = new System.Windows.Forms.ListView();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.textBox59 = new System.Windows.Forms.TextBox();
             this.textBox60 = new System.Windows.Forms.TextBox();
@@ -265,6 +313,12 @@
             this.label79 = new System.Windows.Forms.Label();
             this.PodgladPojazduPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
+            this.PrzegladyToggle = new GUI.ToggleBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.OpinieToggle = new GUI.ToggleBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SamochódBox = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -288,51 +342,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.WyszukiwanieRezerwacjiPanel = new System.Windows.Forms.Panel();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.KlientMenuPanel = new System.Windows.Forms.Panel();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.ListaPracownikowPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.idPrac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataZatr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button23 = new System.Windows.Forms.Button();
-            this.ListaRezerwacjiPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.toggleBox5 = new GUI.ToggleBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.toggleBox6 = new GUI.ToggleBox();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.PrzegladyToggle = new GUI.ToggleBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.OpinieToggle = new GUI.ToggleBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.toggleBox3 = new GUI.ToggleBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -397,27 +406,45 @@
             this.NazwiskoDispLabel = new System.Windows.Forms.Label();
             this.DataUrLabel = new System.Windows.Forms.Label();
             this.PlecDispLabel = new System.Windows.Forms.Label();
-            this.idRezerw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataWypoz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataZwrotu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pojazd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Klient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImieNazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataUr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NrDowOsob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.KlientMenuPanel = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6.SuspendLayout();
             this.PrawyPanel.SuspendLayout();
-            this.ListaKlientowPanel.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.ListaPojazdowPanel.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ListaPracownikowPanel.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.ListaKlientowPanel.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.ListaRezerwacjiPanel.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.EdytujPojazdPanel.SuspendLayout();
+            this.toggleBox5.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.toggleBox6.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.DodajPracownikaPanel.SuspendLayout();
@@ -453,25 +480,14 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.PodgladPojazduPanel.SuspendLayout();
+            this.PrzegladyToggle.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.OpinieToggle.SuspendLayout();
             this.SamochódBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.WyszukiwanieRezerwacjiPanel.SuspendLayout();
-            this.KlientMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.ListaPracownikowPanel.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.ListaRezerwacjiPanel.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.toggleBox5.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.toggleBox6.SuspendLayout();
-            this.PrzegladyToggle.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.OpinieToggle.SuspendLayout();
             this.toggleBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -485,6 +501,8 @@
             this.toggleBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).BeginInit();
             this.Wyszukaj.SuspendLayout();
+            this.KlientMenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel6
@@ -501,16 +519,16 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(984, 461);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
+            this.PrawyPanel.Controls.Add(this.ListaPracownikowPanel);
             this.PrawyPanel.Controls.Add(this.ListaKlientowPanel);
             this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
-            this.PrawyPanel.Controls.Add(this.ListaPracownikowPanel);
-            this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
             this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.DodajPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
@@ -523,69 +541,8 @@
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
-            this.PrawyPanel.Size = new System.Drawing.Size(585, 444);
+            this.PrawyPanel.Size = new System.Drawing.Size(769, 455);
             this.PrawyPanel.TabIndex = 21;
-            // 
-            // ListaKlientowPanel
-            // 
-            this.ListaKlientowPanel.Controls.Add(this.tableLayoutPanel13);
-            this.ListaKlientowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListaKlientowPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListaKlientowPanel.Name = "ListaKlientowPanel";
-            this.ListaKlientowPanel.Size = new System.Drawing.Size(585, 444);
-            this.ListaKlientowPanel.TabIndex = 0;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 1;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
-            this.tableLayoutPanel13.Controls.Add(this.groupBox12, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.dataGridView2, 0, 1);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 2;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(585, 444);
-            this.tableLayoutPanel13.TabIndex = 3;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox12.Location = new System.Drawing.Point(3, 3);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(579, 41);
-            this.groupBox12.TabIndex = 1;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Wyszukiwanie";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idKlient,
-            this.ImieNazwisko,
-            this.DataUr,
-            this.NrDowOsob,
-            this.Telefon,
-            this.Email,
-            this.Login});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 50);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(579, 391);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // ListaPojazdowPanel
             // 
@@ -593,7 +550,7 @@
             this.ListaPojazdowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListaPojazdowPanel.Location = new System.Drawing.Point(0, 0);
             this.ListaPojazdowPanel.Name = "ListaPojazdowPanel";
-            this.ListaPojazdowPanel.Size = new System.Drawing.Size(585, 444);
+            this.ListaPojazdowPanel.Size = new System.Drawing.Size(769, 455);
             this.ListaPojazdowPanel.TabIndex = 40;
             // 
             // tableLayoutPanel11
@@ -610,18 +567,61 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(585, 444);
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(769, 455);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.label127);
+            this.groupBox11.Controls.Add(this.textBox52);
+            this.groupBox11.Controls.Add(this.textBox53);
+            this.groupBox11.Controls.Add(this.label128);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.Location = new System.Drawing.Point(3, 3);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(579, 41);
+            this.groupBox11.Size = new System.Drawing.Size(763, 43);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Wyszukiwanie";
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(241, 20);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(68, 13);
+            this.label127.TabIndex = 10;
+            this.label127.Text = "Nr rejestracji:";
+            // 
+            // textBox52
+            // 
+            this.textBox52.Location = new System.Drawing.Point(311, 17);
+            this.textBox52.Name = "textBox52";
+            this.textBox52.Size = new System.Drawing.Size(141, 20);
+            this.textBox52.TabIndex = 9;
+            this.textBox52.TextChanged += new System.EventHandler(this.VehicleListFilter);
+            // 
+            // textBox53
+            // 
+            this.textBox53.Location = new System.Drawing.Point(69, 17);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.Size = new System.Drawing.Size(141, 20);
+            this.textBox53.TabIndex = 8;
+            this.textBox53.TextChanged += new System.EventHandler(this.VehicleListFilter);
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(27, 20);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(40, 13);
+            this.label128.TabIndex = 7;
+            this.label128.Text = "Marka:";
             // 
             // dataGridView1
             // 
@@ -638,12 +638,12 @@
             this.ZaGodz,
             this.Sprawny});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 52);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(763, 400);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -696,6 +696,448 @@
             this.Sprawny.Name = "Sprawny";
             this.Sprawny.ReadOnly = true;
             // 
+            // ListaPracownikowPanel
+            // 
+            this.ListaPracownikowPanel.Controls.Add(this.tableLayoutPanel14);
+            this.ListaPracownikowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListaPracownikowPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListaPracownikowPanel.Name = "ListaPracownikowPanel";
+            this.ListaPracownikowPanel.Size = new System.Drawing.Size(769, 455);
+            this.ListaPracownikowPanel.TabIndex = 4;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
+            this.tableLayoutPanel14.Controls.Add(this.groupBox14, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.dataGridView3, 0, 1);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(769, 455);
+            this.tableLayoutPanel14.TabIndex = 3;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.textBox37);
+            this.groupBox14.Controls.Add(this.label113);
+            this.groupBox14.Controls.Add(this.label114);
+            this.groupBox14.Controls.Add(this.textBox39);
+            this.groupBox14.Controls.Add(this.textBox44);
+            this.groupBox14.Controls.Add(this.label125);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox14.Location = new System.Drawing.Point(3, 3);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(763, 43);
+            this.groupBox14.TabIndex = 1;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Wyszukiwanie";
+            // 
+            // textBox37
+            // 
+            this.textBox37.Location = new System.Drawing.Point(491, 15);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.Size = new System.Drawing.Size(140, 20);
+            this.textBox37.TabIndex = 18;
+            this.textBox37.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(453, 18);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(36, 13);
+            this.label113.TabIndex = 17;
+            this.label113.Text = "Login:";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(244, 18);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(46, 13);
+            this.label114.TabIndex = 16;
+            this.label114.Text = "Telefon:";
+            // 
+            // textBox39
+            // 
+            this.textBox39.Location = new System.Drawing.Point(292, 15);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.Size = new System.Drawing.Size(140, 20);
+            this.textBox39.TabIndex = 15;
+            this.textBox39.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            // 
+            // textBox44
+            // 
+            this.textBox44.Location = new System.Drawing.Point(92, 16);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new System.Drawing.Size(140, 20);
+            this.textBox44.TabIndex = 14;
+            this.textBox44.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(13, 19);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(78, 13);
+            this.label125.TabIndex = 13;
+            this.label125.Text = "Imię Nazwisko:";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPrac,
+            this.ImieNazwiskoP,
+            this.DataZatr,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 52);
+            this.dataGridView3.MultiSelect = false;
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(763, 400);
+            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
+            // 
+            // idPrac
+            // 
+            this.idPrac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idPrac.DataPropertyName = "idPrac";
+            this.idPrac.HeaderText = "Id";
+            this.idPrac.Name = "idPrac";
+            this.idPrac.ReadOnly = true;
+            this.idPrac.Visible = false;
+            // 
+            // ImieNazwiskoP
+            // 
+            this.ImieNazwiskoP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ImieNazwiskoP.DataPropertyName = "ImieNazwisko";
+            this.ImieNazwiskoP.HeaderText = "Imie Nazwisko";
+            this.ImieNazwiskoP.Name = "ImieNazwiskoP";
+            this.ImieNazwiskoP.ReadOnly = true;
+            // 
+            // DataZatr
+            // 
+            this.DataZatr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataZatr.DataPropertyName = "DataZatr";
+            this.DataZatr.HeaderText = "Data Zatrudnienia";
+            this.DataZatr.Name = "DataZatr";
+            this.DataZatr.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Telefon";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Telofon";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Login";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Login";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // ListaKlientowPanel
+            // 
+            this.ListaKlientowPanel.Controls.Add(this.tableLayoutPanel13);
+            this.ListaKlientowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListaKlientowPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListaKlientowPanel.Name = "ListaKlientowPanel";
+            this.ListaKlientowPanel.Size = new System.Drawing.Size(769, 455);
+            this.ListaKlientowPanel.TabIndex = 0;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
+            this.tableLayoutPanel13.Controls.Add(this.groupBox12, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.dataGridView2, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(769, 455);
+            this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBox17);
+            this.groupBox12.Controls.Add(this.label108);
+            this.groupBox12.Controls.Add(this.label110);
+            this.groupBox12.Controls.Add(this.textBox33);
+            this.groupBox12.Controls.Add(this.textBox34);
+            this.groupBox12.Controls.Add(this.label111);
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.Location = new System.Drawing.Point(3, 3);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(763, 43);
+            this.groupBox12.TabIndex = 1;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Wyszukiwanie";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(518, 16);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(119, 20);
+            this.textBox17.TabIndex = 12;
+            this.textBox17.TextChanged += new System.EventHandler(this.ClientListFilter);
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(399, 20);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(116, 13);
+            this.label108.TabIndex = 11;
+            this.label108.Text = "Nr dowodu osobistego:";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(231, 20);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(46, 13);
+            this.label110.TabIndex = 10;
+            this.label110.Text = "Telefon:";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Location = new System.Drawing.Point(279, 16);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(109, 20);
+            this.textBox33.TabIndex = 9;
+            this.textBox33.TextChanged += new System.EventHandler(this.ClientListFilter);
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(91, 17);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(131, 20);
+            this.textBox34.TabIndex = 8;
+            this.textBox34.TextChanged += new System.EventHandler(this.ClientListFilter);
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(12, 21);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(78, 13);
+            this.label111.TabIndex = 7;
+            this.label111.Text = "Imię Nazwisko:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idKlient,
+            this.ImieNazwisko,
+            this.DataUr,
+            this.NrDowOsob,
+            this.Telefon,
+            this.Email,
+            this.Login});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 52);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(763, 400);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // idKlient
+            // 
+            this.idKlient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idKlient.DataPropertyName = "idKlient";
+            this.idKlient.HeaderText = "Id";
+            this.idKlient.Name = "idKlient";
+            this.idKlient.ReadOnly = true;
+            this.idKlient.Visible = false;
+            // 
+            // ImieNazwisko
+            // 
+            this.ImieNazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ImieNazwisko.DataPropertyName = "ImieNazwisko";
+            this.ImieNazwisko.HeaderText = "Imię Nazwisko";
+            this.ImieNazwisko.Name = "ImieNazwisko";
+            this.ImieNazwisko.ReadOnly = true;
+            // 
+            // DataUr
+            // 
+            this.DataUr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataUr.DataPropertyName = "DataUr";
+            this.DataUr.HeaderText = "Data urodzenia";
+            this.DataUr.Name = "DataUr";
+            this.DataUr.ReadOnly = true;
+            // 
+            // NrDowOsob
+            // 
+            this.NrDowOsob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NrDowOsob.DataPropertyName = "NrDowOsob";
+            this.NrDowOsob.FillWeight = 150F;
+            this.NrDowOsob.HeaderText = "Nr Dowodu Osobistego";
+            this.NrDowOsob.Name = "NrDowOsob";
+            this.NrDowOsob.ReadOnly = true;
+            // 
+            // Telefon
+            // 
+            this.Telefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Telefon.DataPropertyName = "Telefon";
+            this.Telefon.HeaderText = "Telefon";
+            this.Telefon.Name = "Telefon";
+            this.Telefon.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Login
+            // 
+            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Login.DataPropertyName = "Login";
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // ListaRezerwacjiPanel
+            // 
+            this.ListaRezerwacjiPanel.Controls.Add(this.tableLayoutPanel15);
+            this.ListaRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListaRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListaRezerwacjiPanel.Name = "ListaRezerwacjiPanel";
+            this.ListaRezerwacjiPanel.Size = new System.Drawing.Size(769, 455);
+            this.ListaRezerwacjiPanel.TabIndex = 41;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
+            this.tableLayoutPanel15.Controls.Add(this.groupBox16, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.dataGridView4, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(769, 455);
+            this.tableLayoutPanel15.TabIndex = 3;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox16.Location = new System.Drawing.Point(3, 3);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(763, 43);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Wyszukiwanie";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idRezerw,
+            this.DataWypoz,
+            this.DataZwrotu,
+            this.Pojazd,
+            this.Klient});
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 52);
+            this.dataGridView4.MultiSelect = false;
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(763, 400);
+            this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
+            // 
+            // idRezerw
+            // 
+            this.idRezerw.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idRezerw.DataPropertyName = "idRezerw";
+            this.idRezerw.HeaderText = "Id";
+            this.idRezerw.Name = "idRezerw";
+            this.idRezerw.ReadOnly = true;
+            this.idRezerw.Visible = false;
+            // 
+            // DataWypoz
+            // 
+            this.DataWypoz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataWypoz.DataPropertyName = "DataWypoz";
+            this.DataWypoz.HeaderText = "Data wypożyczenia";
+            this.DataWypoz.Name = "DataWypoz";
+            this.DataWypoz.ReadOnly = true;
+            // 
+            // DataZwrotu
+            // 
+            this.DataZwrotu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataZwrotu.DataPropertyName = "DataZwrotu";
+            this.DataZwrotu.HeaderText = "Data zwrotu";
+            this.DataZwrotu.Name = "DataZwrotu";
+            this.DataZwrotu.ReadOnly = true;
+            // 
+            // Pojazd
+            // 
+            this.Pojazd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Pojazd.DataPropertyName = "Pojazd";
+            this.Pojazd.HeaderText = "Pojazd";
+            this.Pojazd.Name = "Pojazd";
+            this.Pojazd.ReadOnly = true;
+            // 
+            // Klient
+            // 
+            this.Klient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Klient.DataPropertyName = "Klient";
+            this.Klient.HeaderText = "Klient";
+            this.Klient.Name = "Klient";
+            this.Klient.ReadOnly = true;
+            // 
             // EdytujPojazdPanel
             // 
             this.EdytujPojazdPanel.AutoScroll = true;
@@ -706,7 +1148,7 @@
             this.EdytujPojazdPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujPojazdPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujPojazdPanel.Name = "EdytujPojazdPanel";
-            this.EdytujPojazdPanel.Size = new System.Drawing.Size(585, 444);
+            this.EdytujPojazdPanel.Size = new System.Drawing.Size(769, 455);
             this.EdytujPojazdPanel.TabIndex = 30;
             // 
             // button17
@@ -714,10 +1156,102 @@
             this.button17.Dock = System.Windows.Forms.DockStyle.Top;
             this.button17.Location = new System.Drawing.Point(0, 494);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(568, 23);
+            this.button17.Size = new System.Drawing.Size(752, 23);
             this.button17.TabIndex = 24;
             this.button17.Text = "Dalej";
             this.button17.UseVisualStyleBackColor = true;
+            // 
+            // toggleBox5
+            // 
+            this.toggleBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.toggleBox5.Caption = "Przeglądy";
+            this.toggleBox5.Controls.Add(this.tableLayoutPanel12);
+            this.toggleBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toggleBox5.Location = new System.Drawing.Point(0, 469);
+            this.toggleBox5.Name = "toggleBox5";
+            this.toggleBox5.On = false;
+            this.toggleBox5.Size = new System.Drawing.Size(752, 25);
+            this.toggleBox5.TabIndex = 21;
+            // 
+            // toggleBox5.WorkingArea
+            // 
+            this.toggleBox5.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toggleBox5.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.toggleBox5.WorkingArea.Name = "WorkingArea";
+            this.toggleBox5.WorkingArea.Size = new System.Drawing.Size(13634, 0);
+            this.toggleBox5.WorkingArea.TabIndex = 2;
+            this.toggleBox5.WorkingArea.Visible = false;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.richTextBox6, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.listBox3, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(562, 244);
+            this.tableLayoutPanel12.TabIndex = 21;
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox6.Location = new System.Drawing.Point(284, 3);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.Size = new System.Drawing.Size(275, 238);
+            this.richTextBox6.TabIndex = 1;
+            this.richTextBox6.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
+            // 
+            // listBox3
+            // 
+            this.listBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Items.AddRange(new object[] {
+            "01-01-2016",
+            "02-03-2017",
+            "03-02-2018"});
+            this.listBox3.Location = new System.Drawing.Point(3, 3);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(275, 238);
+            this.listBox3.TabIndex = 0;
+            // 
+            // toggleBox6
+            // 
+            this.toggleBox6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.toggleBox6.Caption = "Opinie";
+            this.toggleBox6.Controls.Add(this.listView4);
+            this.toggleBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toggleBox6.Location = new System.Drawing.Point(0, 444);
+            this.toggleBox6.Name = "toggleBox6";
+            this.toggleBox6.On = false;
+            this.toggleBox6.Size = new System.Drawing.Size(752, 25);
+            this.toggleBox6.TabIndex = 1;
+            // 
+            // toggleBox6.WorkingArea
+            // 
+            this.toggleBox6.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toggleBox6.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.toggleBox6.WorkingArea.Name = "WorkingArea";
+            this.toggleBox6.WorkingArea.Size = new System.Drawing.Size(13634, 0);
+            this.toggleBox6.WorkingArea.TabIndex = 2;
+            this.toggleBox6.WorkingArea.Visible = false;
+            // 
+            // listView4
+            // 
+            this.listView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView4.Location = new System.Drawing.Point(2, 31);
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(562, 283);
+            this.listView4.TabIndex = 0;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.List;
             // 
             // groupBox15
             // 
@@ -739,7 +1273,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(568, 444);
+            this.groupBox15.Size = new System.Drawing.Size(752, 444);
             this.groupBox15.TabIndex = 26;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = " ";
@@ -876,13 +1410,13 @@
             this.DodajPracownikaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DodajPracownikaPanel.Location = new System.Drawing.Point(0, 0);
             this.DodajPracownikaPanel.Name = "DodajPracownikaPanel";
-            this.DodajPracownikaPanel.Size = new System.Drawing.Size(585, 444);
+            this.DodajPracownikaPanel.Size = new System.Drawing.Size(769, 455);
             this.DodajPracownikaPanel.TabIndex = 26;
             // 
             // button13
             // 
             this.button13.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button13.Location = new System.Drawing.Point(234, 412);
+            this.button13.Location = new System.Drawing.Point(326, 423);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 23);
             this.button13.TabIndex = 21;
@@ -917,7 +1451,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(585, 404);
+            this.groupBox10.Size = new System.Drawing.Size(769, 404);
             this.groupBox10.TabIndex = 19;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Dane Osobiste";
@@ -1118,13 +1652,13 @@
             this.DodajKlientaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DodajKlientaPanel.Location = new System.Drawing.Point(0, 0);
             this.DodajKlientaPanel.Name = "DodajKlientaPanel";
-            this.DodajKlientaPanel.Size = new System.Drawing.Size(585, 444);
+            this.DodajKlientaPanel.Size = new System.Drawing.Size(769, 455);
             this.DodajKlientaPanel.TabIndex = 12;
             // 
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button10.Location = new System.Drawing.Point(234, 412);
+            this.button10.Location = new System.Drawing.Point(326, 423);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 21;
@@ -1165,7 +1699,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 404);
+            this.groupBox2.Size = new System.Drawing.Size(769, 404);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane Osobiste";
@@ -1414,7 +1948,7 @@
             this.EdytujPracownikaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujPracownikaPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujPracownikaPanel.Name = "EdytujPracownikaPanel";
-            this.EdytujPracownikaPanel.Size = new System.Drawing.Size(585, 444);
+            this.EdytujPracownikaPanel.Size = new System.Drawing.Size(769, 455);
             this.EdytujPracownikaPanel.TabIndex = 25;
             // 
             // button4
@@ -1453,7 +1987,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox8.Location = new System.Drawing.Point(0, 42);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(585, 344);
+            this.groupBox8.Size = new System.Drawing.Size(769, 344);
             this.groupBox8.TabIndex = 23;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Dane Osobiste";
@@ -1644,7 +2178,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(585, 42);
+            this.groupBox9.Size = new System.Drawing.Size(769, 42);
             this.groupBox9.TabIndex = 22;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Wyszukaj";
@@ -1674,7 +2208,7 @@
             this.EdytujDaneKlientaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujDaneKlientaPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujDaneKlientaPanel.Name = "EdytujDaneKlientaPanel";
-            this.EdytujDaneKlientaPanel.Size = new System.Drawing.Size(585, 444);
+            this.EdytujDaneKlientaPanel.Size = new System.Drawing.Size(769, 455);
             this.EdytujDaneKlientaPanel.TabIndex = 4;
             // 
             // UpdateClientDataButton
@@ -1719,7 +2253,7 @@
             this.DaneOsobiste.Dock = System.Windows.Forms.DockStyle.Top;
             this.DaneOsobiste.Location = new System.Drawing.Point(0, 42);
             this.DaneOsobiste.Name = "DaneOsobiste";
-            this.DaneOsobiste.Size = new System.Drawing.Size(585, 344);
+            this.DaneOsobiste.Size = new System.Drawing.Size(769, 344);
             this.DaneOsobiste.TabIndex = 23;
             this.DaneOsobiste.TabStop = false;
             this.DaneOsobiste.Text = "Dane Osobiste";
@@ -1963,7 +2497,7 @@
             this.WyszukajEDKlienta.Dock = System.Windows.Forms.DockStyle.Top;
             this.WyszukajEDKlienta.Location = new System.Drawing.Point(0, 0);
             this.WyszukajEDKlienta.Name = "WyszukajEDKlienta";
-            this.WyszukajEDKlienta.Size = new System.Drawing.Size(585, 42);
+            this.WyszukajEDKlienta.Size = new System.Drawing.Size(769, 42);
             this.WyszukajEDKlienta.TabIndex = 22;
             this.WyszukajEDKlienta.TabStop = false;
             this.WyszukajEDKlienta.Text = "Wyszukaj";
@@ -2010,7 +2544,7 @@
             this.DodajPojazdPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DodajPojazdPanel.Location = new System.Drawing.Point(0, 0);
             this.DodajPojazdPanel.Name = "DodajPojazdPanel";
-            this.DodajPojazdPanel.Size = new System.Drawing.Size(585, 444);
+            this.DodajPojazdPanel.Size = new System.Drawing.Size(769, 455);
             this.DodajPojazdPanel.TabIndex = 27;
             // 
             // button14
@@ -2018,7 +2552,7 @@
             this.button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.button14.Location = new System.Drawing.Point(0, 572);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(568, 23);
+            this.button14.Size = new System.Drawing.Size(752, 23);
             this.button14.TabIndex = 24;
             this.button14.Text = "Dodaj";
             this.button14.UseVisualStyleBackColor = true;
@@ -2049,7 +2583,7 @@
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(568, 572);
+            this.groupBox13.Size = new System.Drawing.Size(752, 572);
             this.groupBox13.TabIndex = 26;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = " Dodaj Pojazd";
@@ -2231,7 +2765,7 @@
             this.PodgladRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PodgladRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
             this.PodgladRezerwacjiPanel.Name = "PodgladRezerwacjiPanel";
-            this.PodgladRezerwacjiPanel.Size = new System.Drawing.Size(585, 444);
+            this.PodgladRezerwacjiPanel.Size = new System.Drawing.Size(769, 455);
             this.PodgladRezerwacjiPanel.TabIndex = 24;
             // 
             // groupBox3
@@ -2243,7 +2777,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 887);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(568, 132);
+            this.groupBox3.Size = new System.Drawing.Size(752, 132);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nawigacja";
@@ -2253,7 +2787,7 @@
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox5.Image = global::GUI.Properties.Resources.prawa_strzałka_318_113460;
             this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(471, 25);
+            this.pictureBox5.Location = new System.Drawing.Point(655, 25);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(91, 88);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2300,7 +2834,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 629);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(568, 258);
+            this.groupBox1.Size = new System.Drawing.Size(752, 258);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Klient";
@@ -2503,7 +3037,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(0, 405);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(568, 224);
+            this.groupBox4.Size = new System.Drawing.Size(752, 224);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Wybrany Samochód";
@@ -2551,7 +3085,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(0, 248);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(568, 157);
+            this.groupBox5.Size = new System.Drawing.Size(752, 157);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Inne";
@@ -2573,7 +3107,7 @@
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(562, 138);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(746, 138);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
             // checkedListBox4
@@ -2591,7 +3125,7 @@
             "BE"});
             this.checkedListBox4.Location = new System.Drawing.Point(3, 3);
             this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(134, 132);
+            this.checkedListBox4.Size = new System.Drawing.Size(180, 132);
             this.checkedListBox4.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -2601,7 +3135,7 @@
             this.tableLayoutPanel8.Controls.Add(this.label67, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.textBox23, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(283, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(375, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 5;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -2610,7 +3144,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(134, 132);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(180, 132);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // label67
@@ -2619,7 +3153,7 @@
             this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label67.Location = new System.Drawing.Point(3, 0);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(134, 26);
+            this.label67.Size = new System.Drawing.Size(174, 26);
             this.label67.TabIndex = 0;
             this.label67.Text = "Cena za godzinę";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2630,7 +3164,7 @@
             this.textBox23.Enabled = false;
             this.textBox23.Location = new System.Drawing.Point(3, 29);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(134, 20);
+            this.textBox23.Size = new System.Drawing.Size(174, 20);
             this.textBox23.TabIndex = 3;
             // 
             // tableLayoutPanel9
@@ -2640,7 +3174,7 @@
             this.tableLayoutPanel9.Controls.Add(this.label70, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.textBox25, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(423, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(561, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 5;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -2648,7 +3182,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(136, 132);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(182, 132);
             this.tableLayoutPanel9.TabIndex = 5;
             // 
             // label70
@@ -2657,7 +3191,7 @@
             this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label70.Location = new System.Drawing.Point(3, 0);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(135, 26);
+            this.label70.Size = new System.Drawing.Size(176, 26);
             this.label70.TabIndex = 0;
             this.label70.Text = "Przebieg w km";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2668,7 +3202,7 @@
             this.textBox25.Enabled = false;
             this.textBox25.Location = new System.Drawing.Point(3, 29);
             this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(135, 20);
+            this.textBox25.Size = new System.Drawing.Size(176, 20);
             this.textBox25.TabIndex = 3;
             // 
             // checkedListBox5
@@ -2680,9 +3214,9 @@
             "Samochód",
             "Motorower",
             "Motocykl"});
-            this.checkedListBox5.Location = new System.Drawing.Point(143, 3);
+            this.checkedListBox5.Location = new System.Drawing.Point(189, 3);
             this.checkedListBox5.Name = "checkedListBox5";
-            this.checkedListBox5.Size = new System.Drawing.Size(134, 132);
+            this.checkedListBox5.Size = new System.Drawing.Size(180, 132);
             this.checkedListBox5.TabIndex = 1;
             // 
             // tableLayoutPanel10
@@ -2699,7 +3233,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(568, 248);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(752, 248);
             this.tableLayoutPanel10.TabIndex = 12;
             // 
             // groupBox6
@@ -2714,9 +3248,9 @@
             this.groupBox6.Controls.Add(this.label76);
             this.groupBox6.Controls.Add(this.monthCalendar3);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(287, 3);
+            this.groupBox6.Location = new System.Drawing.Point(379, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(278, 222);
+            this.groupBox6.Size = new System.Drawing.Size(370, 222);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Zwrot";
@@ -2807,7 +3341,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(278, 222);
+            this.groupBox7.Size = new System.Drawing.Size(370, 222);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Rezerwacja";
@@ -2881,7 +3415,7 @@
             this.PodgladPojazduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PodgladPojazduPanel.Location = new System.Drawing.Point(0, 0);
             this.PodgladPojazduPanel.Name = "PodgladPojazduPanel";
-            this.PodgladPojazduPanel.Size = new System.Drawing.Size(585, 444);
+            this.PodgladPojazduPanel.Size = new System.Drawing.Size(769, 455);
             this.PodgladPojazduPanel.TabIndex = 29;
             // 
             // button6
@@ -2889,10 +3423,102 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.Location = new System.Drawing.Point(0, 494);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(568, 23);
+            this.button6.Size = new System.Drawing.Size(752, 23);
             this.button6.TabIndex = 24;
             this.button6.Text = "Dalej";
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // PrzegladyToggle
+            // 
+            this.PrzegladyToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PrzegladyToggle.Caption = "Przeglądy";
+            this.PrzegladyToggle.Controls.Add(this.tableLayoutPanel1);
+            this.PrzegladyToggle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PrzegladyToggle.Location = new System.Drawing.Point(0, 469);
+            this.PrzegladyToggle.Name = "PrzegladyToggle";
+            this.PrzegladyToggle.On = false;
+            this.PrzegladyToggle.Size = new System.Drawing.Size(752, 25);
+            this.PrzegladyToggle.TabIndex = 21;
+            // 
+            // PrzegladyToggle.WorkingArea
+            // 
+            this.PrzegladyToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
+            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(13634, 0);
+            this.PrzegladyToggle.WorkingArea.TabIndex = 2;
+            this.PrzegladyToggle.WorkingArea.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
+            this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "01-01-2016",
+            "02-03-2017",
+            "03-02-2018"});
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(275, 238);
+            this.listBox1.TabIndex = 0;
+            // 
+            // OpinieToggle
+            // 
+            this.OpinieToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OpinieToggle.Caption = "Opinie";
+            this.OpinieToggle.Controls.Add(this.listView1);
+            this.OpinieToggle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpinieToggle.Location = new System.Drawing.Point(0, 444);
+            this.OpinieToggle.Name = "OpinieToggle";
+            this.OpinieToggle.On = false;
+            this.OpinieToggle.Size = new System.Drawing.Size(752, 25);
+            this.OpinieToggle.TabIndex = 1;
+            // 
+            // OpinieToggle.WorkingArea
+            // 
+            this.OpinieToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.OpinieToggle.WorkingArea.Name = "WorkingArea";
+            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(13634, 0);
+            this.OpinieToggle.WorkingArea.TabIndex = 2;
+            this.OpinieToggle.WorkingArea.Visible = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView1.Location = new System.Drawing.Point(2, 31);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(562, 283);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // SamochódBox
             // 
@@ -2919,7 +3545,7 @@
             this.SamochódBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.SamochódBox.Location = new System.Drawing.Point(0, 0);
             this.SamochódBox.Name = "SamochódBox";
-            this.SamochódBox.Size = new System.Drawing.Size(568, 444);
+            this.SamochódBox.Size = new System.Drawing.Size(752, 444);
             this.SamochódBox.TabIndex = 26;
             this.SamochódBox.TabStop = false;
             this.SamochódBox.Text = " ";
@@ -3122,7 +3748,7 @@
             this.WyszukiwanieRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WyszukiwanieRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
             this.WyszukiwanieRezerwacjiPanel.Name = "WyszukiwanieRezerwacjiPanel";
-            this.WyszukiwanieRezerwacjiPanel.Size = new System.Drawing.Size(585, 444);
+            this.WyszukiwanieRezerwacjiPanel.Size = new System.Drawing.Size(769, 455);
             this.WyszukiwanieRezerwacjiPanel.TabIndex = 22;
             // 
             // listView2
@@ -3130,564 +3756,10 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView2.Location = new System.Drawing.Point(0, 100);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(585, 315);
+            this.listView2.Size = new System.Drawing.Size(769, 315);
             this.listView2.TabIndex = 24;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.List;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.Location = new System.Drawing.Point(0, 423);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(585, 21);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Wybierz";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // KlientMenuPanel
-            // 
-            this.KlientMenuPanel.Controls.Add(this.button23);
-            this.KlientMenuPanel.Controls.Add(this.button22);
-            this.KlientMenuPanel.Controls.Add(this.button21);
-            this.KlientMenuPanel.Controls.Add(this.button15);
-            this.KlientMenuPanel.Controls.Add(this.button19);
-            this.KlientMenuPanel.Controls.Add(this.button20);
-            this.KlientMenuPanel.Controls.Add(this.button18);
-            this.KlientMenuPanel.Controls.Add(this.button16);
-            this.KlientMenuPanel.Controls.Add(this.button5);
-            this.KlientMenuPanel.Controls.Add(this.button3);
-            this.KlientMenuPanel.Controls.Add(this.button2);
-            this.KlientMenuPanel.Controls.Add(this.button1);
-            this.KlientMenuPanel.Controls.Add(this.label3);
-            this.KlientMenuPanel.Controls.Add(this.label2);
-            this.KlientMenuPanel.Controls.Add(this.label1);
-            this.KlientMenuPanel.Controls.Add(this.pictureBox1);
-            this.KlientMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.KlientMenuPanel.Location = new System.Drawing.Point(3, 3);
-            this.KlientMenuPanel.Name = "KlientMenuPanel";
-            this.KlientMenuPanel.Size = new System.Drawing.Size(203, 444);
-            this.KlientMenuPanel.TabIndex = 0;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(11, 335);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(178, 23);
-            this.button21.TabIndex = 15;
-            this.button21.Text = "Lista klientów";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(12, 308);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(178, 23);
-            this.button15.TabIndex = 14;
-            this.button15.Text = "Lista pojazdów";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click_1);
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(11, 249);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(178, 23);
-            this.button19.TabIndex = 13;
-            this.button19.Text = "Dodaj Pojazd";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(11, 278);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(178, 23);
-            this.button20.TabIndex = 12;
-            this.button20.Text = "Edytuj Pojazd";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(11, 191);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(178, 23);
-            this.button18.TabIndex = 11;
-            this.button18.Text = "Dodaj Pracownika";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(11, 220);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(178, 23);
-            this.button16.TabIndex = 10;
-            this.button16.Text = "Edytuj Dane Pracownika";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.Location = new System.Drawing.Point(14, 418);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Wyloguj";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(11, 133);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Edytuj Dane Klienta";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(11, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Przeglądaj Rezerwacje";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(11, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Dodaj Klienta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Pracownik";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Franek Michalski";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(90, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "11:52";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(12, 363);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(178, 23);
-            this.button22.TabIndex = 16;
-            this.button22.Text = "Lista pracowników";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // ListaPracownikowPanel
-            // 
-            this.ListaPracownikowPanel.Controls.Add(this.tableLayoutPanel14);
-            this.ListaPracownikowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListaPracownikowPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListaPracownikowPanel.Name = "ListaPracownikowPanel";
-            this.ListaPracownikowPanel.Size = new System.Drawing.Size(585, 444);
-            this.ListaPracownikowPanel.TabIndex = 4;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
-            this.tableLayoutPanel14.Controls.Add(this.groupBox14, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.dataGridView3, 0, 1);
-            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(585, 444);
-            this.tableLayoutPanel14.TabIndex = 3;
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox14.Location = new System.Drawing.Point(3, 3);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(579, 41);
-            this.groupBox14.TabIndex = 1;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Wyszukiwanie";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPrac,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.DataZatr,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 50);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(579, 391);
-            this.dataGridView3.TabIndex = 0;
-            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
-            // 
-            // idPrac
-            // 
-            this.idPrac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPrac.DataPropertyName = "idPrac";
-            this.idPrac.HeaderText = "Id";
-            this.idPrac.Name = "idPrac";
-            this.idPrac.ReadOnly = true;
-            this.idPrac.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Imie";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Imie";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nazwisko";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwisko";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // DataZatr
-            // 
-            this.DataZatr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataZatr.DataPropertyName = "DataZatr";
-            this.DataZatr.HeaderText = "DataZatr";
-            this.DataZatr.Name = "DataZatr";
-            this.DataZatr.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Telefon";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Telofon";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Login";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Login";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(12, 390);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(178, 23);
-            this.button23.TabIndex = 17;
-            this.button23.Text = "Lista rezerwacji";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // ListaRezerwacjiPanel
-            // 
-            this.ListaRezerwacjiPanel.Controls.Add(this.tableLayoutPanel15);
-            this.ListaRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListaRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListaRezerwacjiPanel.Name = "ListaRezerwacjiPanel";
-            this.ListaRezerwacjiPanel.Size = new System.Drawing.Size(585, 444);
-            this.ListaRezerwacjiPanel.TabIndex = 41;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
-            this.tableLayoutPanel15.Controls.Add(this.groupBox16, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.dataGridView4, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(585, 444);
-            this.tableLayoutPanel15.TabIndex = 3;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox16.Location = new System.Drawing.Point(3, 3);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(579, 41);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Wyszukiwanie";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idRezerw,
-            this.DataWypoz,
-            this.DataZwrotu,
-            this.Pojazd,
-            this.Klient});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 50);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(579, 391);
-            this.dataGridView4.TabIndex = 0;
-            this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
-            // 
-            // toggleBox5
-            // 
-            this.toggleBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.toggleBox5.Caption = "Przeglądy";
-            this.toggleBox5.Controls.Add(this.tableLayoutPanel12);
-            this.toggleBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toggleBox5.Location = new System.Drawing.Point(0, 469);
-            this.toggleBox5.Name = "toggleBox5";
-            this.toggleBox5.On = false;
-            this.toggleBox5.Size = new System.Drawing.Size(568, 25);
-            this.toggleBox5.TabIndex = 21;
-            // 
-            // toggleBox5.WorkingArea
-            // 
-            this.toggleBox5.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toggleBox5.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.toggleBox5.WorkingArea.Name = "WorkingArea";
-            this.toggleBox5.WorkingArea.Size = new System.Drawing.Size(12076, 0);
-            this.toggleBox5.WorkingArea.TabIndex = 2;
-            this.toggleBox5.WorkingArea.Visible = false;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.richTextBox6, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.listBox3, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 34);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(562, 244);
-            this.tableLayoutPanel12.TabIndex = 21;
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox6.Location = new System.Drawing.Point(284, 3);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(275, 238);
-            this.richTextBox6.TabIndex = 1;
-            this.richTextBox6.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
-            // 
-            // listBox3
-            // 
-            this.listBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
-            "01-01-2016",
-            "02-03-2017",
-            "03-02-2018"});
-            this.listBox3.Location = new System.Drawing.Point(3, 3);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(275, 238);
-            this.listBox3.TabIndex = 0;
-            // 
-            // toggleBox6
-            // 
-            this.toggleBox6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.toggleBox6.Caption = "Opinie";
-            this.toggleBox6.Controls.Add(this.listView4);
-            this.toggleBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toggleBox6.Location = new System.Drawing.Point(0, 444);
-            this.toggleBox6.Name = "toggleBox6";
-            this.toggleBox6.On = false;
-            this.toggleBox6.Size = new System.Drawing.Size(568, 25);
-            this.toggleBox6.TabIndex = 1;
-            // 
-            // toggleBox6.WorkingArea
-            // 
-            this.toggleBox6.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toggleBox6.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.toggleBox6.WorkingArea.Name = "WorkingArea";
-            this.toggleBox6.WorkingArea.Size = new System.Drawing.Size(12076, 0);
-            this.toggleBox6.WorkingArea.TabIndex = 2;
-            this.toggleBox6.WorkingArea.Visible = false;
-            // 
-            // listView4
-            // 
-            this.listView4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listView4.Location = new System.Drawing.Point(2, 31);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(562, 283);
-            this.listView4.TabIndex = 0;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.List;
-            // 
-            // PrzegladyToggle
-            // 
-            this.PrzegladyToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PrzegladyToggle.Caption = "Przeglądy";
-            this.PrzegladyToggle.Controls.Add(this.tableLayoutPanel1);
-            this.PrzegladyToggle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PrzegladyToggle.Location = new System.Drawing.Point(0, 469);
-            this.PrzegladyToggle.Name = "PrzegladyToggle";
-            this.PrzegladyToggle.On = false;
-            this.PrzegladyToggle.Size = new System.Drawing.Size(568, 25);
-            this.PrzegladyToggle.TabIndex = 21;
-            // 
-            // PrzegladyToggle.WorkingArea
-            // 
-            this.PrzegladyToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
-            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(12076, 0);
-            this.PrzegladyToggle.WorkingArea.TabIndex = 2;
-            this.PrzegladyToggle.WorkingArea.Visible = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
-            this.tableLayoutPanel1.TabIndex = 21;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "01-01-2016",
-            "02-03-2017",
-            "03-02-2018"});
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(275, 238);
-            this.listBox1.TabIndex = 0;
-            // 
-            // OpinieToggle
-            // 
-            this.OpinieToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.OpinieToggle.Caption = "Opinie";
-            this.OpinieToggle.Controls.Add(this.listView1);
-            this.OpinieToggle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpinieToggle.Location = new System.Drawing.Point(0, 444);
-            this.OpinieToggle.Name = "OpinieToggle";
-            this.OpinieToggle.On = false;
-            this.OpinieToggle.Size = new System.Drawing.Size(568, 25);
-            this.OpinieToggle.TabIndex = 1;
-            // 
-            // OpinieToggle.WorkingArea
-            // 
-            this.OpinieToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.OpinieToggle.WorkingArea.Name = "WorkingArea";
-            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(12076, 0);
-            this.OpinieToggle.WorkingArea.TabIndex = 2;
-            this.OpinieToggle.WorkingArea.Visible = false;
-            // 
-            // listView1
-            // 
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listView1.Location = new System.Drawing.Point(2, 31);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(562, 283);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // toggleBox3
             // 
@@ -3698,7 +3770,7 @@
             this.toggleBox3.Location = new System.Drawing.Point(0, 75);
             this.toggleBox3.Name = "toggleBox3";
             this.toggleBox3.On = false;
-            this.toggleBox3.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox3.Size = new System.Drawing.Size(769, 25);
             this.toggleBox3.TabIndex = 9;
             // 
             // toggleBox3.WorkingArea
@@ -3708,7 +3780,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox3.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox3.WorkingArea.Name = "WorkingArea";
-            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(14262, 0);
+            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(15871, 0);
             this.toggleBox3.WorkingArea.TabIndex = 2;
             this.toggleBox3.WorkingArea.Visible = false;
             // 
@@ -3911,7 +3983,7 @@
             this.toggleBox4.Location = new System.Drawing.Point(0, 50);
             this.toggleBox4.Name = "toggleBox4";
             this.toggleBox4.On = false;
-            this.toggleBox4.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox4.Size = new System.Drawing.Size(769, 25);
             this.toggleBox4.TabIndex = 23;
             // 
             // toggleBox4.WorkingArea
@@ -3921,7 +3993,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox4.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox4.WorkingArea.Name = "WorkingArea";
-            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(14262, 0);
+            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(15871, 0);
             this.toggleBox4.WorkingArea.TabIndex = 2;
             this.toggleBox4.WorkingArea.Visible = false;
             // 
@@ -4106,7 +4178,7 @@
             this.toggleBox2.Location = new System.Drawing.Point(0, 25);
             this.toggleBox2.Name = "toggleBox2";
             this.toggleBox2.On = false;
-            this.toggleBox2.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox2.Size = new System.Drawing.Size(769, 25);
             this.toggleBox2.TabIndex = 22;
             // 
             // toggleBox2.WorkingArea
@@ -4116,7 +4188,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox2.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox2.WorkingArea.Name = "WorkingArea";
-            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(14262, 0);
+            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(15871, 0);
             this.toggleBox2.WorkingArea.TabIndex = 2;
             this.toggleBox2.WorkingArea.Visible = false;
             // 
@@ -4192,7 +4264,7 @@
             this.toggleBox1.Location = new System.Drawing.Point(0, 0);
             this.toggleBox1.Name = "toggleBox1";
             this.toggleBox1.On = false;
-            this.toggleBox1.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox1.Size = new System.Drawing.Size(769, 25);
             this.toggleBox1.TabIndex = 22;
             // 
             // toggleBox1.WorkingArea
@@ -4202,7 +4274,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox1.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox1.WorkingArea.Name = "WorkingArea";
-            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(14262, 0);
+            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(15871, 0);
             this.toggleBox1.WorkingArea.TabIndex = 2;
             this.toggleBox1.WorkingArea.Visible = false;
             // 
@@ -4404,122 +4476,231 @@
             this.PlecDispLabel.TabIndex = 12;
             this.PlecDispLabel.Text = "Mężczyzna";
             // 
-            // idRezerw
+            // button7
             // 
-            this.idRezerw.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idRezerw.DataPropertyName = "idRezerw";
-            this.idRezerw.HeaderText = "Id";
-            this.idRezerw.Name = "idRezerw";
-            this.idRezerw.ReadOnly = true;
-            this.idRezerw.Visible = false;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.Location = new System.Drawing.Point(0, 434);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(769, 21);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Wybierz";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // DataWypoz
+            // KlientMenuPanel
             // 
-            this.DataWypoz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataWypoz.DataPropertyName = "DataWypoz";
-            this.DataWypoz.HeaderText = "Data wypożyczenia";
-            this.DataWypoz.Name = "DataWypoz";
-            this.DataWypoz.ReadOnly = true;
+            this.KlientMenuPanel.Controls.Add(this.button23);
+            this.KlientMenuPanel.Controls.Add(this.button22);
+            this.KlientMenuPanel.Controls.Add(this.button21);
+            this.KlientMenuPanel.Controls.Add(this.button15);
+            this.KlientMenuPanel.Controls.Add(this.button19);
+            this.KlientMenuPanel.Controls.Add(this.button20);
+            this.KlientMenuPanel.Controls.Add(this.button18);
+            this.KlientMenuPanel.Controls.Add(this.button16);
+            this.KlientMenuPanel.Controls.Add(this.button5);
+            this.KlientMenuPanel.Controls.Add(this.button3);
+            this.KlientMenuPanel.Controls.Add(this.button2);
+            this.KlientMenuPanel.Controls.Add(this.button1);
+            this.KlientMenuPanel.Controls.Add(this.label3);
+            this.KlientMenuPanel.Controls.Add(this.label2);
+            this.KlientMenuPanel.Controls.Add(this.label1);
+            this.KlientMenuPanel.Controls.Add(this.pictureBox1);
+            this.KlientMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.KlientMenuPanel.Location = new System.Drawing.Point(3, 3);
+            this.KlientMenuPanel.Name = "KlientMenuPanel";
+            this.KlientMenuPanel.Size = new System.Drawing.Size(203, 455);
+            this.KlientMenuPanel.TabIndex = 0;
             // 
-            // DataZwrotu
+            // button23
             // 
-            this.DataZwrotu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataZwrotu.DataPropertyName = "DataZwrotu";
-            this.DataZwrotu.HeaderText = "Data zwrotu";
-            this.DataZwrotu.Name = "DataZwrotu";
-            this.DataZwrotu.ReadOnly = true;
+            this.button23.Location = new System.Drawing.Point(12, 390);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(178, 23);
+            this.button23.TabIndex = 17;
+            this.button23.Text = "Lista rezerwacji";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
-            // Pojazd
+            // button22
             // 
-            this.Pojazd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Pojazd.DataPropertyName = "Pojazd";
-            this.Pojazd.HeaderText = "Pojazd";
-            this.Pojazd.Name = "Pojazd";
-            this.Pojazd.ReadOnly = true;
+            this.button22.Location = new System.Drawing.Point(12, 363);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(178, 23);
+            this.button22.TabIndex = 16;
+            this.button22.Text = "Lista pracowników";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
-            // Klient
+            // button21
             // 
-            this.Klient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Klient.DataPropertyName = "Klient";
-            this.Klient.HeaderText = "Klient";
-            this.Klient.Name = "Klient";
-            this.Klient.ReadOnly = true;
+            this.button21.Location = new System.Drawing.Point(11, 335);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(178, 23);
+            this.button21.TabIndex = 15;
+            this.button21.Text = "Lista klientów";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
-            // idKlient
+            // button15
             // 
-            this.idKlient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idKlient.DataPropertyName = "idKlient";
-            this.idKlient.HeaderText = "Id";
-            this.idKlient.Name = "idKlient";
-            this.idKlient.ReadOnly = true;
-            this.idKlient.Visible = false;
+            this.button15.Location = new System.Drawing.Point(12, 308);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(178, 23);
+            this.button15.TabIndex = 14;
+            this.button15.Text = "Lista pojazdów";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
             // 
-            // ImieNazwisko
+            // button19
             // 
-            this.ImieNazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ImieNazwisko.DataPropertyName = "ImieNazwisko";
-            this.ImieNazwisko.HeaderText = "Imię Nazwisko";
-            this.ImieNazwisko.Name = "ImieNazwisko";
-            this.ImieNazwisko.ReadOnly = true;
+            this.button19.Location = new System.Drawing.Point(11, 249);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(178, 23);
+            this.button19.TabIndex = 13;
+            this.button19.Text = "Dodaj Pojazd";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
-            // DataUr
+            // button20
             // 
-            this.DataUr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataUr.DataPropertyName = "DataUr";
-            this.DataUr.HeaderText = "Data urodzenia";
-            this.DataUr.Name = "DataUr";
-            this.DataUr.ReadOnly = true;
+            this.button20.Location = new System.Drawing.Point(11, 278);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(178, 23);
+            this.button20.TabIndex = 12;
+            this.button20.Text = "Edytuj Pojazd";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
-            // NrDowOsob
+            // button18
             // 
-            this.NrDowOsob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NrDowOsob.DataPropertyName = "NrDowOsob";
-            this.NrDowOsob.FillWeight = 150F;
-            this.NrDowOsob.HeaderText = "Nr Dowodu Osobistego";
-            this.NrDowOsob.Name = "NrDowOsob";
-            this.NrDowOsob.ReadOnly = true;
+            this.button18.Location = new System.Drawing.Point(11, 191);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(178, 23);
+            this.button18.TabIndex = 11;
+            this.button18.Text = "Dodaj Pracownika";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
-            // Telefon
+            // button16
             // 
-            this.Telefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefon.DataPropertyName = "Telefon";
-            this.Telefon.HeaderText = "Telefon";
-            this.Telefon.Name = "Telefon";
-            this.Telefon.ReadOnly = true;
+            this.button16.Location = new System.Drawing.Point(11, 220);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(178, 23);
+            this.button16.TabIndex = 10;
+            this.button16.Text = "Edytuj Dane Pracownika";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // Email
+            // button5
             // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button5.Location = new System.Drawing.Point(14, 429);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(178, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Wyloguj";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Login
+            // button3
             // 
-            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Login.DataPropertyName = "Login";
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
+            this.button3.Location = new System.Drawing.Point(11, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(178, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Edytuj Dane Klienta";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(11, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(178, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Przeglądaj Rezerwacje";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Dodaj Klienta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Pracownik";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(75, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Franek Michalski";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(90, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "11:52";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "Form4";
             this.Text = "Form4";
             this.tableLayoutPanel6.ResumeLayout(false);
             this.PrawyPanel.ResumeLayout(false);
-            this.ListaKlientowPanel.ResumeLayout(false);
-            this.tableLayoutPanel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ListaPojazdowPanel.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ListaPracownikowPanel.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.ListaKlientowPanel.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.ListaRezerwacjiPanel.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.EdytujPojazdPanel.ResumeLayout(false);
+            this.toggleBox5.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.toggleBox6.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
@@ -4571,27 +4752,15 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.PodgladPojazduPanel.ResumeLayout(false);
+            this.PrzegladyToggle.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.OpinieToggle.ResumeLayout(false);
             this.SamochódBox.ResumeLayout(false);
             this.SamochódBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.WyszukiwanieRezerwacjiPanel.ResumeLayout(false);
-            this.KlientMenuPanel.ResumeLayout(false);
-            this.KlientMenuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ListaPracownikowPanel.ResumeLayout(false);
-            this.tableLayoutPanel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.ListaRezerwacjiPanel.ResumeLayout(false);
-            this.tableLayoutPanel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.toggleBox5.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.toggleBox6.ResumeLayout(false);
-            this.PrzegladyToggle.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.OpinieToggle.ResumeLayout(false);
             this.toggleBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -4613,6 +4782,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).EndInit();
             this.Wyszukaj.ResumeLayout(false);
             this.Wyszukaj.PerformLayout();
+            this.KlientMenuPanel.ResumeLayout(false);
+            this.KlientMenuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4976,13 +5148,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPrac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataZatr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Panel ListaRezerwacjiPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
@@ -5000,5 +5165,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPrac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImieNazwiskoP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataZatr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.Label label128;
     }
 }

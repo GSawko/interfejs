@@ -14,11 +14,14 @@ namespace GUI
 {
     public partial class Form4 : Form
     {
-        private KLIENCI _currentEditKlient;
-        private PRACOWNICY _currentEditPracownik;
-        private POJAZDY _currentEditPojazd;
-        private int _indexPojazd;
-        private List<CarListGrid> _listPojazd = new List<CarListGrid>();
+        private KLIENCI _currentEditClient;
+        private List<ClientListGrid> _clientListGrid = new List<ClientListGrid>();
+
+        private PRACOWNICY _currentEditWorker;
+        private List<WorkerListGrid> _workerListGrid = new List<WorkerListGrid>();
+
+        private POJAZDY _currentEditVehicle;
+        private List<VehicleListGrid> _vehicleListGrid = new List<VehicleListGrid>();
 
         public Form4(string Login)
         {
@@ -118,9 +121,9 @@ namespace GUI
             {
                 id = -1;
             }
-            _currentEditPracownik = WorkerService.GetWorker(id) ?? new PRACOWNICY();
+            _currentEditWorker = WorkerService.GetWorker(id) ?? new PRACOWNICY();
 
-            ShowWorkerOnEditScreen(_currentEditPracownik);
+            ShowWorkerOnEditScreen(_currentEditWorker);
         }
 
         private void ShowWorkerOnEditScreen(PRACOWNICY pracownicy)
@@ -152,16 +155,16 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (_currentEditPracownik != null && _currentEditPracownik.idPrac > 0)
+            if (_currentEditWorker != null && _currentEditWorker.idPrac > 0)
             {
-                LoadWorkerFromEditScreen(_currentEditPracownik);
-                var isEdit = WorkerService.UpdateWorker(_currentEditPracownik);
+                LoadWorkerFromEditScreen(_currentEditWorker);
+                var isEdit = WorkerService.UpdateWorker(_currentEditWorker);
                 if (isEdit)
                     MessageBox.Show("Zaktualizowano dane pracownika!");
                 else
                     MessageBox.Show("Błąd podczas aktualizacji danych pracownika");
 
-                _currentEditPracownik = WorkerService.GetWorker(_currentEditPracownik.idPrac);
+                _currentEditWorker = WorkerService.GetWorker(_currentEditWorker.idPrac);
             }
             else
                 MessageBox.Show("Najpierw wybierz pracownika do edycji!");
@@ -174,15 +177,15 @@ namespace GUI
                 id = -1;
             }
 
-            _currentEditKlient = ClientService.GetClient(id) ?? new KLIENCI();
-            ShowClientOnEditScreen(_currentEditKlient);
+            _currentEditClient = ClientService.GetClient(id) ?? new KLIENCI();
+            ShowClientOnEditScreen(_currentEditClient);
         }
 
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
             string nrDowOs = ((TextBox)sender).TextOrDefault();
-            _currentEditKlient = ClientService.GetClient(nrDowOs, true) ?? new KLIENCI();
-            ShowClientOnEditScreen(_currentEditKlient);
+            _currentEditClient = ClientService.GetClient(nrDowOs, true) ?? new KLIENCI();
+            ShowClientOnEditScreen(_currentEditClient);
         }
 
         private void ShowClientOnEditScreen(KLIENCI klient)
@@ -226,16 +229,16 @@ namespace GUI
 
         private void UpdateClientDataButton_Click(object sender, EventArgs e)
         {
-            if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
+            if (_currentEditClient != null && _currentEditClient.idKlient > 0)
             {
-                LoadClientFromEditScreen(_currentEditKlient);
-                var isEdt = ClientService.UpdateClient(_currentEditKlient);
+                LoadClientFromEditScreen(_currentEditClient);
+                var isEdt = ClientService.UpdateClient(_currentEditClient);
                 if (isEdt)
                     MessageBox.Show("Zaktualizowano dane klienta.");
                 else
                     MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
 
-                _currentEditKlient = ClientService.GetClient(_currentEditKlient.idKlient);
+                _currentEditClient = ClientService.GetClient(_currentEditClient.idKlient);
             }
             else
                 MessageBox.Show("Najpierw wybierz klienta do edycji!");
@@ -344,16 +347,17 @@ namespace GUI
         private void LoadVehicleGridList()
         {
             var cars = VehicleService.GetVehicles();
-            foreach (CarListGrid car in cars)
+            _vehicleListGrid = new List<VehicleListGrid>();
+            foreach (VehicleListGrid car in cars)
             {
-                _listPojazd.Add(car);
+                _vehicleListGrid.Add(car);
             }
         }
 
         private void LoadCarList()
         {
             LoadVehicleGridList();
-            dataGridView1.DataSource = _listPojazd;
+            dataGridView1.DataSource = _vehicleListGrid;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -364,7 +368,6 @@ namespace GUI
                 var id = (int)row.Cells["idPojazd"].Value;
                 ShowSelectedVehicleOnEditScreen(id);
             }
-
         }
 
         private void ShowSelectedVehicleOnEditScreen(int id)
@@ -384,6 +387,20 @@ namespace GUI
             textBox60.Text = vehicle.DataProd.ToString("d");
             textBox59.Text = vehicle.ZaGodz.ToString("C");
             richTextBox7.Text = vehicle.Opis;
+        }
+
+        private void VehicleListFilter(object sender, EventArgs e)
+        {
+            var filterList = _vehicleListGrid;
+            string name = textBox53.TextOrDefault();
+            if (name != null)
+                filterList = filterList.Where(v => v.Marka.Contains(name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string numerRejestr = textBox52.TextOrDefault();
+            if (numerRejestr != null)
+                filterList = filterList.Where(v => v.NrRejestr.StartsWith(numerRejestr, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView1.DataSource = filterList;
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -406,20 +423,38 @@ namespace GUI
         {
             var client = ClientService.GetClient(id) ?? new KLIENCI();
             ShowClientOnEditScreen(client);
-            _currentEditKlient = client;
+            _currentEditClient = client;
             EdytujDaneKlientaPanel.BringToFront();
         }
 
         private void LoadClientList()
         {
             var clients = ClientService.GetClients();
-            List<ClientListGrid> clientListGrid = new List<ClientListGrid>();
-            foreach (ClientListGrid clientView in clients)
+            _clientListGrid = new List<ClientListGrid>();
+            foreach (ClientListGrid client in clients)
             {
-                clientListGrid.Add(clientView);
+                _clientListGrid.Add(client);
             }
 
-            dataGridView2.DataSource = clientListGrid;
+            dataGridView2.DataSource = _clientListGrid;
+        }
+
+        private void ClientListFilter(object sender, EventArgs e)
+        {
+            var filterList = _clientListGrid;
+            string nameSurname = textBox34.TextOrDefault();
+            if (nameSurname != null)
+                filterList = filterList.Where(c => c.ImieNazwisko.Contains(nameSurname, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string telefon = textBox33.TextOrDefault();
+            if (telefon != null)
+                filterList = filterList.Where(c => c.Telefon.StartsWith(telefon, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string numerDowodu = textBox17.TextOrDefault();
+            if (numerDowodu != null)
+                filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView2.DataSource = filterList;
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -442,20 +477,38 @@ namespace GUI
         {
             var worker = WorkerService.GetWorker(id) ?? new PRACOWNICY();
             ShowWorkerOnEditScreen(worker);
-            _currentEditPracownik = worker;
+            _currentEditWorker = worker;
             EdytujPracownikaPanel.BringToFront();
         }
 
         private void LoadWorkerList()
         {
             var workers = WorkerService.GetWorkers();
-            List<WorkerListGrid> workerListGrid = new List<WorkerListGrid>();
-            foreach (WorkerListGrid workerView in workers)
+            _workerListGrid = new List<WorkerListGrid>();
+            foreach (WorkerListGrid worker in workers)
             {
-                workerListGrid.Add(workerView);
+                _workerListGrid.Add(worker);
             }
 
-            dataGridView3.DataSource = workerListGrid;
+            dataGridView3.DataSource = _workerListGrid;
+        }
+
+        private void WorkerListFilter(object sender, EventArgs e)
+        {
+            var filterList = _workerListGrid;
+            string nameSurname = textBox44.TextOrDefault();
+            if (nameSurname != null)
+                filterList = filterList.Where(w => w.ImieNazwisko.Contains(nameSurname, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string telefon = textBox39.TextOrDefault();
+            if (telefon != null)
+                filterList = filterList.Where(w => w.Telefon.StartsWith(telefon, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string login = textBox37.TextOrDefault();
+            if (login != null)
+                filterList = filterList.Where(w => w.Login.Contains(login, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView3.DataSource = filterList;
         }
 
         private void button23_Click(object sender, EventArgs e)

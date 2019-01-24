@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GUI.GridView
 {
-    class CarListGrid
+    class VehicleListGrid
     {
         private static string[] typPojazdu = { "Samochód", "Motocykl", "Motorower" };
         public int idPojazd { get; set; }
@@ -21,9 +21,9 @@ namespace GUI.GridView
             Rodzaj = typPojazdu[typ];
         }
 
-        public CarListGrid() { }
+        public VehicleListGrid() { }
 
-        public CarListGrid(POJAZDY pojazd)
+        public VehicleListGrid(POJAZDY pojazd)
         {
             idPojazd = pojazd.idPojazd;
             Marka = pojazd.MARKI.ToString();
@@ -33,9 +33,9 @@ namespace GUI.GridView
             Sprawny = pojazd.Sprawny == 0 ? "Nie" : "Tak";
         }
 
-        public static explicit operator CarListGrid(POJAZDY pojazd)
+        public static explicit operator VehicleListGrid(POJAZDY pojazd)
         {
-            return new CarListGrid(pojazd);
+            return new VehicleListGrid(pojazd);
         }
     }
 }

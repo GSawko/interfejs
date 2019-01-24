@@ -269,35 +269,20 @@ namespace GUI
             EdytujDaneKlientaPanel.BringToFront();
         }
 
-        private void textBox19_TextChanged(object sender, EventArgs e)
-        {
-            ClientListFilter();
-        }
-
-        private void textBox24_TextChanged(object sender, EventArgs e)
-        {
-            ClientListFilter();
-        }
-
-        private void textBox26_TextChanged(object sender, EventArgs e)
-        {
-            ClientListFilter();
-        }
-
-        private void ClientListFilter()
+        private void ClientListFilter(object sender, EventArgs e)
         {
             var filterList = _clientGridList;
             string nameSurname = textBox19.TextOrDefault();
             if (nameSurname != null)
-                filterList = filterList.Where(c => c.ImieNazwisko.IndexOf(nameSurname, 0, StringComparison.CurrentCultureIgnoreCase) != -1 ? true : false).ToList();
+                filterList = filterList.Where(c => c.ImieNazwisko.Contains(nameSurname, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            string numerDowodu = textBox24.TextOrDefault();
-            if (numerDowodu != null)
-                filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu)).ToList();
-
-            string telefon = textBox26.TextOrDefault();
+            string telefon = textBox24.TextOrDefault();
             if (telefon != null)
-                filterList = filterList.Where(c => c.Telefon.StartsWith(telefon)).ToList();
+                filterList = filterList.Where(c => c.Telefon.StartsWith(telefon, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string numerDowodu = textBox26.TextOrDefault();
+            if (numerDowodu != null)
+                filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             dataGridView2.DataSource = filterList;
         }
