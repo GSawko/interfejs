@@ -15,7 +15,6 @@ namespace GUI.Service
         {
             using (var entities = new DBEntities())
             {
-                //entities.Configuration.ProxyCreationEnabled = false;
                 var vehicles = entities.POJAZDY
                     .Include("MARKI")
                     .Include("PRZEGLADY")

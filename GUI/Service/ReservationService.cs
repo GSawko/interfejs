@@ -9,6 +9,19 @@ namespace GUI.Service
 {
     static class ReservationService
     {
+        public static List<REZERWACJE> GetReservations()
+        {
+            using (var entities = new DBEntities())
+            {
+                var reservation = entities.REZERWACJE
+                    .Include("KLIENCI")
+                    .Include("POJAZDY")
+                    .Include("POJAZDY.MARKI")
+                    .ToList();
+
+                return reservation;
+            }
+        }
         public static List<REZERWACJE> GetAllNotTaken()
         {
             using (var entities = new DBEntities())

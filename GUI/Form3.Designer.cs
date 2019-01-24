@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.KlientMenuPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,14 +41,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PrawyPanel = new System.Windows.Forms.Panel();
+            this.ListaKlientowPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idKlient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImieNazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataUr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrDowOsob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WyszukiwanieRezerwacjiPanel = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button7 = new System.Windows.Forms.Button();
             this.PodgladPojazduPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.PrzegladyToggle = new GUI.ToggleBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.OpinieToggle = new GUI.ToggleBox();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.SamochódBox = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -135,9 +150,68 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.WyszukiwanieRezerwacjiPanel = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.PodgladRezerwacjiPanel = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label67 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label70 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.monthCalendar4 = new System.Windows.Forms.MonthCalendar();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox26 = new System.Windows.Forms.TextBox();
             this.toggleBox3 = new GUI.ToggleBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -202,75 +276,21 @@
             this.NazwiskoDispLabel = new System.Windows.Forms.Label();
             this.DataUrLabel = new System.Windows.Forms.Label();
             this.PlecDispLabel = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.PodgladRezerwacjiPanel = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label67 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label70 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.monthCalendar4 = new System.Windows.Forms.MonthCalendar();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.PrzegladyToggle = new GUI.ToggleBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.OpinieToggle = new GUI.ToggleBox();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.KlientMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrawyPanel.SuspendLayout();
+            this.ListaKlientowPanel.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.WyszukiwanieRezerwacjiPanel.SuspendLayout();
             this.PodgladPojazduPanel.SuspendLayout();
-            this.PrzegladyToggle.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.OpinieToggle.SuspendLayout();
             this.SamochódBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -282,20 +302,6 @@
             this.DodajKlientaPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.WyszukiwanieRezerwacjiPanel.SuspendLayout();
-            this.toggleBox3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.toggleBox4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.ZwrotBox.SuspendLayout();
-            this.RezerwacjaBox.SuspendLayout();
-            this.toggleBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.toggleBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).BeginInit();
-            this.Wyszukaj.SuspendLayout();
             this.PodgladRezerwacjiPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -312,10 +318,27 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.toggleBox3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.toggleBox4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.ZwrotBox.SuspendLayout();
+            this.RezerwacjaBox.SuspendLayout();
+            this.toggleBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.toggleBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).BeginInit();
+            this.Wyszukaj.SuspendLayout();
+            this.PrzegladyToggle.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.OpinieToggle.SuspendLayout();
             this.SuspendLayout();
             // 
             // KlientMenuPanel
             // 
+            this.KlientMenuPanel.Controls.Add(this.button4);
             this.KlientMenuPanel.Controls.Add(this.button5);
             this.KlientMenuPanel.Controls.Add(this.button3);
             this.KlientMenuPanel.Controls.Add(this.button2);
@@ -330,6 +353,16 @@
             this.KlientMenuPanel.Size = new System.Drawing.Size(203, 436);
             this.KlientMenuPanel.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(14, 133);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(178, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Lista klientów";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -343,7 +376,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 163);
+            this.button3.Location = new System.Drawing.Point(13, 247);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(178, 23);
             this.button3.TabIndex = 6;
@@ -353,7 +386,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 133);
+            this.button2.Location = new System.Drawing.Point(13, 217);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(178, 23);
             this.button2.TabIndex = 5;
@@ -412,6 +445,7 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.ListaKlientowPanel);
             this.PrawyPanel.Controls.Add(this.WyszukiwanieRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.PodgladPojazduPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
@@ -420,8 +454,224 @@
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
-            this.PrawyPanel.Size = new System.Drawing.Size(585, 436);
+            this.PrawyPanel.Size = new System.Drawing.Size(661, 436);
             this.PrawyPanel.TabIndex = 21;
+            // 
+            // ListaKlientowPanel
+            // 
+            this.ListaKlientowPanel.Controls.Add(this.tableLayoutPanel13);
+            this.ListaKlientowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListaKlientowPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListaKlientowPanel.Name = "ListaKlientowPanel";
+            this.ListaKlientowPanel.Size = new System.Drawing.Size(661, 436);
+            this.ListaKlientowPanel.TabIndex = 26;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.5F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5F));
+            this.tableLayoutPanel13.Controls.Add(this.groupBox12, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.dataGridView2, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(661, 436);
+            this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBox26);
+            this.groupBox12.Controls.Add(this.label83);
+            this.groupBox12.Controls.Add(this.label82);
+            this.groupBox12.Controls.Add(this.textBox24);
+            this.groupBox12.Controls.Add(this.textBox19);
+            this.groupBox12.Controls.Add(this.label72);
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.Location = new System.Drawing.Point(3, 3);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(655, 41);
+            this.groupBox12.TabIndex = 1;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Wyszukiwanie";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(380, 18);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(113, 13);
+            this.label83.TabIndex = 5;
+            this.label83.Text = "Nr dowodu osobistego";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(219, 18);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(46, 13);
+            this.label82.TabIndex = 3;
+            this.label82.Text = "Telefon:";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(503, 15);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(100, 20);
+            this.textBox24.TabIndex = 2;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(86, 16);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(120, 20);
+            this.textBox19.TabIndex = 1;
+            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(7, 19);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(78, 13);
+            this.label72.TabIndex = 0;
+            this.label72.Text = "Imię Nazwisko:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idKlient,
+            this.ImieNazwisko,
+            this.DataUr,
+            this.NrDowOsob,
+            this.Telefon,
+            this.Email,
+            this.Login});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 50);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(655, 383);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // idKlient
+            // 
+            this.idKlient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idKlient.DataPropertyName = "idKlient";
+            this.idKlient.HeaderText = "Id";
+            this.idKlient.Name = "idKlient";
+            this.idKlient.ReadOnly = true;
+            this.idKlient.Visible = false;
+            // 
+            // ImieNazwisko
+            // 
+            this.ImieNazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ImieNazwisko.DataPropertyName = "ImieNazwisko";
+            this.ImieNazwisko.HeaderText = "Imię Nazwisko";
+            this.ImieNazwisko.Name = "ImieNazwisko";
+            this.ImieNazwisko.ReadOnly = true;
+            // 
+            // DataUr
+            // 
+            this.DataUr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataUr.DataPropertyName = "DataUr";
+            this.DataUr.HeaderText = "Data urodzenia";
+            this.DataUr.Name = "DataUr";
+            this.DataUr.ReadOnly = true;
+            // 
+            // NrDowOsob
+            // 
+            this.NrDowOsob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NrDowOsob.DataPropertyName = "NrDowOsob";
+            this.NrDowOsob.FillWeight = 150F;
+            this.NrDowOsob.HeaderText = "Nr Dowodu Osobistego";
+            this.NrDowOsob.Name = "NrDowOsob";
+            this.NrDowOsob.ReadOnly = true;
+            // 
+            // Telefon
+            // 
+            this.Telefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Telefon.DataPropertyName = "Telefon";
+            this.Telefon.HeaderText = "Telefon";
+            this.Telefon.Name = "Telefon";
+            this.Telefon.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Login
+            // 
+            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Login.DataPropertyName = "Login";
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // WyszukiwanieRezerwacjiPanel
+            // 
+            this.WyszukiwanieRezerwacjiPanel.AutoScroll = true;
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.listView2);
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox3);
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox4);
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox2);
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox1);
+            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.button7);
+            this.WyszukiwanieRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WyszukiwanieRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
+            this.WyszukiwanieRezerwacjiPanel.Name = "WyszukiwanieRezerwacjiPanel";
+            this.WyszukiwanieRezerwacjiPanel.Size = new System.Drawing.Size(661, 436);
+            this.WyszukiwanieRezerwacjiPanel.TabIndex = 22;
+            // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView2.LargeImageList = this.imageList1;
+            this.listView2.Location = new System.Drawing.Point(0, 100);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(661, 315);
+            this.listView2.TabIndex = 24;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "nosacz.jpg");
+            this.imageList1.Images.SetKeyName(1, "pic.png");
+            this.imageList1.Images.SetKeyName(2, "indeks.jpg");
+            this.imageList1.Images.SetKeyName(3, "Jak-wstawić-zdjęcie-do-CV-2-e1449518366313.jpg");
+            this.imageList1.Images.SetKeyName(4, "pic.png");
+            this.imageList1.Images.SetKeyName(5, "pic.png");
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.Location = new System.Drawing.Point(0, 415);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(661, 21);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Wybierz";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // PodgladPojazduPanel
             // 
@@ -433,7 +683,7 @@
             this.PodgladPojazduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PodgladPojazduPanel.Location = new System.Drawing.Point(0, 0);
             this.PodgladPojazduPanel.Name = "PodgladPojazduPanel";
-            this.PodgladPojazduPanel.Size = new System.Drawing.Size(585, 436);
+            this.PodgladPojazduPanel.Size = new System.Drawing.Size(661, 436);
             this.PodgladPojazduPanel.TabIndex = 25;
             // 
             // button6
@@ -441,102 +691,10 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.Location = new System.Drawing.Point(0, 494);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(568, 23);
+            this.button6.Size = new System.Drawing.Size(644, 23);
             this.button6.TabIndex = 24;
             this.button6.Text = "Dalej";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // PrzegladyToggle
-            // 
-            this.PrzegladyToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PrzegladyToggle.Caption = "Przeglądy";
-            this.PrzegladyToggle.Controls.Add(this.tableLayoutPanel1);
-            this.PrzegladyToggle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PrzegladyToggle.Location = new System.Drawing.Point(0, 469);
-            this.PrzegladyToggle.Name = "PrzegladyToggle";
-            this.PrzegladyToggle.On = false;
-            this.PrzegladyToggle.Size = new System.Drawing.Size(568, 25);
-            this.PrzegladyToggle.TabIndex = 21;
-            // 
-            // PrzegladyToggle.WorkingArea
-            // 
-            this.PrzegladyToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
-            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(1390, 0);
-            this.PrzegladyToggle.WorkingArea.TabIndex = 2;
-            this.PrzegladyToggle.WorkingArea.Visible = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
-            this.tableLayoutPanel1.TabIndex = 21;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "01-01-2016",
-            "02-03-2017",
-            "03-02-2018"});
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(275, 238);
-            this.listBox1.TabIndex = 0;
-            // 
-            // OpinieToggle
-            // 
-            this.OpinieToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.OpinieToggle.Caption = "Opinie";
-            this.OpinieToggle.Controls.Add(this.listView3);
-            this.OpinieToggle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpinieToggle.Location = new System.Drawing.Point(0, 444);
-            this.OpinieToggle.Name = "OpinieToggle";
-            this.OpinieToggle.On = false;
-            this.OpinieToggle.Size = new System.Drawing.Size(568, 25);
-            this.OpinieToggle.TabIndex = 1;
-            // 
-            // OpinieToggle.WorkingArea
-            // 
-            this.OpinieToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
-            this.OpinieToggle.WorkingArea.Name = "WorkingArea";
-            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(1390, 0);
-            this.OpinieToggle.WorkingArea.TabIndex = 2;
-            this.OpinieToggle.WorkingArea.Visible = false;
-            // 
-            // listView3
-            // 
-            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listView3.Location = new System.Drawing.Point(2, 31);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(562, 283);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
             // 
             // SamochódBox
             // 
@@ -563,7 +721,7 @@
             this.SamochódBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.SamochódBox.Location = new System.Drawing.Point(0, 0);
             this.SamochódBox.Name = "SamochódBox";
-            this.SamochódBox.Size = new System.Drawing.Size(568, 444);
+            this.SamochódBox.Size = new System.Drawing.Size(644, 444);
             this.SamochódBox.TabIndex = 26;
             this.SamochódBox.TabStop = false;
             this.SamochódBox.Text = " ";
@@ -762,7 +920,7 @@
             this.EdytujDaneKlientaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujDaneKlientaPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujDaneKlientaPanel.Name = "EdytujDaneKlientaPanel";
-            this.EdytujDaneKlientaPanel.Size = new System.Drawing.Size(585, 436);
+            this.EdytujDaneKlientaPanel.Size = new System.Drawing.Size(661, 436);
             this.EdytujDaneKlientaPanel.TabIndex = 4;
             // 
             // UpdateClientDataButton
@@ -807,7 +965,7 @@
             this.DaneOsobiste.Dock = System.Windows.Forms.DockStyle.Top;
             this.DaneOsobiste.Location = new System.Drawing.Point(0, 42);
             this.DaneOsobiste.Name = "DaneOsobiste";
-            this.DaneOsobiste.Size = new System.Drawing.Size(585, 344);
+            this.DaneOsobiste.Size = new System.Drawing.Size(661, 344);
             this.DaneOsobiste.TabIndex = 23;
             this.DaneOsobiste.TabStop = false;
             this.DaneOsobiste.Text = "Dane Osobiste";
@@ -1049,7 +1207,7 @@
             this.WyszukajEDKlienta.Dock = System.Windows.Forms.DockStyle.Top;
             this.WyszukajEDKlienta.Location = new System.Drawing.Point(0, 0);
             this.WyszukajEDKlienta.Name = "WyszukajEDKlienta";
-            this.WyszukajEDKlienta.Size = new System.Drawing.Size(585, 42);
+            this.WyszukajEDKlienta.Size = new System.Drawing.Size(661, 42);
             this.WyszukajEDKlienta.TabIndex = 22;
             this.WyszukajEDKlienta.TabStop = false;
             this.WyszukajEDKlienta.Text = "Wyszukaj";
@@ -1095,13 +1253,13 @@
             this.DodajKlientaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DodajKlientaPanel.Location = new System.Drawing.Point(0, 0);
             this.DodajKlientaPanel.Name = "DodajKlientaPanel";
-            this.DodajKlientaPanel.Size = new System.Drawing.Size(585, 436);
+            this.DodajKlientaPanel.Size = new System.Drawing.Size(661, 436);
             this.DodajKlientaPanel.TabIndex = 12;
             // 
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button10.Location = new System.Drawing.Point(234, 410);
+            this.button10.Location = new System.Drawing.Point(272, 410);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 21;
@@ -1142,7 +1300,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 404);
+            this.groupBox2.Size = new System.Drawing.Size(661, 404);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane Osobiste";
@@ -1380,42 +1538,681 @@
             this.textBox17.Size = new System.Drawing.Size(100, 20);
             this.textBox17.TabIndex = 9;
             // 
-            // WyszukiwanieRezerwacjiPanel
+            // PodgladRezerwacjiPanel
             // 
-            this.WyszukiwanieRezerwacjiPanel.AutoScroll = true;
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.listView2);
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox3);
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox4);
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox2);
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.toggleBox1);
-            this.WyszukiwanieRezerwacjiPanel.Controls.Add(this.button7);
-            this.WyszukiwanieRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WyszukiwanieRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
-            this.WyszukiwanieRezerwacjiPanel.Name = "WyszukiwanieRezerwacjiPanel";
-            this.WyszukiwanieRezerwacjiPanel.Size = new System.Drawing.Size(585, 436);
-            this.WyszukiwanieRezerwacjiPanel.TabIndex = 22;
+            this.PodgladRezerwacjiPanel.AutoScroll = true;
+            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox3);
+            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox1);
+            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox4);
+            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox5);
+            this.PodgladRezerwacjiPanel.Controls.Add(this.tableLayoutPanel10);
+            this.PodgladRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PodgladRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
+            this.PodgladRezerwacjiPanel.Name = "PodgladRezerwacjiPanel";
+            this.PodgladRezerwacjiPanel.Size = new System.Drawing.Size(661, 436);
+            this.PodgladRezerwacjiPanel.TabIndex = 24;
             // 
-            // listView2
+            // groupBox3
             // 
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listView2.LargeImageList = this.imageList1;
-            this.listView2.Location = new System.Drawing.Point(0, 100);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(585, 315);
-            this.listView2.TabIndex = 24;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
+            this.groupBox3.AutoSize = true;
+            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox3.Controls.Add(this.pictureBox5);
+            this.groupBox3.Controls.Add(this.pictureBox6);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 887);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(644, 132);
+            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Nawigacja";
             // 
-            // imageList1
+            // pictureBox5
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "nosacz.jpg");
-            this.imageList1.Images.SetKeyName(1, "pic.png");
-            this.imageList1.Images.SetKeyName(2, "indeks.jpg");
-            this.imageList1.Images.SetKeyName(3, "Jak-wstawić-zdjęcie-do-CV-2-e1449518366313.jpg");
-            this.imageList1.Images.SetKeyName(4, "pic.png");
-            this.imageList1.Images.SetKeyName(5, "pic.png");
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox5.Image = global::GUI.Properties.Resources.prawa_strzałka_318_113460;
+            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(547, 25);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(91, 88);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox6.Image = global::GUI.Properties.Resources.strzalka_pelna_w_lewo;
+            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
+            this.pictureBox6.Location = new System.Drawing.Point(6, 25);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(91, 88);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.label34);
+            this.groupBox1.Controls.Add(this.label80);
+            this.groupBox1.Controls.Add(this.label81);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.label46);
+            this.groupBox1.Controls.Add(this.label53);
+            this.groupBox1.Controls.Add(this.label54);
+            this.groupBox1.Controls.Add(this.label55);
+            this.groupBox1.Controls.Add(this.label56);
+            this.groupBox1.Controls.Add(this.label57);
+            this.groupBox1.Controls.Add(this.label58);
+            this.groupBox1.Controls.Add(this.label59);
+            this.groupBox1.Controls.Add(this.label60);
+            this.groupBox1.Controls.Add(this.label61);
+            this.groupBox1.Controls.Add(this.label62);
+            this.groupBox1.Controls.Add(this.label63);
+            this.groupBox1.Controls.Add(this.label64);
+            this.groupBox1.Controls.Add(this.label65);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 629);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(644, 258);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Klient";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(180, 33);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(40, 13);
+            this.label33.TabIndex = 24;
+            this.label33.Text = "Michał";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(12, 32);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(40, 13);
+            this.label34.TabIndex = 23;
+            this.label34.Text = "Franek";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(180, 16);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(60, 13);
+            this.label80.TabIndex = 22;
+            this.label80.Text = "Drugie Imie";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(13, 16);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(26, 13);
+            this.label81.TabIndex = 21;
+            this.label81.Text = "Imie";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources.nosacz;
+            this.pictureBox3.Location = new System.Drawing.Point(390, 62);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(169, 161);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(180, 229);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(83, 13);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "FranekM@o2.pl";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(14, 227);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(67, 13);
+            this.label45.TabIndex = 19;
+            this.label45.Text = "123 456 789";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(180, 213);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(35, 13);
+            this.label46.TabIndex = 18;
+            this.label46.Text = "E-mail";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(13, 210);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(43, 13);
+            this.label53.TabIndex = 17;
+            this.label53.Text = "Telefon";
+            // 
+            // label54
+            // 
+            this.label54.Location = new System.Drawing.Point(180, 179);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(204, 34);
+            this.label54.TabIndex = 16;
+            this.label54.Text = "Cebulowa 16, 12-345 Wilkowyje";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(14, 176);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(65, 13);
+            this.label55.TabIndex = 15;
+            this.label55.Text = "01/01/1995";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(180, 162);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(34, 13);
+            this.label56.TabIndex = 14;
+            this.label56.Text = "Adres";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(13, 158);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(81, 13);
+            this.label57.TabIndex = 13;
+            this.label57.Text = "Data Urodzenia";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(180, 128);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 13);
+            this.label58.TabIndex = 12;
+            this.label58.Text = "Mężczyzna";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(12, 126);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(51, 13);
+            this.label59.TabIndex = 11;
+            this.label59.Text = "Michalski";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(180, 111);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(30, 13);
+            this.label60.TabIndex = 10;
+            this.label60.Text = "Płeć";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(12, 108);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(53, 13);
+            this.label61.TabIndex = 9;
+            this.label61.Text = "Nazwisko";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(180, 78);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(40, 13);
+            this.label62.TabIndex = 8;
+            this.label62.Text = "Michał";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(12, 77);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(40, 13);
+            this.label63.TabIndex = 7;
+            this.label63.Text = "Franek";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(180, 61);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(60, 13);
+            this.label64.TabIndex = 6;
+            this.label64.Text = "Drugie Imie";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(13, 61);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(26, 13);
+            this.label65.TabIndex = 5;
+            this.label65.Text = "Imie";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button12);
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Controls.Add(this.textBox22);
+            this.groupBox4.Controls.Add(this.label66);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox4.Location = new System.Drawing.Point(0, 405);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(644, 224);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Wybrany Samochód";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(286, 70);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(152, 23);
+            this.button12.TabIndex = 5;
+            this.button12.Text = "Podejrzyj Samochód";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::GUI.Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907;
+            this.pictureBox4.Location = new System.Drawing.Point(11, 20);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(259, 197);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Enabled = false;
+            this.textBox22.Location = new System.Drawing.Point(285, 44);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(151, 20);
+            this.textBox22.TabIndex = 1;
+            this.textBox22.Text = "fiat 126p";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(282, 21);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(40, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Nazwa";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tableLayoutPanel7);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox5.Location = new System.Drawing.Point(0, 248);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(644, 157);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Inne";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 4;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.Controls.Add(this.checkedListBox4, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.checkedListBox5, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(638, 138);
+            this.tableLayoutPanel7.TabIndex = 6;
+            // 
+            // checkedListBox4
+            // 
+            this.checkedListBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListBox4.Enabled = false;
+            this.checkedListBox4.FormattingEnabled = true;
+            this.checkedListBox4.Items.AddRange(new object[] {
+            "A",
+            "A1",
+            "A2",
+            "AM",
+            "B",
+            "B1",
+            "BE"});
+            this.checkedListBox4.Location = new System.Drawing.Point(3, 3);
+            this.checkedListBox4.Name = "checkedListBox4";
+            this.checkedListBox4.Size = new System.Drawing.Size(153, 132);
+            this.checkedListBox4.TabIndex = 0;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.label67, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox23, 0, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(321, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 5;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(153, 132);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label67.Location = new System.Drawing.Point(3, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(147, 26);
+            this.label67.TabIndex = 0;
+            this.label67.Text = "Cena za godzinę";
+            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox23.Enabled = false;
+            this.textBox23.Location = new System.Drawing.Point(3, 29);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(147, 20);
+            this.textBox23.TabIndex = 3;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.label70, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox25, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(480, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 5;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(155, 132);
+            this.tableLayoutPanel9.TabIndex = 5;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label70.Location = new System.Drawing.Point(3, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(149, 26);
+            this.label70.TabIndex = 0;
+            this.label70.Text = "Przebieg w km";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox25.Enabled = false;
+            this.textBox25.Location = new System.Drawing.Point(3, 29);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(149, 20);
+            this.textBox25.TabIndex = 3;
+            // 
+            // checkedListBox5
+            // 
+            this.checkedListBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListBox5.Enabled = false;
+            this.checkedListBox5.FormattingEnabled = true;
+            this.checkedListBox5.Items.AddRange(new object[] {
+            "Samochód",
+            "Motorower",
+            "Motocykl"});
+            this.checkedListBox5.Location = new System.Drawing.Point(162, 3);
+            this.checkedListBox5.Name = "checkedListBox5";
+            this.checkedListBox5.Size = new System.Drawing.Size(153, 132);
+            this.checkedListBox5.TabIndex = 1;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.AutoSize = true;
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.groupBox6, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.groupBox7, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(644, 248);
+            this.tableLayoutPanel10.TabIndex = 12;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button8);
+            this.groupBox6.Controls.Add(this.textBox27);
+            this.groupBox6.Controls.Add(this.label73);
+            this.groupBox6.Controls.Add(this.textBox28);
+            this.groupBox6.Controls.Add(this.label74);
+            this.groupBox6.Controls.Add(this.label75);
+            this.groupBox6.Controls.Add(this.textBox29);
+            this.groupBox6.Controls.Add(this.label76);
+            this.groupBox6.Controls.Add(this.monthCalendar3);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(325, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(316, 222);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Zwrot";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(176, 118);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(98, 23);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Zdano";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Enabled = false;
+            this.textBox27.Location = new System.Drawing.Point(174, 182);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(100, 20);
+            this.textBox27.TabIndex = 8;
+            // 
+            // label73
+            // 
+            this.label73.Location = new System.Drawing.Point(171, 147);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(90, 33);
+            this.label73.TabIndex = 7;
+            this.label73.Text = "Pracownik odpowiedzialny";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(174, 120);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(100, 20);
+            this.textBox28.TabIndex = 6;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(171, 99);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(64, 13);
+            this.label74.TabIndex = 5;
+            this.label74.Text = "Data zdania";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(171, 49);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(80, 13);
+            this.label75.TabIndex = 4;
+            this.label75.Text = "Godzina zwrotu";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Enabled = false;
+            this.textBox29.Location = new System.Drawing.Point(174, 72);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(100, 20);
+            this.textBox29.TabIndex = 3;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(8, 25);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(64, 13);
+            this.label76.TabIndex = 1;
+            this.label76.Text = "Data zwrotu";
+            // 
+            // monthCalendar3
+            // 
+            this.monthCalendar3.Enabled = false;
+            this.monthCalendar3.Location = new System.Drawing.Point(11, 48);
+            this.monthCalendar3.Name = "monthCalendar3";
+            this.monthCalendar3.TabIndex = 2;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.monthCalendar4);
+            this.groupBox7.Controls.Add(this.textBox30);
+            this.groupBox7.Controls.Add(this.label77);
+            this.groupBox7.Controls.Add(this.checkBox2);
+            this.groupBox7.Controls.Add(this.textBox31);
+            this.groupBox7.Controls.Add(this.label78);
+            this.groupBox7.Controls.Add(this.label79);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(3, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(316, 222);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Rezerwacja";
+            // 
+            // monthCalendar4
+            // 
+            this.monthCalendar4.Enabled = false;
+            this.monthCalendar4.Location = new System.Drawing.Point(9, 48);
+            this.monthCalendar4.Name = "monthCalendar4";
+            this.monthCalendar4.TabIndex = 2;
+            // 
+            // textBox30
+            // 
+            this.textBox30.Enabled = false;
+            this.textBox30.Location = new System.Drawing.Point(172, 164);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(100, 20);
+            this.textBox30.TabIndex = 11;
+            // 
+            // label77
+            // 
+            this.label77.Location = new System.Drawing.Point(172, 130);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(100, 31);
+            this.label77.TabIndex = 10;
+            this.label77.Text = "Pracownik odpowiedzialny";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(175, 97);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(73, 17);
+            this.checkBox2.TabIndex = 9;
+            this.checkBox2.Text = "Odebrano";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Enabled = false;
+            this.textBox31.Location = new System.Drawing.Point(172, 71);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(100, 20);
+            this.textBox31.TabIndex = 2;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(172, 50);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(84, 13);
+            this.label78.TabIndex = 1;
+            this.label78.Text = "Godzina odbioru";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(10, 20);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(99, 13);
+            this.label79.TabIndex = 0;
+            this.label79.Text = "Data wypożyczenia";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.PrawyPanel, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.KlientMenuPanel, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(876, 442);
+            this.tableLayoutPanel6.TabIndex = 9;
+            // 
+            // textBox26
+            // 
+            this.textBox26.Location = new System.Drawing.Point(269, 15);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(100, 20);
+            this.textBox26.TabIndex = 6;
+            this.textBox26.TextChanged += new System.EventHandler(this.textBox26_TextChanged);
             // 
             // toggleBox3
             // 
@@ -1426,7 +2223,7 @@
             this.toggleBox3.Location = new System.Drawing.Point(0, 75);
             this.toggleBox3.Name = "toggleBox3";
             this.toggleBox3.On = false;
-            this.toggleBox3.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox3.Size = new System.Drawing.Size(661, 25);
             this.toggleBox3.TabIndex = 9;
             // 
             // toggleBox3.WorkingArea
@@ -1436,7 +2233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox3.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox3.WorkingArea.Name = "WorkingArea";
-            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(2913, 0);
+            this.toggleBox3.WorkingArea.Size = new System.Drawing.Size(5330, 0);
             this.toggleBox3.WorkingArea.TabIndex = 2;
             this.toggleBox3.WorkingArea.Visible = false;
             // 
@@ -1639,7 +2436,7 @@
             this.toggleBox4.Location = new System.Drawing.Point(0, 50);
             this.toggleBox4.Name = "toggleBox4";
             this.toggleBox4.On = false;
-            this.toggleBox4.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox4.Size = new System.Drawing.Size(661, 25);
             this.toggleBox4.TabIndex = 23;
             // 
             // toggleBox4.WorkingArea
@@ -1649,7 +2446,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox4.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox4.WorkingArea.Name = "WorkingArea";
-            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(2913, 0);
+            this.toggleBox4.WorkingArea.Size = new System.Drawing.Size(5330, 0);
             this.toggleBox4.WorkingArea.TabIndex = 2;
             this.toggleBox4.WorkingArea.Visible = false;
             // 
@@ -1834,7 +2631,7 @@
             this.toggleBox2.Location = new System.Drawing.Point(0, 25);
             this.toggleBox2.Name = "toggleBox2";
             this.toggleBox2.On = false;
-            this.toggleBox2.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox2.Size = new System.Drawing.Size(661, 25);
             this.toggleBox2.TabIndex = 22;
             // 
             // toggleBox2.WorkingArea
@@ -1844,7 +2641,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox2.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox2.WorkingArea.Name = "WorkingArea";
-            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(2913, 0);
+            this.toggleBox2.WorkingArea.Size = new System.Drawing.Size(5330, 0);
             this.toggleBox2.WorkingArea.TabIndex = 2;
             this.toggleBox2.WorkingArea.Visible = false;
             // 
@@ -1920,7 +2717,7 @@
             this.toggleBox1.Location = new System.Drawing.Point(0, 0);
             this.toggleBox1.Name = "toggleBox1";
             this.toggleBox1.On = false;
-            this.toggleBox1.Size = new System.Drawing.Size(585, 25);
+            this.toggleBox1.Size = new System.Drawing.Size(661, 25);
             this.toggleBox1.TabIndex = 22;
             // 
             // toggleBox1.WorkingArea
@@ -1930,7 +2727,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.toggleBox1.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.toggleBox1.WorkingArea.Name = "WorkingArea";
-            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(2913, 0);
+            this.toggleBox1.WorkingArea.Size = new System.Drawing.Size(5330, 0);
             this.toggleBox1.WorkingArea.TabIndex = 2;
             this.toggleBox1.WorkingArea.Visible = false;
             // 
@@ -2134,690 +2931,103 @@
             this.PlecDispLabel.TabIndex = 12;
             this.PlecDispLabel.Text = "Mężczyzna";
             // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.Location = new System.Drawing.Point(0, 415);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(585, 21);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Wybierz";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // PodgladRezerwacjiPanel
-            // 
-            this.PodgladRezerwacjiPanel.AutoScroll = true;
-            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox3);
-            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox1);
-            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox4);
-            this.PodgladRezerwacjiPanel.Controls.Add(this.groupBox5);
-            this.PodgladRezerwacjiPanel.Controls.Add(this.tableLayoutPanel10);
-            this.PodgladRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PodgladRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
-            this.PodgladRezerwacjiPanel.Name = "PodgladRezerwacjiPanel";
-            this.PodgladRezerwacjiPanel.Size = new System.Drawing.Size(585, 436);
-            this.PodgladRezerwacjiPanel.TabIndex = 24;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox3.Controls.Add(this.pictureBox5);
-            this.groupBox3.Controls.Add(this.pictureBox6);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 887);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(568, 132);
-            this.groupBox3.TabIndex = 25;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Nawigacja";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.Image = global::GUI.Properties.Resources.prawa_strzałka_318_113460;
-            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(471, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(91, 88);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox6.Image = global::GUI.Properties.Resources.strzalka_pelna_w_lewo;
-            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(6, 25);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(91, 88);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Controls.Add(this.label80);
-            this.groupBox1.Controls.Add(this.label81);
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.label35);
-            this.groupBox1.Controls.Add(this.label45);
-            this.groupBox1.Controls.Add(this.label46);
-            this.groupBox1.Controls.Add(this.label53);
-            this.groupBox1.Controls.Add(this.label54);
-            this.groupBox1.Controls.Add(this.label55);
-            this.groupBox1.Controls.Add(this.label56);
-            this.groupBox1.Controls.Add(this.label57);
-            this.groupBox1.Controls.Add(this.label58);
-            this.groupBox1.Controls.Add(this.label59);
-            this.groupBox1.Controls.Add(this.label60);
-            this.groupBox1.Controls.Add(this.label61);
-            this.groupBox1.Controls.Add(this.label62);
-            this.groupBox1.Controls.Add(this.label63);
-            this.groupBox1.Controls.Add(this.label64);
-            this.groupBox1.Controls.Add(this.label65);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 629);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(568, 258);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Klient";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(180, 33);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(40, 13);
-            this.label33.TabIndex = 24;
-            this.label33.Text = "Michał";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(12, 32);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(40, 13);
-            this.label34.TabIndex = 23;
-            this.label34.Text = "Franek";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(180, 16);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(60, 13);
-            this.label80.TabIndex = 22;
-            this.label80.Text = "Drugie Imie";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(13, 16);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 13);
-            this.label81.TabIndex = 21;
-            this.label81.Text = "Imie";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.nosacz;
-            this.pictureBox3.Location = new System.Drawing.Point(390, 62);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(169, 161);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(180, 229);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(83, 13);
-            this.label35.TabIndex = 20;
-            this.label35.Text = "FranekM@o2.pl";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(14, 227);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(67, 13);
-            this.label45.TabIndex = 19;
-            this.label45.Text = "123 456 789";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(180, 213);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(35, 13);
-            this.label46.TabIndex = 18;
-            this.label46.Text = "E-mail";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(13, 210);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(43, 13);
-            this.label53.TabIndex = 17;
-            this.label53.Text = "Telefon";
-            // 
-            // label54
-            // 
-            this.label54.Location = new System.Drawing.Point(180, 179);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(204, 34);
-            this.label54.TabIndex = 16;
-            this.label54.Text = "Cebulowa 16, 12-345 Wilkowyje";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(14, 176);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(65, 13);
-            this.label55.TabIndex = 15;
-            this.label55.Text = "01/01/1995";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(180, 162);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(34, 13);
-            this.label56.TabIndex = 14;
-            this.label56.Text = "Adres";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(13, 158);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(81, 13);
-            this.label57.TabIndex = 13;
-            this.label57.Text = "Data Urodzenia";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(180, 128);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(60, 13);
-            this.label58.TabIndex = 12;
-            this.label58.Text = "Mężczyzna";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(12, 126);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(51, 13);
-            this.label59.TabIndex = 11;
-            this.label59.Text = "Michalski";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(180, 111);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(30, 13);
-            this.label60.TabIndex = 10;
-            this.label60.Text = "Płeć";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(12, 108);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(53, 13);
-            this.label61.TabIndex = 9;
-            this.label61.Text = "Nazwisko";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(180, 78);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(40, 13);
-            this.label62.TabIndex = 8;
-            this.label62.Text = "Michał";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(12, 77);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(40, 13);
-            this.label63.TabIndex = 7;
-            this.label63.Text = "Franek";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(180, 61);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(60, 13);
-            this.label64.TabIndex = 6;
-            this.label64.Text = "Drugie Imie";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(13, 61);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(26, 13);
-            this.label65.TabIndex = 5;
-            this.label65.Text = "Imie";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.pictureBox4);
-            this.groupBox4.Controls.Add(this.textBox22);
-            this.groupBox4.Controls.Add(this.label66);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox4.Location = new System.Drawing.Point(0, 405);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(568, 224);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Wybrany Samochód";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(286, 70);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(152, 23);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "Podejrzyj Samochód";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GUI.Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907;
-            this.pictureBox4.Location = new System.Drawing.Point(11, 20);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(259, 197);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Enabled = false;
-            this.textBox22.Location = new System.Drawing.Point(285, 44);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(151, 20);
-            this.textBox22.TabIndex = 1;
-            this.textBox22.Text = "fiat 126p";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(282, 21);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(40, 13);
-            this.label66.TabIndex = 0;
-            this.label66.Text = "Nazwa";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.tableLayoutPanel7);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox5.Location = new System.Drawing.Point(0, 248);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(568, 157);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Inne";
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 4;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.checkedListBox4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 2, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.checkedListBox5, 1, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(562, 138);
-            this.tableLayoutPanel7.TabIndex = 6;
-            // 
-            // checkedListBox4
-            // 
-            this.checkedListBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox4.Enabled = false;
-            this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Items.AddRange(new object[] {
-            "A",
-            "A1",
-            "A2",
-            "AM",
-            "B",
-            "B1",
-            "BE"});
-            this.checkedListBox4.Location = new System.Drawing.Point(3, 3);
-            this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(134, 132);
-            this.checkedListBox4.TabIndex = 0;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.Controls.Add(this.label67, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox23, 0, 1);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(283, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 5;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(134, 132);
-            this.tableLayoutPanel8.TabIndex = 2;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label67.Location = new System.Drawing.Point(3, 0);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(134, 26);
-            this.label67.TabIndex = 0;
-            this.label67.Text = "Cena za godzinę";
-            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox23.Enabled = false;
-            this.textBox23.Location = new System.Drawing.Point(3, 29);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(134, 20);
-            this.textBox23.TabIndex = 3;
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.Controls.Add(this.label70, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox25, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(423, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 5;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(136, 132);
-            this.tableLayoutPanel9.TabIndex = 5;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label70.Location = new System.Drawing.Point(3, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(135, 26);
-            this.label70.TabIndex = 0;
-            this.label70.Text = "Przebieg w km";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox25.Enabled = false;
-            this.textBox25.Location = new System.Drawing.Point(3, 29);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(135, 20);
-            this.textBox25.TabIndex = 3;
-            // 
-            // checkedListBox5
-            // 
-            this.checkedListBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox5.Enabled = false;
-            this.checkedListBox5.FormattingEnabled = true;
-            this.checkedListBox5.Items.AddRange(new object[] {
-            "Samochód",
-            "Motorower",
-            "Motocykl"});
-            this.checkedListBox5.Location = new System.Drawing.Point(143, 3);
-            this.checkedListBox5.Name = "checkedListBox5";
-            this.checkedListBox5.Size = new System.Drawing.Size(134, 132);
-            this.checkedListBox5.TabIndex = 1;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.AutoSize = true;
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.groupBox6, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.groupBox7, 0, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(568, 248);
-            this.tableLayoutPanel10.TabIndex = 12;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.button8);
-            this.groupBox6.Controls.Add(this.textBox27);
-            this.groupBox6.Controls.Add(this.label73);
-            this.groupBox6.Controls.Add(this.textBox28);
-            this.groupBox6.Controls.Add(this.label74);
-            this.groupBox6.Controls.Add(this.label75);
-            this.groupBox6.Controls.Add(this.textBox29);
-            this.groupBox6.Controls.Add(this.label76);
-            this.groupBox6.Controls.Add(this.monthCalendar3);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(287, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(278, 222);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Zwrot";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(176, 118);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(98, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Zdano";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Enabled = false;
-            this.textBox27.Location = new System.Drawing.Point(174, 182);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 20);
-            this.textBox27.TabIndex = 8;
-            // 
-            // label73
-            // 
-            this.label73.Location = new System.Drawing.Point(171, 147);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(90, 33);
-            this.label73.TabIndex = 7;
-            this.label73.Text = "Pracownik odpowiedzialny";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(174, 120);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(100, 20);
-            this.textBox28.TabIndex = 6;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(171, 99);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(64, 13);
-            this.label74.TabIndex = 5;
-            this.label74.Text = "Data zdania";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(171, 49);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(80, 13);
-            this.label75.TabIndex = 4;
-            this.label75.Text = "Godzina zwrotu";
-            // 
-            // textBox29
-            // 
-            this.textBox29.Enabled = false;
-            this.textBox29.Location = new System.Drawing.Point(174, 72);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(100, 20);
-            this.textBox29.TabIndex = 3;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(8, 25);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(64, 13);
-            this.label76.TabIndex = 1;
-            this.label76.Text = "Data zwrotu";
-            // 
-            // monthCalendar3
-            // 
-            this.monthCalendar3.Enabled = false;
-            this.monthCalendar3.Location = new System.Drawing.Point(11, 48);
-            this.monthCalendar3.Name = "monthCalendar3";
-            this.monthCalendar3.TabIndex = 2;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.monthCalendar4);
-            this.groupBox7.Controls.Add(this.textBox30);
-            this.groupBox7.Controls.Add(this.label77);
-            this.groupBox7.Controls.Add(this.checkBox2);
-            this.groupBox7.Controls.Add(this.textBox31);
-            this.groupBox7.Controls.Add(this.label78);
-            this.groupBox7.Controls.Add(this.label79);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(278, 222);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Rezerwacja";
-            // 
-            // monthCalendar4
-            // 
-            this.monthCalendar4.Enabled = false;
-            this.monthCalendar4.Location = new System.Drawing.Point(9, 48);
-            this.monthCalendar4.Name = "monthCalendar4";
-            this.monthCalendar4.TabIndex = 2;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Enabled = false;
-            this.textBox30.Location = new System.Drawing.Point(172, 164);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 20);
-            this.textBox30.TabIndex = 11;
-            // 
-            // label77
-            // 
-            this.label77.Location = new System.Drawing.Point(172, 130);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(100, 31);
-            this.label77.TabIndex = 10;
-            this.label77.Text = "Pracownik odpowiedzialny";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(175, 97);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Odebrano";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Enabled = false;
-            this.textBox31.Location = new System.Drawing.Point(172, 71);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(100, 20);
-            this.textBox31.TabIndex = 2;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(172, 50);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(84, 13);
-            this.label78.TabIndex = 1;
-            this.label78.Text = "Godzina odbioru";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(10, 20);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(99, 13);
-            this.label79.TabIndex = 0;
-            this.label79.Text = "Data wypożyczenia";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.PrawyPanel, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.KlientMenuPanel, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 442);
-            this.tableLayoutPanel6.TabIndex = 9;
+            // PrzegladyToggle
+            // 
+            this.PrzegladyToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PrzegladyToggle.Caption = "Przeglądy";
+            this.PrzegladyToggle.Controls.Add(this.tableLayoutPanel1);
+            this.PrzegladyToggle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PrzegladyToggle.Location = new System.Drawing.Point(0, 469);
+            this.PrzegladyToggle.Name = "PrzegladyToggle";
+            this.PrzegladyToggle.On = false;
+            this.PrzegladyToggle.Size = new System.Drawing.Size(644, 25);
+            this.PrzegladyToggle.TabIndex = 21;
+            // 
+            // PrzegladyToggle.WorkingArea
+            // 
+            this.PrzegladyToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
+            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(3688, 0);
+            this.PrzegladyToggle.WorkingArea.TabIndex = 2;
+            this.PrzegladyToggle.WorkingArea.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 244);
+            this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox2.Location = new System.Drawing.Point(284, 3);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(275, 238);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "03-02-2018\nWymieniono przedni spojler, oczyszczono rurę wydechową";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "01-01-2016",
+            "02-03-2017",
+            "03-02-2018"});
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(275, 238);
+            this.listBox1.TabIndex = 0;
+            // 
+            // OpinieToggle
+            // 
+            this.OpinieToggle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OpinieToggle.Caption = "Opinie";
+            this.OpinieToggle.Controls.Add(this.listView3);
+            this.OpinieToggle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpinieToggle.Location = new System.Drawing.Point(0, 444);
+            this.OpinieToggle.Name = "OpinieToggle";
+            this.OpinieToggle.On = false;
+            this.OpinieToggle.Size = new System.Drawing.Size(644, 25);
+            this.OpinieToggle.TabIndex = 1;
+            // 
+            // OpinieToggle.WorkingArea
+            // 
+            this.OpinieToggle.WorkingArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
+            this.OpinieToggle.WorkingArea.Name = "WorkingArea";
+            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(3688, 0);
+            this.OpinieToggle.WorkingArea.TabIndex = 2;
+            this.OpinieToggle.WorkingArea.Visible = false;
+            // 
+            // listView3
+            // 
+            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listView3.Location = new System.Drawing.Point(2, 31);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(562, 283);
+            this.listView3.TabIndex = 0;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 442);
+            this.ClientSize = new System.Drawing.Size(876, 442);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "Form3";
             this.Text = "Panel Pracownika";
@@ -2826,10 +3036,13 @@
             this.KlientMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PrawyPanel.ResumeLayout(false);
+            this.ListaKlientowPanel.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.WyszukiwanieRezerwacjiPanel.ResumeLayout(false);
             this.PodgladPojazduPanel.ResumeLayout(false);
-            this.PrzegladyToggle.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.OpinieToggle.ResumeLayout(false);
             this.SamochódBox.ResumeLayout(false);
             this.SamochódBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -2845,28 +3058,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.WyszukiwanieRezerwacjiPanel.ResumeLayout(false);
-            this.toggleBox3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.toggleBox4.ResumeLayout(false);
-            this.toggleBox4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.ZwrotBox.ResumeLayout(false);
-            this.ZwrotBox.PerformLayout();
-            this.RezerwacjaBox.ResumeLayout(false);
-            this.RezerwacjaBox.PerformLayout();
-            this.toggleBox2.ResumeLayout(false);
-            this.toggleBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.toggleBox1.ResumeLayout(false);
-            this.toggleBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).EndInit();
-            this.Wyszukaj.ResumeLayout(false);
-            this.Wyszukaj.PerformLayout();
             this.PodgladRezerwacjiPanel.ResumeLayout(false);
             this.PodgladRezerwacjiPanel.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2890,6 +3081,30 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.toggleBox3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.toggleBox4.ResumeLayout(false);
+            this.toggleBox4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.ZwrotBox.ResumeLayout(false);
+            this.ZwrotBox.PerformLayout();
+            this.RezerwacjaBox.ResumeLayout(false);
+            this.RezerwacjaBox.PerformLayout();
+            this.toggleBox2.ResumeLayout(false);
+            this.toggleBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.toggleBox1.ResumeLayout(false);
+            this.toggleBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).EndInit();
+            this.Wyszukaj.ResumeLayout(false);
+            this.Wyszukaj.PerformLayout();
+            this.PrzegladyToggle.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.OpinieToggle.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3131,5 +3346,23 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel ListaKlientowPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKlient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImieNazwisko;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataUr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrDowOsob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox26;
     }
 }

@@ -9,8 +9,7 @@ namespace GUI.GridView
     class ClientListGrid
     {
         public int idKlient { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
+        public string ImieNazwisko { get; set; }
         public string DataUr { get; set; }
         public string NrDowOsob { get; set; }
         public string Telefon { get; set; }
@@ -22,8 +21,7 @@ namespace GUI.GridView
         public ClientListGrid(KLIENCI klient)
         {
             idKlient = klient.idKlient;
-            Imie = klient.Imie;
-            Nazwisko = klient.Nazwisko;
+            ImieNazwisko = klient.Imie + " " + klient.Nazwisko;
             DataUr = klient.DataUr.ToString("d");
             NrDowOsob = klient.NrDowOsob;
             Telefon = klient.Telefon;

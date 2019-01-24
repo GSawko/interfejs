@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.GridView;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -12,6 +13,7 @@ namespace GUI
     public partial class Form3 : Form
     {
         private KLIENCI _currentEditKlient;
+        private List<ClientListGrid> _clientGridList = new List<ClientListGrid>();
 
         public Form3(string login)
         {
@@ -102,17 +104,17 @@ namespace GUI
             }
 
             _currentEditKlient = ClientService.GetClient(id) ?? new KLIENCI();
-            UpdateKlientDataFromEditScreen(_currentEditKlient);
+            ShowClientOnEditScreen(_currentEditKlient);
         }
 
         private void NrDowOsTBoxWEDK_TextChanged(object sender, EventArgs e)
         {
             string nrDowOsob = ((TextBox)sender).TextOrDefault();
             _currentEditKlient = ClientService.GetClient(nrDowOsob, true) ?? new KLIENCI();
-            UpdateKlientDataFromEditScreen(_currentEditKlient);
+            ShowClientOnEditScreen(_currentEditKlient);
         }
 
-        private void UpdateKlientDataFromEditScreen(KLIENCI klient)
+        private void ShowClientOnEditScreen(KLIENCI klient)
         {
             ImieTBoxEDKlienta.Text = klient.Imie;
             DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
@@ -232,6 +234,72 @@ namespace GUI
         private void button4_Click(object sender, EventArgs e)
         {
             DodajKlientaPanel.BringToFront();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            LoadClientList();
+            ListaKlientowPanel.BringToFront();
+        }
+
+        private void LoadClientList()
+        {
+            var clients = ClientService.GetClients();
+            _clientGridList = new List<ClientListGrid>();
+            foreach (ClientListGrid client in clients)
+                _clientGridList.Add(client);
+
+            dataGridView2.DataSource = _clientGridList;
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                var row = dataGridView2.SelectedRows[0];
+                var id = (int)row.Cells["idKlient"].Value;
+                ShowSelectedClientOnEditScreen(id);
+            }
+        }
+
+        private void ShowSelectedClientOnEditScreen(int id)
+        {
+            _currentEditKlient = ClientService.GetClient(id) ?? new KLIENCI();
+            ShowClientOnEditScreen(_currentEditKlient);
+            EdytujDaneKlientaPanel.BringToFront();
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+            ClientListFilter();
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+            ClientListFilter();
+        }
+
+        private void textBox26_TextChanged(object sender, EventArgs e)
+        {
+            ClientListFilter();
+        }
+
+        private void ClientListFilter()
+        {
+            var filterList = _clientGridList;
+            string nameSurname = textBox19.TextOrDefault();
+            if (nameSurname != null)
+                filterList = filterList.Where(c => c.ImieNazwisko.IndexOf(nameSurname, 0, StringComparison.CurrentCultureIgnoreCase) != -1 ? true : false).ToList();
+
+            string numerDowodu = textBox24.TextOrDefault();
+            if (numerDowodu != null)
+                filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu)).ToList();
+
+            string telefon = textBox26.TextOrDefault();
+            if (telefon != null)
+                filterList = filterList.Where(c => c.Telefon.StartsWith(telefon)).ToList();
+
+            dataGridView2.DataSource = filterList;
         }
     }
 }

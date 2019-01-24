@@ -457,5 +457,39 @@ namespace GUI
 
             dataGridView3.DataSource = workerListGrid;
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            LoadReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadReservationList()
+        {
+            var reservations = ReservationService.GetReservations();
+            List<ReservationListGrid> reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservationView in reservations)
+            {
+                reservationListGrid.Add(reservationView);
+            }
+            dataGridView4.DataSource = reservationListGrid;
+        }
+
+        private void ShowSelectedReservationOnEditScreen(int id)
+        {
+            //var reservation = ReservationService.GetReservation(id);
+            //Otwórz ekran wyświetlający szczegóły rezerwacji
+            //TODO rezerwacje jeszcze nigdzie nie są obsługiwane
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView4.SelectedRows.Count > 0)
+            {
+                var row = dataGridView4.SelectedRows[0];
+                var id = (int)row.Cells["idRezerw"].Value;
+                //Wywołanie funkcji otwierającej szczegóły na podstawie idRezerw
+            }
+        }
     }
 }
