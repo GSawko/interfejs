@@ -376,13 +376,86 @@ namespace GUI
 
         private void ShowVehicleOnEditScreen(POJAZDY vehicle)
         {
-            textBox64.Text = vehicle.MARKI.Nazwa;
-            textBox63.Text = vehicle.MARKI.Model;
+            var marka = vehicle.MARKI.Nazwa.Split(' ');
+            textBox64.Text = marka.Length > 0 ? marka[0] : "";
+            textBox63.Text = marka.Length > 1 ? marka[1] : "";
             textBox62.Text = vehicle.Kolor;
             textBox61.Text = vehicle.Przebieg.ToString("D");
             textBox60.Text = vehicle.DataProd.ToString("d");
             textBox59.Text = vehicle.ZaGodz.ToString("C");
             richTextBox7.Text = vehicle.Opis;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            LoadClientList();
+            ListaKlientowPanel.BringToFront();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                var row = dataGridView2.SelectedRows[0];
+                var id = (int)row.Cells["idKlient"].Value;
+                ShowSelectedClientOnEditScreen(id);
+            }
+        }
+
+        private void ShowSelectedClientOnEditScreen(int id)
+        {
+            var client = ClientService.GetClient(id) ?? new KLIENCI();
+            ShowClientOnEditScreen(client);
+            _currentEditKlient = client;
+            EdytujDaneKlientaPanel.BringToFront();
+        }
+
+        private void LoadClientList()
+        {
+            var clients = ClientService.GetClients();
+            List<ClientListGrid> clientListGrid = new List<ClientListGrid>();
+            foreach (ClientListGrid clientView in clients)
+            {
+                clientListGrid.Add(clientView);
+            }
+
+            dataGridView2.DataSource = clientListGrid;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            LoadWorkerList();
+            ListaPracownikowPanel.BringToFront();
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                var row = dataGridView3.SelectedRows[0];
+                var id = (int)row.Cells["idPrac"].Value;
+                ShowSelectedWorkerOnEditScreen(id);
+            }
+        }
+
+        private void ShowSelectedWorkerOnEditScreen(int id)
+        {
+            var worker = WorkerService.GetWorker(id) ?? new PRACOWNICY();
+            ShowWorkerOnEditScreen(worker);
+            _currentEditPracownik = worker;
+            EdytujPracownikaPanel.BringToFront();
+        }
+
+        private void LoadWorkerList()
+        {
+            var workers = WorkerService.GetWorkers();
+            List<WorkerListGrid> workerListGrid = new List<WorkerListGrid>();
+            foreach (WorkerListGrid workerView in workers)
+            {
+                workerListGrid.Add(workerView);
+            }
+
+            dataGridView3.DataSource = workerListGrid;
         }
     }
 }

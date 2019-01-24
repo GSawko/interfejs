@@ -13,7 +13,7 @@ namespace GUI.GridView
         public string Marka { get; set; }
         public string Rodzaj { get; set; }
         public string NrRejestr { get; set; }
-        public float ZaGodz { get; set; }
+        public string ZaGodz { get; set; }
         public string Sprawny { get; set; }
 
         public void SetRodzaj(int typ)
@@ -29,7 +29,7 @@ namespace GUI.GridView
             Marka = pojazd.MARKI.ToString();
             SetRodzaj(pojazd.Rodzaj);
             NrRejestr = pojazd.NrRejestr;
-            ZaGodz = pojazd.ZaGodz;
+            ZaGodz = pojazd.ZaGodz.ToString("C");
             Sprawny = pojazd.Sprawny == 0 ? "Nie" : "Tak";
         }
 

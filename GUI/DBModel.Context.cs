@@ -27,7 +27,6 @@ namespace GUI
     
         public virtual DbSet<KATEGORIEPJAZDY> KATEGORIEPJAZDY { get; set; }
         public virtual DbSet<KLIENCI> KLIENCI { get; set; }
-        public virtual DbSet<MARKI> MARKI { get; set; }
         public virtual DbSet<OPINIA> OPINIA { get; set; }
         public virtual DbSet<POJAZDY> POJAZDY { get; set; }
         public virtual DbSet<PRACOWNICY> PRACOWNICY { get; set; }
@@ -35,5 +34,6 @@ namespace GUI
         public virtual DbSet<REZERWACJE> REZERWACJE { get; set; }
         public virtual DbSet<ZDJECIA> ZDJECIA { get; set; }
         public virtual DbSet<LoginData> LoginData { get; set; }
+        public virtual DbSet<MARKI> MARKI { get; set; }
     }
 }

@@ -9,11 +9,22 @@ namespace GUI.Service
 {
     static class WorkerService
     {
+        public static List<PRACOWNICY> GetWorkers()
+        {
+            using (var entities = new DBEntities())
+            {
+                var pracownicy = entities.PRACOWNICY
+                    .ToList();
+
+                return pracownicy;
+            }
+        }
+
         public static PRACOWNICY GetWorker(int idWork)
         {
             using (var entities = new DBEntities())
             {
-                PRACOWNICY pracownik = entities.PRACOWNICY
+                var pracownik = entities.PRACOWNICY
                     .Where(p => p.idPrac == idWork)
                     .FirstOrDefault();
 
@@ -25,7 +36,7 @@ namespace GUI.Service
         {
             using (var entities = new DBEntities())
             {
-                PRACOWNICY pracownik = entities.PRACOWNICY
+                var pracownik = entities.PRACOWNICY
                     .Where(p => p.Login == login)
                     .FirstOrDefault();
 
@@ -62,7 +73,7 @@ namespace GUI.Service
 
         public static bool RemoveWorker(int idWorker)
         {
-            PRACOWNICY worker = new PRACOWNICY() { idPrac = idWorker };
+            var worker = new PRACOWNICY() { idPrac = idWorker };
             using (var entities = new DBEntities())
             {
                 try

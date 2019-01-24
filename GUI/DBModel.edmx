@@ -39,7 +39,6 @@
           </Key>
           <Property Name="idMarki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="Model" Type="varchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="OPINIA">
           <Key>
@@ -391,15 +390,6 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <NavigationProperty Name="KATEGORIEPJAZDY" Relationship="Self.POSIADA" FromRole="KLIENCI" ToRole="KATEGORIEPJAZDY" />
           <Property Name="Plec" Type="SByte" Nullable="false" />
         </EntityType>
-        <EntityType Name="MARKI">
-          <Key>
-            <PropertyRef Name="idMarki" />
-          </Key>
-          <Property Name="idMarki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="POJAZDY" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="MARKI" ToRole="POJAZDY" />
-          <Property Name="Model" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="OPINIA">
           <Key>
             <PropertyRef Name="idOpinia" />
@@ -424,12 +414,12 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <Property Name="Sprawny" Type="SByte" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="MARKI_idMarki" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MARKI" Relationship="Self.fk_POJAZDY_MARKI1" FromRole="POJAZDY" ToRole="MARKI" />
           <NavigationProperty Name="PRZEGLADY" Relationship="Self.fk_PRZEGLADY_POJAZDY1" FromRole="POJAZDY" ToRole="PRZEGLADY" />
           <NavigationProperty Name="REZERWACJE" Relationship="Self.fk_REZERWACJE_POJAZDY1" FromRole="POJAZDY" ToRole="REZERWACJE" />
           <NavigationProperty Name="ZDJECIA" Relationship="Self.fk_ZDJECIA_POJAZDY1" FromRole="POJAZDY" ToRole="ZDJECIA" />
           <NavigationProperty Name="KATEGORIEPJAZDY" Relationship="Self.WYMAGA" FromRole="POJAZDY" ToRole="KATEGORIEPJAZDY" />
           <Property Name="Kolor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MARKI" Relationship="DBModel.fk_POJAZDY_MARKI1" FromRole="POJAZDY" ToRole="MARKI" />
         </EntityType>
         <EntityType Name="PRACOWNICY">
           <Key>
@@ -507,18 +497,6 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
             </Principal>
             <Dependent Role="REZERWACJE">
               <PropertyRef Name="KLIENCI_idKlient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_POJAZDY_MARKI1">
-          <End Role="MARKI" Type="Self.MARKI" Multiplicity="1" />
-          <End Role="POJAZDY" Type="Self.POJAZDY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MARKI">
-              <PropertyRef Name="idMarki" />
-            </Principal>
-            <Dependent Role="POJAZDY">
-              <PropertyRef Name="MARKI_idMarki" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -605,7 +583,6 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
         <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="KATEGORIEPJAZDY" EntityType="Self.KATEGORIEPJAZDY" />
           <EntitySet Name="KLIENCI" EntityType="Self.KLIENCI" />
-          <EntitySet Name="MARKI" EntityType="Self.MARKI" />
           <EntitySet Name="OPINIA" EntityType="Self.OPINIA" />
           <EntitySet Name="POJAZDY" EntityType="Self.POJAZDY" />
           <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" />
@@ -616,10 +593,6 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
           <AssociationSet Name="fk_REZERWACJE_KLIENCI1" Association="Self.fk_REZERWACJE_KLIENCI1">
             <End Role="KLIENCI" EntitySet="KLIENCI" />
             <End Role="REZERWACJE" EntitySet="REZERWACJE" />
-          </AssociationSet>
-          <AssociationSet Name="fk_POJAZDY_MARKI1" Association="Self.fk_POJAZDY_MARKI1">
-            <End Role="MARKI" EntitySet="MARKI" />
-            <End Role="POJAZDY" EntitySet="POJAZDY" />
           </AssociationSet>
           <AssociationSet Name="fk_OPINIA_REZERWACJE1" Association="Self.fk_OPINIA_REZERWACJE1">
             <End Role="REZERWACJE" EntitySet="REZERWACJE" />
@@ -653,7 +626,32 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
             <End Role="KATEGORIEPJAZDY" EntitySet="KATEGORIEPJAZDY" />
             <End Role="POJAZDY" EntitySet="POJAZDY" />
           </AssociationSet>
+          <EntitySet Name="MARKI" EntityType="DBModel.MARKI" />
+          <AssociationSet Name="fk_POJAZDY_MARKI1" Association="DBModel.fk_POJAZDY_MARKI1">
+            <End Role="MARKI" EntitySet="MARKI" />
+            <End Role="POJAZDY" EntitySet="POJAZDY" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MARKI">
+          <Key>
+            <PropertyRef Name="idMarki" />
+          </Key>
+          <Property Name="idMarki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POJAZDY" Relationship="DBModel.fk_POJAZDY_MARKI1" FromRole="MARKI" ToRole="POJAZDY" />
+        </EntityType>
+        <Association Name="fk_POJAZDY_MARKI1">
+          <End Type="DBModel.MARKI" Role="MARKI" Multiplicity="1" />
+          <End Type="DBModel.POJAZDY" Role="POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKI">
+              <PropertyRef Name="idMarki" />
+            </Principal>
+            <Dependent Role="POJAZDY">
+              <PropertyRef Name="MARKI_idMarki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -687,15 +685,6 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Haslo" ColumnName="Haslo" />
                 <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MARKI">
-            <EntityTypeMapping TypeName="DBModel.MARKI">
-              <MappingFragment StoreEntitySet="MARKI">
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="idMarki" ColumnName="idMarki" />
-                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -804,6 +793,14 @@ FROM `LoginData` AS `LoginData`</DefiningQuery>
               <ScalarProperty Name="idPojazd" ColumnName="POJAZDY_idPojazd" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="MARKI">
+            <EntityTypeMapping TypeName="DBModel.MARKI">
+              <MappingFragment StoreEntitySet="MARKI">
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="idMarki" ColumnName="idMarki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

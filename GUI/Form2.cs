@@ -105,9 +105,10 @@ namespace GUI
 
         private void ShowVehicleDataToChooseVehicle(POJAZDY vehicle)
         {
-            label5.Text = vehicle.MARKI.Nazwa + " " + vehicle.MARKI.Model;      //Opis pod zjęciem
-            label7.Text = vehicle.MARKI.Nazwa;
-            label9.Text = vehicle.MARKI.Model;
+            label5.Text = vehicle.MARKI.Nazwa;      //Opis pod zjęciem
+            var marka = vehicle.MARKI.Nazwa.Split(' ');
+            label7.Text = marka.Length > 0 ? marka[0] : "";
+            label9.Text = marka.Length > 1 ? marka[1] : "";
             label11.Text = vehicle.Kolor;
             label13.Text = vehicle.Przebieg.ToString() + " km";
             label15.Text = vehicle.DataProd.ToString("yyyy");

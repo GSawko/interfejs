@@ -9,10 +9,9 @@
 
 namespace GUI
 {
-    using GUI.GridView;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class POJAZDY
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +22,7 @@ namespace GUI
             this.ZDJECIA = new HashSet<ZDJECIA>();
             this.KATEGORIEPJAZDY = new HashSet<KATEGORIEPJAZDY>();
         }
-
+    
         public int idPojazd { get; set; }
         public short Rodzaj { get; set; }
         public string NrRejestr { get; set; }
@@ -34,8 +33,7 @@ namespace GUI
         public string Opis { get; set; }
         public int MARKI_idMarki { get; set; }
         public string Kolor { get; set; }
-
-        public virtual MARKI MARKI { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRZEGLADY> PRZEGLADY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -44,5 +42,6 @@ namespace GUI
         public virtual ICollection<ZDJECIA> ZDJECIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KATEGORIEPJAZDY> KATEGORIEPJAZDY { get; set; }
+        public virtual MARKI MARKI { get; set; }
     }
 }

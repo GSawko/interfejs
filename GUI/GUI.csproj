@@ -105,6 +105,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GridView\CarListGrid.cs" />
+    <Compile Include="GridView\ClientListGrid.cs" />
+    <Compile Include="GridView\WorkerListGrid.cs" />
+    <Compile Include="MARKI.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Service\CarBrandService.cs" />
     <Compile Include="Service\DrivingLicenceService.cs" />
     <Compile Include="Extensions\MaskedTextBoxExtension.cs" />
@@ -158,9 +163,6 @@
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginData.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MARKI.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OPINIA.cs">

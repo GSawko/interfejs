@@ -9,6 +9,17 @@ namespace GUI
 {
     static class ClientService
     {
+
+        public static List<KLIENCI> GetClients()
+        {
+            using (var entities = new DBEntities())
+            {
+                var clients = entities.KLIENCI
+                    .ToList();
+
+                return clients;
+            }
+        }
         public static KLIENCI GetClient(string loginOrIDNumb, bool IDNumb = false)
         {
             using (var entities = new DBEntities())
