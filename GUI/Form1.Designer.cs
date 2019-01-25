@@ -72,6 +72,7 @@
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Nie pamiętam hasła";
+            this.linkLabel1.Visible = false;
             // 
             // label2
             // 

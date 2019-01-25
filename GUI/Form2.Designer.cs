@@ -200,13 +200,13 @@
             this.KlientMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.KlientMenuPanel.Location = new System.Drawing.Point(3, 3);
             this.KlientMenuPanel.Name = "KlientMenuPanel";
-            this.KlientMenuPanel.Size = new System.Drawing.Size(203, 436);
+            this.KlientMenuPanel.Size = new System.Drawing.Size(203, 555);
             this.KlientMenuPanel.TabIndex = 0;
             // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.Location = new System.Drawing.Point(15, 410);
+            this.button5.Location = new System.Drawing.Point(15, 529);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(178, 23);
             this.button5.TabIndex = 8;
@@ -302,7 +302,7 @@
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
-            this.PrawyPanel.Size = new System.Drawing.Size(585, 436);
+            this.PrawyPanel.Size = new System.Drawing.Size(819, 555);
             this.PrawyPanel.TabIndex = 21;
             // 
             // WybórPojazduPanel
@@ -316,7 +316,7 @@
             this.WybórPojazduPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WybórPojazduPanel.Location = new System.Drawing.Point(0, 0);
             this.WybórPojazduPanel.Name = "WybórPojazduPanel";
-            this.WybórPojazduPanel.Size = new System.Drawing.Size(585, 436);
+            this.WybórPojazduPanel.Size = new System.Drawing.Size(819, 555);
             this.WybórPojazduPanel.TabIndex = 1;
             // 
             // button6
@@ -324,7 +324,7 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.Location = new System.Drawing.Point(0, 519);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(568, 23);
+            this.button6.Size = new System.Drawing.Size(819, 23);
             this.button6.TabIndex = 24;
             this.button6.Text = "Dalej";
             this.button6.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@
             this.WyborPojazduToggle.Location = new System.Drawing.Point(0, 494);
             this.WyborPojazduToggle.Name = "WyborPojazduToggle";
             this.WyborPojazduToggle.On = false;
-            this.WyborPojazduToggle.Size = new System.Drawing.Size(568, 25);
+            this.WyborPojazduToggle.Size = new System.Drawing.Size(819, 25);
             this.WyborPojazduToggle.TabIndex = 21;
             // 
             // WyborPojazduToggle.WorkingArea
@@ -349,7 +349,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WyborPojazduToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.WyborPojazduToggle.WorkingArea.Name = "WorkingArea";
-            this.WyborPojazduToggle.WorkingArea.Size = new System.Drawing.Size(1116, 0);
+            this.WyborPojazduToggle.WorkingArea.Size = new System.Drawing.Size(1641, 0);
             this.WyborPojazduToggle.WorkingArea.TabIndex = 2;
             this.WyborPojazduToggle.WorkingArea.Visible = false;
             // 
@@ -382,7 +382,7 @@
             this.PrzegladyToggle.Location = new System.Drawing.Point(0, 469);
             this.PrzegladyToggle.Name = "PrzegladyToggle";
             this.PrzegladyToggle.On = false;
-            this.PrzegladyToggle.Size = new System.Drawing.Size(568, 25);
+            this.PrzegladyToggle.Size = new System.Drawing.Size(819, 25);
             this.PrzegladyToggle.TabIndex = 21;
             // 
             // PrzegladyToggle.WorkingArea
@@ -392,7 +392,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PrzegladyToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.PrzegladyToggle.WorkingArea.Name = "WorkingArea";
-            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(1116, 0);
+            this.PrzegladyToggle.WorkingArea.Size = new System.Drawing.Size(1641, 0);
             this.PrzegladyToggle.WorkingArea.TabIndex = 2;
             this.PrzegladyToggle.WorkingArea.Visible = false;
             // 
@@ -442,7 +442,7 @@
             this.OpinieToggle.Location = new System.Drawing.Point(0, 444);
             this.OpinieToggle.Name = "OpinieToggle";
             this.OpinieToggle.On = false;
-            this.OpinieToggle.Size = new System.Drawing.Size(568, 25);
+            this.OpinieToggle.Size = new System.Drawing.Size(819, 25);
             this.OpinieToggle.TabIndex = 1;
             // 
             // OpinieToggle.WorkingArea
@@ -452,7 +452,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OpinieToggle.WorkingArea.Location = new System.Drawing.Point(0, 29);
             this.OpinieToggle.WorkingArea.Name = "WorkingArea";
-            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(1116, 0);
+            this.OpinieToggle.WorkingArea.Size = new System.Drawing.Size(1641, 0);
             this.OpinieToggle.WorkingArea.TabIndex = 2;
             this.OpinieToggle.WorkingArea.Visible = false;
             // 
@@ -491,7 +491,7 @@
             this.SamochódBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.SamochódBox.Location = new System.Drawing.Point(0, 0);
             this.SamochódBox.Name = "SamochódBox";
-            this.SamochódBox.Size = new System.Drawing.Size(568, 444);
+            this.SamochódBox.Size = new System.Drawing.Size(819, 444);
             this.SamochódBox.TabIndex = 26;
             this.SamochódBox.TabStop = false;
             this.SamochódBox.Text = " ";
@@ -694,7 +694,7 @@
             this.FormularzRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormularzRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
             this.FormularzRezerwacjiPanel.Name = "FormularzRezerwacjiPanel";
-            this.FormularzRezerwacjiPanel.Size = new System.Drawing.Size(585, 436);
+            this.FormularzRezerwacjiPanel.Size = new System.Drawing.Size(819, 555);
             this.FormularzRezerwacjiPanel.TabIndex = 21;
             // 
             // WybranyBox
@@ -707,7 +707,7 @@
             this.WybranyBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.WybranyBox.Location = new System.Drawing.Point(0, 385);
             this.WybranyBox.Name = "WybranyBox";
-            this.WybranyBox.Size = new System.Drawing.Size(568, 224);
+            this.WybranyBox.Size = new System.Drawing.Size(802, 224);
             this.WybranyBox.TabIndex = 14;
             this.WybranyBox.TabStop = false;
             this.WybranyBox.Text = "Wybrany Samochód";
@@ -765,7 +765,7 @@
             this.InneBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.InneBox.Location = new System.Drawing.Point(0, 228);
             this.InneBox.Name = "InneBox";
-            this.InneBox.Size = new System.Drawing.Size(568, 157);
+            this.InneBox.Size = new System.Drawing.Size(802, 157);
             this.InneBox.TabIndex = 4;
             this.InneBox.TabStop = false;
             this.InneBox.Text = "Inne";
@@ -787,7 +787,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(562, 138);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(796, 138);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // checkedListBox1
@@ -804,7 +804,7 @@
             "BE"});
             this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(134, 132);
+            this.checkedListBox1.Size = new System.Drawing.Size(193, 132);
             this.checkedListBox1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -817,7 +817,7 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox6, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBox7, 0, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(283, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(401, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -826,7 +826,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(134, 132);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(193, 132);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // label27
@@ -835,7 +835,7 @@
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Location = new System.Drawing.Point(3, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(134, 26);
+            this.label27.Size = new System.Drawing.Size(187, 26);
             this.label27.TabIndex = 0;
             this.label27.Text = "Cena za godzinę";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -846,7 +846,7 @@
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Location = new System.Drawing.Point(3, 78);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(134, 26);
+            this.label29.Size = new System.Drawing.Size(187, 26);
             this.label29.TabIndex = 2;
             this.label29.Text = "Do";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -857,7 +857,7 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Location = new System.Drawing.Point(3, 26);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(134, 26);
+            this.label28.Size = new System.Drawing.Size(187, 26);
             this.label28.TabIndex = 1;
             this.label28.Text = "Od";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -867,7 +867,7 @@
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox6.Location = new System.Drawing.Point(3, 55);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 20);
+            this.textBox6.Size = new System.Drawing.Size(187, 20);
             this.textBox6.TabIndex = 3;
             // 
             // textBox7
@@ -875,7 +875,7 @@
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox7.Location = new System.Drawing.Point(3, 107);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(134, 20);
+            this.textBox7.Size = new System.Drawing.Size(187, 20);
             this.textBox7.TabIndex = 4;
             // 
             // tableLayoutPanel3
@@ -888,7 +888,7 @@
             this.tableLayoutPanel3.Controls.Add(this.textBox8, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.textBox9, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(423, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(600, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -896,7 +896,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(136, 132);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(193, 132);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // label30
@@ -905,7 +905,7 @@
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Location = new System.Drawing.Point(3, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(135, 26);
+            this.label30.Size = new System.Drawing.Size(187, 26);
             this.label30.TabIndex = 0;
             this.label30.Text = "Przebieg w km";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -916,7 +916,7 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Location = new System.Drawing.Point(3, 78);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(135, 26);
+            this.label31.Size = new System.Drawing.Size(187, 26);
             this.label31.TabIndex = 2;
             this.label31.Text = "Do";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -927,7 +927,7 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Location = new System.Drawing.Point(3, 26);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(135, 26);
+            this.label32.Size = new System.Drawing.Size(187, 26);
             this.label32.TabIndex = 1;
             this.label32.Text = "Od";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -937,7 +937,7 @@
             this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox8.Location = new System.Drawing.Point(3, 55);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(135, 20);
+            this.textBox8.Size = new System.Drawing.Size(187, 20);
             this.textBox8.TabIndex = 3;
             // 
             // textBox9
@@ -945,7 +945,7 @@
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox9.Location = new System.Drawing.Point(3, 107);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(135, 20);
+            this.textBox9.Size = new System.Drawing.Size(187, 20);
             this.textBox9.TabIndex = 4;
             // 
             // checkedListBox2
@@ -956,9 +956,9 @@
             "Samochód",
             "Motorower",
             "Motocykl"});
-            this.checkedListBox2.Location = new System.Drawing.Point(143, 3);
+            this.checkedListBox2.Location = new System.Drawing.Point(202, 3);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(134, 132);
+            this.checkedListBox2.Size = new System.Drawing.Size(193, 132);
             this.checkedListBox2.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -974,7 +974,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(568, 228);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(802, 228);
             this.tableLayoutPanel5.TabIndex = 12;
             // 
             // ZwrotBox
@@ -988,9 +988,9 @@
             this.ZwrotBox.Controls.Add(this.label21);
             this.ZwrotBox.Controls.Add(this.monthCalendar2);
             this.ZwrotBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ZwrotBox.Location = new System.Drawing.Point(287, 3);
+            this.ZwrotBox.Location = new System.Drawing.Point(404, 3);
             this.ZwrotBox.Name = "ZwrotBox";
-            this.ZwrotBox.Size = new System.Drawing.Size(278, 222);
+            this.ZwrotBox.Size = new System.Drawing.Size(395, 222);
             this.ZwrotBox.TabIndex = 3;
             this.ZwrotBox.TabStop = false;
             this.ZwrotBox.Text = "Zwrot";
@@ -1071,7 +1071,7 @@
             this.RezerwacjaBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RezerwacjaBox.Location = new System.Drawing.Point(3, 3);
             this.RezerwacjaBox.Name = "RezerwacjaBox";
-            this.RezerwacjaBox.Size = new System.Drawing.Size(278, 222);
+            this.RezerwacjaBox.Size = new System.Drawing.Size(395, 222);
             this.RezerwacjaBox.TabIndex = 0;
             this.RezerwacjaBox.TabStop = false;
             this.RezerwacjaBox.Text = "Rezerwacja";
@@ -1139,7 +1139,7 @@
             this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button7.Location = new System.Drawing.Point(0, 609);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(568, 21);
+            this.button7.Size = new System.Drawing.Size(802, 21);
             this.button7.TabIndex = 5;
             this.button7.Text = "Rezerwuj";
             this.button7.UseVisualStyleBackColor = true;
@@ -1152,7 +1152,7 @@
             this.EdytujDaneOsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujDaneOsPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujDaneOsPanel.Name = "EdytujDaneOsPanel";
-            this.EdytujDaneOsPanel.Size = new System.Drawing.Size(585, 436);
+            this.EdytujDaneOsPanel.Size = new System.Drawing.Size(819, 555);
             this.EdytujDaneOsPanel.TabIndex = 13;
             // 
             // button8
@@ -1160,7 +1160,7 @@
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.Location = new System.Drawing.Point(0, 418);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(585, 23);
+            this.button8.Size = new System.Drawing.Size(819, 23);
             this.button8.TabIndex = 20;
             this.button8.Text = "Zapisz";
             this.button8.UseVisualStyleBackColor = true;
@@ -1175,7 +1175,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 318);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(585, 100);
+            this.groupBox3.Size = new System.Drawing.Size(819, 100);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dane Logowania";
@@ -1244,7 +1244,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 318);
+            this.groupBox2.Size = new System.Drawing.Size(819, 318);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane Osobiste";
@@ -1477,7 +1477,7 @@
             this.KontaktPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.KontaktPanel.Location = new System.Drawing.Point(0, 0);
             this.KontaktPanel.Name = "KontaktPanel";
-            this.KontaktPanel.Size = new System.Drawing.Size(585, 436);
+            this.KontaktPanel.Size = new System.Drawing.Size(819, 555);
             this.KontaktPanel.TabIndex = 13;
             // 
             // groupBox1
@@ -1488,7 +1488,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 436);
+            this.groupBox1.Size = new System.Drawing.Size(819, 555);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kontakt";
@@ -1534,14 +1534,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(800, 442);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1034, 561);
             this.tableLayoutPanel6.TabIndex = 9;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 442);
+            this.ClientSize = new System.Drawing.Size(1034, 561);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "Form2";
             this.Text = "Panel Klienta";

@@ -27,9 +27,10 @@ namespace GUI.Service
             using (var entities = new DBEntities())
             {
                 var reservation = entities.REZERWACJE
-                    .Where(r => r.PRACOWNICY_idPracWydaj == null)
+                    .Where(r => r.Wypozycz == 0)
                     .Include("KLIENCI")
                     .Include("POJAZDY")
+                    .Include("POJAZDY.MARKI")
                     .ToList();
 
                 return reservation;
@@ -41,9 +42,10 @@ namespace GUI.Service
             using (var entities = new DBEntities())
             {
                 var reservation = entities.REZERWACJE
-                    .Where(r => r.PRACOWNICY_idPracOdbier == null)
+                    .Where(r => r.Wypozycz == 1)
                     .Include("KLIENCI")
                     .Include("POJAZDY")
+                    .Include("POJAZDY.MARKI")
                     .Include("PRACOWNICY")
                     .ToList();
 

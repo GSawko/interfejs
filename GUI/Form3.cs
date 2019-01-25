@@ -1,4 +1,5 @@
 ﻿using GUI.GridView;
+using GUI.Service;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,8 @@ namespace GUI
     {
         private KLIENCI _currentEditKlient;
         private List<ClientListGrid> _clientGridList = new List<ClientListGrid>();
+
+        private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
         public Form3(string login)
         {
@@ -135,24 +138,27 @@ namespace GUI
             }
         }
 
-        private void GetKlientDataFromEditScreen(KLIENCI klient)
+        private void LoadClientFromEditScreen(KLIENCI editClient)
         {
-            klient.Imie = ImieTBoxEDKlienta.TextOrDefault();
-            klient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
-            klient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
-            klient.Adres = AdresTBoxEDKlienta.TextOrDefault();
-            klient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
-            klient.Email = EmailTBoxEDKlienta.TextOrDefault();
+            editClient.Imie = ImieTBoxEDKlienta.TextOrDefault();
+            editClient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
+            editClient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
+            editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
+            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+            editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
+            editClient.NrPrawaJazd = NrPJazdyTBoxEDKlienta.TextOrDefault();
+            editClient.NrDowOsob = NrDowOsTBoxEDKlienta.TextOrDefault();
+            //editClient.Zdjecie =
 
-            klient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
+            editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
             for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count; i++)
             {
                 var index = KategoriePJazdyCBoxEDKlienta.CheckedIndices[i] + 1;
-                klient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
+                editClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
             }
         }
 
-        private KLIENCI LoadKlientDataFromAddScreen()
+        private KLIENCI GetClientFromAddScreen()
         {
             KLIENCI newClient = new KLIENCI();
             newClient.Imie = textBox10.TextOrDefault();
@@ -160,12 +166,12 @@ namespace GUI
             newClient.Nazwisko = textBox13.TextOrDefault();
             newClient.Adres = textBox12.TextOrDefault();
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newClient.Telefon = textBox17.TextOrDefault();
+            newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
+            newClient.Telefon = maskedTextBox7.TextOrDefault();
             newClient.Email = textBox16.TextOrDefault();
             newClient.NrPrawaJazd = textBox15.TextOrDefault();
             newClient.NrDowOsob = textBox14.TextOrDefault();
             newClient.DataRejestr = DateTime.Now;
-            newClient.DataUr = DateTime.Now;
             //newClient.Zdjecie = 
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
@@ -182,7 +188,7 @@ namespace GUI
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var addClient = LoadKlientDataFromAddScreen();
+            var addClient = GetClientFromAddScreen();
             var isAdd = ClientService.AddClient(addClient);
             if (isAdd)
                 MessageBox.Show("Dodano klienta.");
@@ -194,7 +200,7 @@ namespace GUI
         {
             if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
             {
-                GetKlientDataFromEditScreen(_currentEditKlient);
+                LoadClientFromEditScreen(_currentEditKlient);
                 var isEdt = ClientService.UpdateClient(_currentEditKlient);
                 if (isEdt)
                     MessageBox.Show("Zaktualizowano dane klienta.");
@@ -285,6 +291,97 @@ namespace GUI
                 filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             dataGridView2.DataSource = filterList;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            LoadReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadReservationList()
+        {
+            var reservations = ReservationService.GetReservations();
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
+        }
+
+        private void ShowSelectedReservationOnEditScreen(int id)
+        {
+            //var reservation = ReservationService.GetReservation(id);
+            //Otwórz ekran wyświetlający szczegóły rezerwacji
+            //TODO rezerwacje jeszcze nigdzie nie są obsługiwane
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView4.SelectedRows.Count > 0)
+            {
+                var row = dataGridView4.SelectedRows[0];
+                var id = (int)row.Cells["idRezerw"].Value;
+                ShowSelectedReservationOnEditScreen(id);
+            }
+        }
+
+        private void ReservationListFilter(object sender, EventArgs e)
+        {
+            var filterList = _reservationListGrid;
+
+            DateTime startWypoz = dateTimePicker1.Value;
+            if (checkBox4.Checked)
+                filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
+
+            DateTime startZwrotu = dateTimePicker2.Value;
+            if (checkBox5.Checked)
+                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+
+            string pojazd = textBox48.TextOrDefault();
+            if (pojazd != null)
+                filterList = filterList.Where(r => r.Pojazd.Contains(pojazd, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string klient = textBox54.TextOrDefault();
+            if (klient != null)
+                filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView4.DataSource = filterList;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            LoadNoTakenReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadNoTakenReservationList()
+        {
+            var reservations = ReservationService.GetAllNotTaken();
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            LoadNoReturnReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadNoReturnReservationList()
+        {
+            var reservations = ReservationService.GetAllNotReturned();
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
         }
     }
 }

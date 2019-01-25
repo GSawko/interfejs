@@ -219,6 +219,8 @@ namespace GUI
             editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
             editClient.Telefon = maskedTextBox5.TextOrDefault();
             editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
+            editClient.NrPrawaJazd = NrPJazdyTBoxEDKlienta.TextOrDefault();
+            editClient.NrDowOsob = NrDowOsTBoxEDKlienta.TextOrDefault();
             //editClient.Zdjecie =
 
             editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
@@ -400,7 +402,7 @@ namespace GUI
 
             string numerRejestr = textBox52.TextOrDefault();
             if (numerRejestr != null)
-                filterList = filterList.Where(v => v.NrRejestr.StartsWith(numerRejestr, StringComparison.CurrentCultureIgnoreCase)).ToList();
+                filterList = filterList.Where(v => v.NrRejestr.Contains(numerRejestr, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             dataGridView1.DataSource = filterList;
         }
@@ -543,7 +545,7 @@ namespace GUI
             {
                 var row = dataGridView4.SelectedRows[0];
                 var id = (int)row.Cells["idRezerw"].Value;
-                //Wywołanie funkcji otwierającej szczegóły na podstawie idRezerw
+                ShowSelectedReservationOnEditScreen(id);
             }
         }
 
@@ -553,11 +555,11 @@ namespace GUI
            
             DateTime startWypoz = dateTimePicker1.Value;
             if (checkBox4.Checked)
-                filterList = filterList.Where(r => r.DateWypoz >= startWypoz).ToList();
+                filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
             DateTime startZwrotu = dateTimePicker2.Value;
             if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DateZwrotu >= startZwrotu).ToList();
+                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
