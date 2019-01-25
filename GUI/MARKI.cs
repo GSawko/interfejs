@@ -25,10 +25,5 @@ namespace GUI
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POJAZDY> POJAZDY { get; set; }
-
-        public override string ToString()
-        {
-            return Nazwa;
-        }
     }
 }

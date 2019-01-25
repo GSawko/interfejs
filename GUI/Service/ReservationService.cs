@@ -17,6 +17,7 @@ namespace GUI.Service
                     .Include("KLIENCI")
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
+                    .Include("OPINIA")
                     .ToList();
 
                 return reservation;
@@ -31,6 +32,7 @@ namespace GUI.Service
                     .Include("KLIENCI")
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
+                    .Include("OPINIA")
                     .ToList();
 
                 return reservation;
@@ -47,6 +49,7 @@ namespace GUI.Service
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
                     .Include("PRACOWNICY")
+                    .Include("OPINIA")
                     .ToList();
 
                 return reservation;
@@ -63,6 +66,7 @@ namespace GUI.Service
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
                     .Include("PRACOWNICY")
+                    .Include("OPINIA")
                     .First();
 
                 return reservation;
@@ -79,6 +83,7 @@ namespace GUI.Service
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
                     .Include("PRACOWNICY")
+                    .Include("OPINIA")
                     .ToList();
 
                 return reservation;
@@ -118,6 +123,19 @@ namespace GUI.Service
                 if (status == 2 && dataZdania != null)
                     reservation.DataZdania = dataZdania;
 
+                entities.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool AddOpinion(OPINIA newOpinia)
+        {
+            using (var entities = new DBEntities())
+            {
+                entities.OPINIA.Add(newOpinia);
                 entities.SaveChanges();
 
                 return true;

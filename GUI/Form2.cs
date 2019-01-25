@@ -17,6 +17,7 @@ namespace GUI
         private List<POJAZDY> _vehicleList;
         private int _vehicleShow;
 
+        private REZERWACJE _currentEditReservation;
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
         public Form2(string login)
@@ -280,6 +281,20 @@ namespace GUI
             textBox46.Text = reservation.POJAZDY.Przebieg.ToString() + " km";
             textBox47.Text = reservation.POJAZDY.ZaGodz.ToString("C");
             richTextBox3.Text = reservation.POJAZDY.Opis;
+
+            //Opinie
+            comboBox2.SelectedIndex = 0;
+            richTextBox2.Text = "";
+            var isNoOpinion = reservation.OPINIA.Count == 0 && reservation.Wypozycz == 2 ? true : false;
+            button1.Enabled = isNoOpinion;
+            richTextBox4.Enabled = isNoOpinion;
+            comboBox2.Enabled = isNoOpinion;
+            if (!isNoOpinion && reservation.OPINIA.Count > 1)
+            {
+                var opinia = reservation.OPINIA.First();
+                richTextBox4.Text = opinia.Opis;
+                comboBox2.SelectedIndex = opinia.Ocena - 1;
+            }
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -295,8 +310,29 @@ namespace GUI
         private void ShowSelectedReservationOnEditScreen(int id)
         {
             var reservation = ReservationService.GetReservation(id);
-            LoadReservationOnDetailsScreen(reservation);
+            _currentEditReservation = reservation;
+            LoadReservationOnDetailsScreen(_currentEditReservation);
             SzegolyRezerwacjiPanel.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var opinia = richTextBox4.TextOrDefault();
+            if (opinia != null && opinia.Length > 10)
+            {
+                var newOpinion = new OPINIA();
+                newOpinion.REZERWACJE_idRezerw = _currentEditReservation.idRezerw;
+                newOpinion.DataWyst = DateTime.Now;
+                newOpinion.Ocena = (short)(comboBox1.SelectedIndex + 1);
+                newOpinion.Opis = opinia;
+                ReservationService.AddOpinion(newOpinion);
+                ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
+                MessageBox.Show("Dodano opinie do rezerwacji!");
+            }
+            else
+            {
+                MessageBox.Show("Opinia musi zawierać przynajmniej 10 znaków!");
+            }
         }
     }
 }
