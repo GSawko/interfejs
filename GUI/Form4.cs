@@ -198,7 +198,7 @@ namespace GUI
             AdresTBoxEDKlienta.Text = klient.Adres;
             PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
             textBox18.Text = klient.DataUr.ToString("d");
-            maskedTextBox5.Text = klient.Telefon;
+            TelefonTBoxEDKlienta.Text = klient.Telefon;
             EmailTBoxEDKlienta.Text = klient.Email;
             NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
             NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
@@ -217,7 +217,7 @@ namespace GUI
             editClient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
             editClient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
             editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
-            editClient.Telefon = maskedTextBox5.TextOrDefault();
+            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
             editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
             editClient.NrPrawaJazd = NrPJazdyTBoxEDKlienta.TextOrDefault();
             editClient.NrDowOsob = NrDowOsTBoxEDKlienta.TextOrDefault();

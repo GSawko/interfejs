@@ -1,4 +1,5 @@
-﻿using GUI.Service;
+﻿using GUI.GridView;
+using GUI.Service;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -15,7 +16,9 @@ namespace GUI
         private KLIENCI _currentClient;
         private List<POJAZDY> _vehicleList;
         private int _vehicleShow;
-       
+
+        private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
+
         public Form2(string login)
         {
             InitializeComponent();
@@ -24,7 +27,7 @@ namespace GUI
             _login = login;
             
             LoadClient(_login);
-            LoadClientData();
+            ShowClientOnEditScreen();
         }
 
         private void LoadClient(string login)
@@ -45,7 +48,7 @@ namespace GUI
             }
         }
 
-        private void LoadClientData()
+        private void ShowClientOnEditScreen()
         {
             //boczne menu
             label2.Text = _currentClient.Imie + " " + _currentClient.Nazwisko;
@@ -56,31 +59,39 @@ namespace GUI
             textBox13.Text = _currentClient.Nazwisko;
             textBox12.Text = _currentClient.Adres;
             comboBox1.SelectedIndex = _currentClient.Plec;
-            textBox17.Text = _currentClient.Telefon;
+            TelefonTBoxEDKlienta.Text = _currentClient.Telefon;
             textBox16.Text = _currentClient.Email;
             textBox15.Text = _currentClient.NrPrawaJazd;
             textBox14.Text = _currentClient.NrDowOsob;
             textBox20.Text = _currentClient.DataRejestr.ToString("d");
+            //pictureBox7.Zdjecie = klient.Zdjecie;
 
             foreach (var licence in _currentClient.KATEGORIEPJAZDY)
             {
                 checkedListBox3.SetItemChecked(licence.idKatPJ - 1, true);
             }
-            //pictureBox7.Image = klient.Zdjecie;
 
             textBox19.Text = _currentClient.Login;
             textBox18.Text = _currentClient.Haslo;
         }
 
-        private void LoadKlientDataFromEditScreen(KLIENCI klient)
+        private void LoadClientFromEditScreen(KLIENCI editClient)
         {
-            klient.Imie = textBox10.TextOrDefault();
-            klient.DrugieImie = textBox11.TextOrDefault();
-            klient.Nazwisko = textBox13.TextOrDefault();
-            klient.Adres = textBox12.TextOrDefault();
-            klient.Telefon = textBox17.TextOrDefault();
-            klient.Email = textBox16.TextOrDefault();
-            klient.Haslo = textBox18.TextOrDefault();
+            editClient.Imie = textBox10.TextOrDefault();
+            editClient.DrugieImie = textBox11.TextOrDefault();
+            editClient.Nazwisko = textBox13.TextOrDefault();
+            editClient.Adres = textBox12.TextOrDefault();
+            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+            editClient.Email = textBox16.TextOrDefault();
+            editClient.Haslo = textBox18.TextOrDefault();
+            //editClient.Zdjecie =
+
+            editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
+            for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
+            {
+                var index = checkedListBox3.CheckedIndices[i] + 1;
+                editClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -196,21 +207,13 @@ namespace GUI
 
         private void buttonShowReservation_Click(object sender, EventArgs e)
         {
-
+            LoadReservationList();
+            ListaRezerwacjiPanel.BringToFront();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            LoadKlientDataFromEditScreen(_currentClient);
-
-            _currentClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
-            for (int i = 0; i < checkedListBox3.Items.Count; i++)
-            {
-                if (checkedListBox3.GetItemCheckState(i) == CheckState.Checked)
-                {
-                    _currentClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = i + 1 });
-                }
-            }
+            LoadClientFromEditScreen(_currentClient);
 
             if (ClientService.UpdateClient(_currentClient))
             {
@@ -237,6 +240,17 @@ namespace GUI
                 listView2.Items.Add(imageList.Images.Keys[i], i);
             }
             listView2.RedrawItems(0, imageList.Images.Count - 1, false);
+        }
+
+        private void LoadReservationList()
+        {
+            var reservations = ReservationService.GetClientReservation(_currentClient.idKlient);
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
         }
     }
 }

@@ -53,6 +53,22 @@ namespace GUI.Service
             }
         }
 
+        public static List<REZERWACJE> GetClientReservation(int id)
+        {
+            using (var entities = new DBEntities())
+            {
+                var reservation = entities.REZERWACJE
+                    .Where(r => r.KLIENCI_idKlient == id)
+                    .Include("KLIENCI")
+                    .Include("POJAZDY")
+                    .Include("POJAZDY.MARKI")
+                    .Include("PRACOWNICY")
+                    .ToList();
+
+                return reservation;
+            }
+        }
+
         public static bool RemoveReservation(int idReservation)
         {
             REZERWACJE reservation = new REZERWACJE() { idRezerw = idReservation };

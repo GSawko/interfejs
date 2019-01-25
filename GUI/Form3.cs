@@ -161,13 +161,13 @@ namespace GUI
         private KLIENCI GetClientFromAddScreen()
         {
             KLIENCI newClient = new KLIENCI();
-            newClient.Imie = textBox10.TextOrDefault();
+            newClient.Imie = textBox13.TextOrDefault();
             newClient.DrugieImie = textBox11.TextOrDefault();
             newClient.Nazwisko = textBox13.TextOrDefault();
             newClient.Adres = textBox12.TextOrDefault();
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
             newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
-            newClient.Telefon = maskedTextBox7.TextOrDefault();
+            newClient.Telefon = maskedTextBox4.TextOrDefault();
             newClient.Email = textBox16.TextOrDefault();
             newClient.NrPrawaJazd = textBox15.TextOrDefault();
             newClient.NrDowOsob = textBox14.TextOrDefault();

@@ -105,7 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtension.cs" />
-    <Compile Include="GridView\CarListGrid.cs" />
+    <Compile Include="GridView\VehicleListGrid.cs" />
     <Compile Include="GridView\ClientListGrid.cs" />
     <Compile Include="GridView\ReservationListGrid.cs" />
     <Compile Include="GridView\WorkerListGrid.cs" />
