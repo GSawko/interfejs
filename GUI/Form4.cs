@@ -595,6 +595,13 @@ namespace GUI
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel File|*.xlsx";
+            saveFileDialog.Title = "Utwórz raport z listy pracowników";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName.Equals(""))
+                return;
+
             using (ExcelPackage excel = new ExcelPackage())
             {
                 excel.Workbook.Worksheets.Add("Klienci");
@@ -613,7 +620,7 @@ namespace GUI
                 
                 worksheet.Cells[headerRange].LoadFromArrays(headerRow);
 
-                FileInfo excelFile = new FileInfo(@"C:\Raporty\Klienci.xlsx");
+                FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
                 var cellData = new List<Object[]>();
                 ;
                 foreach (ClientListGrid clg in _clientListGrid)
@@ -621,12 +628,20 @@ namespace GUI
                 worksheet.Cells[2, 1].LoadFromArrays(cellData);
                 worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                 excel.SaveAs(excelFile);
+                MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
 
         }
 
         private void button16_Click_1(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel File|*.xlsx";
+            saveFileDialog.Title = "Utwórz raport z listy pracowników";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName.Equals(""))
+                return;
+
             using (ExcelPackage excel = new ExcelPackage())
             {
                 excel.Workbook.Worksheets.Add("Pracownicy");
@@ -645,7 +660,7 @@ namespace GUI
                 
                 worksheet.Cells[headerRange].LoadFromArrays(headerRow);
 
-                FileInfo excelFile = new FileInfo(@"C:\Raporty\Pracownicy.xlsx");
+                FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
                 var cellData = new List<Object[]>();
 
                 foreach (WorkerListGrid clg in _workerListGrid)
@@ -653,6 +668,7 @@ namespace GUI
                 worksheet.Cells[2, 1].LoadFromArrays(cellData);
                 worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                 excel.SaveAs(excelFile);
+                MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
 
         }
