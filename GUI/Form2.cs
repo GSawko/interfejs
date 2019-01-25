@@ -334,5 +334,10 @@ namespace GUI
                 MessageBox.Show("Opinia musi zawierać przynajmniej 10 znaków!");
             }
         }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
     }
 }

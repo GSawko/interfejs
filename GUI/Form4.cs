@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
+using System.IO;
+
 
 namespace GUI
 {
@@ -573,6 +576,85 @@ namespace GUI
                 filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             dataGridView4.DataSource = filterList;
+        }
+
+        private void textBox23_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void textBox25_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void textBox33_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                excel.Workbook.Worksheets.Add("Klienci");
+
+                  var headerRow = new List<string[]>()
+                  {
+                    new string[] { "Imię Nazwisko", "Data Urodzenia", "Numer dowodu osobistego", "Telefon", "Email" }
+                  };
+
+                string headerRange = "A1:" + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+
+                var worksheet = excel.Workbook.Worksheets["Klienci"];
+                worksheet.Cells[headerRange].Style.Font.Bold = true;
+                worksheet.Cells[headerRange].Style.Font.Size = 14;
+                worksheet.Cells[headerRange].Style.Font.Color.SetColor(System.Drawing.Color.Blue);
+                
+                worksheet.Cells[headerRange].LoadFromArrays(headerRow);
+
+                FileInfo excelFile = new FileInfo(@"C:\Raporty\Klienci.xlsx");
+                var cellData = new List<Object[]>();
+                ;
+                foreach (ClientListGrid clg in _clientListGrid)
+                    cellData.Add(new Object[] { clg.ImieNazwisko, clg.DataUr, clg.NrDowOsob, clg.Telefon, clg.Email });
+                worksheet.Cells[2, 1].LoadFromArrays(cellData);
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                excel.SaveAs(excelFile);
+            }
+
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                excel.Workbook.Worksheets.Add("Pracownicy");
+
+                var headerRow = new List<string[]>()
+                  {
+                    new string[] { "Imię Nazwisko", "Data Zatrudnienia", "Email", "Telefon" }
+                  };
+
+                string headerRange = "A1:" + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+
+                var worksheet = excel.Workbook.Worksheets["Pracownicy"];
+                worksheet.Cells[headerRange].Style.Font.Bold = true;
+                worksheet.Cells[headerRange].Style.Font.Size = 14;
+                worksheet.Cells[headerRange].Style.Font.Color.SetColor(System.Drawing.Color.Blue);
+                
+                worksheet.Cells[headerRange].LoadFromArrays(headerRow);
+
+                FileInfo excelFile = new FileInfo(@"C:\Raporty\Pracownicy.xlsx");
+                var cellData = new List<Object[]>();
+
+                foreach (WorkerListGrid clg in _workerListGrid)
+                    cellData.Add(new Object[] { clg.ImieNazwisko, clg.DataZatr, clg.Email, clg.Telefon });
+                worksheet.Cells[2, 1].LoadFromArrays(cellData);
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                excel.SaveAs(excelFile);
+            }
+
         }
     }
 }
