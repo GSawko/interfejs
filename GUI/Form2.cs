@@ -252,5 +252,51 @@ namespace GUI
             }
             dataGridView4.DataSource = _reservationListGrid;
         }
+
+        private void LoadReservationOnDetailsScreen(REZERWACJE reservation)
+        {
+            //Podstawowe informacje
+            textBox10.Text = reservation.DataRez.ToString();
+            textBox32.Text = reservation.DataWypoz.ToString();
+            textBox33.Text = reservation.DataZwrotu.ToString();
+            textBox34.Text = reservation.DataZdania?.ToString();
+            textBox35.Text = ReservationListGrid.GetTextStatus(reservation.Wypozycz);
+
+            //Dane klienta
+            groupBox10.Visible = false;
+            textBox36.Text = reservation.KLIENCI.Imie + " " + reservation.KLIENCI.Nazwisko;
+            textBox37.Text = reservation.KLIENCI.Plec == 0 ? "Mężczyzna" : "Kobieta";
+            textBox38.Text = reservation.KLIENCI.Adres;
+            textBox39.Text = reservation.KLIENCI.NrDowOsob;
+            textBox40.Text = reservation.KLIENCI.Telefon;
+            textBox41.Text = reservation.KLIENCI.Login;
+
+            //Pojazd
+            //pictureBox11.Image = reservation.POJAZDY.ZDJECIA[0]
+            textBox42.Text = VehicleListGrid.GetTextType(reservation.POJAZDY.Rodzaj);
+            textBox43.Text = reservation.POJAZDY.MARKI.Nazwa;
+            textBox44.Text = reservation.POJAZDY.Kolor;
+            textBox45.Text = reservation.POJAZDY.DataProd.ToString("d");
+            textBox46.Text = reservation.POJAZDY.Przebieg.ToString() + " km";
+            textBox47.Text = reservation.POJAZDY.ZaGodz.ToString("C");
+            richTextBox3.Text = reservation.POJAZDY.Opis;
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView4.SelectedRows.Count > 0)
+            {
+                var row = dataGridView4.SelectedRows[0];
+                var id = (int)row.Cells["idRezerw"].Value;
+                ShowSelectedReservationOnEditScreen(id);
+            }
+        }
+
+        private void ShowSelectedReservationOnEditScreen(int id)
+        {
+            var reservation = ReservationService.GetReservation(id);
+            LoadReservationOnDetailsScreen(reservation);
+            SzegolyRezerwacjiPanel.BringToFront();
+        }
     }
 }

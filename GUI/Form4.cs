@@ -135,6 +135,7 @@ namespace GUI
             textBox35.Text = pracownicy.Nazwisko;
             textBox38.Text = pracownicy.Adres;
             comboBox2.SelectedIndex = pracownicy.Plec == 1 ? 1 : 0;
+            textBox55.Text = pracownicy.Login;
             maskedTextBox6.Text = pracownicy.Telefon;
             textBox36.Text = pracownicy.Email;
             textBox24.Text = pracownicy.DataZatr.ToString("d");
@@ -203,6 +204,8 @@ namespace GUI
             NrPJazdyTBoxEDKlienta.Text = klient.NrPrawaJazd;
             NrDowOsTBoxEDKlienta.Text = klient.NrDowOsob;
             DataRejestracjiTBoxEDKlienta.Text = klient.DataRejestr.ToString("d");
+            LoginTBoxEDKlienta.Text = klient.Login;
+
 
             KategoriePJazdyCBoxEDKlienta.ClearItemChecked();
             foreach (var licence in klient.KATEGORIEPJAZDY)

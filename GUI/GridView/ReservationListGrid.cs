@@ -21,6 +21,11 @@ namespace GUI.GridView
             Status = Stan[stan];
         }
 
+        public static string GetTextStatus(int stan)
+        {
+            return Stan[stan];
+        }
+
         public ReservationListGrid() { }
 
         public ReservationListGrid(REZERWACJE rezerwacje)

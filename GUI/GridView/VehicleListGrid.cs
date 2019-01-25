@@ -21,6 +21,11 @@ namespace GUI.GridView
             Rodzaj = typPojazdu[typ];
         }
 
+        public static string GetTextType(int typ)
+        {
+            return typPojazdu[typ];
+        }
+
         public VehicleListGrid() { }
 
         public VehicleListGrid(POJAZDY pojazd)

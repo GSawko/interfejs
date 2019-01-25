@@ -53,6 +53,22 @@ namespace GUI.Service
             }
         }
 
+        public static REZERWACJE GetReservation(int id)
+        {
+            using (var entities = new DBEntities())
+            {
+                var reservation = entities.REZERWACJE
+                    .Where(r => r.idRezerw == id)
+                    .Include("KLIENCI")
+                    .Include("POJAZDY")
+                    .Include("POJAZDY.MARKI")
+                    .Include("PRACOWNICY")
+                    .First();
+
+                return reservation;
+            }
+        }
+
         public static List<REZERWACJE> GetClientReservation(int id)
         {
             using (var entities = new DBEntities())
@@ -88,6 +104,26 @@ namespace GUI.Service
             }
 
             return true;
+        }
+
+        public static bool ChangeStatus(int idReservation, sbyte status , DateTime? dataZdania = null)
+        {
+            using (var entities = new DBEntities())
+            {
+                var reservation = entities.REZERWACJE
+                    .Where(r => r.idRezerw == idReservation)
+                    .FirstOrDefault();
+
+                reservation.Wypozycz = status;
+                if (status == 2 && dataZdania != null)
+                    reservation.DataZdania = dataZdania;
+
+                entities.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
     }
 }
