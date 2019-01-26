@@ -118,22 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="getting-new-car-key-from-seller-to-vector-clip-art_csp53426618" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\getting-new-car-key-from-seller-to-vector-clip-art_csp53426618.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prawa-strzałka_318-113460" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\prawa-strzałka_318-113460.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nosacz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\nosacz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="A1812854_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A1812854_full.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="strzalka-pelna-w-lewo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\strzalka-pelna-w-lewo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="getting-new-car-key-from-seller-to-vector-clip-art_csp53426618" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\getting-new-car-key-from-seller-to-vector-clip-art_csp53426618.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prawa-strzałka_318-113460" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\prawa-strzałka_318-113460.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="porsche_911_992_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\porsche_911_992_200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nosacz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\nosacz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A1812854_full1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A1812854_full1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

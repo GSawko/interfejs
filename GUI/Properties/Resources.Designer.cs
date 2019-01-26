@@ -17,7 +17,7 @@ namespace GUI.Properties {
     /// </summary>
     // Ta klasa została automatycznie wygenerowana za pomocą klasy StronglyTypedResourceBuilder
     // przez narzędzie, takie jak ResGen lub Visual Studio.
-    // Aby dodać lub usunąć składową, edytuj plik ResX, a następnie ponownie uruchom narzędzie ResGen
+    // Aby dodać lub usunąć członka, edytuj plik .ResX, a następnie ponownie uruchom ResGen
     // z opcją /str lub ponownie utwórz projekt VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -63,6 +63,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap A1812854_full {
+            get {
+                object obj = ResourceManager.GetObject("A1812854_full", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap A1812854_full1 {
+            get {
+                object obj = ResourceManager.GetObject("A1812854_full1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907 {
             get {
                 object obj = ResourceManager.GetObject("fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907", resourceCulture);
@@ -96,6 +116,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap pic {
             get {
                 object obj = ResourceManager.GetObject("pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap porsche_911_992_200 {
+            get {
+                object obj = ResourceManager.GetObject("porsche_911_992_200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

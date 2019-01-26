@@ -277,6 +277,9 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\A1812854_full1.jpg" />
+    <None Include="Resources\A1812854_full.jpg" />
+    <None Include="Resources\porsche_911_992_200.jpg" />
     <None Include="pic.png" />
   </ItemGroup>
   <ItemGroup>
