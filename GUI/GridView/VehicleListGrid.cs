@@ -31,7 +31,7 @@ namespace GUI.GridView
         public VehicleListGrid(POJAZDY pojazd)
         {
             idPojazd = pojazd.idPojazd;
-            Marka = pojazd.MARKI.ToString();
+            Marka = pojazd.MARKI.Nazwa;
             SetRodzaj(pojazd.Rodzaj);
             NrRejestr = pojazd.NrRejestr;
             ZaGodz = pojazd.ZaGodz.ToString("C");

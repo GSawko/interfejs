@@ -44,6 +44,21 @@ namespace GUI.Service
             }
         }
 
+        public static List<POJAZDY> GetFreeVehicle(DateTime startReserv, DateTime endReserv)
+        {
+            using (var entities = new DBEntities())
+            {
+                var vehicles = entities.POJAZDY
+                            .Where(v => !v.REZERWACJE.Any(r => (startReserv > r.DataWypoz && startReserv < r.DataZwrotu) ||
+                                                                (endReserv > r.DataWypoz && endReserv < r.DataZwrotu) ||
+                                                                (r.DataWypoz > startReserv && r.DataWypoz < endReserv)))
+                            .Include("MARKI")
+                            .ToList();
+
+                return vehicles;
+            }
+        }
+
         public static List<OPINIA> GetVehicleOpinions(int idVehicle)
         {
             using (var entities = new DBEntities())

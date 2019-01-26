@@ -20,6 +20,8 @@ namespace GUI
         private REZERWACJE _currentEditReservation;
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
+        private List<VehicleListGrid> _avabileVehicleListGrid = new List<VehicleListGrid>();
+
         public Form2(string login)
         {
             InitializeComponent();
@@ -257,7 +259,7 @@ namespace GUI
         private void LoadReservationOnDetailsScreen(REZERWACJE reservation)
         {
             //Podstawowe informacje
-            textBox10.Text = reservation.DataRez.ToString();
+            textBox17.Text = reservation.DataRez.ToString();
             textBox32.Text = reservation.DataWypoz.ToString();
             textBox33.Text = reservation.DataZwrotu.ToString();
             textBox34.Text = reservation.DataZdania?.ToString();
@@ -295,6 +297,10 @@ namespace GUI
                 richTextBox4.Text = opinia.Opis;
                 comboBox2.SelectedIndex = opinia.Ocena - 1;
             }
+
+            //Realizacja
+            textBox23.Text = reservation.PRACOWNICY?.ToString();
+            textBox24.Text = reservation.PRACOWNICY1?.ToString();
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -338,6 +344,85 @@ namespace GUI
         private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void TimeRangeChange(object sender, EventArgs e)
+        {
+
+            FilterByTime();
+            FilterByType();
+        }
+        private DateTime GetStartReservationTime()
+        {
+            var picker = dateTimePicker3.Value;
+
+            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown2.SelectedIndex + 1, domainUpDown4.SelectedIndex + 1, 0);
+        }
+
+        private DateTime GetEndReservationTime()
+        {
+            var picker = dateTimePicker4.Value;
+
+            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown3.SelectedIndex + 1, domainUpDown1.SelectedIndex + 1, 0);
+        }
+
+        private void FilterByTime()
+        {
+            var vehicles = VehicleService.GetFreeVehicle(GetStartReservationTime(), GetEndReservationTime());
+
+            _avabileVehicleListGrid = new List<VehicleListGrid>();
+            foreach (VehicleListGrid vehicle in vehicles)
+                _avabileVehicleListGrid.Add(vehicle);
+
+            dataGridView1.DataSource = _avabileVehicleListGrid;
+        }
+
+        private void VehicleTypeChange(object sender, EventArgs e)
+        {
+            FilterByType();
+        }
+
+        private void FilterByType()
+        {
+            var filterList = _avabileVehicleListGrid;
+            if (radioButton1.Checked)
+                filterList = filterList.Where(v => v.Rodzaj.Equals("Samochód")).ToList();
+            else if (radioButton2.Checked)
+                filterList = filterList.Where(v => v.Rodzaj.Equals("Motocykl")).ToList();
+            else if (radioButton3.Checked)
+                filterList = filterList.Where(v => v.Rodzaj.Equals("Motorower")).ToList();
+
+            dataGridView1.DataSource = filterList;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Proszę wybrać pojazd z listy dostępnych!");
+                return;
+            }
+
+            if (!checkBox2.Checked)
+            {
+                MessageBox.Show("Potwiedź chęć zarezerwowania pojazdu!");
+                return;
+            }
+
+            var newRes = new REZERWACJE();
+            newRes.DataRez = DateTime.Now;
+            newRes.DataWypoz = GetStartReservationTime();
+            newRes.DataZwrotu = GetEndReservationTime();
+            newRes.KLIENCI_idKlient = _currentClient.idKlient;
+            newRes.POJAZDY_idPojazd = (int)dataGridView1.SelectedRows[0].Cells["idPojazd"].Value;
+
+            if (ReservationService.Add(newRes))
+                MessageBox.Show("Pomyślnie zarezerwowano pojazd.");
+            else
+                MessageBox.Show("Błąd rezerwacji pojazdu!");
+
+            checkBox2.Checked = false;
+
         }
     }
 }

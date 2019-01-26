@@ -66,6 +66,7 @@ namespace GUI.Service
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
                     .Include("PRACOWNICY")
+                    .Include("PRACOWNICY1")
                     .Include("OPINIA")
                     .First();
 
@@ -136,6 +137,19 @@ namespace GUI.Service
             using (var entities = new DBEntities())
             {
                 entities.OPINIA.Add(newOpinia);
+                entities.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Add(REZERWACJE newReservation)
+        {
+            using (var entities = new DBEntities())
+            {
+                entities.REZERWACJE.Add(newReservation);
                 entities.SaveChanges();
 
                 return true;

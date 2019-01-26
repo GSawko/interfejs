@@ -39,5 +39,10 @@ namespace GUI
         public virtual ICollection<REZERWACJE> REZERWACJE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REZERWACJE> REZERWACJE1 { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Imie} {Nazwisko} - {idPrac}";
+        }
     }
 }
