@@ -49,6 +49,7 @@ namespace GUI.Service
             using (var entities = new DBEntities())
             {
                 var vehicles = entities.POJAZDY
+                            .Where(v => v.Sprawny == 1)
                             .Where(v => !v.REZERWACJE.Any(r => (startReserv > r.DataWypoz && startReserv < r.DataZwrotu) ||
                                                                 (endReserv > r.DataWypoz && endReserv < r.DataZwrotu) ||
                                                                 (r.DataWypoz > startReserv && r.DataWypoz < endReserv)))

@@ -356,14 +356,14 @@ namespace GUI
         {
             var picker = dateTimePicker3.Value;
 
-            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown2.SelectedIndex + 1, domainUpDown4.SelectedIndex + 1, 0);
+            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown2.SelectedIndex + 1, 0, 0);
         }
 
         private DateTime GetEndReservationTime()
         {
             var picker = dateTimePicker4.Value;
 
-            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown3.SelectedIndex + 1, domainUpDown1.SelectedIndex + 1, 0);
+            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown3.SelectedIndex + 1, 30, 0);
         }
 
         private void FilterByTime()

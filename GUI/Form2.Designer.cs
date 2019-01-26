@@ -1689,6 +1689,7 @@
             // 
             // domainUpDown4
             // 
+            this.domainUpDown4.Enabled = false;
             this.domainUpDown4.Items.Add("00");
             this.domainUpDown4.Items.Add("30");
             this.domainUpDown4.Location = new System.Drawing.Point(147, 57);
@@ -1771,13 +1772,14 @@
             // 
             // domainUpDown1
             // 
+            this.domainUpDown1.Enabled = false;
             this.domainUpDown1.Items.Add("00");
             this.domainUpDown1.Items.Add("30");
             this.domainUpDown1.Location = new System.Drawing.Point(147, 57);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.Size = new System.Drawing.Size(51, 20);
             this.domainUpDown1.TabIndex = 3;
-            this.domainUpDown1.Text = "00";
+            this.domainUpDown1.Text = "30";
             this.domainUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // domainUpDown3
