@@ -25,6 +25,10 @@ namespace GUI
         public Form2(string login)
         {
             InitializeComponent();
+            domainUpDown2.DownButton();
+            domainUpDown3.DownButton();
+            FilterByTime();
+            FilterByType();
             LoadCheckedListBox(checkedListBox3);
             timer1.Start();
 
@@ -32,6 +36,8 @@ namespace GUI
             
             LoadClient(_login);
             ShowClientOnEditScreen();
+            LoadReservationList();
+            ReservationListFilter(this, new EventArgs());
         }
 
         private void LoadClient(string login)
@@ -210,7 +216,7 @@ namespace GUI
 
         private void buttonShowReservation_Click(object sender, EventArgs e)
         {
-            LoadReservationList();
+            ReservationListFilter(this, new EventArgs());
             ListaRezerwacjiPanel.BringToFront();
         }
 
@@ -420,16 +426,18 @@ namespace GUI
             var filterList = _reservationListGrid;
 
             DateTime startWypoz = dateTimePicker1.Value.Date;
-            if (checkBox4.Checked)
-                filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
+            filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
             DateTime startZwrotu = dateTimePicker2.Value.Date;
-            if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+            filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
                 filterList = filterList.Where(r => r.Pojazd.Contains(pojazd, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string klient = textBox54.TextOrDefault();
+            if (klient != null)
+                filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             dataGridView4.DataSource = filterList;
         }

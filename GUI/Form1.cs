@@ -27,7 +27,7 @@ namespace GUI
                 {
                     isGoodAuth = entities.LoginData.Where(u => u.Login == login && u.Haslo == password).Any();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Brak połączenia z internetem!");
                     return;

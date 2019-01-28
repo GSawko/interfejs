@@ -31,6 +31,8 @@ namespace GUI
                 var pracownik = entities.PRACOWNICY.Where(p => p.Login == login).First();
                 label2.Text = pracownik.Imie + " " + pracownik.Nazwisko;
             }
+            LoadReservationList();
+            ReservationListFilter(this, new EventArgs());
         }
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
@@ -51,12 +53,6 @@ namespace GUI
             textBox11.Text = DateTime.Now.ToString("d");
             DodajKlientaPanel.BringToFront();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            EdytujDaneKlientaPanel.BringToFront();
-        }
-
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -268,7 +264,7 @@ namespace GUI
 
         private void button13_Click(object sender, EventArgs e)
         {
-            LoadReservationList();
+            ReservationListFilter(this, new EventArgs());
             ListaRezerwacjiPanel.BringToFront();
         }
 
@@ -306,12 +302,10 @@ namespace GUI
             var filterList = _reservationListGrid;
 
             DateTime startWypoz = dateTimePicker1.Value.Date;
-            if (checkBox4.Checked)
-                filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
+            filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
             DateTime startZwrotu = dateTimePicker2.Value.Date;
-            if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+            filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
