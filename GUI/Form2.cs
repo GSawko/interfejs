@@ -97,53 +97,6 @@ namespace GUI
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            //Load all vehicle
-            _vehicleList = VehicleService.GetVehicles();
-            _vehicleShow = 0;
-            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
-
-            
-            listView2.LargeImageList.Images.Clear();
-            listView2.Items.Clear();
-            int i = 0;
-            foreach (var vehicle in _vehicleList)
-            {
-                listView2.LargeImageList.Images.Add(vehicle.MARKI.Nazwa, Properties.Resources.example_car);
-                listView2.Items.Add(vehicle.MARKI.Nazwa, i++);
-            }
-
-            this.WybórPojazduPanel.BringToFront();
-        }
-
-        private void ShowVehicleDataToChooseVehicle(POJAZDY vehicle)
-        {
-            label5.Text = vehicle.MARKI.Nazwa;      //Opis pod zjęciem
-            var marka = vehicle.MARKI.Nazwa.Split(' ');
-            label7.Text = marka.Length > 0 ? marka[0] : "";
-            label9.Text = marka.Length > 1 ? marka[1] : "";
-            label11.Text = vehicle.Kolor;
-            label13.Text = vehicle.Przebieg.ToString() + " km";
-            label15.Text = vehicle.DataProd.ToString("yyyy");
-            label17.Text = vehicle.Sprawny == 0 ? "Nie" : "Tak";
-            label19.Text = vehicle.ZaGodz.ToString() + " zł";
-            richTextBox1.Text = vehicle.Opis;
-
-            listBox1.Items.Clear();
-            foreach (var check in vehicle.PRZEGLADY)
-                listBox1.Items.Add(check.Data.ToString("d"));
-
-            richTextBox2.Text = "";
-
-            var opinions = VehicleService.GetVehicleOpinions(vehicle.idPojazd);
-            listView1.Items.Clear();
-            foreach (var opinion in opinions)
-            {
-                listView1.Items.Add(opinion.DataWyst.ToString("d") + " - " + opinion.Ocena + "/10 " + opinion.Opis);
-            }
-        }
-
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             var index = listBox1.SelectedIndex;
@@ -152,34 +105,6 @@ namespace GUI
                 var check = _vehicleList[_vehicleShow].PRZEGLADY.ToList()[index];
 
                 richTextBox2.Text = check.Data.ToString("d") + '\n' + check.Opis;
-            }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            _vehicleShow--;
-            if (_vehicleShow < 0)
-                _vehicleShow = _vehicleList.Count - 1;
-
-            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            _vehicleShow++;
-            if (_vehicleShow >= _vehicleList.Count)
-                _vehicleShow = 0;
-
-            ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
-        }
-
-        private void listView2_DoubleClick(object sender, EventArgs e)
-        {
-            var index = listView2.SelectedIndices[0];
-            if (index >= 0)
-            {
-                _vehicleShow = index;
-                ShowVehicleDataToChooseVehicle(_vehicleList[_vehicleShow]);
             }
         }
 
@@ -457,6 +382,17 @@ namespace GUI
 
             FormOpinion formOpinion = new FormOpinion(opinions);
             formOpinion.ShowDialog();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                var vehicle = VehicleService.GetVehicle(id);
+                FormVehicle formVehicle = new FormVehicle(vehicle);
+                formVehicle.ShowDialog();
+            }
         }
     }
 }

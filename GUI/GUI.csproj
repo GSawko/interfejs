@@ -115,6 +115,12 @@
     <Compile Include="FormOpinion.Designer.cs">
       <DependentUpon>FormOpinion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVehicle.Designer.cs">
+      <DependentUpon>FormVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="GridView\OpinionListGrid.cs" />
     <Compile Include="GridView\VehicleListGrid.cs" />
     <Compile Include="GridView\ClientListGrid.cs" />
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOpinion.resx">
       <DependentUpon>FormOpinion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVehicle.resx">
+      <DependentUpon>FormVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
