@@ -209,6 +209,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button17 = new System.Windows.Forms.Button();
+            this.label65 = new System.Windows.Forms.Label();
             this.KlientMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrawyPanel.SuspendLayout();
@@ -354,8 +356,8 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
-            this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
+            this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
             this.PrawyPanel.Controls.Add(this.WybórPojazduPanel);
@@ -835,6 +837,8 @@
             // groupBox11
             // 
             this.tableLayoutPanel11.SetColumnSpan(this.groupBox11, 2);
+            this.groupBox11.Controls.Add(this.button17);
+            this.groupBox11.Controls.Add(this.label65);
             this.groupBox11.Controls.Add(this.richTextBox3);
             this.groupBox11.Controls.Add(this.textBox47);
             this.groupBox11.Controls.Add(this.textBox46);
@@ -864,7 +868,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(558, 30);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(214, 143);
+            this.richTextBox3.Size = new System.Drawing.Size(245, 102);
             this.richTextBox3.TabIndex = 17;
             this.richTextBox3.Text = "";
             // 
@@ -2179,6 +2183,25 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(595, 154);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 70;
+            this.button17.Text = "Pokaż";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(524, 160);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(37, 13);
+            this.label65.TabIndex = 69;
+            this.label65.Text = "Opinie";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2426,5 +2449,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label65;
     }
 }

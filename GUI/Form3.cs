@@ -451,5 +451,18 @@ namespace GUI
         {
             label1.Text = DateTime.Now.ToString("HH:mm");
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var opinions = VehicleService.GetVehicleOpinions(_currentEditReservation.POJAZDY.idPojazd);
+            if (opinions.Count == 0)
+            {
+                MessageBox.Show("Wybrany pojazd nie posiada jeszcze opini.");
+                return;
+            }
+
+            FormOpinion formOpinion = new FormOpinion(opinions);
+            formOpinion.ShowDialog();
+        }
     }
 }
