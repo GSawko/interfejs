@@ -425,7 +425,7 @@ namespace GUI
 
             DateTime startZwrotu = dateTimePicker2.Value.Date;
             if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+                filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)

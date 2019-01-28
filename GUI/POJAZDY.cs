@@ -32,6 +32,7 @@ namespace GUI
         public sbyte Sprawny { get; set; }
         public string Opis { get; set; }
         public int MARKI_idMarki { get; set; }
+        public string MARKA_Nazwa { get; set; }
         public string Kolor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

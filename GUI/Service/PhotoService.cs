@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GUI.Service
 {
@@ -23,6 +24,21 @@ namespace GUI.Service
             Image returnImage = Image.FromStream(ms);
 
             return returnImage;
+        }
+
+        public static Image LoadFileToImage()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.jpg;*.png";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.Title = "Otwórz plik ze zwdjęciem";
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName.Equals(""))
+                return null;
+
+            Image image = Image.FromFile(openFileDialog.FileName);
+
+            return image;
         }
     }
 }

@@ -354,12 +354,12 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
             this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.WybórPojazduPanel);
             this.PrawyPanel.Controls.Add(this.KontaktPanel);
-            this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrawyPanel.Location = new System.Drawing.Point(212, 3);
             this.PrawyPanel.Name = "PrawyPanel";
@@ -556,6 +556,7 @@
             this.domainUpDown3.TabIndex = 1;
             this.domainUpDown3.Text = "12";
             this.domainUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domainUpDown3.TextChanged += new System.EventHandler(this.TimeRangeChange);
             // 
             // groupBox6
             // 
@@ -644,6 +645,7 @@
             this.domainUpDown2.TabIndex = 1;
             this.domainUpDown2.Text = "12";
             this.domainUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domainUpDown2.TextChanged += new System.EventHandler(this.TimeRangeChange);
             // 
             // groupBox12
             // 

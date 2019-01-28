@@ -84,6 +84,18 @@ namespace GUI.Service
                 }
 
                 newVehile.KATEGORIEPJAZDY = licences;
+
+                if (newVehile.MARKI_idMarki == 0)
+                {
+                    var brandID = CarBrandService.GetCarBrandId(newVehile.MARKA_Nazwa);
+                    if (brandID == -1)
+                    {
+                        brandID = CarBrandService.AddCarBrand(new MARKI() { Nazwa = newVehile.MARKA_Nazwa });
+                    }
+
+                    newVehile.MARKI_idMarki = brandID;
+                }
+
                 entities.POJAZDY.Add(newVehile);
                 entities.SaveChanges();
 

@@ -267,6 +267,7 @@
     <Content Include="Resources\example_car.jpg" />
     <Content Include="Resources\left_arrow.jpg" />
     <Content Include="Resources\logo.png" />
+    <Content Include="Resources\no_car_image.jpg" />
     <Content Include="Resources\right_arrow.jpg" />
   </ItemGroup>
   <ItemGroup>

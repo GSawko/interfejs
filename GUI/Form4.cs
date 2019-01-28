@@ -28,12 +28,15 @@ namespace GUI
 
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
+        private Image _lastLoadImage = null;
+
         public Form4(string Login)
         {
             InitializeComponent();
             LoadMenuData(Login);
             LoadCheckedListBox();
             LoadComboBox(comboBox5);
+            ClearVehicleFromAddScreen();
             timer1.Start();
         }
 
@@ -72,7 +75,7 @@ namespace GUI
 
         private void button19_Click(object sender, EventArgs e)
         {
-            comboBox4.SelectedIndex = 0;
+            ClearVehicleFromAddScreen();
             DodajPojazdPanel.BringToFront();
         }
 
@@ -329,7 +332,9 @@ namespace GUI
             newVehicle.Sprawny = (sbyte)(checkBox3.Checked == true ? 1 : 0);
             newVehicle.Opis = richTextBox4.TextOrDefault();
             newVehicle.Kolor = textBox50.TextOrDefault();
-            newVehicle.MARKI_idMarki = ((MARKI)comboBox5.SelectedItem).idMarki;
+            newVehicle.MARKA_Nazwa = comboBox5.Text;
+            if (_lastLoadImage != null)
+                newVehicle.ZDJECIA.Add(new ZDJECIA() { Zdjecie = PhotoService.ImageToByteArray(_lastLoadImage) });
 
             for (int i = 0; i < checkedListBox6.CheckedIndices.Count; i++)
             {
@@ -340,12 +345,32 @@ namespace GUI
             return newVehicle;
         }
 
+        private void ClearVehicleFromAddScreen()
+        {
+            comboBox4.SelectedIndex = 0;
+            textBox43.Text = "";
+            textBox49.Text = "";
+            textBox51.Text = "";
+            maskedTextBox1.Text = "";
+            checkBox3.Checked = false;
+            richTextBox4.Text = "";
+            textBox50.Text = "";
+            comboBox5.SelectedIndex = 0;
+            pictureBox11.Image = Properties.Resources.no_car_image;
+            checkedListBox6.ClearItemChecked();
+
+            _lastLoadImage = null;
+        }
+
         private void button14_Click(object sender, EventArgs e)
         {
             var addVehicle = GetVehicleFromAddScreen();
             var isAdd = VehicleService.AddVehicle(addVehicle);
             if (isAdd)
+            {
                 MessageBox.Show("Dodano pojazd.");
+                ClearVehicleFromAddScreen();
+            }
             else
                 MessageBox.Show("Błąd dodania pojazdu!");
         }
@@ -555,13 +580,13 @@ namespace GUI
         {
             var filterList = _reservationListGrid;
            
-            DateTime startWypoz = dateTimePicker1.Value;
+            DateTime startWypoz = dateTimePicker1.Value.Date;
             if (checkBox4.Checked)
                 filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
             DateTime startZwrotu = dateTimePicker2.Value;
             if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+                filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
@@ -707,6 +732,16 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _lastLoadImage = PhotoService.LoadFileToImage();
+
+            if (_lastLoadImage == null)
+                return;
+
+            pictureBox11.Image = _lastLoadImage;
         }
     }
 }
