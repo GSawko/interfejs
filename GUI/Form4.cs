@@ -34,6 +34,7 @@ namespace GUI
             LoadMenuData(Login);
             LoadCheckedListBox();
             LoadComboBox(comboBox5);
+            timer1.Start();
         }
 
         private void LoadMenuData(string login)
@@ -71,6 +72,7 @@ namespace GUI
 
         private void button19_Click(object sender, EventArgs e)
         {
+            comboBox4.SelectedIndex = 0;
             DodajPojazdPanel.BringToFront();
         }
 
@@ -78,11 +80,6 @@ namespace GUI
         {
             DodajKlientaPanel.BringToFront();
             textBox20.Text = DateTime.Now.ToString("d");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            PodgladRezerwacjiPanel.BringToFront();
         }
 
         private void button15_Click_1(object sender, EventArgs e)
@@ -115,7 +112,7 @@ namespace GUI
         {
             foreach (var model in CarBrandService.GetCarBrands())
             {
-                comboBox.Items.Add(model);
+                comboBox.Items.Add(model.Nazwa);
             }
             comboBox.SelectedIndex = 0;
         }
@@ -268,7 +265,6 @@ namespace GUI
             newClient.NrPrawaJazd = textBox15.TextOrDefault();
             newClient.NrDowOsob = textBox14.TextOrDefault();
             newClient.DataRejestr = DateTime.Now;
-            //newClient.Zdjecie =
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
             {
@@ -665,12 +661,52 @@ namespace GUI
 
                 foreach (WorkerListGrid clg in _workerListGrid)
                     cellData.Add(new Object[] { clg.ImieNazwisko, clg.DataZatr, clg.Email, clg.Telefon });
+
                 worksheet.Cells[2, 1].LoadFromArrays(cellData);
                 worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                 excel.SaveAs(excelFile);
                 MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
 
+        }
+
+        private void button20_Click_1(object sender, EventArgs e)
+        {
+            LoadNoTakenReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadNoTakenReservationList()
+        {
+            var reservations = ReservationService.GetAllNotTaken();
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            LoadNoReturnReservationList();
+            ListaRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadNoReturnReservationList()
+        {
+            var reservations = ReservationService.GetAllNotReturned();
+            _reservationListGrid = new List<ReservationListGrid>();
+            foreach (ReservationListGrid reservation in reservations)
+            {
+                _reservationListGrid.Add(reservation);
+            }
+            dataGridView4.DataSource = _reservationListGrid;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString("HH:mm");
         }
     }
 }

@@ -26,6 +26,7 @@ namespace GUI
         {
             InitializeComponent();
             LoadCheckedListBox(checkedListBox3);
+            timer1.Start();
 
             _login = login;
             
@@ -66,8 +67,7 @@ namespace GUI
             textBox16.Text = _currentClient.Email;
             textBox15.Text = _currentClient.NrPrawaJazd;
             textBox14.Text = _currentClient.NrDowOsob;
-            textBox20.Text = _currentClient.DataRejestr.ToString("d");
-            //pictureBox7.Zdjecie = klient.Zdjecie;
+            textBox22.Text = _currentClient.DataRejestr.ToString("d");
 
             foreach (var licence in _currentClient.KATEGORIEPJAZDY)
             {
@@ -110,7 +110,7 @@ namespace GUI
             int i = 0;
             foreach (var vehicle in _vehicleList)
             {
-                listView2.LargeImageList.Images.Add(vehicle.MARKI.Nazwa, Properties.Resources.fiat_126p_maluch_pomorskie_gdynia_sprzedam_415772907);
+                listView2.LargeImageList.Images.Add(vehicle.MARKI.Nazwa, Properties.Resources.example_car);
                 listView2.Items.Add(vehicle.MARKI.Nazwa, i++);
             }
 
@@ -231,20 +231,6 @@ namespace GUI
             _currentClient = ClientService.GetClient(_login);
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            //TODO
-            /* Obrazy są niskiej jakości ponieważ ImageList korzysta z bardzo słabego domyślnego algorytmu
-             * zmiany rozmiaru. Należy albo zapewnić, że wczytywane obrazy nie wymagają zmiany rozmiaru,
-             * albo zmienić rozmiar ręcznie przed wczytaniem do ImageList*/
-            ImageList imageList = listView2.LargeImageList;
-            for (int i = 0; i < imageList.Images.Count; i++)
-            {
-                listView2.Items.Add(imageList.Images.Keys[i], i);
-            }
-            listView2.RedrawItems(0, imageList.Images.Count - 1, false);
-        }
-
         private void LoadReservationList()
         {
             var reservations = ReservationService.GetClientReservation(_currentClient.idKlient);
@@ -256,7 +242,7 @@ namespace GUI
             dataGridView4.DataSource = _reservationListGrid;
         }
 
-        private void LoadReservationOnDetailsScreen(REZERWACJE reservation)
+        private void ShowReservationOnDetailsScreen(REZERWACJE reservation)
         {
             //Podstawowe informacje
             textBox17.Text = reservation.DataRez.ToString();
@@ -317,7 +303,7 @@ namespace GUI
         {
             var reservation = ReservationService.GetReservation(id);
             _currentEditReservation = reservation;
-            LoadReservationOnDetailsScreen(_currentEditReservation);
+            ShowReservationOnDetailsScreen(_currentEditReservation);
             SzegolyRezerwacjiPanel.BringToFront();
         }
 
@@ -348,6 +334,10 @@ namespace GUI
 
         private void TimeRangeChange(object sender, EventArgs e)
         {
+            if (GetStartReservationTime() >= GetEndReservationTime())
+                dateTimePicker4.Value = dateTimePicker3.Value.AddDays(1);
+            
+            
 
             FilterByTime();
             FilterByType();
@@ -423,6 +413,30 @@ namespace GUI
 
             checkBox2.Checked = false;
 
+        }
+
+        private void ReservationListFilter(object sender, EventArgs e)
+        {
+            var filterList = _reservationListGrid;
+
+            DateTime startWypoz = dateTimePicker1.Value.Date;
+            if (checkBox4.Checked)
+                filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
+
+            DateTime startZwrotu = dateTimePicker2.Value.Date;
+            if (checkBox5.Checked)
+                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+
+            string pojazd = textBox48.TextOrDefault();
+            if (pojazd != null)
+                filterList = filterList.Where(r => r.Pojazd.Contains(pojazd, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView4.DataSource = filterList;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString("HH:mm");
         }
     }
 }

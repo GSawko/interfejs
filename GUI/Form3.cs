@@ -24,6 +24,7 @@ namespace GUI
             InitializeComponent();
             LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
             LoadCheckedListBox(checkedListBox3);
+            timer1.Start();
 
             using (var entities = new DBEntities())
             {
@@ -47,7 +48,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox20.Text = DateTime.Now.ToString("d");
+            textBox11.Text = DateTime.Now.ToString("d");
             DodajKlientaPanel.BringToFront();
         }
 
@@ -159,17 +160,16 @@ namespace GUI
         {
             KLIENCI newClient = new KLIENCI();
             newClient.Imie = textBox13.TextOrDefault();
-            newClient.DrugieImie = textBox11.TextOrDefault();
-            newClient.Nazwisko = textBox13.TextOrDefault();
-            newClient.Adres = textBox12.TextOrDefault();
+            newClient.DrugieImie = textBox12.TextOrDefault();
+            newClient.Nazwisko = textBox16.TextOrDefault();
+            newClient.Adres = textBox20.TextOrDefault();
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
             newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
-            newClient.Telefon = maskedTextBox4.TextOrDefault();
-            newClient.Email = textBox16.TextOrDefault();
+            newClient.Telefon = maskedTextBox1.TextOrDefault();
+            newClient.Email = textBox17.TextOrDefault();
             newClient.NrPrawaJazd = textBox15.TextOrDefault();
             newClient.NrDowOsob = textBox14.TextOrDefault();
             newClient.DataRejestr = DateTime.Now;
-            //newClient.Zdjecie = 
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
             {
@@ -305,11 +305,11 @@ namespace GUI
         {
             var filterList = _reservationListGrid;
 
-            DateTime startWypoz = dateTimePicker1.Value;
+            DateTime startWypoz = dateTimePicker1.Value.Date;
             if (checkBox4.Checked)
                 filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
-            DateTime startZwrotu = dateTimePicker2.Value;
+            DateTime startZwrotu = dateTimePicker2.Value.Date;
             if (checkBox5.Checked)
                 filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
 
@@ -439,6 +439,11 @@ namespace GUI
         private void IDKlientaTBoxWEDK_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString("HH:mm");
         }
     }
 }

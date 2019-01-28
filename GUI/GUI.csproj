@@ -134,6 +134,11 @@
     <Compile Include="PRACOWNICY.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PRZEGLADY.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -188,6 +193,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\PhotoService.cs" />
     <Compile Include="Service\ReservationService.cs" />
     <Compile Include="Service\VehicleService.cs" />
     <Compile Include="Service\WorkerService.cs" />
@@ -216,14 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ToggleBox.resx">
       <DependentUpon>ToggleBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,21 +250,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fiat-126p-maluch-pomorskie-gdynia-sprzedam-415772907.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="prawa-strzałka_318-113460.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="strzalka-pelna-w-lewo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="nosacz.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="getting-new-car-key-from-seller-to-vector-clip-art_csp53426618.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -277,10 +263,11 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\A1812854_full1.jpg" />
-    <None Include="Resources\A1812854_full.jpg" />
-    <None Include="Resources\porsche_911_992_200.jpg" />
-    <None Include="pic.png" />
+    <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\example_car.jpg" />
+    <Content Include="Resources\left_arrow.jpg" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\right_arrow.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
