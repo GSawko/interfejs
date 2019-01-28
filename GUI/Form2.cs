@@ -261,7 +261,11 @@ namespace GUI
             textBox41.Text = reservation.KLIENCI.Login;
 
             //Pojazd
-            //pictureBox11.Image = reservation.POJAZDY.ZDJECIA[0]
+            if (reservation.POJAZDY.ZDJECIA.Count > 0)
+                pictureBox11.Image = PhotoService.ByteArrayToImage(reservation.POJAZDY.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox11.Image = Properties.Resources.no_car_image;
+
             textBox42.Text = VehicleListGrid.GetTextType(reservation.POJAZDY.Rodzaj);
             textBox43.Text = reservation.POJAZDY.MARKI.Nazwa;
             textBox44.Text = reservation.POJAZDY.Kolor;

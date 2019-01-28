@@ -65,6 +65,7 @@ namespace GUI.Service
                     .Include("KLIENCI")
                     .Include("POJAZDY")
                     .Include("POJAZDY.MARKI")
+                    .Include("POJAZDY.ZDJECIA")
                     .Include("PRACOWNICY")
                     .Include("PRACOWNICY1")
                     .Include("OPINIA")

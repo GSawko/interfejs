@@ -26,6 +26,7 @@ namespace GUI
         private POJAZDY _currentEditVehicle;
         private List<VehicleListGrid> _vehicleListGrid = new List<VehicleListGrid>();
 
+        private REZERWACJE _currentEditReservation;
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
         private Image _lastLoadImage = null;
@@ -561,9 +562,81 @@ namespace GUI
 
         private void ShowSelectedReservationOnEditScreen(int id)
         {
-            //var reservation = ReservationService.GetReservation(id);
-            //Otwórz ekran wyświetlający szczegóły rezerwacji
-            //TODO rezerwacje jeszcze nigdzie nie są obsługiwane
+            _currentEditReservation = ReservationService.GetReservation(id);
+            LoadReservationOnDetailsScreen(_currentEditReservation);
+            SzegolyRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadReservationOnDetailsScreen(REZERWACJE reservation)
+        {
+            //Podstawowe informacje
+            textBox28.Text = reservation.DataRez.ToString("dd.MM.yyyy HH:mm");
+            textBox27.Text = reservation.DataWypoz.ToString("dd.MM.yyyy HH:mm");
+            textBox25.Text = reservation.DataZwrotu.ToString("dd.MM.yyyy HH:mm");
+            textBox23.Text = reservation.DataZdania?.ToString("dd.MM.yyyy HH:mm");
+            textBox22.Text = ReservationListGrid.GetTextStatus(reservation.Wypozycz);
+
+            //Dane klienta
+            textBox58.Text = reservation.KLIENCI.Imie + " " + reservation.KLIENCI.Nazwisko;
+            textBox57.Text = reservation.KLIENCI.Plec == 0 ? "Mężczyzna" : "Kobieta";
+            textBox56.Text = reservation.KLIENCI.Adres;
+            textBox31.Text = reservation.KLIENCI.NrDowOsob;
+            textBox30.Text = reservation.KLIENCI.Telefon;
+            textBox29.Text = reservation.KLIENCI.Login;
+
+            //Pojazd
+            if (reservation.POJAZDY.ZDJECIA.Count > 0)
+                pictureBox2.Image = PhotoService.ByteArrayToImage(reservation.POJAZDY.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox2.Image = Properties.Resources.no_car_image;
+
+            textBox70.Text = VehicleListGrid.GetTextType(reservation.POJAZDY.Rodzaj);
+            textBox69.Text = reservation.POJAZDY.MARKI.Nazwa;
+            textBox68.Text = reservation.POJAZDY.Kolor;
+            textBox67.Text = reservation.POJAZDY.DataProd.ToString("d");
+            textBox66.Text = reservation.POJAZDY.Przebieg.ToString() + " km";
+            textBox65.Text = reservation.POJAZDY.ZaGodz.ToString("C");
+            richTextBox3.Text = reservation.POJAZDY.Opis;
+
+            //Wydaj
+            textBox71.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            checkBox6.Enabled = reservation.Wypozycz == 0 ? true : false;
+            checkBox6.Checked = false;
+            wydajPojazdButton.Enabled = reservation.Wypozycz == 0 ? true : false;
+
+            //Odbierz
+            textBox72.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            checkBox2.Enabled = reservation.Wypozycz == 1 ? true : false;
+            checkBox2.Checked = false;
+            odbierzPojazdButton.Enabled = reservation.Wypozycz == 1 ? true : false;
+        }
+
+        private void wydajPojazdButton_Click(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                ReservationService.ChangeStatus(_currentEditReservation.idRezerw, 1);
+                ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
+                MessageBox.Show("Status rezerwacji został pomyślnie zmieniony");
+            }
+            else
+            {
+                MessageBox.Show("Potwierdź wydanie pojazdu klientowi!");
+            }
+        }
+
+        private void odbierzPojazdButton_Click(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                ReservationService.ChangeStatus(_currentEditReservation.idRezerw, 2, DateTime.Now);
+                ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
+                MessageBox.Show("Status rezerwacji został pomyślnie zmieniony");
+            }
+            else
+            {
+                MessageBox.Show("Potwierdź odebranie pojazdu od klienta!");
+            }
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -651,7 +724,6 @@ namespace GUI
                 excel.SaveAs(excelFile);
                 MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
-
         }
 
         private void button16_Click_1(object sender, EventArgs e)
@@ -692,7 +764,6 @@ namespace GUI
                 excel.SaveAs(excelFile);
                 MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
-
         }
 
         private void button20_Click_1(object sender, EventArgs e)
