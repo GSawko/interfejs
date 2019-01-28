@@ -281,9 +281,8 @@ namespace GUI
 
         private void ShowSelectedReservationOnEditScreen(int id)
         {
-            var reservation = ReservationService.GetReservation(id);
-            _currentEditReservation = reservation;
-            LoadReservationOnDetailsScreen(reservation);
+            _currentEditReservation = ReservationService.GetReservation(id);
+            LoadReservationOnDetailsScreen(_currentEditReservation);
             SzegolyRezerwacjiPanel.BringToFront();
         }
 
@@ -299,13 +298,17 @@ namespace GUI
 
         private void ReservationListFilter(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
+                dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
+
             var filterList = _reservationListGrid;
 
             DateTime startWypoz = dateTimePicker1.Value.Date;
             filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
             DateTime startZwrotu = dateTimePicker2.Value.Date;
-            filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
+            if (checkBox5.Checked)
+                filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
@@ -370,7 +373,11 @@ namespace GUI
             textBox41.Text = reservation.KLIENCI.Login;
 
             //Pojazd
-            //pictureBox11.Image = reservation.POJAZDY.ZDJECIA[0]
+            if (reservation.POJAZDY.ZDJECIA.Count > 0)
+                pictureBox11.Image = PhotoService.ByteArrayToImage(reservation.POJAZDY.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox11.Image = Properties.Resources.no_car_image;
+
             textBox42.Text = VehicleListGrid.GetTextType(reservation.POJAZDY.Rodzaj);
             textBox43.Text = reservation.POJAZDY.MARKI.Nazwa;
             textBox44.Text = reservation.POJAZDY.Kolor;

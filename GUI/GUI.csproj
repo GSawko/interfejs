@@ -109,6 +109,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="FormOpinion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpinion.Designer.cs">
+      <DependentUpon>FormOpinion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridView\OpinionListGrid.cs" />
     <Compile Include="GridView\VehicleListGrid.cs" />
     <Compile Include="GridView\ClientListGrid.cs" />
     <Compile Include="GridView\ReservationListGrid.cs" />
@@ -220,6 +227,9 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOpinion.resx">
+      <DependentUpon>FormOpinion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -267,6 +277,7 @@
     <Content Include="Resources\example_car.jpg" />
     <Content Include="Resources\left_arrow.jpg" />
     <Content Include="Resources\logo.png" />
+    <Content Include="Resources\no_car_image.jpg" />
     <Content Include="Resources\right_arrow.jpg" />
   </ItemGroup>
   <ItemGroup>

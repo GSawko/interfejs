@@ -49,11 +49,9 @@ namespace GUI.Service
             using (var entities = new DBEntities())
             {
                 var pracownik = entities.PRACOWNICY
-                    .Where(p => p.idPrac == updatePracownik.idPrac)
-                    .First();
+                    .First(p => p.idPrac == updatePracownik.idPrac);
 
                 entities.Entry(pracownik).CurrentValues.SetValues(updatePracownik);
-
                 entities.SaveChanges();
 
                 return true;

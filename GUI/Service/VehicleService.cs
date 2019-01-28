@@ -72,6 +72,21 @@ namespace GUI.Service
             }
         }
 
+        public static bool UpdateVehicle(POJAZDY updateVehicle)
+        {
+            using (var entities = new DBEntities())
+            {
+                var vehicle = entities.POJAZDY
+                    .First(v => v.idPojazd == updateVehicle.idPojazd);
+
+                entities.Entry(vehicle).CurrentValues.SetValues(updateVehicle);
+                entities.SaveChanges();
+
+                return true;
+            }
+            return false;
+        }
+
         public static bool AddVehicle(POJAZDY newVehile)
         {
             using (var entities = new DBEntities())
@@ -84,6 +99,18 @@ namespace GUI.Service
                 }
 
                 newVehile.KATEGORIEPJAZDY = licences;
+
+                if (newVehile.MARKI_idMarki == 0)
+                {
+                    var brandID = CarBrandService.GetCarBrandId(newVehile.MARKA_Nazwa);
+                    if (brandID == -1)
+                    {
+                        brandID = CarBrandService.AddCarBrand(new MARKI() { Nazwa = newVehile.MARKA_Nazwa });
+                    }
+
+                    newVehile.MARKI_idMarki = brandID;
+                }
+
                 entities.POJAZDY.Add(newVehile);
                 entities.SaveChanges();
 

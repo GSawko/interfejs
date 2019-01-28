@@ -143,7 +143,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SzegolyRezerwacjiPanel = new System.Windows.Forms.Panel();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
@@ -301,7 +300,6 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SzegolyRezerwacjiPanel.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -1458,23 +1456,12 @@
             // 
             // SzegolyRezerwacjiPanel
             // 
-            this.SzegolyRezerwacjiPanel.Controls.Add(this.groupBox8);
+            this.SzegolyRezerwacjiPanel.Controls.Add(this.tableLayoutPanel11);
             this.SzegolyRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SzegolyRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
             this.SzegolyRezerwacjiPanel.Name = "SzegolyRezerwacjiPanel";
             this.SzegolyRezerwacjiPanel.Size = new System.Drawing.Size(859, 556);
             this.SzegolyRezerwacjiPanel.TabIndex = 12;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.tableLayoutPanel11);
-            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(0, 0);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(859, 556);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Szczegóły rezerwacji";
             // 
             // tableLayoutPanel11
             // 
@@ -1487,13 +1474,13 @@
             this.tableLayoutPanel11.Controls.Add(this.groupBox13, 0, 2);
             this.tableLayoutPanel11.Controls.Add(this.groupBox14, 1, 2);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(853, 537);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(859, 555);
             this.tableLayoutPanel11.TabIndex = 3;
             // 
             // groupBox9
@@ -1511,7 +1498,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(420, 184);
+            this.groupBox9.Size = new System.Drawing.Size(423, 184);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Podstawowe informacje";
@@ -1621,9 +1608,9 @@
             this.groupBox10.Controls.Add(this.label90);
             this.groupBox10.Controls.Add(this.label89);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.Location = new System.Drawing.Point(429, 3);
+            this.groupBox10.Location = new System.Drawing.Point(432, 3);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(421, 184);
+            this.groupBox10.Size = new System.Drawing.Size(424, 184);
             this.groupBox10.TabIndex = 1;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Dane klienta";
@@ -1757,7 +1744,7 @@
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.Location = new System.Drawing.Point(3, 193);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(847, 194);
+            this.groupBox11.Size = new System.Drawing.Size(853, 194);
             this.groupBox11.TabIndex = 2;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Pojazd";
@@ -1891,7 +1878,7 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::GUI.Properties.Resources.example_car;
+            this.pictureBox11.Image = global::GUI.Properties.Resources.no_car_image;
             this.pictureBox11.Location = new System.Drawing.Point(28, 21);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(223, 163);
@@ -1908,7 +1895,7 @@
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox13.Location = new System.Drawing.Point(3, 393);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(420, 141);
+            this.groupBox13.Size = new System.Drawing.Size(423, 159);
             this.groupBox13.TabIndex = 3;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Wydaj";
@@ -1959,9 +1946,9 @@
             this.groupBox14.Controls.Add(this.textBox49);
             this.groupBox14.Controls.Add(this.label102);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox14.Location = new System.Drawing.Point(429, 393);
+            this.groupBox14.Location = new System.Drawing.Point(432, 393);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(421, 141);
+            this.groupBox14.Size = new System.Drawing.Size(424, 159);
             this.groupBox14.TabIndex = 4;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Odbierz";
@@ -2946,7 +2933,6 @@
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.SzegolyRezerwacjiPanel.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -3193,7 +3179,6 @@
         private System.Windows.Forms.TextBox LoginTBoxEDKlienta;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel SzegolyRezerwacjiPanel;
-        private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label87;

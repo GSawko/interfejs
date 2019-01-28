@@ -34,6 +34,7 @@
             this.PrawyPanel = new System.Windows.Forms.Panel();
             this.DodajPojazdPanel = new System.Windows.Forms.Panel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -50,7 +51,6 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label109 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label112 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
@@ -185,23 +185,6 @@
             this.ZaGodz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sprawny = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EdytujPojazdPanel = new System.Windows.Forms.Panel();
-            this.button17 = new System.Windows.Forms.Button();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.label122 = new System.Windows.Forms.Label();
-            this.label123 = new System.Windows.Forms.Label();
-            this.label124 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.ListaRezerwacjiPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -271,7 +254,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -307,10 +289,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label52 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
-            this.KlientPic = new System.Windows.Forms.PictureBox();
             this.Wyszukaj = new System.Windows.Forms.GroupBox();
             this.NrDowOsTBox = new System.Windows.Forms.TextBox();
             this.IDKlientaLabel = new System.Windows.Forms.Label();
@@ -341,11 +321,91 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SzegolyRezerwacjiPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox56 = new System.Windows.Forms.TextBox();
+            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.textBox67 = new System.Windows.Forms.TextBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.wydajPojazdButton = new System.Windows.Forms.Button();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.odbierzPojazdButton = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox72 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.textBox60 = new System.Windows.Forms.TextBox();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.textBox62 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox63 = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.KlientPic = new System.Windows.Forms.PictureBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label64 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6.SuspendLayout();
             this.PrawyPanel.SuspendLayout();
             this.DodajPojazdPanel.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.DodajKlientaPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.DodajPracownikaPanel.SuspendLayout();
@@ -361,8 +421,6 @@
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.EdytujPojazdPanel.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.ListaRezerwacjiPanel.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.groupBox16.SuspendLayout();
@@ -376,18 +434,29 @@
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.KlientMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.ZwrotBox.SuspendLayout();
             this.RezerwacjaBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).BeginInit();
             this.Wyszukaj.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.SzegolyRezerwacjiPanel.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel6
@@ -410,13 +479,14 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.DodajPojazdPanel);
+            this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.DodajPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.EdytujPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneKlientaPanel);
-            this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
-            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.ListaKlientowPanel);
             this.PrawyPanel.Controls.Add(this.ListaPracownikowPanel);
@@ -439,6 +509,7 @@
             // groupBox13
             // 
             this.groupBox13.AutoSize = true;
+            this.groupBox13.Controls.Add(this.button2);
             this.groupBox13.Controls.Add(this.label8);
             this.groupBox13.Controls.Add(this.label7);
             this.groupBox13.Controls.Add(this.maskedTextBox1);
@@ -469,6 +540,16 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Dodaj Pojazd";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(535, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Wczytaj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -481,7 +562,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(345, 391);
+            this.label7.Location = new System.Drawing.Point(345, 390);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 36;
@@ -532,6 +613,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "Samochód",
@@ -605,17 +687,6 @@
             this.label109.Size = new System.Drawing.Size(62, 13);
             this.label109.TabIndex = 18;
             this.label109.Text = "Za Godzinę";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::GUI.Properties.Resources.example_car;
-            this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
-            this.pictureBox11.Location = new System.Drawing.Point(231, 27);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(379, 241);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
             // 
             // label112
             // 
@@ -1921,173 +1992,12 @@
             // EdytujPojazdPanel
             // 
             this.EdytujPojazdPanel.AutoScroll = true;
-            this.EdytujPojazdPanel.Controls.Add(this.button17);
             this.EdytujPojazdPanel.Controls.Add(this.groupBox15);
             this.EdytujPojazdPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujPojazdPanel.Location = new System.Drawing.Point(0, 0);
             this.EdytujPojazdPanel.Name = "EdytujPojazdPanel";
             this.EdytujPojazdPanel.Size = new System.Drawing.Size(859, 555);
             this.EdytujPojazdPanel.TabIndex = 30;
-            // 
-            // button17
-            // 
-            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button17.Location = new System.Drawing.Point(0, 444);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(859, 23);
-            this.button17.TabIndex = 24;
-            this.button17.Text = "Dalej";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.textBox59);
-            this.groupBox15.Controls.Add(this.textBox60);
-            this.groupBox15.Controls.Add(this.textBox61);
-            this.groupBox15.Controls.Add(this.textBox62);
-            this.groupBox15.Controls.Add(this.textBox63);
-            this.groupBox15.Controls.Add(this.textBox64);
-            this.groupBox15.Controls.Add(this.richTextBox7);
-            this.groupBox15.Controls.Add(this.label118);
-            this.groupBox15.Controls.Add(this.label119);
-            this.groupBox15.Controls.Add(this.label121);
-            this.groupBox15.Controls.Add(this.label122);
-            this.groupBox15.Controls.Add(this.label123);
-            this.groupBox15.Controls.Add(this.label124);
-            this.groupBox15.Controls.Add(this.label115);
-            this.groupBox15.Controls.Add(this.pictureBox17);
-            this.groupBox15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox15.Location = new System.Drawing.Point(0, 0);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(859, 444);
-            this.groupBox15.TabIndex = 26;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = " ";
-            // 
-            // textBox59
-            // 
-            this.textBox59.Location = new System.Drawing.Point(140, 418);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(100, 20);
-            this.textBox59.TabIndex = 39;
-            // 
-            // textBox60
-            // 
-            this.textBox60.Location = new System.Drawing.Point(140, 390);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(100, 20);
-            this.textBox60.TabIndex = 38;
-            // 
-            // textBox61
-            // 
-            this.textBox61.Location = new System.Drawing.Point(140, 360);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(100, 20);
-            this.textBox61.TabIndex = 37;
-            // 
-            // textBox62
-            // 
-            this.textBox62.Location = new System.Drawing.Point(140, 332);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(100, 20);
-            this.textBox62.TabIndex = 36;
-            // 
-            // textBox63
-            // 
-            this.textBox63.Location = new System.Drawing.Point(140, 302);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(100, 20);
-            this.textBox63.TabIndex = 35;
-            // 
-            // textBox64
-            // 
-            this.textBox64.Location = new System.Drawing.Point(140, 274);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(100, 20);
-            this.textBox64.TabIndex = 34;
-            // 
-            // richTextBox7
-            // 
-            this.richTextBox7.Enabled = false;
-            this.richTextBox7.Location = new System.Drawing.Point(307, 272);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(231, 165);
-            this.richTextBox7.TabIndex = 33;
-            this.richTextBox7.Text = "Krótki opis pojazdu";
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(43, 277);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(37, 13);
-            this.label118.TabIndex = 27;
-            this.label118.Text = "Marka";
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(43, 421);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(62, 13);
-            this.label119.TabIndex = 32;
-            this.label119.Text = "Za Godzinę";
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(43, 305);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(36, 13);
-            this.label121.TabIndex = 28;
-            this.label121.Text = "Model";
-            // 
-            // label122
-            // 
-            this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(43, 335);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(31, 13);
-            this.label122.TabIndex = 29;
-            this.label122.Text = "Kolor";
-            // 
-            // label123
-            // 
-            this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(43, 393);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(76, 13);
-            this.label123.TabIndex = 31;
-            this.label123.Text = "Data produkcji";
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(43, 363);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(48, 13);
-            this.label124.TabIndex = 30;
-            this.label124.Text = "Przebieg";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(0, 0);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(105, 13);
-            this.label115.TabIndex = 0;
-            this.label115.Text = "Dokonaj Rezerwacji ";
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::GUI.Properties.Resources.example_car;
-            this.pictureBox17.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.InitialImage")));
-            this.pictureBox17.Location = new System.Drawing.Point(105, 33);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(366, 225);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 1;
-            this.pictureBox17.TabStop = false;
             // 
             // ListaRezerwacjiPanel
             // 
@@ -2821,16 +2731,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "11:52";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 4;
@@ -3207,16 +3107,6 @@
             this.button11.Text = "Wybierz Samochód";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::GUI.Properties.Resources.example_car;
-            this.pictureBox8.Location = new System.Drawing.Point(6, 36);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(259, 197);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
-            // 
             // label52
             // 
             this.label52.AutoSize = true;
@@ -3234,16 +3124,6 @@
             this.textBox21.Size = new System.Drawing.Size(151, 20);
             this.textBox21.TabIndex = 1;
             this.textBox21.Text = "fiat 126p";
-            // 
-            // KlientPic
-            // 
-            this.KlientPic.Image = global::GUI.Properties.Resources.logo;
-            this.KlientPic.Location = new System.Drawing.Point(390, 72);
-            this.KlientPic.Name = "KlientPic";
-            this.KlientPic.Size = new System.Drawing.Size(169, 161);
-            this.KlientPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.KlientPic.TabIndex = 4;
-            this.KlientPic.TabStop = false;
             // 
             // Wyszukaj
             // 
@@ -3530,6 +3410,837 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // SzegolyRezerwacjiPanel
+            // 
+            this.SzegolyRezerwacjiPanel.Controls.Add(this.tableLayoutPanel7);
+            this.SzegolyRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SzegolyRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
+            this.SzegolyRezerwacjiPanel.Name = "SzegolyRezerwacjiPanel";
+            this.SzegolyRezerwacjiPanel.Size = new System.Drawing.Size(859, 555);
+            this.SzegolyRezerwacjiPanel.TabIndex = 42;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.groupBox4, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.groupBox6, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.groupBox7, 1, 2);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(859, 555);
+            this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox22);
+            this.groupBox3.Controls.Add(this.textBox23);
+            this.groupBox3.Controls.Add(this.textBox25);
+            this.groupBox3.Controls.Add(this.textBox27);
+            this.groupBox3.Controls.Add(this.textBox28);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(423, 184);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Podstawowe informacje";
+            // 
+            // textBox22
+            // 
+            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox22.Location = new System.Drawing.Point(138, 145);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(219, 13);
+            this.textBox22.TabIndex = 9;
+            // 
+            // textBox23
+            // 
+            this.textBox23.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox23.Location = new System.Drawing.Point(138, 116);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(219, 13);
+            this.textBox23.TabIndex = 8;
+            // 
+            // textBox25
+            // 
+            this.textBox25.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox25.Location = new System.Drawing.Point(138, 86);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.ReadOnly = true;
+            this.textBox25.Size = new System.Drawing.Size(219, 13);
+            this.textBox25.TabIndex = 7;
+            // 
+            // textBox27
+            // 
+            this.textBox27.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox27.Location = new System.Drawing.Point(138, 57);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            this.textBox27.Size = new System.Drawing.Size(219, 13);
+            this.textBox27.TabIndex = 6;
+            // 
+            // textBox28
+            // 
+            this.textBox28.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox28.Location = new System.Drawing.Point(138, 28);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
+            this.textBox28.Size = new System.Drawing.Size(228, 13);
+            this.textBox28.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 119);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Data zdania";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 148);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Status";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Data zwrotu";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Data wypożyczenia";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(22, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Data rezerwacji";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.textBox30);
+            this.groupBox4.Controls.Add(this.textBox31);
+            this.groupBox4.Controls.Add(this.textBox56);
+            this.groupBox4.Controls.Add(this.textBox57);
+            this.groupBox4.Controls.Add(this.textBox58);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label91);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(432, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(424, 184);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Dane klienta";
+            // 
+            // textBox29
+            // 
+            this.textBox29.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox29.Location = new System.Drawing.Point(132, 152);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(246, 13);
+            this.textBox29.TabIndex = 12;
+            // 
+            // textBox30
+            // 
+            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox30.Location = new System.Drawing.Point(132, 125);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.ReadOnly = true;
+            this.textBox30.Size = new System.Drawing.Size(246, 13);
+            this.textBox30.TabIndex = 11;
+            // 
+            // textBox31
+            // 
+            this.textBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox31.Location = new System.Drawing.Point(132, 100);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.ReadOnly = true;
+            this.textBox31.Size = new System.Drawing.Size(246, 13);
+            this.textBox31.TabIndex = 10;
+            // 
+            // textBox56
+            // 
+            this.textBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox56.Location = new System.Drawing.Point(132, 75);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.ReadOnly = true;
+            this.textBox56.Size = new System.Drawing.Size(246, 13);
+            this.textBox56.TabIndex = 9;
+            // 
+            // textBox57
+            // 
+            this.textBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox57.Location = new System.Drawing.Point(132, 50);
+            this.textBox57.Name = "textBox57";
+            this.textBox57.ReadOnly = true;
+            this.textBox57.Size = new System.Drawing.Size(246, 13);
+            this.textBox57.TabIndex = 8;
+            // 
+            // textBox58
+            // 
+            this.textBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox58.Location = new System.Drawing.Point(132, 24);
+            this.textBox58.Name = "textBox58";
+            this.textBox58.ReadOnly = true;
+            this.textBox58.Size = new System.Drawing.Size(246, 13);
+            this.textBox58.TabIndex = 7;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(39, 155);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(33, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Login";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(39, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Płeć";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(39, 130);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Telefon";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(39, 103);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(76, 13);
+            this.label91.TabIndex = 2;
+            this.label91.Text = "Nr dowodu os.";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(39, 78);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(34, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Adres";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(39, 27);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(75, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Imie Nazwisko";
+            // 
+            // groupBox5
+            // 
+            this.tableLayoutPanel7.SetColumnSpan(this.groupBox5, 2);
+            this.groupBox5.Controls.Add(this.richTextBox3);
+            this.groupBox5.Controls.Add(this.textBox65);
+            this.groupBox5.Controls.Add(this.textBox66);
+            this.groupBox5.Controls.Add(this.textBox67);
+            this.groupBox5.Controls.Add(this.textBox68);
+            this.groupBox5.Controls.Add(this.textBox69);
+            this.groupBox5.Controls.Add(this.textBox70);
+            this.groupBox5.Controls.Add(this.label19);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.label34);
+            this.groupBox5.Controls.Add(this.label98);
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.label45);
+            this.groupBox5.Controls.Add(this.label46);
+            this.groupBox5.Controls.Add(this.pictureBox2);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 193);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(853, 194);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Pojazd";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Location = new System.Drawing.Point(562, 30);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(214, 143);
+            this.richTextBox3.TabIndex = 17;
+            this.richTextBox3.Text = "";
+            // 
+            // textBox65
+            // 
+            this.textBox65.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox65.Location = new System.Drawing.Point(355, 156);
+            this.textBox65.Name = "textBox65";
+            this.textBox65.ReadOnly = true;
+            this.textBox65.Size = new System.Drawing.Size(154, 13);
+            this.textBox65.TabIndex = 16;
+            // 
+            // textBox66
+            // 
+            this.textBox66.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox66.Location = new System.Drawing.Point(355, 132);
+            this.textBox66.Name = "textBox66";
+            this.textBox66.ReadOnly = true;
+            this.textBox66.Size = new System.Drawing.Size(154, 13);
+            this.textBox66.TabIndex = 15;
+            // 
+            // textBox67
+            // 
+            this.textBox67.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox67.Location = new System.Drawing.Point(355, 107);
+            this.textBox67.Name = "textBox67";
+            this.textBox67.ReadOnly = true;
+            this.textBox67.Size = new System.Drawing.Size(154, 13);
+            this.textBox67.TabIndex = 14;
+            // 
+            // textBox68
+            // 
+            this.textBox68.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox68.Location = new System.Drawing.Point(355, 81);
+            this.textBox68.Name = "textBox68";
+            this.textBox68.ReadOnly = true;
+            this.textBox68.Size = new System.Drawing.Size(154, 13);
+            this.textBox68.TabIndex = 13;
+            // 
+            // textBox69
+            // 
+            this.textBox69.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox69.Location = new System.Drawing.Point(355, 55);
+            this.textBox69.Name = "textBox69";
+            this.textBox69.ReadOnly = true;
+            this.textBox69.Size = new System.Drawing.Size(154, 13);
+            this.textBox69.TabIndex = 12;
+            // 
+            // textBox70
+            // 
+            this.textBox70.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox70.Location = new System.Drawing.Point(355, 30);
+            this.textBox70.Name = "textBox70";
+            this.textBox70.ReadOnly = true;
+            this.textBox70.Size = new System.Drawing.Size(154, 13);
+            this.textBox70.TabIndex = 11;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(524, 33);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(28, 13);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "Opis";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(269, 84);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(31, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Kolor";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(269, 110);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(76, 13);
+            this.label34.TabIndex = 8;
+            this.label34.Text = "Data produkcji";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(269, 160);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(33, 13);
+            this.label98.TabIndex = 7;
+            this.label98.Text = "Koszt";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(269, 135);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(48, 13);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "Przebieg";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(269, 33);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(40, 13);
+            this.label45.TabIndex = 5;
+            this.label45.Text = "Rodzaj";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(269, 58);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(37, 13);
+            this.label46.TabIndex = 4;
+            this.label46.Text = "Marka";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.wydajPojazdButton);
+            this.groupBox6.Controls.Add(this.checkBox6);
+            this.groupBox6.Controls.Add(this.textBox71);
+            this.groupBox6.Controls.Add(this.label51);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(3, 393);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(423, 159);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Wydaj";
+            // 
+            // wydajPojazdButton
+            // 
+            this.wydajPojazdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wydajPojazdButton.Location = new System.Drawing.Point(124, 87);
+            this.wydajPojazdButton.Name = "wydajPojazdButton";
+            this.wydajPojazdButton.Size = new System.Drawing.Size(145, 36);
+            this.wydajPojazdButton.TabIndex = 24;
+            this.wydajPojazdButton.Text = "Wydaj pojazd";
+            this.wydajPojazdButton.UseVisualStyleBackColor = true;
+            this.wydajPojazdButton.Click += new System.EventHandler(this.wydajPojazdButton_Click);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(94, 56);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(212, 17);
+            this.checkBox6.TabIndex = 23;
+            this.checkBox6.Text = "Potwierdzam wydanie klientowi pojazdu";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // textBox71
+            // 
+            this.textBox71.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox71.Location = new System.Drawing.Point(163, 26);
+            this.textBox71.Name = "textBox71";
+            this.textBox71.ReadOnly = true;
+            this.textBox71.Size = new System.Drawing.Size(154, 13);
+            this.textBox71.TabIndex = 22;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(80, 26);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(75, 13);
+            this.label51.TabIndex = 21;
+            this.label51.Text = "Data wydania:";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.odbierzPojazdButton);
+            this.groupBox7.Controls.Add(this.checkBox2);
+            this.groupBox7.Controls.Add(this.textBox72);
+            this.groupBox7.Controls.Add(this.label53);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(432, 393);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(424, 159);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Odbierz";
+            // 
+            // odbierzPojazdButton
+            // 
+            this.odbierzPojazdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.odbierzPojazdButton.Location = new System.Drawing.Point(129, 87);
+            this.odbierzPojazdButton.Name = "odbierzPojazdButton";
+            this.odbierzPojazdButton.Size = new System.Drawing.Size(145, 36);
+            this.odbierzPojazdButton.TabIndex = 20;
+            this.odbierzPojazdButton.Text = "Odbierz pojazd";
+            this.odbierzPojazdButton.UseVisualStyleBackColor = true;
+            this.odbierzPojazdButton.Click += new System.EventHandler(this.odbierzPojazdButton_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(95, 56);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(216, 17);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Potwierdzam zwrot pojazdu przez klienta";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox72
+            // 
+            this.textBox72.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox72.Location = new System.Drawing.Point(169, 26);
+            this.textBox72.Name = "textBox72";
+            this.textBox72.ReadOnly = true;
+            this.textBox72.Size = new System.Drawing.Size(154, 13);
+            this.textBox72.TabIndex = 18;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(86, 26);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(71, 13);
+            this.label53.TabIndex = 0;
+            this.label53.Text = "Data odbioru:";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.button12);
+            this.groupBox15.Controls.Add(this.label64);
+            this.groupBox15.Controls.Add(this.button6);
+            this.groupBox15.Controls.Add(this.label58);
+            this.groupBox15.Controls.Add(this.textBox63);
+            this.groupBox15.Controls.Add(this.button8);
+            this.groupBox15.Controls.Add(this.label54);
+            this.groupBox15.Controls.Add(this.label55);
+            this.groupBox15.Controls.Add(this.maskedTextBox5);
+            this.groupBox15.Controls.Add(this.checkBox7);
+            this.groupBox15.Controls.Add(this.textBox59);
+            this.groupBox15.Controls.Add(this.label56);
+            this.groupBox15.Controls.Add(this.comboBox7);
+            this.groupBox15.Controls.Add(this.label57);
+            this.groupBox15.Controls.Add(this.textBox60);
+            this.groupBox15.Controls.Add(this.textBox61);
+            this.groupBox15.Controls.Add(this.textBox62);
+            this.groupBox15.Controls.Add(this.richTextBox1);
+            this.groupBox15.Controls.Add(this.label59);
+            this.groupBox15.Controls.Add(this.pictureBox3);
+            this.groupBox15.Controls.Add(this.label60);
+            this.groupBox15.Controls.Add(this.label61);
+            this.groupBox15.Controls.Add(this.label62);
+            this.groupBox15.Controls.Add(this.label63);
+            this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox15.Location = new System.Drawing.Point(0, 0);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(859, 555);
+            this.groupBox15.TabIndex = 26;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = " Edytuj pojazd";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(734, 505);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(116, 13);
+            this.label54.TabIndex = 59;
+            this.label54.Text = "* pola nieobowiązkowe";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(354, 395);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(32, 13);
+            this.label55.TabIndex = 58;
+            this.label55.Text = "Opis*";
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(150, 354);
+            this.maskedTextBox5.Mask = "00/00/0000";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.ReadOnly = true;
+            this.maskedTextBox5.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox5.TabIndex = 57;
+            this.maskedTextBox5.ValidatingType = typeof(System.DateTime);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(350, 318);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(100, 17);
+            this.checkBox7.TabIndex = 56;
+            this.checkBox7.Text = "Pojazd sprawny";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // textBox59
+            // 
+            this.textBox59.Location = new System.Drawing.Point(150, 477);
+            this.textBox59.Name = "textBox59";
+            this.textBox59.ReadOnly = true;
+            this.textBox59.Size = new System.Drawing.Size(149, 20);
+            this.textBox59.TabIndex = 55;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(57, 480);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(70, 13);
+            this.label56.TabIndex = 54;
+            this.label56.Text = "Nr Rejestracji";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.Enabled = false;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Samochód",
+            "Motocykl",
+            "Motorower"});
+            this.comboBox7.Location = new System.Drawing.Point(350, 367);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(248, 21);
+            this.comboBox7.TabIndex = 52;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(354, 348);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(65, 13);
+            this.label57.TabIndex = 51;
+            this.label57.Text = "Typ pojazdu";
+            // 
+            // textBox60
+            // 
+            this.textBox60.Location = new System.Drawing.Point(150, 445);
+            this.textBox60.Name = "textBox60";
+            this.textBox60.Size = new System.Drawing.Size(149, 20);
+            this.textBox60.TabIndex = 49;
+            // 
+            // textBox61
+            // 
+            this.textBox61.Location = new System.Drawing.Point(150, 414);
+            this.textBox61.Name = "textBox61";
+            this.textBox61.Size = new System.Drawing.Size(149, 20);
+            this.textBox61.TabIndex = 48;
+            // 
+            // textBox62
+            // 
+            this.textBox62.Location = new System.Drawing.Point(150, 383);
+            this.textBox62.Name = "textBox62";
+            this.textBox62.Size = new System.Drawing.Size(149, 20);
+            this.textBox62.TabIndex = 47;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(350, 414);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(248, 83);
+            this.richTextBox1.TabIndex = 46;
+            this.richTextBox1.Text = "";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(57, 447);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(62, 13);
+            this.label59.TabIndex = 45;
+            this.label59.Text = "Za Godzinę";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(57, 320);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(36, 13);
+            this.label60.TabIndex = 41;
+            this.label60.Text = "Model";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(57, 387);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(35, 13);
+            this.label61.TabIndex = 42;
+            this.label61.Text = "Kolor*";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(57, 352);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(76, 13);
+            this.label62.TabIndex = 44;
+            this.label62.Text = "Data produkcji";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(57, 417);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(48, 13);
+            this.label63.TabIndex = 43;
+            this.label63.Text = "Przebieg";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(16, 523);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(834, 23);
+            this.button8.TabIndex = 61;
+            this.button8.Text = "Zapisz";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // textBox63
+            // 
+            this.textBox63.Location = new System.Drawing.Point(150, 317);
+            this.textBox63.Name = "textBox63";
+            this.textBox63.ReadOnly = true;
+            this.textBox63.Size = new System.Drawing.Size(149, 20);
+            this.textBox63.TabIndex = 62;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources.no_car_image;
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(214, 32);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(379, 232);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::GUI.Properties.Resources.no_car_image;
+            this.pictureBox11.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.InitialImage")));
+            this.pictureBox11.Location = new System.Drawing.Point(231, 27);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(379, 232);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources.no_car_image;
+            this.pictureBox2.Location = new System.Drawing.Point(28, 21);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(223, 163);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::GUI.Properties.Resources.example_car;
+            this.pictureBox8.Location = new System.Drawing.Point(6, 36);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(259, 197);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // KlientPic
+            // 
+            this.KlientPic.Image = global::GUI.Properties.Resources.logo;
+            this.KlientPic.Location = new System.Drawing.Point(390, 72);
+            this.KlientPic.Name = "KlientPic";
+            this.KlientPic.Size = new System.Drawing.Size(169, 161);
+            this.KlientPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.KlientPic.TabIndex = 4;
+            this.KlientPic.TabStop = false;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(641, 320);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(37, 13);
+            this.label58.TabIndex = 63;
+            this.label58.Text = "Opinie";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(712, 314);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 64;
+            this.button6.Text = "Pokaż";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(712, 347);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 66;
+            this.button12.Text = "Pokaż";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(641, 353);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(53, 13);
+            this.label64.TabIndex = 65;
+            this.label64.Text = "Przeglądy";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3545,7 +4256,6 @@
             this.DodajPojazdPanel.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.DodajKlientaPanel.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -3568,9 +4278,6 @@
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.EdytujPojazdPanel.ResumeLayout(false);
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ListaRezerwacjiPanel.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
@@ -3588,7 +4295,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.KlientMenuPanel.ResumeLayout(false);
             this.KlientMenuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -3599,12 +4305,30 @@
             this.ZwrotBox.PerformLayout();
             this.RezerwacjaBox.ResumeLayout(false);
             this.RezerwacjaBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).EndInit();
             this.Wyszukaj.ResumeLayout(false);
             this.Wyszukaj.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.SzegolyRezerwacjiPanel.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KlientPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3774,29 +4498,12 @@
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.Label label120;
         public System.Windows.Forms.Panel EdytujPojazdPanel;
-        private System.Windows.Forms.Button button17;
         private ToggleBox toggleBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.ListBox listBox3;
         private ToggleBox toggleBox6;
         private System.Windows.Forms.ListView listView4;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.TextBox textBox60;
-        private System.Windows.Forms.TextBox textBox61;
-        private System.Windows.Forms.TextBox textBox62;
-        private System.Windows.Forms.TextBox textBox63;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.RichTextBox richTextBox7;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.Label label121;
-        private System.Windows.Forms.Label label122;
-        private System.Windows.Forms.Label label123;
-        private System.Windows.Forms.Label label124;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.PictureBox pictureBox17;
         private ToggleBox PrzegladyToggle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.RichTextBox richTextBox2;
@@ -3931,5 +4638,83 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel SzegolyRezerwacjiPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.TextBox textBox57;
+        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.TextBox textBox65;
+        private System.Windows.Forms.TextBox textBox66;
+        private System.Windows.Forms.TextBox textBox67;
+        private System.Windows.Forms.TextBox textBox68;
+        private System.Windows.Forms.TextBox textBox69;
+        private System.Windows.Forms.TextBox textBox70;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button wydajPojazdButton;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button odbierzPojazdButton;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox72;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox textBox60;
+        private System.Windows.Forms.TextBox textBox61;
+        private System.Windows.Forms.TextBox textBox62;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label58;
     }
 }

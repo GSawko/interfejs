@@ -18,15 +18,30 @@ namespace GUI.Service
             }
         }
 
-        public static bool AddCarBrand(MARKI newCarBrand)
+        public static int AddCarBrand(MARKI newCarBrand)
         {
             using (var entities = new DBEntities())
             {
                 entities.MARKI.Add(newCarBrand);
                 entities.SaveChanges();
+
+                return newCarBrand.idMarki;
             }
 
-            return true;
+            return -1;
+        }
+
+        public static int GetCarBrandId(string nazwa)
+        {
+            using (var entities = new DBEntities())
+            {
+                var marka = entities.MARKI.FirstOrDefault(m => m.Nazwa.Equals(nazwa));
+
+                if (marka == null)
+                    return -1;
+                else
+                    return marka.idMarki;
+            }
         }
 
         public static bool RemoveCarBrand(int idCarBrand)

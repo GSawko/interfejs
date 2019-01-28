@@ -26,7 +26,10 @@ namespace GUI
         private POJAZDY _currentEditVehicle;
         private List<VehicleListGrid> _vehicleListGrid = new List<VehicleListGrid>();
 
+        private REZERWACJE _currentEditReservation;
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
+
+        private Image _lastLoadImage = null;
 
         public Form4(string Login)
         {
@@ -34,6 +37,7 @@ namespace GUI
             LoadMenuData(Login);
             LoadCheckedListBox();
             LoadComboBox(comboBox5);
+            ClearVehicleFromAddScreen();
             timer1.Start();
         }
 
@@ -72,7 +76,7 @@ namespace GUI
 
         private void button19_Click(object sender, EventArgs e)
         {
-            comboBox4.SelectedIndex = 0;
+            ClearVehicleFromAddScreen();
             DodajPojazdPanel.BringToFront();
         }
 
@@ -329,7 +333,9 @@ namespace GUI
             newVehicle.Sprawny = (sbyte)(checkBox3.Checked == true ? 1 : 0);
             newVehicle.Opis = richTextBox4.TextOrDefault();
             newVehicle.Kolor = textBox50.TextOrDefault();
-            newVehicle.MARKI_idMarki = ((MARKI)comboBox5.SelectedItem).idMarki;
+            newVehicle.MARKA_Nazwa = comboBox5.Text;
+            if (_lastLoadImage != null)
+                newVehicle.ZDJECIA.Add(new ZDJECIA() { Zdjecie = PhotoService.ImageToByteArray(_lastLoadImage) });
 
             for (int i = 0; i < checkedListBox6.CheckedIndices.Count; i++)
             {
@@ -340,12 +346,32 @@ namespace GUI
             return newVehicle;
         }
 
+        private void ClearVehicleFromAddScreen()
+        {
+            comboBox4.SelectedIndex = 0;
+            textBox43.Text = "";
+            textBox49.Text = "";
+            textBox51.Text = "";
+            maskedTextBox1.Text = "";
+            checkBox3.Checked = false;
+            richTextBox4.Text = "";
+            textBox50.Text = "";
+            comboBox5.SelectedIndex = 0;
+            pictureBox11.Image = Properties.Resources.no_car_image;
+            checkedListBox6.ClearItemChecked();
+
+            _lastLoadImage = null;
+        }
+
         private void button14_Click(object sender, EventArgs e)
         {
             var addVehicle = GetVehicleFromAddScreen();
             var isAdd = VehicleService.AddVehicle(addVehicle);
             if (isAdd)
+            {
                 MessageBox.Show("Dodano pojazd.");
+                ClearVehicleFromAddScreen();
+            }
             else
                 MessageBox.Show("Błąd dodania pojazdu!");
         }
@@ -378,21 +404,51 @@ namespace GUI
 
         private void ShowSelectedVehicleOnEditScreen(int id)
         {
-            var car = VehicleService.GetVehicle(id) ?? new POJAZDY();
-            ShowVehicleOnEditScreen(car);
+            _currentEditVehicle = VehicleService.GetVehicle(id) ?? new POJAZDY();
+            ShowVehicleOnEditScreen(_currentEditVehicle);
             EdytujPojazdPanel.BringToFront();
         }
 
         private void ShowVehicleOnEditScreen(POJAZDY vehicle)
         {
-            var marka = vehicle.MARKI.Nazwa.Split(' ');
-            textBox64.Text = marka.Length > 0 ? marka[0] : "";
-            textBox63.Text = marka.Length > 1 ? marka[1] : "";
+            if (vehicle.ZDJECIA.Count > 0)
+                pictureBox3.Image = PhotoService.ByteArrayToImage(vehicle.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox3.Image = Properties.Resources.no_car_image;
+
+            textBox63.Text = vehicle.MARKI.Nazwa;
+            maskedTextBox5.Text = vehicle.DataProd.ToString("d");
             textBox62.Text = vehicle.Kolor;
             textBox61.Text = vehicle.Przebieg.ToString("D");
-            textBox60.Text = vehicle.DataProd.ToString("d");
-            textBox59.Text = vehicle.ZaGodz.ToString("C");
-            richTextBox7.Text = vehicle.Opis;
+            textBox60.Text = vehicle.ZaGodz.ToString("F");
+            textBox59.Text = vehicle.NrRejestr;
+            checkBox7.Checked = vehicle.Sprawny == 0 ? false : true;
+            comboBox7.SelectedIndex = vehicle.Rodzaj;
+            richTextBox1.Text = vehicle.Opis;
+        }
+
+        private void LoadVehicleFromEditScreen(POJAZDY editVehicle)
+        {
+            editVehicle.Kolor = textBox62.TextOrDefault();
+            editVehicle.Przebieg = int.Parse(textBox61.Text);
+            editVehicle.ZaGodz = float.Parse(textBox60.Text);
+            editVehicle.Sprawny = (sbyte)(checkBox7.Checked == true ? 1 : 0);
+            editVehicle.Opis = richTextBox1.TextOrDefault();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (_currentEditVehicle != null && _currentEditVehicle.idPojazd > 0)
+            {
+                LoadVehicleFromEditScreen(_currentEditVehicle);
+                var isEdit = VehicleService.UpdateVehicle(_currentEditVehicle);
+                if (isEdit)
+                    MessageBox.Show("Zaktualizowano dane pojazdu.");
+                else
+                    MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
+            }
+            else
+                MessageBox.Show("Najpierw wybierz pojazd do edycji!");
         }
 
         private void VehicleListFilter(object sender, EventArgs e)
@@ -536,9 +592,81 @@ namespace GUI
 
         private void ShowSelectedReservationOnEditScreen(int id)
         {
-            //var reservation = ReservationService.GetReservation(id);
-            //Otwórz ekran wyświetlający szczegóły rezerwacji
-            //TODO rezerwacje jeszcze nigdzie nie są obsługiwane
+            _currentEditReservation = ReservationService.GetReservation(id);
+            LoadReservationOnDetailsScreen(_currentEditReservation);
+            SzegolyRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadReservationOnDetailsScreen(REZERWACJE reservation)
+        {
+            //Podstawowe informacje
+            textBox28.Text = reservation.DataRez.ToString("dd.MM.yyyy HH:mm");
+            textBox27.Text = reservation.DataWypoz.ToString("dd.MM.yyyy HH:mm");
+            textBox25.Text = reservation.DataZwrotu.ToString("dd.MM.yyyy HH:mm");
+            textBox23.Text = reservation.DataZdania?.ToString("dd.MM.yyyy HH:mm");
+            textBox22.Text = ReservationListGrid.GetTextStatus(reservation.Wypozycz);
+
+            //Dane klienta
+            textBox58.Text = reservation.KLIENCI.Imie + " " + reservation.KLIENCI.Nazwisko;
+            textBox57.Text = reservation.KLIENCI.Plec == 0 ? "Mężczyzna" : "Kobieta";
+            textBox56.Text = reservation.KLIENCI.Adres;
+            textBox31.Text = reservation.KLIENCI.NrDowOsob;
+            textBox30.Text = reservation.KLIENCI.Telefon;
+            textBox29.Text = reservation.KLIENCI.Login;
+
+            //Pojazd
+            if (reservation.POJAZDY.ZDJECIA.Count > 0)
+                pictureBox2.Image = PhotoService.ByteArrayToImage(reservation.POJAZDY.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox2.Image = Properties.Resources.no_car_image;
+
+            textBox70.Text = VehicleListGrid.GetTextType(reservation.POJAZDY.Rodzaj);
+            textBox69.Text = reservation.POJAZDY.MARKI.Nazwa;
+            textBox68.Text = reservation.POJAZDY.Kolor;
+            textBox67.Text = reservation.POJAZDY.DataProd.ToString("d");
+            textBox66.Text = reservation.POJAZDY.Przebieg.ToString() + " km";
+            textBox65.Text = reservation.POJAZDY.ZaGodz.ToString("C");
+            richTextBox3.Text = reservation.POJAZDY.Opis;
+
+            //Wydaj
+            textBox71.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            checkBox6.Enabled = reservation.Wypozycz == 0 ? true : false;
+            checkBox6.Checked = false;
+            wydajPojazdButton.Enabled = reservation.Wypozycz == 0 ? true : false;
+
+            //Odbierz
+            textBox72.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            checkBox2.Enabled = reservation.Wypozycz == 1 ? true : false;
+            checkBox2.Checked = false;
+            odbierzPojazdButton.Enabled = reservation.Wypozycz == 1 ? true : false;
+        }
+
+        private void wydajPojazdButton_Click(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                ReservationService.ChangeStatus(_currentEditReservation.idRezerw, 1);
+                ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
+                MessageBox.Show("Status rezerwacji został pomyślnie zmieniony");
+            }
+            else
+            {
+                MessageBox.Show("Potwierdź wydanie pojazdu klientowi!");
+            }
+        }
+
+        private void odbierzPojazdButton_Click(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                ReservationService.ChangeStatus(_currentEditReservation.idRezerw, 2, DateTime.Now);
+                ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
+                MessageBox.Show("Status rezerwacji został pomyślnie zmieniony");
+            }
+            else
+            {
+                MessageBox.Show("Potwierdź odebranie pojazdu od klienta!");
+            }
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -553,15 +681,18 @@ namespace GUI
 
         private void ReservationListFilter(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
+                dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
+
             var filterList = _reservationListGrid;
            
-            DateTime startWypoz = dateTimePicker1.Value;
+            DateTime startWypoz = dateTimePicker1.Value.Date;
             if (checkBox4.Checked)
                 filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
-            DateTime startZwrotu = dateTimePicker2.Value;
+            DateTime startZwrotu = dateTimePicker2.Value.Date;
             if (checkBox5.Checked)
-                filterList = filterList.Where(r => r.DataZwrotu >= startZwrotu).ToList();
+                filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
             string pojazd = textBox48.TextOrDefault();
             if (pojazd != null)
@@ -626,7 +757,6 @@ namespace GUI
                 excel.SaveAs(excelFile);
                 MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
-
         }
 
         private void button16_Click_1(object sender, EventArgs e)
@@ -667,7 +797,6 @@ namespace GUI
                 excel.SaveAs(excelFile);
                 MessageBox.Show("Raport został wygenerowany i zapisany.");
             }
-
         }
 
         private void button20_Click_1(object sender, EventArgs e)
@@ -707,6 +836,22 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _lastLoadImage = PhotoService.LoadFileToImage();
+
+            if (_lastLoadImage == null)
+                return;
+
+            pictureBox11.Image = _lastLoadImage;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormOpinion formOpinion = new FormOpinion(_currentEditVehicle.idPojazd);
+            formOpinion.Show();
         }
     }
 }
