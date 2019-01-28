@@ -438,14 +438,6 @@ namespace GUI
             DateTime startZwrotu = dateTimePicker2.Value.Date;
             filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 
-            string pojazd = textBox48.TextOrDefault();
-            if (pojazd != null)
-                filterList = filterList.Where(r => r.Pojazd.Contains(pojazd, StringComparison.CurrentCultureIgnoreCase)).ToList();
-
-            string klient = textBox54.TextOrDefault();
-            if (klient != null)
-                filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
-
             dataGridView4.DataSource = filterList;
         }
 
