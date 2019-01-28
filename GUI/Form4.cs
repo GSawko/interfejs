@@ -850,8 +850,28 @@ namespace GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FormOpinion formOpinion = new FormOpinion(_currentEditVehicle.idPojazd);
-            formOpinion.Show();
+            var opinions = VehicleService.GetVehicleOpinions(_currentEditVehicle.idPojazd);
+            if (opinions.Count == 0)
+            {
+                MessageBox.Show("Wybrany pojazd nie posiada jeszcze opini.");
+                return;
+            }
+
+            FormOpinion formOpinion = new FormOpinion(opinions);
+            formOpinion.ShowDialog();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var opinions = VehicleService.GetVehicleOpinions(_currentEditReservation.POJAZDY.idPojazd);
+            if (opinions.Count == 0)
+            {
+                MessageBox.Show("Wybrany pojazd nie posiada jeszcze opini.");
+                return;
+            }
+
+            FormOpinion formOpinion = new FormOpinion(opinions);
+            formOpinion.ShowDialog();
         }
     }
 }

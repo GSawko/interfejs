@@ -15,20 +15,14 @@ namespace GUI
     public partial class FormOpinion : Form
     {
         List<OpinionListGrid> _opinionListGrids;
-        public FormOpinion(int vehicleId)
+        public FormOpinion(List<OPINIA> opinions)
         {
             InitializeComponent();
-            LoadVehicleOpinion(vehicleId);
-            if (_opinionListGrids.Count == 0)
-            {
-                MessageBox.Show("Wybrany pojazd nie posiada jeszcze opini.");
-            }
+            LoadVehicleOpinion(opinions);
         }
 
-        public void LoadVehicleOpinion(int id)
+        public void LoadVehicleOpinion(List<OPINIA> opinions)
         {
-            var opinions = VehicleService.GetVehicleOpinions(id);
-
             _opinionListGrids = new List<OpinionListGrid>();
             foreach (OpinionListGrid opinion in opinions)
             {
