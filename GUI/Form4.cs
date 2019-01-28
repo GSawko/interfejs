@@ -651,13 +651,16 @@ namespace GUI
 
         private void ReservationListFilter(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
+                dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
+
             var filterList = _reservationListGrid;
            
             DateTime startWypoz = dateTimePicker1.Value.Date;
             if (checkBox4.Checked)
                 filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
 
-            DateTime startZwrotu = dateTimePicker2.Value;
+            DateTime startZwrotu = dateTimePicker2.Value.Date;
             if (checkBox5.Checked)
                 filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
 

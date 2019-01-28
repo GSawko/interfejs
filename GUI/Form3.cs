@@ -302,6 +302,9 @@ namespace GUI
 
         private void ReservationListFilter(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
+                dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
+
             var filterList = _reservationListGrid;
 
             DateTime startWypoz = dateTimePicker1.Value.Date;
