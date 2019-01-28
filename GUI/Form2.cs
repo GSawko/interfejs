@@ -37,7 +37,6 @@ namespace GUI
             LoadClient(_login);
             ShowClientOnEditScreen();
             LoadReservationList();
-            ReservationListFilter(this, new EventArgs());
         }
 
         private void LoadClient(string login)
@@ -139,12 +138,6 @@ namespace GUI
             Application.Restart();
         }
 
-        private void buttonShowReservation_Click(object sender, EventArgs e)
-        {
-            ReservationListFilter(this, new EventArgs());
-            ListaRezerwacjiPanel.BringToFront();
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
             LoadClientFromEditScreen(_currentClient);
@@ -170,7 +163,6 @@ namespace GUI
             {
                 _reservationListGrid.Add(reservation);
             }
-            dataGridView4.DataSource = _reservationListGrid;
         }
 
         private void ShowReservationOnDetailsScreen(REZERWACJE reservation)
@@ -222,16 +214,6 @@ namespace GUI
             //Realizacja
             textBox23.Text = reservation.PRACOWNICY?.ToString();
             textBox24.Text = reservation.PRACOWNICY1?.ToString();
-        }
-
-        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView4.SelectedRows.Count > 0)
-            {
-                var row = dataGridView4.SelectedRows[0];
-                var id = (int)row.Cells["idRezerw"].Value;
-                ShowSelectedReservationOnEditScreen(id);
-            }
         }
 
         private void ShowSelectedReservationOnEditScreen(int id)
@@ -350,21 +332,6 @@ namespace GUI
 
         }
 
-        private void ReservationListFilter(object sender, EventArgs e)
-        {
-            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
-                dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
-
-            var filterList = _reservationListGrid;
-
-            DateTime startWypoz = dateTimePicker1.Value.Date;
-            filterList = filterList.Where(r => r.DataWypoz >= startWypoz).ToList();
-
-            DateTime startZwrotu = dateTimePicker2.Value.Date;
-            filterList = filterList.Where(r => r.DataZwrotu <= startZwrotu).ToList();
-
-            dataGridView4.DataSource = filterList;
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {

@@ -39,22 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PrawyPanel = new System.Windows.Forms.Panel();
-            this.ListaRezerwacjiPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.label130 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label129 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.label126 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.idRezerw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataWypoz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataZwrotu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pojazd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Klient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SzegolyRezerwacjiPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -187,10 +171,6 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.KlientMenuPanel.SuspendLayout();
             this.PrawyPanel.SuspendLayout();
-            this.ListaRezerwacjiPanel.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SzegolyRezerwacjiPanel.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -272,7 +252,6 @@
             this.buttonShowReservation.TabIndex = 5;
             this.buttonShowReservation.Text = "Przeglądaj rezerwacje";
             this.buttonShowReservation.UseVisualStyleBackColor = true;
-            this.buttonShowReservation.Click += new System.EventHandler(this.buttonShowReservation_Click);
             // 
             // buttonMakeReservation
             // 
@@ -317,7 +296,6 @@
             this.PrawyPanel.AutoScroll = true;
             this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
-            this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
             this.PrawyPanel.Controls.Add(this.KontaktPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -325,177 +303,7 @@
             this.PrawyPanel.Name = "PrawyPanel";
             this.PrawyPanel.Size = new System.Drawing.Size(859, 556);
             this.PrawyPanel.TabIndex = 21;
-            // 
-            // ListaRezerwacjiPanel
-            // 
-            this.ListaRezerwacjiPanel.Controls.Add(this.tableLayoutPanel15);
-            this.ListaRezerwacjiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListaRezerwacjiPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListaRezerwacjiPanel.Name = "ListaRezerwacjiPanel";
-            this.ListaRezerwacjiPanel.Size = new System.Drawing.Size(859, 555);
-            this.ListaRezerwacjiPanel.TabIndex = 42;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Controls.Add(this.groupBox16, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.dataGridView4, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(859, 555);
-            this.tableLayoutPanel15.TabIndex = 3;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.label130);
-            this.groupBox16.Controls.Add(this.dateTimePicker2);
-            this.groupBox16.Controls.Add(this.label129);
-            this.groupBox16.Controls.Add(this.dateTimePicker1);
-            this.groupBox16.Controls.Add(this.textBox48);
-            this.groupBox16.Controls.Add(this.label126);
-            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox16.Location = new System.Drawing.Point(3, 3);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(853, 53);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Wyszukiwanie";
-            //
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Location = new System.Drawing.Point(282, 24);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(67, 13);
-            this.label130.TabIndex = 15;
-            this.label130.Text = "Data zwrotu:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(351, 21);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(94, 20);
-            this.dateTimePicker2.TabIndex = 14;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.ReservationListFilter);
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(17, 24);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(102, 13);
-            this.label129.TabIndex = 12;
-            this.label129.Text = "Data wypożyczenia:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(120, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(91, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.ReservationListFilter);
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(563, 20);
-            this.textBox48.MaxLength = 30;
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(142, 20);
-            this.textBox48.TabIndex = 10;
-            this.textBox48.TextChanged += new System.EventHandler(this.ReservationListFilter);
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(521, 23);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(42, 13);
-            this.label126.TabIndex = 9;
-            this.label126.Text = "Pojazd:";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idRezerw,
-            this.DataWypoz,
-            this.DataZwrotu,
-            this.Pojazd,
-            this.Klient,
-            this.Status});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 62);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(853, 490);
-            this.dataGridView4.TabIndex = 0;
-            this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
-            // 
-            // idRezerw
-            // 
-            this.idRezerw.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idRezerw.DataPropertyName = "idRezerw";
-            this.idRezerw.HeaderText = "Id";
-            this.idRezerw.Name = "idRezerw";
-            this.idRezerw.ReadOnly = true;
-            this.idRezerw.Visible = false;
-            // 
-            // DataWypoz
-            // 
-            this.DataWypoz.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataWypoz.DataPropertyName = "DataWypoz";
-            this.DataWypoz.HeaderText = "Data wypożyczenia";
-            this.DataWypoz.Name = "DataWypoz";
-            this.DataWypoz.ReadOnly = true;
-            // 
-            // DataZwrotu
-            // 
-            this.DataZwrotu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataZwrotu.DataPropertyName = "DataZwrotu";
-            this.DataZwrotu.HeaderText = "Data zwrotu";
-            this.DataZwrotu.Name = "DataZwrotu";
-            this.DataZwrotu.ReadOnly = true;
-            // 
-            // Pojazd
-            // 
-            this.Pojazd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Pojazd.DataPropertyName = "Pojazd";
-            this.Pojazd.HeaderText = "Pojazd";
-            this.Pojazd.Name = "Pojazd";
-            this.Pojazd.ReadOnly = true;
-            // 
-            // Klient
-            // 
-            this.Klient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Klient.DataPropertyName = "Klient";
-            this.Klient.HeaderText = "Klient";
-            this.Klient.Name = "Klient";
-            this.Klient.ReadOnly = true;
-            this.Klient.Visible = false;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+
             // 
             // SzegolyRezerwacjiPanel
             // 
@@ -1921,11 +1729,6 @@
             this.KlientMenuPanel.ResumeLayout(false);
             this.KlientMenuPanel.PerformLayout();
             this.PrawyPanel.ResumeLayout(false);
-            this.ListaRezerwacjiPanel.ResumeLayout(false);
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.SzegolyRezerwacjiPanel.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
