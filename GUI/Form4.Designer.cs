@@ -483,6 +483,7 @@
             this.PrawyPanel.AutoScroll = true;
             this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
+            this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
             this.PrawyPanel.Controls.Add(this.DodajPojazdPanel);
             this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
             this.PrawyPanel.Controls.Add(this.DodajPracownikaPanel);
@@ -1993,7 +1994,6 @@
             // EdytujPojazdPanel
             // 
             this.EdytujPojazdPanel.AutoScroll = true;
-            this.EdytujPojazdPanel.Controls.Add(this.DodajKlientaPanel);
             this.EdytujPojazdPanel.Controls.Add(this.groupBox15);
             this.EdytujPojazdPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EdytujPojazdPanel.Location = new System.Drawing.Point(0, 0);
@@ -4173,6 +4173,7 @@
             this.button12.TabIndex = 66;
             this.button12.Text = "Pokaż";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label64
             // 

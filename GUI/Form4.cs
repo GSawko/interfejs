@@ -873,5 +873,11 @@ namespace GUI
             FormOpinion formOpinion = new FormOpinion(opinions);
             formOpinion.ShowDialog();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            FormInspection formInspection = new FormInspection(_currentEditVehicle.idPojazd);
+            formInspection.ShowDialog();
+        }
     }
 }

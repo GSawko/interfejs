@@ -72,6 +72,20 @@ namespace GUI.Service
             }
         }
 
+        public static List<PRZEGLADY> GetVehicleInspection(int idVehicle)
+        {
+            using (var entities = new DBEntities())
+            {
+                var inspection = entities.PRZEGLADY
+                    .Where(i => i.POJAZDY_idPojazd == idVehicle)
+                    .ToList();
+
+                return inspection;
+            }
+
+            return new List<PRZEGLADY>();
+        }
+
         public static bool UpdateVehicle(POJAZDY updateVehicle)
         {
             using (var entities = new DBEntities())
@@ -116,6 +130,19 @@ namespace GUI.Service
 
                 return true;
             }
+        }
+
+        public static bool AddVehicleInspection(PRZEGLADY newInspection)
+        {
+            using (var entities = new DBEntities())
+            {
+                entities.PRZEGLADY.Add(newInspection);
+                entities.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
 
         public static bool RemoveVehicle(int idVehicle)

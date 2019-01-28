@@ -109,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="FormInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInspection.Designer.cs">
+      <DependentUpon>FormInspection.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOpinion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,7 @@
     <Compile Include="FormVehicle.Designer.cs">
       <DependentUpon>FormVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridView\InspectionListGrid.cs" />
     <Compile Include="GridView\OpinionListGrid.cs" />
     <Compile Include="GridView\VehicleListGrid.cs" />
     <Compile Include="GridView\ClientListGrid.cs" />
@@ -232,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInspection.resx">
+      <DependentUpon>FormInspection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOpinion.resx">
       <DependentUpon>FormOpinion.cs</DependentUpon>
