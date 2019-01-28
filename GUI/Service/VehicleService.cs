@@ -72,6 +72,21 @@ namespace GUI.Service
             }
         }
 
+        public static bool UpdateVehicle(POJAZDY updateVehicle)
+        {
+            using (var entities = new DBEntities())
+            {
+                var vehicle = entities.POJAZDY
+                    .First(v => v.idPojazd == updateVehicle.idPojazd);
+
+                entities.Entry(vehicle).CurrentValues.SetValues(updateVehicle);
+                entities.SaveChanges();
+
+                return true;
+            }
+            return false;
+        }
+
         public static bool AddVehicle(POJAZDY newVehile)
         {
             using (var entities = new DBEntities())

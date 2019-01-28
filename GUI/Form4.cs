@@ -404,21 +404,51 @@ namespace GUI
 
         private void ShowSelectedVehicleOnEditScreen(int id)
         {
-            var car = VehicleService.GetVehicle(id) ?? new POJAZDY();
-            ShowVehicleOnEditScreen(car);
+            _currentEditVehicle = VehicleService.GetVehicle(id) ?? new POJAZDY();
+            ShowVehicleOnEditScreen(_currentEditVehicle);
             EdytujPojazdPanel.BringToFront();
         }
 
         private void ShowVehicleOnEditScreen(POJAZDY vehicle)
         {
-            var marka = vehicle.MARKI.Nazwa.Split(' ');
-            textBox64.Text = marka.Length > 0 ? marka[0] : "";
-            textBox63.Text = marka.Length > 1 ? marka[1] : "";
+            if (vehicle.ZDJECIA.Count > 0)
+                pictureBox3.Image = PhotoService.ByteArrayToImage(vehicle.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox3.Image = Properties.Resources.no_car_image;
+
+            textBox63.Text = vehicle.MARKI.Nazwa;
+            maskedTextBox5.Text = vehicle.DataProd.ToString("d");
             textBox62.Text = vehicle.Kolor;
             textBox61.Text = vehicle.Przebieg.ToString("D");
-            textBox60.Text = vehicle.DataProd.ToString("d");
-            textBox59.Text = vehicle.ZaGodz.ToString("C");
-            richTextBox7.Text = vehicle.Opis;
+            textBox60.Text = vehicle.ZaGodz.ToString("F");
+            textBox59.Text = vehicle.NrRejestr;
+            checkBox7.Checked = vehicle.Sprawny == 0 ? false : true;
+            comboBox7.SelectedIndex = vehicle.Rodzaj;
+            richTextBox1.Text = vehicle.Opis;
+        }
+
+        private void LoadVehicleFromEditScreen(POJAZDY editVehicle)
+        {
+            editVehicle.Kolor = textBox62.TextOrDefault();
+            editVehicle.Przebieg = int.Parse(textBox61.Text);
+            editVehicle.ZaGodz = float.Parse(textBox60.Text);
+            editVehicle.Sprawny = (sbyte)(checkBox7.Checked == true ? 1 : 0);
+            editVehicle.Opis = richTextBox1.TextOrDefault();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (_currentEditVehicle != null && _currentEditVehicle.idPojazd > 0)
+            {
+                LoadVehicleFromEditScreen(_currentEditVehicle);
+                var isEdit = VehicleService.UpdateVehicle(_currentEditVehicle);
+                if (isEdit)
+                    MessageBox.Show("Zaktualizowano dane pojazdu.");
+                else
+                    MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
+            }
+            else
+                MessageBox.Show("Najpierw wybierz pojazd do edycji!");
         }
 
         private void VehicleListFilter(object sender, EventArgs e)
