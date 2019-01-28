@@ -847,5 +847,11 @@ namespace GUI
 
             pictureBox11.Image = _lastLoadImage;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormOpinion formOpinion = new FormOpinion(_currentEditVehicle.idPojazd);
+            formOpinion.Show();
+        }
     }
 }
