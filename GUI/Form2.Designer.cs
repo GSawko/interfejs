@@ -327,9 +327,9 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
+            this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.FormularzRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.EdytujDaneOsPanel);
-            this.PrawyPanel.Controls.Add(this.SzegolyRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.ListaRezerwacjiPanel);
             this.PrawyPanel.Controls.Add(this.KontaktPanel);
             this.PrawyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -523,7 +523,6 @@
             this.domainUpDown3.Items.Add("03");
             this.domainUpDown3.Items.Add("02");
             this.domainUpDown3.Items.Add("01");
-            this.domainUpDown3.SelectedIndex = 0;
             this.domainUpDown3.Location = new System.Drawing.Point(85, 57);
             this.domainUpDown3.Name = "domainUpDown3";
             this.domainUpDown3.ReadOnly = true;
@@ -614,12 +613,13 @@
             this.domainUpDown2.Items.Add("03");
             this.domainUpDown2.Items.Add("02");
             this.domainUpDown2.Items.Add("01");
-            this.domainUpDown2.SelectedIndex = 0;
             this.domainUpDown2.Location = new System.Drawing.Point(85, 57);
             this.domainUpDown2.Name = "domainUpDown2";
             this.domainUpDown2.ReadOnly = true;
+            this.domainUpDown2.SelectedIndex = 0;
             this.domainUpDown2.Size = new System.Drawing.Size(51, 20);
             this.domainUpDown2.TabIndex = 1;
+            this.domainUpDown2.Text = "24";
             this.domainUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.domainUpDown2.TextChanged += new System.EventHandler(this.TimeRangeChange);
             // 

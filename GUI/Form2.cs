@@ -239,7 +239,7 @@ namespace GUI
             button1.Enabled = isNoOpinion;
             richTextBox4.Enabled = isNoOpinion;
             comboBox2.Enabled = isNoOpinion;
-            if (!isNoOpinion && reservation.OPINIA.Count > 1)
+            if (!isNoOpinion && reservation.OPINIA.Count > 0)
             {
                 var opinia = reservation.OPINIA.First();
                 richTextBox4.Text = opinia.Opis;
@@ -277,7 +277,7 @@ namespace GUI
                 var newOpinion = new OPINIA();
                 newOpinion.REZERWACJE_idRezerw = _currentEditReservation.idRezerw;
                 newOpinion.DataWyst = DateTime.Now;
-                newOpinion.Ocena = (short)(comboBox1.SelectedIndex + 1);
+                newOpinion.Ocena = (short)(comboBox2.SelectedIndex + 1);
                 newOpinion.Opis = opinia;
                 ReservationService.AddOpinion(newOpinion);
                 ShowSelectedReservationOnEditScreen(_currentEditReservation.idRezerw);
