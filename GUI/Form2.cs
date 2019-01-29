@@ -25,13 +25,12 @@ namespace GUI
         public Form2(string login)
         {
             InitializeComponent();
-            LoadCheckedListBox(checkedListBox3);
-            timer1.Start();
-
             _login = login;
-            
+            timer1.Start();
+            LoadCheckedListBox(checkedListBox3);
             LoadClient(_login);
-            ShowClientOnEditScreen();
+
+            TimeRangeChange(null, null);
         }
 
         private void LoadClient(string login)
@@ -78,16 +77,31 @@ namespace GUI
             textBox18.Text = _currentClient.Haslo;
         }
 
-        private void LoadClientFromEditScreen(KLIENCI editClient)
+        private bool LoadClientFromEditScreen(KLIENCI editClient)
         {
-            editClient.Imie = textBox10.TextOrDefault();
+            var tmp = textBox10.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Imie = tmp;
+
             editClient.DrugieImie = textBox11.TextOrDefault();
-            editClient.Nazwisko = textBox13.TextOrDefault();
-            editClient.Adres = textBox12.TextOrDefault();
-            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+
+            tmp = textBox13.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Nazwisko = tmp;
+
+            tmp = textBox12.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Adres = tmp;
+
+            tmp = TelefonTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return false;
+            editClient.Telefon = tmp;
+
             editClient.Email = textBox16.TextOrDefault();
-            editClient.Haslo = textBox18.TextOrDefault();
-            //editClient.Zdjecie =
+
+            tmp = textBox18.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Haslo = tmp;
 
             editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
@@ -95,6 +109,8 @@ namespace GUI
                 var index = checkedListBox3.CheckedIndices[i] + 1;
                 editClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
             }
+
+            return true;
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -115,11 +131,13 @@ namespace GUI
 
         private void buttonMakeReservation_Click(object sender, EventArgs e)
         {
+            TimeRangeChange(null, null);
             FormularzRezerwacjiPanel.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            ShowClientOnEditScreen();
             EdytujDaneOsPanel.BringToFront();
         }
 
@@ -141,7 +159,13 @@ namespace GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            LoadClientFromEditScreen(_currentClient);
+            var status = LoadClientFromEditScreen(_currentClient);
+
+            if (status == false)
+            {
+                MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                return;
+            }
 
             if (ClientService.UpdateClient(_currentClient))
             {
@@ -263,11 +287,12 @@ namespace GUI
 
         private void TimeRangeChange(object sender, EventArgs e)
         {
+            if (GetStartReservationTime() < DateTime.Now)
+                dateTimePicker3.Value = DateTime.Now;
+
             if (GetStartReservationTime() >= GetEndReservationTime())
                 dateTimePicker4.Value = dateTimePicker3.Value.AddDays(1);
             
-            
-
             FilterByTime();
             FilterByType();
         }
@@ -336,7 +361,10 @@ namespace GUI
             newRes.POJAZDY_idPojazd = (int)dataGridView1.SelectedRows[0].Cells["idPojazd"].Value;
 
             if (ReservationService.Add(newRes))
+            {
                 MessageBox.Show("Pomyślnie zarezerwowano pojazd.");
+                TimeRangeChange(null, null);
+            }
             else
                 MessageBox.Show("Błąd rezerwacji pojazdu!");
 
