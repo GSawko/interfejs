@@ -376,7 +376,7 @@ namespace GUI
                 MessageBox.Show("Błąd dodania pojazdu!");
         }
 
-        private void LoadVehicleGridList()
+        private void LoadCarList()
         {
             var cars = VehicleService.GetVehicles();
             _vehicleListGrid = new List<VehicleListGrid>();
@@ -384,11 +384,6 @@ namespace GUI
             {
                 _vehicleListGrid.Add(car);
             }
-        }
-
-        private void LoadCarList()
-        {
-            LoadVehicleGridList();
             dataGridView1.DataSource = _vehicleListGrid;
         }
 

@@ -19,6 +19,9 @@ namespace GUI
         private REZERWACJE _currentEditReservation;
         private List<ReservationListGrid> _reservationListGrid = new List<ReservationListGrid>();
 
+        private POJAZDY _currentEditVehicle;
+        private List<VehicleListGrid> _vehicleListGrid = new List<VehicleListGrid>();
+
         public Form3(string login)
         {
             InitializeComponent();
@@ -463,6 +466,116 @@ namespace GUI
 
             FormOpinion formOpinion = new FormOpinion(opinions);
             formOpinion.ShowDialog();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            LoadCarList();
+            ListaPojazdowPanel.BringToFront();
+        }
+
+        private void LoadCarList()
+        {
+            var cars = VehicleService.GetVehicles();
+            _vehicleListGrid = new List<VehicleListGrid>();
+            foreach (VehicleListGrid car in cars)
+            {
+                _vehicleListGrid.Add(car);
+            }
+
+            dataGridView1.DataSource = _vehicleListGrid;
+        }
+
+        private void VehicleListFilter(object sender, EventArgs e)
+        {
+            var filterList = _vehicleListGrid;
+            string name = textBox53.TextOrDefault();
+            if (name != null)
+                filterList = filterList.Where(v => v.Marka.Contains(name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            string numerRejestr = textBox52.TextOrDefault();
+            if (numerRejestr != null)
+                filterList = filterList.Where(v => v.NrRejestr.Contains(numerRejestr, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            dataGridView1.DataSource = filterList;
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var row = dataGridView1.SelectedRows[0];
+                var id = (int)row.Cells["idPojazd"].Value;
+                ShowSelectedVehicleOnEditScreen(id);
+            }
+        }
+
+        private void ShowSelectedVehicleOnEditScreen(int id)
+        {
+            _currentEditVehicle = VehicleService.GetVehicle(id) ?? new POJAZDY();
+            ShowVehicleOnEditScreen(_currentEditVehicle);
+            EdytujPojazdPanel.BringToFront();
+        }
+
+        private void ShowVehicleOnEditScreen(POJAZDY vehicle)
+        {
+            if (vehicle.ZDJECIA.Count > 0)
+                pictureBox3.Image = PhotoService.ByteArrayToImage(vehicle.ZDJECIA.First().Zdjecie);
+            else
+                pictureBox3.Image = Properties.Resources.no_car_image;
+
+            textBox63.Text = vehicle.MARKI.Nazwa;
+            maskedTextBox5.Text = vehicle.DataProd.ToString("d");
+            textBox62.Text = vehicle.Kolor;
+            textBox61.Text = vehicle.Przebieg.ToString("D");
+            textBox60.Text = vehicle.ZaGodz.ToString("F");
+            textBox59.Text = vehicle.NrRejestr;
+            checkBox7.Checked = vehicle.Sprawny == 0 ? false : true;
+            comboBox7.SelectedIndex = vehicle.Rodzaj;
+            richTextBox1.Text = vehicle.Opis;
+        }
+
+        private void LoadVehicleFromEditScreen(POJAZDY editVehicle)
+        {
+            editVehicle.Kolor = textBox62.TextOrDefault();
+            editVehicle.Przebieg = int.Parse(textBox61.Text);
+            editVehicle.ZaGodz = float.Parse(textBox60.Text);
+            editVehicle.Sprawny = (sbyte)(checkBox7.Checked == true ? 1 : 0);
+            editVehicle.Opis = richTextBox1.TextOrDefault();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (_currentEditVehicle != null && _currentEditVehicle.idPojazd > 0)
+            {
+                LoadVehicleFromEditScreen(_currentEditVehicle);
+                var isEdit = VehicleService.UpdateVehicle(_currentEditVehicle);
+                if (isEdit)
+                    MessageBox.Show("Zaktualizowano dane pojazdu.");
+                else
+                    MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
+            }
+            else
+                MessageBox.Show("Najpierw wybierz pojazd do edycji!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var opinions = VehicleService.GetVehicleOpinions(_currentEditVehicle.idPojazd);
+            if (opinions.Count == 0)
+            {
+                MessageBox.Show("Wybrany pojazd nie posiada jeszcze opini.");
+                return;
+            }
+
+            FormOpinion formOpinion = new FormOpinion(opinions);
+            formOpinion.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            FormInspection formInspection = new FormInspection(_currentEditVehicle.idPojazd);
+            formInspection.ShowDialog();
         }
     }
 }
