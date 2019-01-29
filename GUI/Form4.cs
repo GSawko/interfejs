@@ -89,6 +89,7 @@ namespace GUI
         private void button15_Click_1(object sender, EventArgs e)
         {
             LoadCarList();
+            VehicleListFilterEvent(null, null);
             ListaPojazdowPanel.BringToFront();
         }
 
@@ -632,7 +633,7 @@ namespace GUI
                 MessageBox.Show("Najpierw wybierz pojazd do edycji!");
         }
 
-        private void VehicleListFilter(object sender, EventArgs e)
+        private List<VehicleListGrid> VehicleListFilter()
         {
             var filterList = _vehicleListGrid;
             string name = textBox53.TextOrDefault();
@@ -643,12 +644,19 @@ namespace GUI
             if (numerRejestr != null)
                 filterList = filterList.Where(v => v.NrRejestr.Contains(numerRejestr, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            dataGridView1.DataSource = filterList;
+            return filterList;
+        }
+
+        private void VehicleListFilterEvent(object sender, EventArgs e)
+        {
+            
+            dataGridView1.DataSource = VehicleListFilter();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
             LoadClientList();
+            ClientListFilterEvent(null, null);
             ListaKlientowPanel.BringToFront();
         }
 
@@ -682,7 +690,7 @@ namespace GUI
             dataGridView2.DataSource = _clientListGrid;
         }
 
-        private void ClientListFilter(object sender, EventArgs e)
+        private List<ClientListGrid> ClientListFilter()
         {
             var filterList = _clientListGrid;
             string nameSurname = textBox34.TextOrDefault();
@@ -697,12 +705,19 @@ namespace GUI
             if (numerDowodu != null)
                 filterList = filterList.Where(c => c.NrDowOsob.StartsWith(numerDowodu, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            dataGridView2.DataSource = filterList;
+            return filterList;
+        }
+
+        private void ClientListFilterEvent(object sender, EventArgs e)
+        {
+            
+            dataGridView2.DataSource = ClientListFilter();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
             LoadWorkerList();
+            WorkerListFilterEvent(null, null);
             ListaPracownikowPanel.BringToFront();
         }
 
@@ -736,7 +751,7 @@ namespace GUI
             dataGridView3.DataSource = _workerListGrid;
         }
 
-        private void WorkerListFilter(object sender, EventArgs e)
+        private List<WorkerListGrid> WorkerListFilter()
         {
             var filterList = _workerListGrid;
             string nameSurname = textBox44.TextOrDefault();
@@ -751,12 +766,19 @@ namespace GUI
             if (login != null)
                 filterList = filterList.Where(w => w.Login.Contains(login, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            dataGridView3.DataSource = filterList;
+            return filterList;
+        }
+
+        private void WorkerListFilterEvent(object sender, EventArgs e)
+        {
+
+            dataGridView3.DataSource = WorkerListFilter();
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             LoadReservationList();
+            ReservationListFilterEvent(null, null);
             ListaRezerwacjiPanel.BringToFront();
         }
 
@@ -859,8 +881,7 @@ namespace GUI
                 ShowSelectedReservationOnEditScreen(id);
             }
         }
-
-        private void ReservationListFilter(object sender, EventArgs e)
+        private List<ReservationListGrid> ReservationListFilter()
         {
             if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
                 dateTimePicker2.Value = dateTimePicker1.Value.Date.AddDays(1);
@@ -883,7 +904,12 @@ namespace GUI
             if (klient != null)
                 filterList = filterList.Where(r => r.Klient.Contains(klient, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
-            dataGridView4.DataSource = filterList;
+            return filterList;
+        }
+
+        private void ReservationListFilterEvent(object sender, EventArgs e)
+        {
+            dataGridView4.DataSource = ReservationListFilter();
         }
 
         private void textBox23_KeyPress(object sender, KeyPressEventArgs e)
@@ -931,7 +957,7 @@ namespace GUI
                 FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
                 var cellData = new List<Object[]>();
                 ;
-                foreach (ClientListGrid clg in _clientListGrid)
+                foreach (ClientListGrid clg in ClientListFilter())
                     cellData.Add(new Object[] { clg.ImieNazwisko, clg.DataUr, clg.NrDowOsob, clg.Telefon, clg.Email });
                 worksheet.Cells[2, 1].LoadFromArrays(cellData);
                 worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
@@ -970,7 +996,7 @@ namespace GUI
                 FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
                 var cellData = new List<Object[]>();
 
-                foreach (WorkerListGrid clg in _workerListGrid)
+                foreach (WorkerListGrid clg in WorkerListFilter())
                     cellData.Add(new Object[] { clg.ImieNazwisko, clg.DataZatr, clg.Email, clg.Telefon });
 
                 worksheet.Cells[2, 1].LoadFromArrays(cellData);
@@ -983,6 +1009,7 @@ namespace GUI
         private void button20_Click_1(object sender, EventArgs e)
         {
             LoadNoTakenReservationList();
+            ReservationListFilterEvent(null, null);
             ListaRezerwacjiPanel.BringToFront();
         }
 
@@ -1000,6 +1027,7 @@ namespace GUI
         private void button7_Click(object sender, EventArgs e)
         {
             LoadNoReturnReservationList();
+            ReservationListFilterEvent(null, null);
             ListaRezerwacjiPanel.BringToFront();
         }
 

@@ -472,8 +472,8 @@
             // PrawyPanel
             // 
             this.PrawyPanel.AutoScroll = true;
-            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.DodajKlientaPanel);
+            this.PrawyPanel.Controls.Add(this.EdytujPojazdPanel);
             this.PrawyPanel.Controls.Add(this.EdytujPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.DodajPracownikaPanel);
             this.PrawyPanel.Controls.Add(this.ListaPojazdowPanel);
@@ -813,7 +813,7 @@
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(141, 20);
             this.textBox52.TabIndex = 9;
-            this.textBox52.TextChanged += new System.EventHandler(this.VehicleListFilter);
+            this.textBox52.TextChanged += new System.EventHandler(this.VehicleListFilterEvent);
             // 
             // textBox53
             // 
@@ -821,7 +821,7 @@
             this.textBox53.Name = "textBox53";
             this.textBox53.Size = new System.Drawing.Size(141, 20);
             this.textBox53.TabIndex = 8;
-            this.textBox53.TextChanged += new System.EventHandler(this.VehicleListFilter);
+            this.textBox53.TextChanged += new System.EventHandler(this.VehicleListFilterEvent);
             // 
             // label128
             // 
@@ -2785,7 +2785,7 @@
             this.textBox54.Name = "textBox54";
             this.textBox54.Size = new System.Drawing.Size(142, 20);
             this.textBox54.TabIndex = 18;
-            this.textBox54.TextChanged += new System.EventHandler(this.ReservationListFilter);
+            this.textBox54.TextChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // label131
             // 
@@ -2804,7 +2804,7 @@
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 16;
             this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.ReservationListFilter);
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // label130
             // 
@@ -2823,7 +2823,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(94, 20);
             this.dateTimePicker2.TabIndex = 14;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.ReservationListFilter);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // checkBox4
             // 
@@ -2833,7 +2833,7 @@
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 13;
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.ReservationListFilter);
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // label129
             // 
@@ -2852,7 +2852,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(91, 20);
             this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.ReservationListFilter);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // textBox48
             // 
@@ -2860,7 +2860,7 @@
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(142, 20);
             this.textBox48.TabIndex = 10;
-            this.textBox48.TextChanged += new System.EventHandler(this.ReservationListFilter);
+            this.textBox48.TextChanged += new System.EventHandler(this.ReservationListFilterEvent);
             // 
             // label126
             // 
@@ -3005,7 +3005,7 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(119, 20);
             this.textBox17.TabIndex = 12;
-            this.textBox17.TextChanged += new System.EventHandler(this.ClientListFilter);
+            this.textBox17.TextChanged += new System.EventHandler(this.ClientListFilterEvent);
             // 
             // label108
             // 
@@ -3032,7 +3032,7 @@
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(109, 20);
             this.textBox33.TabIndex = 9;
-            this.textBox33.TextChanged += new System.EventHandler(this.ClientListFilter);
+            this.textBox33.TextChanged += new System.EventHandler(this.ClientListFilterEvent);
             this.textBox33.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox33_KeyPress);
             // 
             // textBox34
@@ -3042,7 +3042,7 @@
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(131, 20);
             this.textBox34.TabIndex = 8;
-            this.textBox34.TextChanged += new System.EventHandler(this.ClientListFilter);
+            this.textBox34.TextChanged += new System.EventHandler(this.ClientListFilterEvent);
             // 
             // label111
             // 
@@ -3196,7 +3196,7 @@
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(140, 20);
             this.textBox37.TabIndex = 18;
-            this.textBox37.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            this.textBox37.TextChanged += new System.EventHandler(this.WorkerListFilterEvent);
             // 
             // label113
             // 
@@ -3222,7 +3222,7 @@
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(140, 20);
             this.textBox39.TabIndex = 15;
-            this.textBox39.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            this.textBox39.TextChanged += new System.EventHandler(this.WorkerListFilterEvent);
             // 
             // textBox44
             // 
@@ -3230,7 +3230,7 @@
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(140, 20);
             this.textBox44.TabIndex = 14;
-            this.textBox44.TextChanged += new System.EventHandler(this.WorkerListFilter);
+            this.textBox44.TextChanged += new System.EventHandler(this.WorkerListFilterEvent);
             // 
             // label125
             // 
