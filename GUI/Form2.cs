@@ -30,6 +30,7 @@ namespace GUI
             LoadCheckedListBox(checkedListBox3);
             LoadClient(_login);
 
+            LoadMakeReservationScreen();
             TimeRangeChange(null, null);
         }
 
@@ -131,8 +132,16 @@ namespace GUI
 
         private void buttonMakeReservation_Click(object sender, EventArgs e)
         {
+            LoadMakeReservationScreen();
             TimeRangeChange(null, null);
             FormularzRezerwacjiPanel.BringToFront();
+        }
+
+        private void LoadMakeReservationScreen()
+        {
+            var time = DateTime.Now;
+            domainUpDown2.SelectedIndex = 23 - time.Hour;
+            domainUpDown3.SelectedIndex = 23 - time.Hour;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -287,8 +296,12 @@ namespace GUI
 
         private void TimeRangeChange(object sender, EventArgs e)
         {
-            if (GetStartReservationTime() < DateTime.Now)
-                dateTimePicker3.Value = DateTime.Now;
+            var time = DateTime.Now;
+            if (GetStartReservationTime() < time)
+            {
+                dateTimePicker3.Value = time;
+                domainUpDown2.SelectedIndex = 23 - time.Hour;
+            }
 
             if (GetStartReservationTime() >= GetEndReservationTime())
                 dateTimePicker4.Value = dateTimePicker3.Value.AddDays(1);
@@ -300,14 +313,14 @@ namespace GUI
         {
             var picker = dateTimePicker3.Value;
 
-            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown2.SelectedIndex + 1, 0, 0);
+            return new DateTime(picker.Year, picker.Month, picker.Day, 23 - Math.Abs(domainUpDown2.SelectedIndex), 0, 0);
         }
 
         private DateTime GetEndReservationTime()
         {
             var picker = dateTimePicker4.Value;
 
-            return new DateTime(picker.Year, picker.Month, picker.Day, domainUpDown3.SelectedIndex + 1, 30, 0);
+            return new DateTime(picker.Year, picker.Month, picker.Day, 23 - Math.Abs(domainUpDown3.SelectedIndex), 30, 0);
         }
 
         private void FilterByTime()
