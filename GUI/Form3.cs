@@ -28,12 +28,15 @@ namespace GUI
             LoadCheckedListBox(KategoriePJazdyCBoxEDKlienta);
             LoadCheckedListBox(checkedListBox3);
             timer1.Start();
+            ClearClientFromEditScreen();
 
-            using (var entities = new DBEntities())
-            {
-                var pracownik = entities.PRACOWNICY.Where(p => p.Login == login).First();
-                label2.Text = pracownik.Imie + " " + pracownik.Nazwisko;
-            }
+            LoadUserData(login);
+        }
+
+        private void LoadUserData(string login)
+        {
+            var pracownik = WorkerService.GetWorker(login);
+            label2.Text = pracownik.Imie + " " + pracownik.Nazwisko;
         }
 
         private void LoadCheckedListBox(CheckedListBox checkedListBox)
@@ -51,7 +54,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox11.Text = DateTime.Now.ToString("d");
+            ClearClientFromEditScreen();
             DodajKlientaPanel.BringToFront();
         }
 
@@ -122,7 +125,7 @@ namespace GUI
             ImieTBoxEDKlienta.Text = klient.Imie;
             DrugieImieTBoxEDKlienta.Text = klient.DrugieImie;
             NazwiskoTBoxEDKlienta.Text = klient.Nazwisko;
-            DataUrDispLabel.Text = klient.DataUr.ToString("d");
+            textBox18.Text = klient.DataUr.ToString("d");
             TelefonTBoxEDKlienta.Text = klient.Telefon;
             PlecComboEDKlienta.SelectedIndex = klient.Plec == 1 ? 1 : 0;
             AdresTBoxEDKlienta.Text = klient.Adres;
@@ -139,17 +142,35 @@ namespace GUI
             }
         }
 
-        private void LoadClientFromEditScreen(KLIENCI editClient)
+        private bool LoadClientFromEditScreen(KLIENCI editClient)
         {
-            editClient.Imie = ImieTBoxEDKlienta.TextOrDefault();
+            var tmp = ImieTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Imie = tmp;
+
             editClient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
-            editClient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
-            editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
-            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+
+            tmp = NazwiskoTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Nazwisko = tmp;
+
+            tmp = AdresTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Adres = tmp;
+
+            tmp = TelefonTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return false;
+            editClient.Telefon = tmp;
+
             editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
-            editClient.NrPrawaJazd = NrPJazdyTBoxEDKlienta.TextOrDefault();
-            editClient.NrDowOsob = NrDowOsTBoxEDKlienta.TextOrDefault();
-            //editClient.Zdjecie =
+
+            tmp = NrPJazdyTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length > 13) return false;
+            editClient.NrPrawaJazd = tmp;
+
+            tmp = NrDowOsTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length > 9) return false;
+            editClient.NrDowOsob = tmp;
 
             editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
             for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count; i++)
@@ -157,21 +178,47 @@ namespace GUI
                 var index = KategoriePJazdyCBoxEDKlienta.CheckedIndices[i] + 1;
                 editClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
             }
+
+            return true;
         }
 
         private KLIENCI GetClientFromAddScreen()
         {
             KLIENCI newClient = new KLIENCI();
-            newClient.Imie = textBox13.TextOrDefault();
+            var tmp = textBox13.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Imie = tmp;
+
             newClient.DrugieImie = textBox12.TextOrDefault();
-            newClient.Nazwisko = textBox16.TextOrDefault();
-            newClient.Adres = textBox20.TextOrDefault();
+
+            tmp = textBox16.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Nazwisko = tmp;
+
+            tmp = textBox20.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Adres = tmp;
+
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
-            newClient.Telefon = maskedTextBox1.TextOrDefault();
+
+            var parse = DateTime.TryParse(maskedTextBox4.Text, out DateTime data);
+            if (!parse) return null;
+            newClient.DataUr = data;
+
+            tmp = maskedTextBox1.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return null;
+            newClient.Telefon = tmp;
+
             newClient.Email = textBox17.TextOrDefault();
-            newClient.NrPrawaJazd = textBox15.TextOrDefault();
-            newClient.NrDowOsob = textBox14.TextOrDefault();
+
+            tmp = textBox15.TextOrDefault();
+            if (tmp == null || tmp.Length >= 13) return null;
+            newClient.NrPrawaJazd = tmp;
+
+            tmp = textBox14.TextOrDefault();
+            if (tmp == null || tmp.Length >= 9) return null;
+            newClient.NrDowOsob = tmp;
+
             newClient.DataRejestr = DateTime.Now;
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
@@ -186,12 +233,38 @@ namespace GUI
             return newClient;
         }
 
+        private void ClearClientFromEditScreen()
+        {
+            textBox13.Text = "";
+            textBox12.Text = "";
+            textBox16.Text = "";
+            textBox20.Text = "";
+            comboBox1.SelectedIndex = 0;
+            maskedTextBox4.Text = "";
+            maskedTextBox1.Text = "";
+            textBox17.Text = "";
+            textBox15.Text = "";
+            textBox14.Text = "";
+            textBox11.Text = DateTime.Now.ToString("d");
+
+            checkedListBox3.ClearItemChecked();
+        }
+
         private void button10_Click(object sender, EventArgs e)
         {
             var addClient = GetClientFromAddScreen();
+            if (addClient == null)
+            {
+                MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                return;
+            }
+
             var isAdd = ClientService.AddClient(addClient);
             if (isAdd)
+            {
+                ClearClientFromEditScreen();
                 MessageBox.Show("Dodano klienta.");
+            }
             else
                 MessageBox.Show("Błąd dodanie klienta!");
         }
@@ -200,7 +273,12 @@ namespace GUI
         {
             if (_currentEditKlient != null && _currentEditKlient.idKlient > 0)
             {
-                LoadClientFromEditScreen(_currentEditKlient);
+                var status = LoadClientFromEditScreen(_currentEditKlient);
+                if (!status)
+                {
+                    MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                    return;
+                }
                 var isEdt = ClientService.UpdateClient(_currentEditKlient);
                 if (isEdt)
                     MessageBox.Show("Zaktualizowano dane klienta.");
@@ -532,23 +610,38 @@ namespace GUI
             textBox59.Text = vehicle.NrRejestr;
             checkBox7.Checked = vehicle.Sprawny == 0 ? false : true;
             comboBox7.SelectedIndex = vehicle.Rodzaj;
-            richTextBox1.Text = vehicle.Opis;
+            richTextBox4.Text = vehicle.Opis;
         }
 
-        private void LoadVehicleFromEditScreen(POJAZDY editVehicle)
+        private bool LoadVehicleFromEditScreen(POJAZDY editVehicle)
         {
             editVehicle.Kolor = textBox62.TextOrDefault();
-            editVehicle.Przebieg = int.Parse(textBox61.Text);
-            editVehicle.ZaGodz = float.Parse(textBox60.Text);
+
+            var parse = int.TryParse(textBox61.Text, out int przebieg);
+            if (!parse) return false;
+            editVehicle.Przebieg = przebieg;
+
+            parse = float.TryParse(textBox60.Text, out float zaGodz);
+            if (!parse) return false;
+            editVehicle.ZaGodz = zaGodz;
+
             editVehicle.Sprawny = (sbyte)(checkBox7.Checked == true ? 1 : 0);
-            editVehicle.Opis = richTextBox1.TextOrDefault();
+            editVehicle.Opis = richTextBox4.TextOrDefault();
+
+            return true;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             if (_currentEditVehicle != null && _currentEditVehicle.idPojazd > 0)
             {
-                LoadVehicleFromEditScreen(_currentEditVehicle);
+                var status = LoadVehicleFromEditScreen(_currentEditVehicle);
+                if (!status)
+                {
+                    MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                    return;
+                }
+
                 var isEdit = VehicleService.UpdateVehicle(_currentEditVehicle);
                 if (isEdit)
                     MessageBox.Show("Zaktualizowano dane pojazdu.");
