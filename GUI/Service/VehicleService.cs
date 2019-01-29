@@ -94,6 +94,9 @@ namespace GUI.Service
                     .First(v => v.idPojazd == updateVehicle.idPojazd);
 
                 entities.Entry(vehicle).CurrentValues.SetValues(updateVehicle);
+                if (updateVehicle.ZDJECIA.First()?.idZdjecia == 0)
+                    entities.ZDJECIA.Add(updateVehicle.ZDJECIA.First());
+
                 entities.SaveChanges();
 
                 return true;

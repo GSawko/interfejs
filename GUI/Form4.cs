@@ -36,8 +36,7 @@ namespace GUI
             InitializeComponent();
             LoadMenuData(Login);
             LoadCheckedListBox();
-            LoadComboBox(comboBox5);
-            ClearVehicleFromAddScreen();
+            ClearClientFromAddScreen();
             timer1.Start();
         }
 
@@ -65,7 +64,7 @@ namespace GUI
 
         private void button18_Click(object sender, EventArgs e)
         {
-            maskedTextBox2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            ClearWorkerFromAddScreen();
             DodajPracownikaPanel.BringToFront();
         }
 
@@ -76,14 +75,15 @@ namespace GUI
 
         private void button19_Click(object sender, EventArgs e)
         {
+            LoadComboBox(comboBox5);
             ClearVehicleFromAddScreen();
             DodajPojazdPanel.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ClearClientFromAddScreen();
             DodajKlientaPanel.BringToFront();
-            textBox20.Text = DateTime.Now.ToString("d");
         }
 
         private void button15_Click_1(object sender, EventArgs e)
@@ -148,23 +148,41 @@ namespace GUI
             //pictureBox9.Image =
         }
 
-        private void LoadWorkerFromEditScreen(PRACOWNICY editWorker)
+        private bool LoadWorkerFromEditScreen(PRACOWNICY editWorker)
         {
-            editWorker.Imie = textBox32.TextOrDefault();
+            var tmp = textBox32.TextOrDefault();
+            if (tmp == null) return false;
+            editWorker.Imie = tmp;
+
             editWorker.DrugieImie = textBox26.TextOrDefault();
-            editWorker.Nazwisko = textBox35.TextOrDefault();
-            editWorker.Adres = textBox38.TextOrDefault();
-            editWorker.Telefon = maskedTextBox6.TextOrDefault();
+
+            tmp = textBox35.TextOrDefault();
+            if (tmp == null) return false;
+            editWorker.Nazwisko = tmp;
+
+            tmp = textBox38.TextOrDefault();
+            if (tmp == null) return false;
+            editWorker.Adres = tmp;
+
+            tmp = maskedTextBox6.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return false;
+            editWorker.Telefon = tmp;
+
             editWorker.Email = textBox36.TextOrDefault();
 
-            //editWorker.Zdjecie =
+            return true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (_currentEditWorker != null && _currentEditWorker.idPrac > 0)
             {
-                LoadWorkerFromEditScreen(_currentEditWorker);
+                var status = LoadWorkerFromEditScreen(_currentEditWorker);
+                if (!status)
+                {
+                    MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                    return;
+                }
                 var isEdit = WorkerService.UpdateWorker(_currentEditWorker);
                 if (isEdit)
                     MessageBox.Show("Zaktualizowano dane pracownika!");
@@ -172,6 +190,7 @@ namespace GUI
                     MessageBox.Show("Błąd podczas aktualizacji danych pracownika");
 
                 _currentEditWorker = WorkerService.GetWorker(_currentEditWorker.idPrac);
+                ShowWorkerOnEditScreen(_currentEditWorker);
             }
             else
                 MessageBox.Show("Najpierw wybierz pracownika do edycji!");
@@ -218,17 +237,35 @@ namespace GUI
             }
         }
 
-        private void LoadClientFromEditScreen(KLIENCI editClient)
+        private bool LoadClientFromEditScreen(KLIENCI editClient)
         {
-            editClient.Imie = ImieTBoxEDKlienta.TextOrDefault();
+            var tmp = ImieTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Imie = tmp;
+
             editClient.DrugieImie = DrugieImieTBoxEDKlienta.TextOrDefault();
-            editClient.Nazwisko = NazwiskoTBoxEDKlienta.TextOrDefault();
-            editClient.Adres = AdresTBoxEDKlienta.TextOrDefault();
-            editClient.Telefon = TelefonTBoxEDKlienta.TextOrDefault();
+
+            tmp = NazwiskoTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Nazwisko = tmp;
+
+            tmp = AdresTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Adres = tmp;
+
+            tmp = TelefonTBoxEDKlienta.TextOrDefault();
+            if (tmp == null) return false;
+            editClient.Telefon = tmp;
+
             editClient.Email = EmailTBoxEDKlienta.TextOrDefault();
-            editClient.NrPrawaJazd = NrPJazdyTBoxEDKlienta.TextOrDefault();
-            editClient.NrDowOsob = NrDowOsTBoxEDKlienta.TextOrDefault();
-            //editClient.Zdjecie =
+
+            tmp = NrPJazdyTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length > 13) return false;
+            editClient.NrPrawaJazd = tmp;
+
+            tmp = NrDowOsTBoxEDKlienta.TextOrDefault();
+            if (tmp == null || tmp.Length > 9) return false;
+            editClient.NrDowOsob = tmp;
 
             editClient.KATEGORIEPJAZDY = new List<KATEGORIEPJAZDY>();
             for (int i = 0; i < KategoriePJazdyCBoxEDKlienta.CheckedIndices.Count; i++)
@@ -236,13 +273,20 @@ namespace GUI
                 var index = KategoriePJazdyCBoxEDKlienta.CheckedIndices[i] + 1;
                 editClient.KATEGORIEPJAZDY.Add(new KATEGORIEPJAZDY() { idKatPJ = index });
             }
+
+            return true;
         }
 
         private void UpdateClientDataButton_Click(object sender, EventArgs e)
         {
             if (_currentEditClient != null && _currentEditClient.idKlient > 0)
             {
-                LoadClientFromEditScreen(_currentEditClient);
+                var status = LoadClientFromEditScreen(_currentEditClient);
+                if (!status)
+                {
+                    MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                    return;
+                }
                 var isEdt = ClientService.UpdateClient(_currentEditClient);
                 if (isEdt)
                     MessageBox.Show("Zaktualizowano dane klienta.");
@@ -250,6 +294,7 @@ namespace GUI
                     MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
 
                 _currentEditClient = ClientService.GetClient(_currentEditClient.idKlient);
+                ShowClientOnEditScreen(_currentEditClient);
             }
             else
                 MessageBox.Show("Najpierw wybierz klienta do edycji!");
@@ -258,16 +303,40 @@ namespace GUI
         private KLIENCI GetClientFromAddScreen()
         {
             KLIENCI newClient = new KLIENCI();
-            newClient.Imie = textBox10.TextOrDefault();
+            var tmp = textBox10.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Imie = tmp;
+
             newClient.DrugieImie = textBox11.TextOrDefault();
-            newClient.Nazwisko = textBox13.TextOrDefault();
-            newClient.Adres = textBox12.TextOrDefault();
+
+            tmp = textBox13.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Nazwisko = tmp;
+
+            tmp = textBox12.TextOrDefault();
+            if (tmp == null) return null;
+            newClient.Adres = tmp;
+
             newClient.Plec = (sbyte)comboBox1.SelectedIndex;
-            newClient.DataUr = DateTime.Parse(maskedTextBox4.Text);
-            newClient.Telefon = maskedTextBox7.TextOrDefault();
+
+            var parse = DateTime.TryParse(maskedTextBox4.Text, out DateTime dataUr);
+            if (!parse) return null;
+            newClient.DataUr = dataUr;
+
+            tmp = maskedTextBox7.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return null;
+            newClient.Telefon = tmp;
+
             newClient.Email = textBox16.TextOrDefault();
-            newClient.NrPrawaJazd = textBox15.TextOrDefault();
-            newClient.NrDowOsob = textBox14.TextOrDefault();
+
+            tmp = textBox15.TextOrDefault();
+            if (tmp == null || tmp.Length > 13) return null;
+            newClient.NrPrawaJazd = tmp;
+
+            tmp = textBox14.TextOrDefault();
+            if (tmp == null || tmp.Length > 9) return null;
+            newClient.NrDowOsob = tmp;
+
             newClient.DataRejestr = DateTime.Now;
 
             for (int i = 0; i < checkedListBox3.CheckedIndices.Count; i++)
@@ -282,12 +351,37 @@ namespace GUI
             return newClient;
         }
 
+        private void ClearClientFromAddScreen()
+        {
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox13.Text = "";
+            textBox12.Text = "";
+            comboBox1.SelectedIndex = 0;
+            maskedTextBox4.Text = "";
+            maskedTextBox7.Text = "";
+            textBox16.Text = "";
+            textBox15.Text = "";
+            textBox14.Text = "";
+            textBox20.Text = DateTime.Now.ToString("d");
+
+            checkedListBox3.ClearItemChecked();
+        }
+
         private void button10_Click(object sender, EventArgs e)
         {
             var addClient = GetClientFromAddScreen();
+            if (addClient == null)
+            {
+                MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                return;
+            }
             var isAdd = ClientService.AddClient(addClient);
             if (isAdd)
+            {
+                ClearClientFromAddScreen();
                 MessageBox.Show("Dodano klienta.");
+            }
             else
                 MessageBox.Show("Błąd dodanie klienta!");
         }
@@ -295,16 +389,35 @@ namespace GUI
         private PRACOWNICY GetWorkerFromAddScreen()
         {
             PRACOWNICY newWorker = new PRACOWNICY();
-            newWorker.Imie = textBox42.TextOrDefault();
+            var tmp = textBox42.TextOrDefault();
+            if (tmp == null) return null;
+            newWorker.Imie = tmp;
+
             newWorker.DrugieImie = textBox40.TextOrDefault();
-            newWorker.Nazwisko = textBox45.TextOrDefault();
-            newWorker.Adres = textBox47.TextOrDefault();
+
+            tmp = textBox45.TextOrDefault();
+            if (tmp == null) return null;
+            newWorker.Nazwisko = tmp;
+
+            tmp = textBox47.TextOrDefault();
+            if (tmp == null) return null;
+            newWorker.Adres = tmp;
+
             newWorker.Plec = (sbyte)comboBox3.SelectedIndex;
-            newWorker.Telefon = maskedTextBox8.TextOrDefault();
+
+            tmp = maskedTextBox8.TextOrDefault();
+            if (tmp == null || tmp.Length < 9) return null;
+            newWorker.Telefon = tmp;
+
             newWorker.Email = textBox46.TextOrDefault();
-            newWorker.DataZatr = DateTime.Now;
-            newWorker.DataUr = DateTime.Parse(maskedTextBox3.Text);
-            //newWorker.Zdjecie =
+
+            var parse = DateTime.TryParse(maskedTextBox2.Text, out DateTime dataZat);
+            if (!parse) return null;
+            newWorker.DataZatr = dataZat;
+
+            parse = DateTime.TryParse(maskedTextBox3.Text, out DateTime dataUr);
+            if (!parse) return null;
+            newWorker.DataUr = dataUr;
 
             newWorker.Login = "p_" + newWorker.Imie + newWorker.DataUr.ToString("dd");
             newWorker.Haslo = newWorker.Login;
@@ -312,12 +425,34 @@ namespace GUI
             return newWorker;
         }
 
+        private void ClearWorkerFromAddScreen()
+        {
+            textBox42.Text = "";
+            textBox40.Text = "";
+            textBox45.Text = "";
+            textBox47.Text = "";
+            comboBox3.SelectedIndex = 0;
+            maskedTextBox8.Text = "";
+            textBox46.Text = "";
+            maskedTextBox2.Text = "";
+            maskedTextBox3.Text = "";
+        }
+
+
         private void button13_Click(object sender, EventArgs e)
         {
             var addWorker = GetWorkerFromAddScreen();
+            if (addWorker == null)
+            {
+                MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                return;
+            }
             var isAdd = WorkerService.AddWorker(addWorker);
             if (isAdd)
+            {
+                ClearWorkerFromAddScreen();
                 MessageBox.Show("Dodano pracownika.");
+            }
             else
                 MessageBox.Show("Błąd dodania pracownika!");
         }
@@ -326,14 +461,33 @@ namespace GUI
         {
             POJAZDY newVehicle = new POJAZDY();
             newVehicle.Rodzaj = (sbyte)comboBox4.SelectedIndex;
-            newVehicle.NrRejestr = textBox43.TextOrDefault();
-            newVehicle.Przebieg = int.Parse(textBox49.Text);
-            newVehicle.ZaGodz = float.Parse(textBox51.Text);
-            newVehicle.DataProd = DateTime.Parse(maskedTextBox1.Text);
+
+            var tmp = textBox43.TextOrDefault();
+            if (tmp == null) return null;
+            newVehicle.NrRejestr = tmp;
+
+            var parse = int.TryParse(textBox49.Text, out int przebieg);
+            if (!parse) return null;
+            newVehicle.Przebieg = przebieg;
+
+            parse = float.TryParse(textBox51.Text, out float zaGodz);
+            if (!parse) return null;
+            newVehicle.ZaGodz = zaGodz;
+
+            parse = DateTime.TryParse(maskedTextBox1.Text, out DateTime date);
+            if (!parse) return null;
+            newVehicle.DataProd = date;
+
             newVehicle.Sprawny = (sbyte)(checkBox3.Checked == true ? 1 : 0);
+
             newVehicle.Opis = richTextBox4.TextOrDefault();
+
             newVehicle.Kolor = textBox50.TextOrDefault();
-            newVehicle.MARKA_Nazwa = comboBox5.Text;
+
+            tmp = comboBox5.Text;
+            if (tmp.Length == 0) return null;
+            newVehicle.MARKA_Nazwa = tmp;
+
             if (_lastLoadImage != null)
                 newVehicle.ZDJECIA.Add(new ZDJECIA() { Zdjecie = PhotoService.ImageToByteArray(_lastLoadImage) });
 
@@ -366,6 +520,11 @@ namespace GUI
         private void button14_Click(object sender, EventArgs e)
         {
             var addVehicle = GetVehicleFromAddScreen();
+            if (addVehicle == null)
+            {
+                MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                return;
+            }
             var isAdd = VehicleService.AddVehicle(addVehicle);
             if (isAdd)
             {
@@ -407,9 +566,15 @@ namespace GUI
         private void ShowVehicleOnEditScreen(POJAZDY vehicle)
         {
             if (vehicle.ZDJECIA.Count > 0)
+            {
                 pictureBox3.Image = PhotoService.ByteArrayToImage(vehicle.ZDJECIA.First().Zdjecie);
+                button24.Enabled = false;
+            }
             else
+            {
                 pictureBox3.Image = Properties.Resources.no_car_image;
+                button24.Enabled = true;
+            }
 
             textBox63.Text = vehicle.MARKI.Nazwa;
             maskedTextBox5.Text = vehicle.DataProd.ToString("d");
@@ -422,25 +587,46 @@ namespace GUI
             richTextBox1.Text = vehicle.Opis;
         }
 
-        private void LoadVehicleFromEditScreen(POJAZDY editVehicle)
+        private bool LoadVehicleFromEditScreen(POJAZDY editVehicle)
         {
             editVehicle.Kolor = textBox62.TextOrDefault();
-            editVehicle.Przebieg = int.Parse(textBox61.Text);
-            editVehicle.ZaGodz = float.Parse(textBox60.Text);
+
+            var parse = int.TryParse(textBox61.Text, out int przebieg);
+            if (!parse) return false;
+            editVehicle.Przebieg = przebieg;
+
+            parse = float.TryParse(textBox60.Text, out float zaGodz);
+            if (!parse) return false;
+            editVehicle.ZaGodz = zaGodz;
+
             editVehicle.Sprawny = (sbyte)(checkBox7.Checked == true ? 1 : 0);
+
             editVehicle.Opis = richTextBox1.TextOrDefault();
+
+            if (_lastLoadImage != null && editVehicle.ZDJECIA.Count == 0)
+                editVehicle.ZDJECIA.Add(new ZDJECIA() { Zdjecie = PhotoService.ImageToByteArray(_lastLoadImage), POJAZDY_idPojazd = editVehicle.idPojazd });
+
+            return true;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             if (_currentEditVehicle != null && _currentEditVehicle.idPojazd > 0)
             {
-                LoadVehicleFromEditScreen(_currentEditVehicle);
+                var startus = LoadVehicleFromEditScreen(_currentEditVehicle);
+                if (!startus)
+                {
+                    MessageBox.Show("Sprawdź czy wymagane pola są wypełnione poprawnymi danymi!");
+                    return;
+                }
                 var isEdit = VehicleService.UpdateVehicle(_currentEditVehicle);
                 if (isEdit)
                     MessageBox.Show("Zaktualizowano dane pojazdu.");
                 else
                     MessageBox.Show("Błąd podczas aktualizacji danych klienta!");
+
+                _currentEditVehicle = VehicleService.GetVehicle(_currentEditVehicle.idPojazd);
+                ShowVehicleOnEditScreen(_currentEditVehicle);
             }
             else
                 MessageBox.Show("Najpierw wybierz pojazd do edycji!");
@@ -841,6 +1027,16 @@ namespace GUI
                 return;
 
             pictureBox11.Image = _lastLoadImage;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            _lastLoadImage = PhotoService.LoadFileToImage();
+
+            if (_lastLoadImage == null)
+                return;
+
+            pictureBox3.Image = _lastLoadImage;
         }
 
         private void button6_Click(object sender, EventArgs e)
